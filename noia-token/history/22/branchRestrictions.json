@@ -1,0 +1,1423 @@
+,{
+  "2020-11-12T11:33:51.655ZCanonicalBurner.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(address)",
+          "parameters": [
+            {
+              "js": "contractNOIAToken.address",
+              "sol": "contractNOIAToken.address"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:55.809ZNOIAVaultFactory.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(address,address)",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "contractNOIAToken.address",
+              "sol": "contractNOIAToken.address"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.940ZNOIAToken.register": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute register()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.941ZNOIAToken.unregister": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute unregister()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.941ZNOIAToken.enableEtherlessTransfer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute enableEtherlessTransfer() WHEN msg.sender==_owner",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail enableEtherlessTransfer() when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.942ZNOIAToken.disableEtherlessTransfer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute disableEtherlessTransfer() WHEN msg.sender==_owner",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail disableEtherlessTransfer() when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.943ZNOIAToken.transfer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "55-57",
+          "restrictions": [
+            "success == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transfer(address,uint256) WHEN success==true",
+          "parameters": [
+            {
+              "js": "contractNOIAVault.address",
+              "sol": "contractNOIAVault.address"
+            },
+            {
+              "js": "1000000000",
+              "sol": "1000000000"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "success != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transfer(address,uint256) WHEN success!=true",
+          "parameters": [
+            {
+              "js": "contractCanonicalBurner.address",
+              "sol": "contractCanonicalBurner.address"
+            },
+            {
+              "js": "96",
+              "sol": "96"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.944ZNOIAToken.transferFrom": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "71-73",
+          "restrictions": [
+            "success == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transferFrom(address,address,uint256) WHEN success==true",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "contractNOIAVault.address",
+              "sol": "contractNOIAVault.address"
+            },
+            {
+              "js": "9999",
+              "sol": "9999"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "success != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transferFrom(address,address,uint256) WHEN success!=true",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "contractNOIAVault.address",
+              "sol": "contractNOIAVault.address"
+            },
+            {
+              "js": "29",
+              "sol": "29"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.945ZNOIAToken.mint": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute mint(address,uint256) WHEN msg.sender==_owner,to!=0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "97",
+              "sol": "97"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail mint(address,uint256) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "97",
+                "sol": "97"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail mint(address,uint256) when NOT comply with: to != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "97",
+                "sol": "97"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.946ZNOIAToken.burn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute burn(uint256) WHEN msg.sender==burnAddress,tokensToMint==0,msg.sender!=0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "28",
+              "sol": "28"
+            },
+            {
+              "js": "{from:accounts[5]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail burn(uint256) when NOT comply with: msg.sender == burnAddress",
+            "parameters": [
+              {
+                "js": "28",
+                "sol": "28"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail burn(uint256) when NOT comply with: tokensToMint == 0",
+            "parameters": [
+              {
+                "js": "28",
+                "sol": "28"
+              },
+              {
+                "js": "{from:accounts[5]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail burn(uint256) when NOT comply with: msg.sender != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "28",
+                "sol": "28"
+              },
+              {
+                "js": "{from:\"0x0000000000000000000000000000000000000000\"}",
+                "sol": "{\"from\":\"\\\"0x0000000000000000000000000000000000000000\\\"\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.953ZNOIAToken.setBurnAddress": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute setBurnAddress(address) WHEN msg.sender==_owner",
+          "parameters": [
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail setBurnAddress(address) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "accounts[5]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.954ZNOIAToken.transferPreSigned": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "153-161",
+          "restrictions": [
+            "msg.sender == _to"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transferPreSigned(bytes,address,uint256,uint256,uint256) WHEN msg.sender==_to,etherlessTransferEnabled==true,_to!=0x0000000000000000000000000000000000000000,from!=0x0000000000000000000000000000000000000000,hashedTxs==false,_to!=0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "[37,220,114,196,1,252,136,217,153,67,91,68,230,175,7,110,235,72,22,207,160,71,202,94,56,10,33,148,48,170,240,117]",
+              "sol": "abi.encode(\"37,220,114,196,1,252,136,217,153,67,91,68,230,175,7,110,235,72,22,207,160,71,202,94,56,10,33,148,48,170,240,117\")"
+            },
+            {
+              "js": "accounts[0]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "2014223715",
+              "sol": "2014223715"
+            },
+            {
+              "js": "1000000001",
+              "sol": "1000000001"
+            },
+            {
+              "js": "95",
+              "sol": "95"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transferPreSigned(bytes,address,uint256,uint256,uint256) when NOT comply with: etherlessTransferEnabled == true",
+            "parameters": [
+              {
+                "js": "[37,220,114,196,1,252,136,217,153,67,91,68,230,175,7,110,235,72,22,207,160,71,202,94,56,10,33,148,48,170,240,117]",
+                "sol": "abi.encode(\"37,220,114,196,1,252,136,217,153,67,91,68,230,175,7,110,235,72,22,207,160,71,202,94,56,10,33,148,48,170,240,117\")"
+              },
+              {
+                "js": "accounts[0]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "2014223715",
+                "sol": "2014223715"
+              },
+              {
+                "js": "1000000001",
+                "sol": "1000000001"
+              },
+              {
+                "js": "95",
+                "sol": "95"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail transferPreSigned(bytes,address,uint256,uint256,uint256) when NOT comply with: _to != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "[37,220,114,196,1,252,136,217,153,67,91,68,230,175,7,110,235,72,22,207,160,71,202,94,56,10,33,148,48,170,240,117]",
+                "sol": "abi.encode(\"37,220,114,196,1,252,136,217,153,67,91,68,230,175,7,110,235,72,22,207,160,71,202,94,56,10,33,148,48,170,240,117\")"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "2014223715",
+                "sol": "2014223715"
+              },
+              {
+                "js": "1000000001",
+                "sol": "1000000001"
+              },
+              {
+                "js": "95",
+                "sol": "95"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail transferPreSigned(bytes,address,uint256,uint256,uint256) when NOT comply with: _to != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "[37,220,114,196,1,252,136,217,153,67,91,68,230,175,7,110,235,72,22,207,160,71,202,94,56,10,33,148,48,170,240,117]",
+                "sol": "abi.encode(\"37,220,114,196,1,252,136,217,153,67,91,68,230,175,7,110,235,72,22,207,160,71,202,94,56,10,33,148,48,170,240,117\")"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "2014223715",
+                "sol": "2014223715"
+              },
+              {
+                "js": "1000000001",
+                "sol": "1000000001"
+              },
+              {
+                "js": "95",
+                "sol": "95"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "156-161",
+          "restrictions": [
+            "msg.sender != _to"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transferPreSigned(bytes,address,uint256,uint256,uint256) WHEN msg.sender!=_to,etherlessTransferEnabled==true,_to!=0x0000000000000000000000000000000000000000,from!=0x0000000000000000000000000000000000000000,hashedTxs==false",
+          "parameters": [
+            {
+              "js": "[169,197,230,253,32,227,104,128,19,193,142,207,244,34,71,253,52,190,122,46,24,188,60,29,141,198,246,115,89,100,2,219]",
+              "sol": "abi.encode(\"169,197,230,253,32,227,104,128,19,193,142,207,244,34,71,253,52,190,122,46,24,188,60,29,141,198,246,115,89,100,2,219\")"
+            },
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "9999",
+              "sol": "9999"
+            },
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "255",
+              "sol": "255"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transferPreSigned(bytes,address,uint256,uint256,uint256) when NOT comply with: etherlessTransferEnabled == true",
+            "parameters": [
+              {
+                "js": "[169,197,230,253,32,227,104,128,19,193,142,207,244,34,71,253,52,190,122,46,24,188,60,29,141,198,246,115,89,100,2,219]",
+                "sol": "abi.encode(\"169,197,230,253,32,227,104,128,19,193,142,207,244,34,71,253,52,190,122,46,24,188,60,29,141,198,246,115,89,100,2,219\")"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "9999",
+                "sol": "9999"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "255",
+                "sol": "255"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail transferPreSigned(bytes,address,uint256,uint256,uint256) when NOT comply with: _to != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "[169,197,230,253,32,227,104,128,19,193,142,207,244,34,71,253,52,190,122,46,24,188,60,29,141,198,246,115,89,100,2,219]",
+                "sol": "abi.encode(\"169,197,230,253,32,227,104,128,19,193,142,207,244,34,71,253,52,190,122,46,24,188,60,29,141,198,246,115,89,100,2,219\")"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "9999",
+                "sol": "9999"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "255",
+                "sol": "255"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.958ZNOIAToken.hashForSign": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute hashForSign(bytes4,address,address,uint256,uint256,uint256)",
+          "parameters": [
+            {
+              "js": "[215,160,71,253]",
+              "sol": "bytes4(\"215,160,71,253\")"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "19",
+              "sol": "19"
+            },
+            {
+              "js": "3",
+              "sol": "3"
+            },
+            {
+              "js": "256",
+              "sol": "256"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.961ZProxyNOIAToken.test_postTransfer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "79-79",
+          "restrictions": [
+            "notify == false",
+            "FunctionCall == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_postTransfer(address,address,uint256) WHEN notify==false,FunctionCall==true",
+          "parameters": [
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "9999",
+              "sol": "9999"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "notify != false",
+            "FunctionCall == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_postTransfer(address,address,uint256) WHEN notify!=false,FunctionCall==true",
+          "parameters": [
+            {
+              "js": "accounts[0]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1532892062",
+              "sol": "1532892062"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "2": {
+        "branch": {
+          "loc": "83-85",
+          "restrictions": [
+            "to == burnAddress",
+            "FunctionCall != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_postTransfer(address,address,uint256) WHEN to==burnAddress,FunctionCall!=true",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "2",
+              "sol": "2"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "to != burnAddress",
+            "FunctionCall != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_postTransfer(address,address,uint256) WHEN to!=burnAddress,FunctionCall!=true",
+          "parameters": [
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1532892062",
+              "sol": "1532892062"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.963ZProxyNOIAToken.test_burn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_burn(address,uint256) WHEN tokensToMint==0,account!=0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1000000001",
+              "sol": "1000000001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail test_burn(address,uint256) when NOT comply with: tokensToMint == 0",
+            "parameters": [
+              {
+                "js": "accounts[6]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1000000001",
+                "sol": "1000000001"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail test_burn(address,uint256) when NOT comply with: account != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "1000000001",
+                "sol": "1000000001"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.968ZNOIAVault.initialize": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute initialize(address,uint256,address) WHEN beneficiary==0x0000000000000000000000000000000000000000,_beneficiary!=0x0000000000000000000000000000000000000000,_lockTill>block.timestamp",
+          "parameters": [
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+723",
+              "sol": "block.timestamp+723"
+            },
+            {
+              "js": "contractNOIAToken.address",
+              "sol": "contractNOIAToken.address"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail initialize(address,uint256,address) when NOT comply with: _beneficiary != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+723",
+                "sol": "block.timestamp+723"
+              },
+              {
+                "js": "contractNOIAToken.address",
+                "sol": "contractNOIAToken.address"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail initialize(address,uint256,address) when NOT comply with: _lockTill > (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+            "parameters": [
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+                "sol": "block.timestamp"
+              },
+              {
+                "js": "contractNOIAToken.address",
+                "sol": "contractNOIAToken.address"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.970ZNOIAVault.release": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "37-37",
+          "restrictions": [
+            "lockTill > (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute release() WHEN lockTill>block.timestamp",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "lockTill <= (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute release() WHEN lockTill<=block.timestamp",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.973ZNOIAVault.recoverTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute recoverTokens(IERC20,address,uint256) WHEN balance>=amount",
+          "parameters": [
+            {
+              "js": "contractNOIAToken.address",
+              "sol": "contractNOIAToken"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "255",
+              "sol": "255"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.976ZNOIAVault.tokensReceived": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute tokensReceived(address,address,uint256)",
+          "parameters": [
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "29",
+              "sol": "29"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.977ZTokenRecoverable.recoverTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute recoverTokens(IERC20,address,uint256) WHEN msg.sender==_owner,balance>=amount",
+          "parameters": [
+            {
+              "js": "contractNOIAToken.address",
+              "sol": "contractNOIAToken"
+            },
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1336",
+              "sol": "1336"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail recoverTokens(IERC20,address,uint256) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "contractNOIAToken.address",
+                "sol": "contractNOIAToken"
+              },
+              {
+                "js": "accounts[5]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1336",
+                "sol": "1336"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.978ZCanonicalBurner.tokensReceived": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute tokensReceived(address,address,uint256) WHEN msg.sender==token",
+          "parameters": [
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "97",
+              "sol": "97"
+            },
+            {
+              "js": "{from:contractNOIAToken.address}",
+              "sol": "{\"from\":\"contractNOIAToken.address\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail tokensReceived(address,address,uint256) when NOT comply with: msg.sender == token",
+            "parameters": [
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "97",
+                "sol": "97"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.979ZNOIAVaultFactory.createVault": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute createVault(address,uint256)",
+          "parameters": [
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1532892064",
+              "sol": "1532892064"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.979ZNOIAVaultFactory.unlockableBalanceOf": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute unlockableBalanceOf(address)",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.980ZNOIAVaultFactory.totalBalanceOf": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute totalBalanceOf(address)",
+          "parameters": [
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.980ZNOIAVaultFactory.getVaultsCount": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute getVaultsCount(address)",
+          "parameters": [
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.980ZNOIAVaultFactory.recoverTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute recoverTokens(IERC20,address,uint256) WHEN balance>=amount",
+          "parameters": [
+            {
+              "js": "contractNOIAToken.address",
+              "sol": "contractNOIAToken"
+            },
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "19",
+              "sol": "19"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T11:33:59.981ZProxyNOIAVaultFactory.testcreateClone": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testcreateClone(address)",
+          "parameters": [
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

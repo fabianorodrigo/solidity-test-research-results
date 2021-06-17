@@ -1,0 +1,882 @@
+,{
+  "2020-11-10T08:38:17.909ZTESTBUXX.TESTBUXX": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute TESTBUXX(uint256,string,uint8,string)",
+          "parameters": [
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "\"k17ikn\"",
+              "sol": "\"k17ikn\""
+            },
+            {
+              "js": "2",
+              "sol": "2"
+            },
+            {
+              "js": "\"k17ikn\"",
+              "sol": "\"k17ikn\""
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:24.828ZButton.Button": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute Button(address)",
+          "parameters": [
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.841ZTESTBUXX.": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute fallback()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.842ZTESTBUXX.mint": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute mint(address,uint256) WHEN msg.sender==admin",
+          "parameters": [
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "3",
+              "sol": "3"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail mint(address,uint256) when NOT comply with: msg.sender == admin",
+            "parameters": [
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "3",
+                "sol": "3"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.843ZTESTBUXX.balanceOf": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute balanceOf(address)",
+          "parameters": [
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.843ZTESTBUXX.approve": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute approve(address,uint256)",
+          "parameters": [
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.843ZTESTBUXX.safeApprove": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute safeApprove(address,uint256,uint256)",
+          "parameters": [
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "229",
+              "sol": "229"
+            },
+            {
+              "js": "2",
+              "sol": "2"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.844ZTESTBUXX.allowance": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute allowance(address,address)",
+          "parameters": [
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.844ZTESTBUXX.transfer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transfer(address,uint256) WHEN to!=0x0",
+          "parameters": [
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "11",
+              "sol": "11"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transfer(address,uint256) when NOT comply with: to != 0x0",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": 0
+              },
+              {
+                "js": "11",
+                "sol": "11"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.845ZTESTBUXX.transferFrom": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transferFrom(address,address,uint256) WHEN to!=0x0",
+          "parameters": [
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "3",
+              "sol": "3"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transferFrom(address,address,uint256) when NOT comply with: to != 0x0",
+            "parameters": [
+              {
+                "js": "accounts[1]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": 0
+              },
+              {
+                "js": "3",
+                "sol": "3"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.847ZTESTBUXX.approveAndCall": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "136-141",
+          "restrictions": [
+            "FunctionCall == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute approveAndCall(address,uint256,bytes) WHEN FunctionCall==true",
+          "parameters": [
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "231",
+              "sol": "231"
+            },
+            {
+              "js": "[206,88,181,121,131,57,122,50,28,10,65,140,237,246,40,168,109,43,137,224,112,102,93,28,184,246,206,186,208,165,157,200]",
+              "sol": "abi.encode(\"206,88,181,121,131,57,122,50,28,10,65,140,237,246,40,168,109,43,137,224,112,102,93,28,184,246,206,186,208,165,157,200\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "FunctionCall != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute approveAndCall(address,uint256,bytes) WHEN FunctionCall!=true",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "10",
+              "sol": "10"
+            },
+            {
+              "js": "[12,56,163,243,188,25,161,67,19,172,128,134,186,1,189,95,14,221,187,43,125,227,53,254,112,56,42,235,164,131,214,83]",
+              "sol": "abi.encode(\"12,56,163,243,188,25,161,67,19,172,128,134,186,1,189,95,14,221,187,43,125,227,53,254,112,56,42,235,164,131,214,83\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.848ZTESTBUXX.burn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute burn(uint256) WHEN balances_>=value",
+          "parameters": [
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.848ZTESTBUXX.burnFrom": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute burnFrom(address,uint256) WHEN balances_>=value",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "11",
+              "sol": "11"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.849ZTESTBUXX.transfer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "180-187",
+          "restrictions": [
+            "FunctionCall == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transfer(address,uint,bytes,string) WHEN FunctionCall==true,to!=0x0",
+          "parameters": [
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "3",
+              "sol": "3"
+            },
+            {
+              "js": "[251,126,123,234,163,91,84,214,41,140,10,48,149,23,238,159,191,20,0,198,142,199,40,184,24,87,57,21,144,220,97,2]",
+              "sol": "abi.encode(\"251,126,123,234,163,91,84,214,41,140,10,48,149,23,238,159,191,20,0,198,142,199,40,184,24,87,57,21,144,220,97,2\")"
+            },
+            {
+              "js": "\"k17ikn\"",
+              "sol": "\"k17ikn\""
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transfer(address,uint,bytes,string) when NOT comply with: to != 0x0",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": 0
+              },
+              {
+                "js": "3",
+                "sol": "3"
+              },
+              {
+                "js": "[251,126,123,234,163,91,84,214,41,140,10,48,149,23,238,159,191,20,0,198,142,199,40,184,24,87,57,21,144,220,97,2]",
+                "sol": "abi.encode(\"251,126,123,234,163,91,84,214,41,140,10,48,149,23,238,159,191,20,0,198,142,199,40,184,24,87,57,21,144,220,97,2\")"
+              },
+              {
+                "js": "\"k17ikn\"",
+                "sol": "\"k17ikn\""
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "FunctionCall != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transfer(address,uint,bytes,string) WHEN FunctionCall!=true,to!=0x0",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "[77,43,139,193,225,24,214,24,57,147,95,252,56,12,69,122,244,114,229,151,96,147,186,29,83,231,94,246,41,213,222,102]",
+              "sol": "abi.encode(\"77,43,139,193,225,24,214,24,57,147,95,252,56,12,69,122,244,114,229,151,96,147,186,29,83,231,94,246,41,213,222,102\")"
+            },
+            {
+              "js": "\"k17ikn\"",
+              "sol": "\"k17ikn\""
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transfer(address,uint,bytes,string) when NOT comply with: to != 0x0",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": 0
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "[77,43,139,193,225,24,214,24,57,147,95,252,56,12,69,122,244,114,229,151,96,147,186,29,83,231,94,246,41,213,222,102]",
+                "sol": "abi.encode(\"77,43,139,193,225,24,214,24,57,147,95,252,56,12,69,122,244,114,229,151,96,147,186,29,83,231,94,246,41,213,222,102\")"
+              },
+              {
+                "js": "\"k17ikn\"",
+                "sol": "\"k17ikn\""
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.851ZTESTBUXX.transfer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "196-198",
+          "restrictions": [
+            "FunctionCall == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transfer(address,uint,bytes) WHEN FunctionCall==true,to!=0x0",
+          "parameters": [
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "11",
+              "sol": "11"
+            },
+            {
+              "js": "[131,56,81,156,245,151,21,143,85,58,130,27,51,119,87,3,238,165,150,104,45,84,132,49,50,95,116,134,241,152,49,213]",
+              "sol": "abi.encode(\"131,56,81,156,245,151,21,143,85,58,130,27,51,119,87,3,238,165,150,104,45,84,132,49,50,95,116,134,241,152,49,213\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transfer(address,uint,bytes) when NOT comply with: to != 0x0",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": 0
+              },
+              {
+                "js": "11",
+                "sol": "11"
+              },
+              {
+                "js": "[131,56,81,156,245,151,21,143,85,58,130,27,51,119,87,3,238,165,150,104,45,84,132,49,50,95,116,134,241,152,49,213]",
+                "sol": "abi.encode(\"131,56,81,156,245,151,21,143,85,58,130,27,51,119,87,3,238,165,150,104,45,84,132,49,50,95,116,134,241,152,49,213\")"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "FunctionCall != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transfer(address,uint,bytes) WHEN FunctionCall!=true,to!=0x0",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "3",
+              "sol": "3"
+            },
+            {
+              "js": "[126,180,178,202,19,119,231,141,141,41,179,198,9,132,224,132,233,184,236,180,175,33,166,206,250,94,54,142,240,51,198,19]",
+              "sol": "abi.encode(\"126,180,178,202,19,119,231,141,141,41,179,198,9,132,224,132,233,184,236,180,175,33,166,206,250,94,54,142,240,51,198,19\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transfer(address,uint,bytes) when NOT comply with: to != 0x0",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": 0
+              },
+              {
+                "js": "3",
+                "sol": "3"
+              },
+              {
+                "js": "[126,180,178,202,19,119,231,141,141,41,179,198,9,132,224,132,233,184,236,180,175,33,166,206,250,94,54,142,240,51,198,19]",
+                "sol": "abi.encode(\"126,180,178,202,19,119,231,141,141,41,179,198,9,132,224,132,233,184,236,180,175,33,166,206,250,94,54,142,240,51,198,19\")"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.854ZProxyTESTBUXX.test_transfer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_transfer(address,address,uint,bytes) WHEN to!=0x0,balances_>=value",
+          "parameters": [
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "[7,179,248,167,147,98,208,248,12,18,128,157,81,207,216,67,205,169,217,217,172,122,207,172,163,247,45,73,233,148,170,174]",
+              "sol": "abi.encode(\"7,179,248,167,147,98,208,248,12,18,128,157,81,207,216,67,205,169,217,217,172,122,207,172,163,247,45,73,233,148,170,174\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail test_transfer(address,address,uint,bytes) when NOT comply with: to != 0x0",
+            "parameters": [
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": 0
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "[7,179,248,167,147,98,208,248,12,18,128,157,81,207,216,67,205,169,217,217,172,122,207,172,163,247,45,73,233,148,170,174]",
+                "sol": "abi.encode(\"7,179,248,167,147,98,208,248,12,18,128,157,81,207,216,67,205,169,217,217,172,122,207,172,163,247,45,73,233,148,170,174\")"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.855ZButton.tokenFallback": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute tokenFallback(address,uint256,bytes) WHEN value>=PUSH_COST",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "231",
+              "sol": "231"
+            },
+            {
+              "js": "[150,89,122,56,223,18,3,98,32,210,117,28,132,113,190,121,13,69,22,56,75,126,155,164,183,10,7,195,232,112,96,246]",
+              "sol": "abi.encode(\"150,89,122,56,223,18,3,98,32,210,117,28,132,113,190,121,13,69,22,56,75,126,155,164,183,10,7,195,232,112,96,246\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail tokenFallback(address,uint256,bytes) when NOT comply with: value >= PUSH_COST",
+            "parameters": [
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": 229,
+                "sol": 229
+              },
+              {
+                "js": "[150,89,122,56,223,18,3,98,32,210,117,28,132,113,190,121,13,69,22,56,75,126,155,164,183,10,7,195,232,112,96,246]",
+                "sol": "abi.encode(\"150,89,122,56,223,18,3,98,32,210,117,28,132,113,190,121,13,69,22,56,75,126,155,164,183,10,7,195,232,112,96,246\")"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T08:38:31.856ZButton.withdraw": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute withdraw() WHEN msg.sender==admin",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail withdraw() when NOT comply with: msg.sender == admin",
+            "parameters": [
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1004 @@
+,{
+  "2020-11-15T16:27:39.444ZBaseSwaps.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(address,address,address,uint,uint,uint) WHEN _baseAddress!=_quoteAddress,_baseLimit>0,_quoteLimit>0,_expirationTimestamp>block.timestamp,_owner!=0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "4038714811",
+              "sol": "4038714811"
+            },
+            {
+              "js": "66",
+              "sol": "66"
+            },
+            {
+              "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+232",
+              "sol": "block.timestamp+232"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail constructor(address,address,address,uint,uint,uint) when NOT comply with: _baseAddress != _quoteAddress",
+            "parameters": [
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "accounts[3]"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+232",
+                "sol": "block.timestamp+232"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(address,address,address,uint,uint,uint) when NOT comply with: _baseLimit > 0",
+            "parameters": [
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[1]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+232",
+                "sol": "block.timestamp+232"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(address,address,address,uint,uint,uint) when NOT comply with: _quoteLimit > 0",
+            "parameters": [
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[1]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+232",
+                "sol": "block.timestamp+232"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(address,address,address,uint,uint,uint) when NOT comply with: _expirationTimestamp > (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+            "parameters": [
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[1]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+                "sol": "block.timestamp"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(address,address,address,uint,uint,uint) when NOT comply with: _owner != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "accounts[1]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+232",
+                "sol": "block.timestamp+232"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.243ZBaseSwaps.": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute fallback() WHEN quoteAddress==0x0000000000000000000000000000000000000000,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamp",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail fallback() when NOT comply with: quoteAddress == 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.248ZBaseSwaps.depositBaseTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute depositBaseTokens(uint) WHEN _value<=allowance,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamp",
+          "parameters": [
+            {
+              "js": "1532892064",
+              "sol": "1532892064"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.249ZBaseSwaps.depositQuoteTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute depositQuoteTokens(uint) WHEN _value<=allowance,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamp",
+          "parameters": [
+            {
+              "js": "65",
+              "sol": "65"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.250ZBaseSwaps.cancel": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute cancel() WHEN msg.sender==_owner,isCancelled!=true,isSwapped!=true",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail cancel() when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail cancel() when NOT comply with: isSwapped != true",
+            "parameters": [
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.253ZBaseSwaps.refundBase": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute refundBase() WHEN isSwapped!=true",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail refundBase() when NOT comply with: isSwapped != true",
+            "parameters": [
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.257ZBaseSwaps.refundQuote": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute refundQuote() WHEN isSwapped!=true",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail refundQuote() when NOT comply with: isSwapped != true",
+            "parameters": [
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.263ZBaseSwaps.baseLimit": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute baseLimit()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.263ZBaseSwaps.quoteLimit": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute quoteLimit()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.264ZBaseSwaps.baseRaised": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute baseRaised()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.264ZBaseSwaps.quoteRaised": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute quoteRaised()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.264ZBaseSwaps.baseInvestors": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute baseInvestors()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.265ZBaseSwaps.quoteInvestors": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute quoteInvestors()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.265ZBaseSwaps.baseUserInvestment": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute baseUserInvestment(address)",
+          "parameters": [
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.265ZBaseSwaps.quoteUserInvestment": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute quoteUserInvestment(address)",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.265ZBaseSwaps.isBaseFilled": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute isBaseFilled()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.266ZBaseSwaps.isQuoteFilled": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute isQuoteFilled()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.274ZProxyBaseSwaps.test_refund": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_refund(address) WHEN isSwapped!=true",
+          "parameters": [
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail test_refund(address) when NOT comply with: isSwapped != true",
+            "parameters": [
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.277ZProxyBaseSwaps.test_swap": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_swap() WHEN isSwapped!=true,isCancelled!=true,raised==limits,raised==limits,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamp",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail test_swap() when NOT comply with: isSwapped != true",
+            "parameters": [
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail test_swap() when NOT comply with: isCancelled != true",
+            "parameters": [
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.281ZProxyBaseSwaps.test_distribute": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_distribute(address,address)",
+          "parameters": [
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.282ZProxyBaseSwaps.test_sendTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "213-217",
+          "restrictions": [
+            "_token == 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_sendTokens(address,address,uint) WHEN _token==0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "\"0x0000000000000000000000000000000000000000\"",
+              "sol": "0x0000000000000000000000000000000000000000"
+            },
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1337",
+              "sol": "1337"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "215-217",
+          "restrictions": [
+            "_token != 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_sendTokens(address,address,uint) WHEN _token!=0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "27",
+              "sol": "27"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.282ZProxyBaseSwaps.test_removeInvestor": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_removeInvestor(address[],address)",
+          "parameters": [
+            {
+              "js": "[accounts[4],accounts[2],accounts[0],accounts[7]]",
+              "sol": "[address(address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))),address(address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))),address(address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))),address(address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number)))))))]"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.283ZProxyBaseSwaps.test_depositEther": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_depositEther(uint) WHEN baseAddress==0x0000000000000000000000000000000000000000,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamp",
+          "parameters": [
+            {
+              "js": "2",
+              "sol": "2"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.286ZProxyBaseSwaps.test_depositTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_depositTokens(address,uint) WHEN quoteAddress==_token,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamp",
+          "parameters": [
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1336",
+              "sol": "1336"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.288ZProxyBaseSwaps.test_deposit": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "256-259",
+          "restrictions": [
+            "FunctionCall != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_deposit(address,address,uint) WHEN FunctionCall!=true,baseAddress==_token,raised<limits,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamp",
+          "parameters": [
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "3",
+              "sol": "3"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "FunctionCall == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_deposit(address,address,uint) WHEN FunctionCall==true,quoteAddress==_token,raised<limits,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamp",
+          "parameters": [
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-15T16:27:44.291ZProxyBaseSwaps.test_isInvestor": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_isInvestor(address,address)",
+          "parameters": [
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

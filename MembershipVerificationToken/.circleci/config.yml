@@ -1,0 +1,66 @@
+version: 2
+job_common: &job_common
+  docker:
+    - image: skyuppercut/node-puppeteer
+  working_directory: ~/MembershipVerificationToken
+step_save_cache: &step_save_cache
+  save_cache:
+    key: dependency-cache-{{ checksum "package.json" }}
+    paths:
+      - node_modules
+step_restore_cache: &step_restore_cache
+  restore_cache:
+    key: dependency-cache-{{ checksum "package.json" }}
+step_setup_global_packages: &step_setup_global_packages
+  run:
+    name: "Set up global packages"
+    command: |
+      npm ci
+
+jobs:
+  # build:
+  #   <<: *job_common
+  #   steps:
+  #     - checkout
+  #     - <<: *step_restore_cache
+  #     - <<: *step_setup_global_packages
+  #     - run:
+  #         name: "Build code for Membership Verification Token"
+  #         command: truffle compile
+  #     - <<: *step_save_cache
+  unit-test:
+    <<: *job_common
+    steps:
+      - checkout
+      - <<: *step_restore_cache
+      - <<: *step_setup_global_packages
+      - run:
+          name: "Run Tests for Membership Verification Token"
+          command: npm run test
+      - <<: *step_save_cache
+      # Save test results
+      - store_test_results:
+          path: /tmp
+  test-coverage:
+    <<: *job_common
+    steps:
+      - checkout
+      - <<: *step_restore_cache
+      - <<: *step_setup_global_packages
+      - setup_remote_docker
+      - run:
+          name: "Running unit tests with coverage"
+          command: npm run coverage
+      - run:
+          name: "Upload Coverage"
+          command: bash <(curl -s https://codecov.io/bash)
+      # Save coverage artifacts
+      - store_artifacts:
+          path: coverage
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - unit-test
+      - test-coverage

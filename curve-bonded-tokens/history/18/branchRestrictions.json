@@ -1,0 +1,3046 @@
+,{
+  "2020-11-11T22:04:58.590ZPower.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.415ZBancorFormula.calculatePurchaseReturn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "249-251",
+          "restrictions": [
+            "_depositAmount == 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculatePurchaseReturn(uint256,uint256,uint32,uint256) WHEN _depositAmount==0,_supply>0,_connectorBalance>0,_connectorWeight>0,_connectorWeight<=MAX_WEIGHT",
+          "parameters": [
+            {
+              "js": "114",
+              "sol": "114"
+            },
+            {
+              "js": "49",
+              "sol": "49"
+            },
+            {
+              "js": "69",
+              "sol": "69"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "49",
+                "sol": "49"
+              },
+              {
+                "js": "69",
+                "sol": "69"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "114",
+                "sol": "114"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "69",
+                "sol": "69"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight > 0",
+            "parameters": [
+              {
+                "js": "114",
+                "sol": "114"
+              },
+              {
+                "js": "49",
+                "sol": "49"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight <= MAX_WEIGHT",
+            "parameters": [
+              {
+                "js": "114",
+                "sol": "114"
+              },
+              {
+                "js": "49",
+                "sol": "49"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_depositAmount != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculatePurchaseReturn(uint256,uint256,uint32,uint256) WHEN _depositAmount!=0,_supply>0,_connectorBalance>0,_connectorWeight>0,_connectorWeight<=MAX_WEIGHT",
+          "parameters": [
+            {
+              "js": "116",
+              "sol": "116"
+            },
+            {
+              "js": "49",
+              "sol": "49"
+            },
+            {
+              "js": "85",
+              "sol": "85"
+            },
+            {
+              "js": "33",
+              "sol": "33"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "49",
+                "sol": "49"
+              },
+              {
+                "js": "85",
+                "sol": "85"
+              },
+              {
+                "js": "33",
+                "sol": "33"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "116",
+                "sol": "116"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "85",
+                "sol": "85"
+              },
+              {
+                "js": "33",
+                "sol": "33"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight > 0",
+            "parameters": [
+              {
+                "js": "116",
+                "sol": "116"
+              },
+              {
+                "js": "49",
+                "sol": "49"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "33",
+                "sol": "33"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight <= MAX_WEIGHT",
+            "parameters": [
+              {
+                "js": "116",
+                "sol": "116"
+              },
+              {
+                "js": "49",
+                "sol": "49"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "33",
+                "sol": "33"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "2": {
+        "branch": {
+          "loc": "253-255",
+          "restrictions": [
+            "_connectorWeight == MAX_WEIGHT"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculatePurchaseReturn(uint256,uint256,uint32,uint256) WHEN _connectorWeight==MAX_WEIGHT,_supply>0,_connectorBalance>0,_connectorWeight>0,_connectorWeight<=MAX_WEIGHT,_connectorBalance>0",
+          "parameters": [
+            {
+              "js": "123",
+              "sol": "123"
+            },
+            {
+              "js": "49",
+              "sol": "49"
+            },
+            {
+              "js": "1000000",
+              "sol": "1000000"
+            },
+            {
+              "js": "26",
+              "sol": "26"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "49",
+                "sol": "49"
+              },
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": "26",
+                "sol": "26"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "123",
+                "sol": "123"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": "26",
+                "sol": "26"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight > 0",
+            "parameters": [
+              {
+                "js": "123",
+                "sol": "123"
+              },
+              {
+                "js": "49",
+                "sol": "49"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "26",
+                "sol": "26"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight <= MAX_WEIGHT",
+            "parameters": [
+              {
+                "js": "123",
+                "sol": "123"
+              },
+              {
+                "js": "49",
+                "sol": "49"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "26",
+                "sol": "26"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "123",
+                "sol": "123"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": "26",
+                "sol": "26"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_connectorWeight != MAX_WEIGHT",
+            "_depositAmount != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculatePurchaseReturn(uint256,uint256,uint32,uint256) WHEN _connectorWeight!=MAX_WEIGHT,_depositAmount!=0,_supply>0,_connectorBalance>0,_connectorWeight>0,_connectorWeight<=MAX_WEIGHT",
+          "parameters": [
+            {
+              "js": "100",
+              "sol": "100"
+            },
+            {
+              "js": "255",
+              "sol": "255"
+            },
+            {
+              "js": "110",
+              "sol": "110"
+            },
+            {
+              "js": "257",
+              "sol": "257"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "255",
+                "sol": "255"
+              },
+              {
+                "js": "110",
+                "sol": "110"
+              },
+              {
+                "js": "257",
+                "sol": "257"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "100",
+                "sol": "100"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "110",
+                "sol": "110"
+              },
+              {
+                "js": "257",
+                "sol": "257"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight > 0",
+            "parameters": [
+              {
+                "js": "100",
+                "sol": "100"
+              },
+              {
+                "js": "255",
+                "sol": "255"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "257",
+                "sol": "257"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculatePurchaseReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight <= MAX_WEIGHT",
+            "parameters": [
+              {
+                "js": "100",
+                "sol": "100"
+              },
+              {
+                "js": "255",
+                "sol": "255"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "257",
+                "sol": "257"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.432ZBancorFormula.calculateSaleReturn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "293-295",
+          "restrictions": [
+            "_sellAmount == 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculateSaleReturn(uint256,uint256,uint32,uint256) WHEN _sellAmount==0,_supply>0,_connectorBalance>0,_connectorWeight>0,_connectorWeight<=MAX_WEIGHT,_sellAmount<=_supply,result>0",
+          "parameters": [
+            {
+              "js": "32737",
+              "sol": "32737"
+            },
+            {
+              "js": "68",
+              "sol": "68"
+            },
+            {
+              "js": "66",
+              "sol": "66"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "68",
+                "sol": "68"
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "32737",
+                "sol": "32737"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight > 0",
+            "parameters": [
+              {
+                "js": "32737",
+                "sol": "32737"
+              },
+              {
+                "js": "68",
+                "sol": "68"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight <= MAX_WEIGHT",
+            "parameters": [
+              {
+                "js": "32737",
+                "sol": "32737"
+              },
+              {
+                "js": "68",
+                "sol": "68"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _sellAmount <= _supply",
+            "parameters": [
+              {
+                "js": "32737",
+                "sol": "32737"
+              },
+              {
+                "js": "68",
+                "sol": "68"
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": 32738,
+                "sol": 32738
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_sellAmount != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculateSaleReturn(uint256,uint256,uint32,uint256) WHEN _sellAmount!=0,_supply>0,_connectorBalance>0,_connectorWeight>0,_connectorWeight<=MAX_WEIGHT,_sellAmount<=_supply,result>0",
+          "parameters": [
+            {
+              "js": "1000000",
+              "sol": "1000000"
+            },
+            {
+              "js": "100",
+              "sol": "100"
+            },
+            {
+              "js": "126",
+              "sol": "126"
+            },
+            {
+              "js": "124",
+              "sol": "124"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "100",
+                "sol": "100"
+              },
+              {
+                "js": "126",
+                "sol": "126"
+              },
+              {
+                "js": "124",
+                "sol": "124"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "126",
+                "sol": "126"
+              },
+              {
+                "js": "124",
+                "sol": "124"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight > 0",
+            "parameters": [
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": "100",
+                "sol": "100"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "124",
+                "sol": "124"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight <= MAX_WEIGHT",
+            "parameters": [
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": "100",
+                "sol": "100"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "124",
+                "sol": "124"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _sellAmount <= _supply",
+            "parameters": [
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": "100",
+                "sol": "100"
+              },
+              {
+                "js": "126",
+                "sol": "126"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "2": {
+        "branch": {
+          "loc": "297-299",
+          "restrictions": [
+            "_sellAmount == _supply"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculateSaleReturn(uint256,uint256,uint32,uint256) WHEN _sellAmount==_supply,_supply>0,_connectorBalance>0,_connectorWeight>0,_connectorWeight<=MAX_WEIGHT,_sellAmount<=_supply,result>0",
+          "parameters": [
+            {
+              "js": "59",
+              "sol": "59"
+            },
+            {
+              "js": "982080",
+              "sol": "982080"
+            },
+            {
+              "js": "46",
+              "sol": "46"
+            },
+            {
+              "js": "59",
+              "sol": "59"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "982080",
+                "sol": "982080"
+              },
+              {
+                "js": "46",
+                "sol": "46"
+              },
+              {
+                "js": "59",
+                "sol": "59"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "59",
+                "sol": "59"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "46",
+                "sol": "46"
+              },
+              {
+                "js": "59",
+                "sol": "59"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight > 0",
+            "parameters": [
+              {
+                "js": "59",
+                "sol": "59"
+              },
+              {
+                "js": "982080",
+                "sol": "982080"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "59",
+                "sol": "59"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight <= MAX_WEIGHT",
+            "parameters": [
+              {
+                "js": "59",
+                "sol": "59"
+              },
+              {
+                "js": "982080",
+                "sol": "982080"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "59",
+                "sol": "59"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _sellAmount <= _supply",
+            "parameters": [
+              {
+                "js": "59",
+                "sol": "59"
+              },
+              {
+                "js": "982080",
+                "sol": "982080"
+              },
+              {
+                "js": "46",
+                "sol": "46"
+              },
+              {
+                "js": 60,
+                "sol": 60
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_sellAmount != _supply",
+            "_sellAmount != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculateSaleReturn(uint256,uint256,uint32,uint256) WHEN _sellAmount!=_supply,_sellAmount!=0,_supply>0,_connectorBalance>0,_connectorWeight>0,_connectorWeight<=MAX_WEIGHT,_sellAmount<=_supply,result>0",
+          "parameters": [
+            {
+              "js": "1532892062",
+              "sol": "1532892062"
+            },
+            {
+              "js": "96",
+              "sol": "96"
+            },
+            {
+              "js": "57",
+              "sol": "57"
+            },
+            {
+              "js": "63",
+              "sol": "63"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "96",
+                "sol": "96"
+              },
+              {
+                "js": "57",
+                "sol": "57"
+              },
+              {
+                "js": "63",
+                "sol": "63"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "1532892062",
+                "sol": "1532892062"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "57",
+                "sol": "57"
+              },
+              {
+                "js": "63",
+                "sol": "63"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight > 0",
+            "parameters": [
+              {
+                "js": "1532892062",
+                "sol": "1532892062"
+              },
+              {
+                "js": "96",
+                "sol": "96"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "63",
+                "sol": "63"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight <= MAX_WEIGHT",
+            "parameters": [
+              {
+                "js": "1532892062",
+                "sol": "1532892062"
+              },
+              {
+                "js": "96",
+                "sol": "96"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "63",
+                "sol": "63"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _sellAmount <= _supply",
+            "parameters": [
+              {
+                "js": "1532892062",
+                "sol": "1532892062"
+              },
+              {
+                "js": "96",
+                "sol": "96"
+              },
+              {
+                "js": "57",
+                "sol": "57"
+              },
+              {
+                "js": 1532892063,
+                "sol": 1532892063
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "4": {
+        "branch": {
+          "loc": "301-303",
+          "restrictions": [
+            "_connectorWeight == MAX_WEIGHT"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculateSaleReturn(uint256,uint256,uint32,uint256) WHEN _connectorWeight==MAX_WEIGHT,_supply>0,_connectorBalance>0,_connectorWeight>0,_connectorWeight<=MAX_WEIGHT,_sellAmount<=_supply,_supply>0,result>0",
+          "parameters": [
+            {
+              "js": "110",
+              "sol": "110"
+            },
+            {
+              "js": "72",
+              "sol": "72"
+            },
+            {
+              "js": "1000000",
+              "sol": "1000000"
+            },
+            {
+              "js": "69",
+              "sol": "69"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "72",
+                "sol": "72"
+              },
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": "69",
+                "sol": "69"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "110",
+                "sol": "110"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": "69",
+                "sol": "69"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight > 0",
+            "parameters": [
+              {
+                "js": "110",
+                "sol": "110"
+              },
+              {
+                "js": "72",
+                "sol": "72"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "69",
+                "sol": "69"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight <= MAX_WEIGHT",
+            "parameters": [
+              {
+                "js": "110",
+                "sol": "110"
+              },
+              {
+                "js": "72",
+                "sol": "72"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "69",
+                "sol": "69"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _sellAmount <= _supply",
+            "parameters": [
+              {
+                "js": "110",
+                "sol": "110"
+              },
+              {
+                "js": "72",
+                "sol": "72"
+              },
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": 111,
+                "sol": 111
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "72",
+                "sol": "72"
+              },
+              {
+                "js": "1000000",
+                "sol": "1000000"
+              },
+              {
+                "js": "69",
+                "sol": "69"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "5": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_connectorWeight != MAX_WEIGHT",
+            "_sellAmount != 0",
+            "_sellAmount != _supply"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculateSaleReturn(uint256,uint256,uint32,uint256) WHEN _connectorWeight!=MAX_WEIGHT,_sellAmount!=0,_sellAmount!=_supply,_supply>0,_connectorBalance>0,_connectorWeight>0,_connectorWeight<=MAX_WEIGHT,_sellAmount<=_supply,result>0",
+          "parameters": [
+            {
+              "js": "95",
+              "sol": "95"
+            },
+            {
+              "js": "128",
+              "sol": "128"
+            },
+            {
+              "js": "127",
+              "sol": "127"
+            },
+            {
+              "js": "91",
+              "sol": "91"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _supply > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "128",
+                "sol": "128"
+              },
+              {
+                "js": "127",
+                "sol": "127"
+              },
+              {
+                "js": "91",
+                "sol": "91"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorBalance > 0",
+            "parameters": [
+              {
+                "js": "95",
+                "sol": "95"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "127",
+                "sol": "127"
+              },
+              {
+                "js": "91",
+                "sol": "91"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight > 0",
+            "parameters": [
+              {
+                "js": "95",
+                "sol": "95"
+              },
+              {
+                "js": "128",
+                "sol": "128"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "91",
+                "sol": "91"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _connectorWeight <= MAX_WEIGHT",
+            "parameters": [
+              {
+                "js": "95",
+                "sol": "95"
+              },
+              {
+                "js": "128",
+                "sol": "128"
+              },
+              {
+                "js": 1000001,
+                "sol": 1000001
+              },
+              {
+                "js": "91",
+                "sol": "91"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail calculateSaleReturn(uint256,uint256,uint32,uint256) when NOT comply with: _sellAmount <= _supply",
+            "parameters": [
+              {
+                "js": "95",
+                "sol": "95"
+              },
+              {
+                "js": "128",
+                "sol": "128"
+              },
+              {
+                "js": "127",
+                "sol": "127"
+              },
+              {
+                "js": 96,
+                "sol": 96
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.448ZERC20BondingToken.initialize": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute initialize(ERC20,uint256,uint256,uint32,uint256) WHEN initialized!=true",
+          "parameters": [
+            {
+              "js": "contractTestERC20BondingToken.address",
+              "sol": "contractTestERC20BondingToken"
+            },
+            {
+              "js": "97",
+              "sol": "97"
+            },
+            {
+              "js": "101",
+              "sol": "101"
+            },
+            {
+              "js": "41",
+              "sol": "41"
+            },
+            {
+              "js": "29",
+              "sol": "29"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.451ZERC20BondingToken.poolBalance": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute poolBalance()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.452ZERC20BondingToken.calculateCurvedMintReturn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculateCurvedMintReturn(uint256)",
+          "parameters": [
+            {
+              "js": "1532892062",
+              "sol": "1532892062"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.453ZERC20BondingToken.calculateCurvedBurnReturn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculateCurvedBurnReturn(uint256)",
+          "parameters": [
+            {
+              "js": "61",
+              "sol": "61"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.456ZProxyERC20BondingToken.test_curvedMint": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_curvedMint(uint256) WHEN msg.gasprice<=gasPrice,amount>0,msg.sender!=0",
+          "parameters": [
+            {
+              "js": "80",
+              "sol": "80"
+            },
+            {
+              "js": "{from:accounts[1],gasPrice:0}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\",\"gasPrice\":\"0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail test_curvedMint(uint256) when NOT comply with: msg.gasprice <= gasPrice",
+            "parameters": [
+              {
+                "js": "80",
+                "sol": "80"
+              },
+              {
+                "js": "{from:accounts[1],gasPrice:0,gasprice:1}",
+                "sol": "{\"from\":\"accounts[1]\",\"gasPrice\":0,\"gasprice\":1}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail test_curvedMint(uint256) when NOT comply with: amount > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "{from:accounts[1],gasPrice:0}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\",\"gasPrice\":\"0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail test_curvedMint(uint256) when NOT comply with: msg.sender != 0",
+            "parameters": [
+              {
+                "js": "80",
+                "sol": "80"
+              },
+              {
+                "js": "{from:\"0x0000000000000000000000000000000000000000\",gasPrice:0}",
+                "sol": "{\"from\":\"\\\"0x0000000000000000000000000000000000000000\\\"\",\"gasPrice\":0}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.459ZProxyERC20BondingToken.test_curvedBurn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_curvedBurn(uint256)",
+          "parameters": [
+            {
+              "js": "91",
+              "sol": "91"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.460ZEthBondingToken.initialize": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute initialize(uint256,uint32,uint256) WHEN initialized!=true",
+          "parameters": [
+            {
+              "js": "1532892064",
+              "sol": "1532892064"
+            },
+            {
+              "js": "46",
+              "sol": "46"
+            },
+            {
+              "js": "74",
+              "sol": "74"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.462ZEthBondingToken.poolBalance": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute poolBalance()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.462ZEthBondingToken.calculateCurvedMintReturn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculateCurvedMintReturn(uint256)",
+          "parameters": [
+            {
+              "js": "67",
+              "sol": "67"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.463ZEthBondingToken.calculateCurvedBurnReturn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute calculateCurvedBurnReturn(uint256)",
+          "parameters": [
+            {
+              "js": "114",
+              "sol": "114"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.466ZProxyEthBondingToken.test_curvedMint": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_curvedMint() WHEN msg.value>0,msg.gasprice<=gasPrice,msg.value>0,msg.sender!=0",
+          "parameters": [
+            {
+              "js": "{from:accounts[0],value:57,gasPrice:0}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\",\"value\":\"57\",\"gasPrice\":\"0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail test_curvedMint() when NOT comply with: msg.value > 0",
+            "parameters": [
+              {
+                "js": "{from:accounts[0],value:0,gasPrice:0}",
+                "sol": "{\"from\":\"accounts[0]\",\"value\":0,\"gasPrice\":0}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail test_curvedMint() when NOT comply with: msg.gasprice <= gasPrice",
+            "parameters": [
+              {
+                "js": "{from:accounts[0],value:57,gasPrice:0,gasprice:1}",
+                "sol": "{\"from\":\"accounts[0]\",\"value\":57,\"gasPrice\":0,\"gasprice\":1}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail test_curvedMint() when NOT comply with: msg.value > 0",
+            "parameters": [
+              {
+                "js": "{from:accounts[0],value:0,gasPrice:0}",
+                "sol": "{\"from\":\"accounts[0]\",\"value\":0,\"gasPrice\":0}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail test_curvedMint() when NOT comply with: msg.sender != 0",
+            "parameters": [
+              {
+                "js": "{from:\"0x0000000000000000000000000000000000000000\",value:57,gasPrice:0}",
+                "sol": "{\"from\":\"\\\"0x0000000000000000000000000000000000000000\\\"\",\"value\":57,\"gasPrice\":0}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.470ZProxyEthBondingToken.test_curvedBurn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_curvedBurn(uint256)",
+          "parameters": [
+            {
+              "js": "4038714811",
+              "sol": "4038714811"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.472ZTestERC20BondingToken.initialize": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute initialize(ERC20,uint256,uint256,uint32,uint256) WHEN initialized!=true",
+          "parameters": [
+            {
+              "js": "contractEthBondingToken.address",
+              "sol": "contractEthBondingToken"
+            },
+            {
+              "js": "126",
+              "sol": "126"
+            },
+            {
+              "js": "982081",
+              "sol": "982081"
+            },
+            {
+              "js": "127",
+              "sol": "127"
+            },
+            {
+              "js": "106",
+              "sol": "106"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.478ZTestERC20BondingToken.mint": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute mint(uint256) WHEN msg.gasprice<=gasPrice,amount>0,msg.sender!=0",
+          "parameters": [
+            {
+              "js": "81",
+              "sol": "81"
+            },
+            {
+              "js": "{from:accounts[8],gasPrice:0}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\",\"gasPrice\":\"0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail mint(uint256) when NOT comply with: msg.gasprice <= gasPrice",
+            "parameters": [
+              {
+                "js": "81",
+                "sol": "81"
+              },
+              {
+                "js": "{from:accounts[8],gasPrice:0,gasprice:1}",
+                "sol": "{\"from\":\"accounts[8]\",\"gasPrice\":0,\"gasprice\":1}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail mint(uint256) when NOT comply with: amount > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "{from:accounts[8],gasPrice:0}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\",\"gasPrice\":\"0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail mint(uint256) when NOT comply with: msg.sender != 0",
+            "parameters": [
+              {
+                "js": "81",
+                "sol": "81"
+              },
+              {
+                "js": "{from:\"0x0000000000000000000000000000000000000000\",gasPrice:0}",
+                "sol": "{\"from\":\"\\\"0x0000000000000000000000000000000000000000\\\"\",\"gasPrice\":0}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.481ZTestERC20BondingToken.burn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute burn(uint256)",
+          "parameters": [
+            {
+              "js": "98",
+              "sol": "98"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.483ZTestEthBondingToken.initialize": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute initialize(uint256,uint32,uint256) WHEN initialized!=true",
+          "parameters": [
+            {
+              "js": "63",
+              "sol": "63"
+            },
+            {
+              "js": "87",
+              "sol": "87"
+            },
+            {
+              "js": "32",
+              "sol": "32"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.485ZTestEthBondingToken.": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute fallback() WHEN msg.value>0,msg.gasprice<=gasPrice,msg.value>0,msg.sender!=0",
+          "parameters": [
+            {
+              "js": "{from:accounts[0],value:118,gasPrice:0}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\",\"value\":\"118\",\"gasPrice\":\"0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail fallback() when NOT comply with: msg.value > 0",
+            "parameters": [
+              {
+                "js": "{from:accounts[0],value:0,gasPrice:0}",
+                "sol": "{\"from\":\"accounts[0]\",\"value\":0,\"gasPrice\":0}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail fallback() when NOT comply with: msg.gasprice <= gasPrice",
+            "parameters": [
+              {
+                "js": "{from:accounts[0],value:118,gasPrice:0,gasprice:1}",
+                "sol": "{\"from\":\"accounts[0]\",\"value\":118,\"gasPrice\":0,\"gasprice\":1}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail fallback() when NOT comply with: msg.value > 0",
+            "parameters": [
+              {
+                "js": "{from:accounts[0],value:0,gasPrice:0}",
+                "sol": "{\"from\":\"accounts[0]\",\"value\":0,\"gasPrice\":0}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail fallback() when NOT comply with: msg.sender != 0",
+            "parameters": [
+              {
+                "js": "{from:\"0x0000000000000000000000000000000000000000\",value:118,gasPrice:0}",
+                "sol": "{\"from\":\"\\\"0x0000000000000000000000000000000000000000\\\"\",\"value\":118,\"gasPrice\":0}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.489ZTestEthBondingToken.mint": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute mint() WHEN msg.value>0,msg.gasprice<=gasPrice,msg.value>0,msg.sender!=0",
+          "parameters": [
+            {
+              "js": "{from:accounts[7],value:32737,gasPrice:0}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\",\"value\":\"32737\",\"gasPrice\":\"0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail mint() when NOT comply with: msg.value > 0",
+            "parameters": [
+              {
+                "js": "{from:accounts[7],value:0,gasPrice:0}",
+                "sol": "{\"from\":\"accounts[7]\",\"value\":0,\"gasPrice\":0}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail mint() when NOT comply with: msg.gasprice <= gasPrice",
+            "parameters": [
+              {
+                "js": "{from:accounts[7],value:32737,gasPrice:0,gasprice:1}",
+                "sol": "{\"from\":\"accounts[7]\",\"value\":32737,\"gasPrice\":0,\"gasprice\":1}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail mint() when NOT comply with: msg.value > 0",
+            "parameters": [
+              {
+                "js": "{from:accounts[7],value:0,gasPrice:0}",
+                "sol": "{\"from\":\"accounts[7]\",\"value\":0,\"gasPrice\":0}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail mint() when NOT comply with: msg.sender != 0",
+            "parameters": [
+              {
+                "js": "{from:\"0x0000000000000000000000000000000000000000\",value:32737,gasPrice:0}",
+                "sol": "{\"from\":\"\\\"0x0000000000000000000000000000000000000000\\\"\",\"value\":32737,\"gasPrice\":0}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.491ZTestEthBondingToken.burn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute burn(uint256)",
+          "parameters": [
+            {
+              "js": "126",
+              "sol": "126"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.498ZProxyPower.testpower": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testpower(uint256,uint256,uint32,uint32) WHEN _baseN<MAX_NUM,_baseN>=_baseD",
+          "parameters": [
+            {
+              "js": "47",
+              "sol": "47"
+            },
+            {
+              "js": "38",
+              "sol": "38"
+            },
+            {
+              "js": "4038714809",
+              "sol": "4038714809"
+            },
+            {
+              "js": "52",
+              "sol": "52"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testpower(uint256,uint256,uint32,uint32) when NOT comply with: _baseN < MAX_NUM",
+            "parameters": [
+              {
+                "js": "680564733841876926926749214863536422912",
+                "sol": "680564733841876926926749214863536422912"
+              },
+              {
+                "js": "38",
+                "sol": "38"
+              },
+              {
+                "js": "4038714809",
+                "sol": "4038714809"
+              },
+              {
+                "js": "52",
+                "sol": "52"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail testpower(uint256,uint256,uint32,uint32) when NOT comply with: _baseN >= _baseD",
+            "parameters": [
+              {
+                "js": 37,
+                "sol": 37
+              },
+              {
+                "js": "38",
+                "sol": "38"
+              },
+              {
+                "js": "4038714809",
+                "sol": "4038714809"
+              },
+              {
+                "js": "52",
+                "sol": "52"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.501ZProxyPower.testgeneralLog": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testgeneralLog(uint256) WHEN LN2_DENOMINATOR>0",
+          "parameters": [
+            {
+              "js": "4038714809",
+              "sol": "4038714809"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.502ZProxyPower.testfloorLog2": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfloorLog2(uint256)",
+          "parameters": [
+            {
+              "js": "103",
+              "sol": "103"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.503ZProxyPower.testfindPositionInMaxExpArray": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "496-497",
+          "restrictions": [
+            "maxExpArray >= _x"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfindPositionInMaxExpArray(uint256) WHEN maxExpArray>=_x",
+          "parameters": [
+            {
+              "js": "41",
+              "sol": "41"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "maxExpArray < _x"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfindPositionInMaxExpArray(uint256) WHEN maxExpArray<_x",
+          "parameters": [
+            {
+              "js": "32735",
+              "sol": "32735"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "2": {
+        "branch": {
+          "loc": "498-499",
+          "restrictions": [
+            "maxExpArray >= _x"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfindPositionInMaxExpArray(uint256) WHEN maxExpArray>=_x",
+          "parameters": [
+            {
+              "js": "103",
+              "sol": "103"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "maxExpArray < _x",
+            "maxExpArray < _x"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfindPositionInMaxExpArray(uint256) WHEN maxExpArray<_x,maxExpArray<_x",
+          "parameters": [
+            {
+              "js": "1000001",
+              "sol": "1000001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.505ZProxyPower.testgeneralExp": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testgeneralExp(uint256,uint8)",
+          "parameters": [
+            {
+              "js": "81",
+              "sol": "81"
+            },
+            {
+              "js": "103",
+              "sol": "103"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.510ZProxyPower.testoptimalLog": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "565-565",
+          "restrictions": [
+            "x >= 0xd3094c70f034de4b96ff7d5b6f99fcd8"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x>=0xd3094c70f034de4b96ff7d5b6f99fcd8",
+          "parameters": [
+            {
+              "js": "\"0xd3094c70f034e0000000000000000001\"",
+              "sol": "0xd3094c70f034e0000000000000000001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "x < 0xd3094c70f034de4b96ff7d5b6f99fcd8"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x<0xd3094c70f034de4b96ff7d5b6f99fcd8",
+          "parameters": [
+            {
+              "js": "1532892063",
+              "sol": "1532892063"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "2": {
+        "branch": {
+          "loc": "566-566",
+          "restrictions": [
+            "x >= 0xa45af1e1f40c333b3de1db4dd55f29a7"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x>=0xa45af1e1f40c333b3de1db4dd55f29a7",
+          "parameters": [
+            {
+              "js": "\"0xa45af1e1f40c30000000000000000001\"",
+              "sol": "0xa45af1e1f40c30000000000000000001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "x < 0xa45af1e1f40c333b3de1db4dd55f29a7"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x<0xa45af1e1f40c333b3de1db4dd55f29a7",
+          "parameters": [
+            {
+              "js": "56",
+              "sol": "56"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "4": {
+        "branch": {
+          "loc": "567-567",
+          "restrictions": [
+            "x >= 0x910b022db7ae67ce76b441c27035c6a1"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x>=0x910b022db7ae67ce76b441c27035c6a1",
+          "parameters": [
+            {
+              "js": "\"0x910b022db7ae68000000000000000000\"",
+              "sol": "0x910b022db7ae68000000000000000000"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "5": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "x < 0x910b022db7ae67ce76b441c27035c6a1"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x<0x910b022db7ae67ce76b441c27035c6a1",
+          "parameters": [
+            {
+              "js": "116",
+              "sol": "116"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "6": {
+        "branch": {
+          "loc": "568-568",
+          "restrictions": [
+            "x >= 0x88415abbe9a76bead8d00cf112e4d4a8"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x>=0x88415abbe9a76bead8d00cf112e4d4a8",
+          "parameters": [
+            {
+              "js": "\"0x88415abbe9a768000000000000000001\"",
+              "sol": "0x88415abbe9a768000000000000000001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "7": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "x < 0x88415abbe9a76bead8d00cf112e4d4a8"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x<0x88415abbe9a76bead8d00cf112e4d4a8",
+          "parameters": [
+            {
+              "js": "88",
+              "sol": "88"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "8": {
+        "branch": {
+          "loc": "569-569",
+          "restrictions": [
+            "x >= 0x84102b00893f64c705e841d5d4064bd3"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x>=0x84102b00893f64c705e841d5d4064bd3",
+          "parameters": [
+            {
+              "js": "\"0x84102b00893f68000000000000000001\"",
+              "sol": "0x84102b00893f68000000000000000001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "9": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "x < 0x84102b00893f64c705e841d5d4064bd3"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x<0x84102b00893f64c705e841d5d4064bd3",
+          "parameters": [
+            {
+              "js": "63",
+              "sol": "63"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "10": {
+        "branch": {
+          "loc": "570-570",
+          "restrictions": [
+            "x >= 0x8204055aaef1c8bd5c3259f4822735a2"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x>=0x8204055aaef1c8bd5c3259f4822735a2",
+          "parameters": [
+            {
+              "js": "\"0x8204055aaef1c8000000000000000001\"",
+              "sol": "0x8204055aaef1c8000000000000000001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "11": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "x < 0x8204055aaef1c8bd5c3259f4822735a2"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x<0x8204055aaef1c8bd5c3259f4822735a2",
+          "parameters": [
+            {
+              "js": "92",
+              "sol": "92"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "12": {
+        "branch": {
+          "loc": "571-571",
+          "restrictions": [
+            "x >= 0x810100ab00222d861931c15e39b44e99"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x>=0x810100ab00222d861931c15e39b44e99",
+          "parameters": [
+            {
+              "js": "\"0x810100ab002230000000000000000000\"",
+              "sol": "0x810100ab002230000000000000000000"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "13": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "x < 0x810100ab00222d861931c15e39b44e99"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x<0x810100ab00222d861931c15e39b44e99",
+          "parameters": [
+            {
+              "js": "71",
+              "sol": "71"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "14": {
+        "branch": {
+          "loc": "572-572",
+          "restrictions": [
+            "x >= 0x808040155aabbbe9451521693554f733"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x>=0x808040155aabbbe9451521693554f733",
+          "parameters": [
+            {
+              "js": "\"0x808040155aabb8000000000000000001\"",
+              "sol": "0x808040155aabb8000000000000000001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "15": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "x < 0x808040155aabbbe9451521693554f733"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalLog(uint256) WHEN x<0x808040155aabbbe9451521693554f733",
+          "parameters": [
+            {
+              "js": "53",
+              "sol": "53"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T22:05:07.520ZProxyPower.testoptimalExp": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testoptimalExp(uint256)",
+          "parameters": [
+            {
+              "js": "71",
+              "sol": "71"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

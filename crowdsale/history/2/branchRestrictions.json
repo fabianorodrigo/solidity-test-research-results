@@ -1,0 +1,735 @@
+,{
+  "2020-11-10T06:29:33.180ZERC20Detailed.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(string,string,uint8)",
+          "parameters": [
+            {
+              "js": "\"\\x19Ethereum Signed Message:\\n32\"",
+              "sol": "\"\\x19Ethereum Signed Message:\\n32\""
+            },
+            {
+              "js": "\"PayableExample\"",
+              "sol": "\"PayableExample\""
+            },
+            {
+              "js": "27",
+              "sol": "27"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T06:29:42.508ZCrowdsale.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(uint256,address,IERC20) WHEN rate>0,wallet!=0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "1532892064",
+              "sol": "1532892064"
+            },
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "contractAtlantisToken.address",
+              "sol": "contractAtlantisToken"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail constructor(uint256,address,IERC20) when NOT comply with: rate > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "contractAtlantisToken.address",
+                "sol": "contractAtlantisToken"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(uint256,address,IERC20) when NOT comply with: wallet != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "1532892064",
+                "sol": "1532892064"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "contractAtlantisToken.address",
+                "sol": "contractAtlantisToken"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T06:29:42.510ZAtlantisToken.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor() WHEN msg.sender!=0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "{from:accounts[7]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail constructor() when NOT comply with: msg.sender != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "{from:\"0x0000000000000000000000000000000000000000\"}",
+                "sol": "{\"from\":\"\\\"0x0000000000000000000000000000000000000000\\\"\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T06:29:50.417ZMinLimitCrowdsale.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(uint256)",
+          "parameters": [
+            {
+              "js": "5",
+              "sol": "5"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T06:29:59.923ZAtlantisCrowdsale.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(uint256,address,IERC20,uint256,uint256,uint256,uint256) WHEN tokensPerEth>0,wallet!=0x0000000000000000000000000000000000000000,openingTime>=block.timestamp,closingTime>openingTime",
+          "parameters": [
+            {
+              "js": "1532892063",
+              "sol": "1532892063"
+            },
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "contractAtlantisToken.address",
+              "sol": "contractAtlantisToken"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+99",
+              "sol": "block.timestamp+99"
+            },
+            {
+              "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+99+592",
+              "sol": "block.timestamp+99+592"
+            },
+            {
+              "js": "64",
+              "sol": "64"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail constructor(uint256,address,IERC20,uint256,uint256,uint256,uint256) when NOT comply with: tokensPerEth > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "accounts[6]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "contractAtlantisToken.address",
+                "sol": "contractAtlantisToken"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+99",
+                "sol": "block.timestamp+99"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+99+592",
+                "sol": "block.timestamp+99+592"
+              },
+              {
+                "js": "64",
+                "sol": "64"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(uint256,address,IERC20,uint256,uint256,uint256,uint256) when NOT comply with: wallet != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "1532892063",
+                "sol": "1532892063"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "contractAtlantisToken.address",
+                "sol": "contractAtlantisToken"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+99",
+                "sol": "block.timestamp+99"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+99+592",
+                "sol": "block.timestamp+99+592"
+              },
+              {
+                "js": "64",
+                "sol": "64"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(uint256,address,IERC20,uint256,uint256,uint256,uint256) when NOT comply with: openingTime >= (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+            "parameters": [
+              {
+                "js": "1532892063",
+                "sol": "1532892063"
+              },
+              {
+                "js": "accounts[6]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "contractAtlantisToken.address",
+                "sol": "contractAtlantisToken"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp-1",
+                "sol": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp-1"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+99+592",
+                "sol": "block.timestamp+99+592"
+              },
+              {
+                "js": "64",
+                "sol": "64"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(uint256,address,IERC20,uint256,uint256,uint256,uint256) when NOT comply with: closingTime > openingTime",
+            "parameters": [
+              {
+                "js": "1532892063",
+                "sol": "1532892063"
+              },
+              {
+                "js": "accounts[6]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "contractAtlantisToken.address",
+                "sol": "contractAtlantisToken"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+99",
+                "sol": "block.timestamp+99"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+99",
+                "sol": "block.timestamp+99"
+              },
+              {
+                "js": "64",
+                "sol": "64"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T06:30:05.584ZAtlantisCrowdsale.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(uint256,address,IERC20,uint256,uint256,uint256,uint256) WHEN tokensPerEth>0,wallet!=0x0000000000000000000000000000000000000000,openingTime>=block.timestamp,closingTime>openingTime",
+          "parameters": [
+            {
+              "js": "1336",
+              "sol": "1336"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "contractAtlantisToken.address",
+              "sol": "contractAtlantisToken"
+            },
+            {
+              "js": "1532892063",
+              "sol": "1532892063"
+            },
+            {
+              "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+322",
+              "sol": "block.timestamp+322"
+            },
+            {
+              "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+322+677",
+              "sol": "block.timestamp+322+677"
+            },
+            {
+              "js": "256",
+              "sol": "256"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail constructor(uint256,address,IERC20,uint256,uint256,uint256,uint256) when NOT comply with: tokensPerEth > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "contractAtlantisToken.address",
+                "sol": "contractAtlantisToken"
+              },
+              {
+                "js": "1532892063",
+                "sol": "1532892063"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+322",
+                "sol": "block.timestamp+322"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+322+677",
+                "sol": "block.timestamp+322+677"
+              },
+              {
+                "js": "256",
+                "sol": "256"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(uint256,address,IERC20,uint256,uint256,uint256,uint256) when NOT comply with: wallet != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "1336",
+                "sol": "1336"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "contractAtlantisToken.address",
+                "sol": "contractAtlantisToken"
+              },
+              {
+                "js": "1532892063",
+                "sol": "1532892063"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+322",
+                "sol": "block.timestamp+322"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+322+677",
+                "sol": "block.timestamp+322+677"
+              },
+              {
+                "js": "256",
+                "sol": "256"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(uint256,address,IERC20,uint256,uint256,uint256,uint256) when NOT comply with: openingTime >= (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+            "parameters": [
+              {
+                "js": "1336",
+                "sol": "1336"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "contractAtlantisToken.address",
+                "sol": "contractAtlantisToken"
+              },
+              {
+                "js": "1532892063",
+                "sol": "1532892063"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp-1",
+                "sol": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp-1"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+322+677",
+                "sol": "block.timestamp+322+677"
+              },
+              {
+                "js": "256",
+                "sol": "256"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail constructor(uint256,address,IERC20,uint256,uint256,uint256,uint256) when NOT comply with: closingTime > openingTime",
+            "parameters": [
+              {
+                "js": "1336",
+                "sol": "1336"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "contractAtlantisToken.address",
+                "sol": "contractAtlantisToken"
+              },
+              {
+                "js": "1532892063",
+                "sol": "1532892063"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+322",
+                "sol": "block.timestamp+322"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+322",
+                "sol": "block.timestamp+322"
+              },
+              {
+                "js": "256",
+                "sol": "256"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T06:30:09.667ZProxyMinLimitCrowdsale.test_preValidatePurchase": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_preValidatePurchase(address,uint256) WHEN beneficiary!=0x0000000000000000000000000000000000000000,weiAmount!=0,weiAmount>=_minLimit",
+          "parameters": [
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "500",
+              "sol": "500"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail test_preValidatePurchase(address,uint256) when NOT comply with: beneficiary != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "500",
+                "sol": "500"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail test_preValidatePurchase(address,uint256) when NOT comply with: weiAmount != 0",
+            "parameters": [
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail test_preValidatePurchase(address,uint256) when NOT comply with: weiAmount >= _minLimit",
+            "parameters": [
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": 96,
+                "sol": 96
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T06:30:09.669ZAtlantisCrowdsale.offchainSale": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute offchainSale(address,uint256) WHEN msg.sender==_owner",
+          "parameters": [
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "5",
+              "sol": "5"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail offchainSale(address,uint256) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "accounts[8]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "5",
+                "sol": "5"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T06:30:09.670ZAtlantisCrowdsale.minLimit": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute minLimit()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/GolemNetworkToken.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> GolemNetworkToken.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">31.87% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>29/91</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.57% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.85% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/65</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.5.3;
+&nbsp;
+contract MigrationAgent {
+    function migrateFrom(address _from, uint256 _value) public;
+}
+&nbsp;
+contract GNTAllocation {
+    constructor(address _golemFactory) public {}
+}
+&nbsp;
+/// @title Golem Network Token (GNT) - crowdfunding code for Golem Project
+contract GolemNetworkToken {
+    string public constant name = "Test Golem Network Token";
+    string public constant symbol = "tGNT";
+    uint8 public constant decimals = 18;  // 18 decimal places, the same as ETH.
+&nbsp;
+    uint256 public constant tokenCreationRate = 10000000000;
+&nbsp;
+    // The funding cap in weis.
+    uint256 public constant tokenCreationCap = 82 finney * tokenCreationRate;
+    uint256 public constant tokenCreationMin = 15 finney * tokenCreationRate;
+&nbsp;
+    uint256 public fundingStartBlock;
+    uint256 public fundingEndBlock;
+&nbsp;
+    // The flag indicates if the GNT contract is in Funding state.
+    bool public funding = true;
+&nbsp;
+    // Receives ETH and its own GNT endowment.
+    address payable public golemFactory;
+&nbsp;
+    // Has control over token migration to next version of token.
+    address public migrationMaster;
+&nbsp;
+    GNTAllocation lockedAllocation;
+&nbsp;
+    // The current total token supply.
+    uint256 public totalTokens;
+&nbsp;
+    mapping (address =&gt; uint256) balances;
+&nbsp;
+    address public migrationAgent;
+    uint256 public totalMigrated;
+&nbsp;
+    event Transfer(address indexed _from, address indexed _to, uint256 _value);
+    event Migrate(address indexed _from, address indexed _to, uint256 _value);
+    event Refund(address indexed _from, uint256 _value);
+&nbsp;
+    constructor(address payable _golemFactory,
+                address _migrationMaster,
+                uint256 _fundingStartBlock,
+                uint256 _fundingEndBlock) public {
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_golemFactory == address(0)) <span class="cstat-no" title="statement not covered" >revert()</span>;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_migrationMaster == address(0)) <span class="cstat-no" title="statement not covered" >revert()</span>;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_fundingStartBlock &lt;= block.number) <span class="cstat-no" title="statement not covered" >revert()</span>;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_fundingEndBlock   &lt;= _fundingStartBlock) <span class="cstat-no" title="statement not covered" >revert()</span>;
+&nbsp;
+        lockedAllocation = new GNTAllocation(_golemFactory);
+        migrationMaster = _migrationMaster;
+        golemFactory = _golemFactory;
+        fundingStartBlock = _fundingStartBlock;
+        fundingEndBlock = _fundingEndBlock;
+    }
+&nbsp;
+    /// @notice Transfer `_value` GNT tokens from sender's account
+    /// `msg.sender` to provided account address `_to`.
+    /// @notice This function is disabled during the funding.
+    /// @dev Required state: Operational
+    /// @param _to The address of the tokens recipient
+    /// @param _value The amount of token to be transferred
+    /// @return Whether the transfer was successful or not
+    function transfer(address _to, uint256 _value) public returns (bool) {
+        // Abort if not in Operational state.
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (funding) revert();
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 senderBalance = balances[msg.sender];</span>
+<span class="cstat-no" title="statement not covered" >        if (senderBalance &gt;= _value &amp;&amp; _value &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            senderBalance -= _value</span>;
+<span class="cstat-no" title="statement not covered" >            balances[msg.sender] = senderBalance</span>;
+<span class="cstat-no" title="statement not covered" >            balances[_to] += _value</span>;
+<span class="cstat-no" title="statement not covered" >            emit Transfer(msg.sender, _to, _value);</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+&nbsp;
+    function totalSupply() external view returns (uint256) {
+        return totalTokens;
+    }
+&nbsp;
+    function balanceOf(address _owner) external view returns (uint256) {
+        return balances[_owner];
+    }
+&nbsp;
+    // Token migration support:
+&nbsp;
+    /// @notice Migrate tokens to the new token contract.
+    /// @dev Required state: Operational Migration
+    /// @param _value The amount of token to be migrated
+<span class="fstat-no" title="function not covered" >    function migrate(uint256 _value) externa</span>l {
+        // Abort if not in Operational Migration state.
+<span class="cstat-no" title="statement not covered" >        if (funding) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+<span class="cstat-no" title="statement not covered" >        if (migrationAgent == address(0)) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+&nbsp;
+        // Validate input value.
+<span class="cstat-no" title="statement not covered" >        if (_value == 0) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+<span class="cstat-no" title="statement not covered" >        if (_value &gt; balances[msg.sender]) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        balances[msg.sender] -= _value</span>;
+<span class="cstat-no" title="statement not covered" >        totalTokens -= _value</span>;
+<span class="cstat-no" title="statement not covered" >        totalMigrated += _value</span>;
+<span class="cstat-no" title="statement not covered" >        MigrationAgent(migrationAgent).migrateFrom(msg.sender, _value)</span>;
+<span class="cstat-no" title="statement not covered" >        emit Migrate(msg.sender, migrationAgent, _value);</span>
+    }
+&nbsp;
+    /// @notice Set address of migration target contract and enable migration
+	/// process.
+    /// @dev Required state: Operational Normal
+    /// @dev State transition: -&gt; Operational Migration
+    /// @param _agent The address of the MigrationAgent contract
+    function setMigrationAgent(address _agent) external {
+        // Abort if not in Operational Normal state.
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (funding) revert();
+<span class="cstat-no" title="statement not covered" >        if (migrationAgent != address(0)) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+<span class="cstat-no" title="statement not covered" >        if (msg.sender != migrationMaster) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+<span class="cstat-no" title="statement not covered" >        migrationAgent = _agent</span>;
+    }
+&nbsp;
+    function setMigrationMaster(address _master) external {
+        if (msg.sender != migrationMaster) revert();
+        if (_master == address(0)) revert();
+        migrationMaster = _master;
+    }
+&nbsp;
+    // Crowdfunding:
+&nbsp;
+    /// @notice Create tokens when funding is active.
+    /// @dev Required state: Funding Active
+    /// @dev State transition: -&gt; Funding Success (only if cap reached)
+    function create() payable external {
+        // Abort if not in Funding Active state.
+        // The checks are split (instead of using or operator) because it is
+        // cheaper this way.
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!funding) <span class="cstat-no" title="statement not covered" >revert()</span>;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (block.number &lt; fundingStartBlock) revert();
+<span class="cstat-no" title="statement not covered" >        if (block.number &gt; fundingEndBlock) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+&nbsp;
+        // Do not allow creating 0 or more than the cap tokens.
+<span class="cstat-no" title="statement not covered" >        if (msg.value == 0) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+<span class="cstat-no" title="statement not covered" >        if (msg.value &gt; (tokenCreationCap - totalTokens) / tokenCreationRate)</span>
+<span class="cstat-no" title="statement not covered" >            revert()</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 numTokens = msg.value * tokenCreationRate;</span>
+<span class="cstat-no" title="statement not covered" >        totalTokens += numTokens</span>;
+&nbsp;
+        // Assign new tokens to the sender
+<span class="cstat-no" title="statement not covered" >        balances[msg.sender] += numTokens</span>;
+&nbsp;
+        // Log token creation event
+<span class="cstat-no" title="statement not covered" >        emit Transfer(address(0), msg.sender, numTokens);</span>
+    }
+&nbsp;
+    /// @notice Finalize crowdfunding
+    /// @dev If cap was reached or crowdfunding has ended then:
+    /// create GNT for the Golem Factory and developer,
+    /// transfer ETH to the Golem Factory address.
+    /// @dev Required state: Funding Success
+    /// @dev State transition: -&gt; Operational Normal
+    function finalize() external {
+        // Abort if not in Funding Success state.
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!funding) <span class="cstat-no" title="statement not covered" >revert()</span>;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if ((block.number &lt;= fundingEndBlock ||
+             totalTokens &lt; tokenCreationMin) &amp;&amp;
+            totalTokens &lt; tokenCreationCap) revert();
+&nbsp;
+        // Switch to Operational state. This is the only place this can happen.
+<span class="cstat-no" title="statement not covered" >        funding = false</span>;
+&nbsp;
+        // Create additional GNT for the Golem Factory and developers as
+        // the 18% of total number of tokens.
+        // All additional tokens are transfered to the account controller by
+        // GNTAllocation contract which will not allow using them for 6 months.
+<span class="cstat-no" title="statement not covered" >        uint256 percentOfTotal = 18;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 additionalTokens =</span>
+            totalTokens * percentOfTotal / (100 - percentOfTotal);
+<span class="cstat-no" title="statement not covered" >        totalTokens += additionalTokens</span>;
+<span class="cstat-no" title="statement not covered" >        balances[address(lockedAllocation)] += additionalTokens</span>;
+<span class="cstat-no" title="statement not covered" >        emit Transfer(address(0), address(lockedAllocation), additionalTokens);</span>
+&nbsp;
+        // Transfer ETH to the Golem Factory address.
+<span class="cstat-no" title="statement not covered" >        if (!golemFactory.send(address(this).balance)) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+    }
+&nbsp;
+    /// @notice Get back the ether sent during the funding in case the funding
+    /// has not reached the minimum level.
+    /// @dev Required state: Funding Failure
+    function refund() external {
+        // Abort if not in Funding Failure state.
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!funding) <span class="cstat-no" title="statement not covered" >revert()</span>;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (block.number &lt;= fundingEndBlock) revert();
+<span class="cstat-no" title="statement not covered" >        if (totalTokens &gt;= tokenCreationMin) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 gntValue = balances[msg.sender];</span>
+<span class="cstat-no" title="statement not covered" >        if (gntValue == 0) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+<span class="cstat-no" title="statement not covered" >        balances[msg.sender] = 0</span>;
+<span class="cstat-no" title="statement not covered" >        totalTokens -= gntValue</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 ethValue = gntValue / tokenCreationRate;</span>
+<span class="cstat-no" title="statement not covered" >        emit Refund(msg.sender, ethValue);</span>
+<span class="cstat-no" title="statement not covered" >        if (!msg.sender.send(ethValue)) <span class="cstat-no" title="statement not covered" >revert()</span>;</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 10 2020 18:27:54 GMT-0200 (GMT-02:00)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

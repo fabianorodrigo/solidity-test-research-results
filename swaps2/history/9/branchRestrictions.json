@@ -1,0 +1,2519 @@
+,{
+  "2020-11-10T23:57:45.045ZSwaps.tokenFallback": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute tokenFallback(address,uint,bytes)",
+          "parameters": [
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "254",
+              "sol": "254"
+            },
+            {
+              "js": "[33,96,19,128,90,180,63,36,134,193,88,186,29,136,2,41,163,142,250,38,70,215,170,98,109,85,131,208,40,83,105,86]",
+              "sol": "abi.encode(\"33,96,19,128,90,180,63,36,134,193,88,186,29,136,2,41,163,142,250,38,70,215,170,98,109,85,131,208,40,83,105,86\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.046ZSwaps.createOrder": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "163-167",
+          "restrictions": [
+            "_brokerAddress != 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) WHEN _brokerAddress!=0x0000000000000000000000000000000000000000,owners==0x0000000000000000000000000000000000000000,_baseAddress!=_quoteAddress,_baseLimit>0,_quoteLimit>0,_expirationTimestamp>block.timestamp",
+          "parameters": [
+            {
+              "js": "[238,129,131,33,10,121,211,89,205,117,109,230,64,199,47,234,72,127,66,131,126,10,162,198,59,123,23,155,210,2,195,241]",
+              "sol": "stringToBytes32(\"238,129,131,33,10,121,211,89,205,117,109,230,64,199,47,234,72,127,66,131,126,10,162,198,59,123,23,155,210,2,195,241\")"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1338",
+              "sol": "1338"
+            },
+            {
+              "js": "257",
+              "sol": "257"
+            },
+            {
+              "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+951",
+              "sol": "block.timestamp+951"
+            },
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "256",
+              "sol": "256"
+            },
+            {
+              "js": "5",
+              "sol": "5"
+            },
+            {
+              "js": "accounts[0]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "4",
+              "sol": "4"
+            },
+            {
+              "js": "4038714811",
+              "sol": "4038714811"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _baseAddress != _quoteAddress",
+            "parameters": [
+              {
+                "js": "[238,129,131,33,10,121,211,89,205,117,109,230,64,199,47,234,72,127,66,131,126,10,162,198,59,123,23,155,210,2,195,241]",
+                "sol": "stringToBytes32(\"238,129,131,33,10,121,211,89,205,117,109,230,64,199,47,234,72,127,66,131,126,10,162,198,59,123,23,155,210,2,195,241\")"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "accounts[9]"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1338",
+                "sol": "1338"
+              },
+              {
+                "js": "257",
+                "sol": "257"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+951",
+                "sol": "block.timestamp+951"
+              },
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "256",
+                "sol": "256"
+              },
+              {
+                "js": "5",
+                "sol": "5"
+              },
+              {
+                "js": "accounts[0]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4",
+                "sol": "4"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _baseLimit > 0",
+            "parameters": [
+              {
+                "js": "[238,129,131,33,10,121,211,89,205,117,109,230,64,199,47,234,72,127,66,131,126,10,162,198,59,123,23,155,210,2,195,241]",
+                "sol": "stringToBytes32(\"238,129,131,33,10,121,211,89,205,117,109,230,64,199,47,234,72,127,66,131,126,10,162,198,59,123,23,155,210,2,195,241\")"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "257",
+                "sol": "257"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+951",
+                "sol": "block.timestamp+951"
+              },
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "256",
+                "sol": "256"
+              },
+              {
+                "js": "5",
+                "sol": "5"
+              },
+              {
+                "js": "accounts[0]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4",
+                "sol": "4"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _quoteLimit > 0",
+            "parameters": [
+              {
+                "js": "[238,129,131,33,10,121,211,89,205,117,109,230,64,199,47,234,72,127,66,131,126,10,162,198,59,123,23,155,210,2,195,241]",
+                "sol": "stringToBytes32(\"238,129,131,33,10,121,211,89,205,117,109,230,64,199,47,234,72,127,66,131,126,10,162,198,59,123,23,155,210,2,195,241\")"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1338",
+                "sol": "1338"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+951",
+                "sol": "block.timestamp+951"
+              },
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "256",
+                "sol": "256"
+              },
+              {
+                "js": "5",
+                "sol": "5"
+              },
+              {
+                "js": "accounts[0]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4",
+                "sol": "4"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _expirationTimestamp > (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+            "parameters": [
+              {
+                "js": "[238,129,131,33,10,121,211,89,205,117,109,230,64,199,47,234,72,127,66,131,126,10,162,198,59,123,23,155,210,2,195,241]",
+                "sol": "stringToBytes32(\"238,129,131,33,10,121,211,89,205,117,109,230,64,199,47,234,72,127,66,131,126,10,162,198,59,123,23,155,210,2,195,241\")"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1338",
+                "sol": "1338"
+              },
+              {
+                "js": "257",
+                "sol": "257"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+                "sol": "block.timestamp"
+              },
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "256",
+                "sol": "256"
+              },
+              {
+                "js": "5",
+                "sol": "5"
+              },
+              {
+                "js": "accounts[0]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4",
+                "sol": "4"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_brokerAddress == 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) WHEN _brokerAddress==0x0000000000000000000000000000000000000000,owners==0x0000000000000000000000000000000000000000,_baseAddress!=_quoteAddress,_baseLimit>0,_quoteLimit>0,_expirationTimestamp>block.timestamp",
+          "parameters": [
+            {
+              "js": "[43,52,199,208,74,143,1,193,199,82,7,147,228,94,135,163,226,99,239,45,216,221,55,67,208,175,100,139,157,196,104,27]",
+              "sol": "stringToBytes32(\"43,52,199,208,74,143,1,193,199,82,7,147,228,94,135,163,226,99,239,45,216,221,55,67,208,175,100,139,157,196,104,27\")"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1532892063",
+              "sol": "1532892063"
+            },
+            {
+              "js": "2",
+              "sol": "2"
+            },
+            {
+              "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+677",
+              "sol": "block.timestamp+677"
+            },
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "10000",
+              "sol": "10000"
+            },
+            {
+              "js": "1532892062",
+              "sol": "1532892062"
+            },
+            {
+              "js": "\"0x0000000000000000000000000000000000000000\"",
+              "sol": "0x0000000000000000000000000000000000000000"
+            },
+            {
+              "js": "1338",
+              "sol": "1338"
+            },
+            {
+              "js": "10001",
+              "sol": "10001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _baseAddress != _quoteAddress",
+            "parameters": [
+              {
+                "js": "[43,52,199,208,74,143,1,193,199,82,7,147,228,94,135,163,226,99,239,45,216,221,55,67,208,175,100,139,157,196,104,27]",
+                "sol": "stringToBytes32(\"43,52,199,208,74,143,1,193,199,82,7,147,228,94,135,163,226,99,239,45,216,221,55,67,208,175,100,139,157,196,104,27\")"
+              },
+              {
+                "js": "accounts[8]",
+                "sol": "accounts[8]"
+              },
+              {
+                "js": "accounts[8]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1532892063",
+                "sol": "1532892063"
+              },
+              {
+                "js": "2",
+                "sol": "2"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+677",
+                "sol": "block.timestamp+677"
+              },
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "10000",
+                "sol": "10000"
+              },
+              {
+                "js": "1532892062",
+                "sol": "1532892062"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "1338",
+                "sol": "1338"
+              },
+              {
+                "js": "10001",
+                "sol": "10001"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _baseLimit > 0",
+            "parameters": [
+              {
+                "js": "[43,52,199,208,74,143,1,193,199,82,7,147,228,94,135,163,226,99,239,45,216,221,55,67,208,175,100,139,157,196,104,27]",
+                "sol": "stringToBytes32(\"43,52,199,208,74,143,1,193,199,82,7,147,228,94,135,163,226,99,239,45,216,221,55,67,208,175,100,139,157,196,104,27\")"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[8]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "2",
+                "sol": "2"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+677",
+                "sol": "block.timestamp+677"
+              },
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "10000",
+                "sol": "10000"
+              },
+              {
+                "js": "1532892062",
+                "sol": "1532892062"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "1338",
+                "sol": "1338"
+              },
+              {
+                "js": "10001",
+                "sol": "10001"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _quoteLimit > 0",
+            "parameters": [
+              {
+                "js": "[43,52,199,208,74,143,1,193,199,82,7,147,228,94,135,163,226,99,239,45,216,221,55,67,208,175,100,139,157,196,104,27]",
+                "sol": "stringToBytes32(\"43,52,199,208,74,143,1,193,199,82,7,147,228,94,135,163,226,99,239,45,216,221,55,67,208,175,100,139,157,196,104,27\")"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[8]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1532892063",
+                "sol": "1532892063"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+677",
+                "sol": "block.timestamp+677"
+              },
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "10000",
+                "sol": "10000"
+              },
+              {
+                "js": "1532892062",
+                "sol": "1532892062"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "1338",
+                "sol": "1338"
+              },
+              {
+                "js": "10001",
+                "sol": "10001"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _expirationTimestamp > (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+            "parameters": [
+              {
+                "js": "[43,52,199,208,74,143,1,193,199,82,7,147,228,94,135,163,226,99,239,45,216,221,55,67,208,175,100,139,157,196,104,27]",
+                "sol": "stringToBytes32(\"43,52,199,208,74,143,1,193,199,82,7,147,228,94,135,163,226,99,239,45,216,221,55,67,208,175,100,139,157,196,104,27\")"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[8]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1532892063",
+                "sol": "1532892063"
+              },
+              {
+                "js": "2",
+                "sol": "2"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+                "sol": "block.timestamp"
+              },
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "10000",
+                "sol": "10000"
+              },
+              {
+                "js": "1532892062",
+                "sol": "1532892062"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "1338",
+                "sol": "1338"
+              },
+              {
+                "js": "10001",
+                "sol": "10001"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "2": {
+        "branch": {
+          "loc": "168-172",
+          "restrictions": [
+            "myWishAddress != 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) WHEN myWishAddress!=0x0000000000000000000000000000000000000000,owners==0x0000000000000000000000000000000000000000,_baseAddress!=_quoteAddress,_baseLimit>0,_quoteLimit>0,_expirationTimestamp>block.timestamp",
+          "parameters": [
+            {
+              "js": "[81,112,75,168,100,71,7,146,141,87,144,176,138,10,3,225,26,14,102,48,83,75,222,252,234,12,8,86,78,143,114,94]",
+              "sol": "stringToBytes32(\"81,112,75,168,100,71,7,146,141,87,144,176,138,10,3,225,26,14,102,48,83,75,222,252,234,12,8,86,78,143,114,94\")"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "11",
+              "sol": "11"
+            },
+            {
+              "js": "10000",
+              "sol": "10000"
+            },
+            {
+              "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+11",
+              "sol": "block.timestamp+11"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "2",
+              "sol": "2"
+            },
+            {
+              "js": "254",
+              "sol": "254"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _baseAddress != _quoteAddress",
+            "parameters": [
+              {
+                "js": "[81,112,75,168,100,71,7,146,141,87,144,176,138,10,3,225,26,14,102,48,83,75,222,252,234,12,8,86,78,143,114,94]",
+                "sol": "stringToBytes32(\"81,112,75,168,100,71,7,146,141,87,144,176,138,10,3,225,26,14,102,48,83,75,222,252,234,12,8,86,78,143,114,94\")"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "accounts[2]"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "11",
+                "sol": "11"
+              },
+              {
+                "js": "10000",
+                "sol": "10000"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+11",
+                "sol": "block.timestamp+11"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "2",
+                "sol": "2"
+              },
+              {
+                "js": "254",
+                "sol": "254"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _baseLimit > 0",
+            "parameters": [
+              {
+                "js": "[81,112,75,168,100,71,7,146,141,87,144,176,138,10,3,225,26,14,102,48,83,75,222,252,234,12,8,86,78,143,114,94]",
+                "sol": "stringToBytes32(\"81,112,75,168,100,71,7,146,141,87,144,176,138,10,3,225,26,14,102,48,83,75,222,252,234,12,8,86,78,143,114,94\")"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "10000",
+                "sol": "10000"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+11",
+                "sol": "block.timestamp+11"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "2",
+                "sol": "2"
+              },
+              {
+                "js": "254",
+                "sol": "254"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _quoteLimit > 0",
+            "parameters": [
+              {
+                "js": "[81,112,75,168,100,71,7,146,141,87,144,176,138,10,3,225,26,14,102,48,83,75,222,252,234,12,8,86,78,143,114,94]",
+                "sol": "stringToBytes32(\"81,112,75,168,100,71,7,146,141,87,144,176,138,10,3,225,26,14,102,48,83,75,222,252,234,12,8,86,78,143,114,94\")"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "11",
+                "sol": "11"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+11",
+                "sol": "block.timestamp+11"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "2",
+                "sol": "2"
+              },
+              {
+                "js": "254",
+                "sol": "254"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _expirationTimestamp > (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+            "parameters": [
+              {
+                "js": "[81,112,75,168,100,71,7,146,141,87,144,176,138,10,3,225,26,14,102,48,83,75,222,252,234,12,8,86,78,143,114,94]",
+                "sol": "stringToBytes32(\"81,112,75,168,100,71,7,146,141,87,144,176,138,10,3,225,26,14,102,48,83,75,222,252,234,12,8,86,78,143,114,94\")"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "11",
+                "sol": "11"
+              },
+              {
+                "js": "10000",
+                "sol": "10000"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+                "sol": "block.timestamp"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "2",
+                "sol": "2"
+              },
+              {
+                "js": "254",
+                "sol": "254"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "myWishAddress == 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) WHEN myWishAddress==0x0000000000000000000000000000000000000000,owners==0x0000000000000000000000000000000000000000,_baseAddress!=_quoteAddress,_baseLimit>0,_quoteLimit>0,_expirationTimestamp>block.timestamp",
+          "parameters": [
+            {
+              "js": "[249,63,11,156,19,8,57,96,252,152,91,118,57,122,104,138,240,41,195,239,96,91,181,153,130,30,32,83,139,161,16,235]",
+              "sol": "stringToBytes32(\"249,63,11,156,19,8,57,96,252,152,91,118,57,122,104,138,240,41,195,239,96,91,181,153,130,30,32,83,139,161,16,235\")"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "10",
+              "sol": "10"
+            },
+            {
+              "js": "3",
+              "sol": "3"
+            },
+            {
+              "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+383",
+              "sol": "block.timestamp+383"
+            },
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "97",
+              "sol": "97"
+            },
+            {
+              "js": "1337",
+              "sol": "1337"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "4038714811",
+              "sol": "4038714811"
+            },
+            {
+              "js": "4038714810",
+              "sol": "4038714810"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _baseAddress != _quoteAddress",
+            "parameters": [
+              {
+                "js": "[249,63,11,156,19,8,57,96,252,152,91,118,57,122,104,138,240,41,195,239,96,91,181,153,130,30,32,83,139,161,16,235]",
+                "sol": "stringToBytes32(\"249,63,11,156,19,8,57,96,252,152,91,118,57,122,104,138,240,41,195,239,96,91,181,153,130,30,32,83,139,161,16,235\")"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "accounts[2]"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "10",
+                "sol": "10"
+              },
+              {
+                "js": "3",
+                "sol": "3"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+383",
+                "sol": "block.timestamp+383"
+              },
+              {
+                "js": "accounts[5]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "97",
+                "sol": "97"
+              },
+              {
+                "js": "1337",
+                "sol": "1337"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "4038714810",
+                "sol": "4038714810"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _baseLimit > 0",
+            "parameters": [
+              {
+                "js": "[249,63,11,156,19,8,57,96,252,152,91,118,57,122,104,138,240,41,195,239,96,91,181,153,130,30,32,83,139,161,16,235]",
+                "sol": "stringToBytes32(\"249,63,11,156,19,8,57,96,252,152,91,118,57,122,104,138,240,41,195,239,96,91,181,153,130,30,32,83,139,161,16,235\")"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "3",
+                "sol": "3"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+383",
+                "sol": "block.timestamp+383"
+              },
+              {
+                "js": "accounts[5]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "97",
+                "sol": "97"
+              },
+              {
+                "js": "1337",
+                "sol": "1337"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "4038714810",
+                "sol": "4038714810"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _quoteLimit > 0",
+            "parameters": [
+              {
+                "js": "[249,63,11,156,19,8,57,96,252,152,91,118,57,122,104,138,240,41,195,239,96,91,181,153,130,30,32,83,139,161,16,235]",
+                "sol": "stringToBytes32(\"249,63,11,156,19,8,57,96,252,152,91,118,57,122,104,138,240,41,195,239,96,91,181,153,130,30,32,83,139,161,16,235\")"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "10",
+                "sol": "10"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp+383",
+                "sol": "block.timestamp+383"
+              },
+              {
+                "js": "accounts[5]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "97",
+                "sol": "97"
+              },
+              {
+                "js": "1337",
+                "sol": "1337"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "4038714810",
+                "sol": "4038714810"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail createOrder(bytes32,address,address,uint,uint,uint,address,uint,uint,address,uint,uint) when NOT comply with: _expirationTimestamp > (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+            "parameters": [
+              {
+                "js": "[249,63,11,156,19,8,57,96,252,152,91,118,57,122,104,138,240,41,195,239,96,91,181,153,130,30,32,83,139,161,16,235]",
+                "sol": "stringToBytes32(\"249,63,11,156,19,8,57,96,252,152,91,118,57,122,104,138,240,41,195,239,96,91,181,153,130,30,32,83,139,161,16,235\")"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "10",
+                "sol": "10"
+              },
+              {
+                "js": "3",
+                "sol": "3"
+              },
+              {
+                "js": "(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp",
+                "sol": "block.timestamp"
+              },
+              {
+                "js": "accounts[5]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "97",
+                "sol": "97"
+              },
+              {
+                "js": "1337",
+                "sol": "1337"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "4038714811",
+                "sol": "4038714811"
+              },
+              {
+                "js": "4038714810",
+                "sol": "4038714810"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.063ZSwaps.deposit": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "198-215",
+          "restrictions": [
+            "_token == 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute deposit(bytes32,address,uint) WHEN _token==0x0000000000000000000000000000000000000000,msg.value==_amount,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamps",
+          "parameters": [
+            {
+              "js": "[112,43,59,28,240,24,206,77,72,200,172,102,136,236,133,242,242,178,31,250,231,150,13,98,223,11,208,171,144,146,236,88]",
+              "sol": "stringToBytes32(\"112,43,59,28,240,24,206,77,72,200,172,102,136,236,133,242,242,178,31,250,231,150,13,98,223,11,208,171,144,146,236,88\")"
+            },
+            {
+              "js": "\"0x0000000000000000000000000000000000000000\"",
+              "sol": "0x0000000000000000000000000000000000000000"
+            },
+            {
+              "js": "66",
+              "sol": "66"
+            },
+            {
+              "js": "{from:accounts[0],value:66}",
+              "sol": "{\"from\":\"0x0\",\"value\":\"66\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail deposit(bytes32,address,uint) when NOT comply with: msg.value == _amount",
+            "parameters": [
+              {
+                "js": "[112,43,59,28,240,24,206,77,72,200,172,102,136,236,133,242,242,178,31,250,231,150,13,98,223,11,208,171,144,146,236,88]",
+                "sol": "stringToBytes32(\"112,43,59,28,240,24,206,77,72,200,172,102,136,236,133,242,242,178,31,250,231,150,13,98,223,11,208,171,144,146,236,88\")"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": 67,
+                "sol": 67
+              },
+              {
+                "js": "{from:accounts[0],value:66}",
+                "sol": "{\"from\":\"0x0\",\"value\":\"66\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "204-215",
+          "restrictions": [
+            "_token != 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute deposit(bytes32,address,uint) WHEN _token!=0x0000000000000000000000000000000000000000,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamps",
+          "parameters": [
+            {
+              "js": "[131,5,202,222,192,134,238,78,124,240,155,185,6,239,60,51,104,44,102,11,247,168,220,155,138,237,80,134,51,21,24,151]",
+              "sol": "stringToBytes32(\"131,5,202,222,192,134,238,78,124,240,155,185,6,239,60,51,104,44,102,11,247,168,220,155,138,237,80,134,51,21,24,151\")"
+            },
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "3",
+              "sol": "3"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.065ZSwaps.cancel": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute cancel(bytes32) WHEN msg.sender==owners,isCancelled!=true,isSwapped!=true",
+          "parameters": [
+            {
+              "js": "[92,185,209,175,50,196,222,199,196,45,85,163,234,118,71,164,199,146,92,178,237,49,188,54,168,103,149,89,94,148,57,137]",
+              "sol": "stringToBytes32(\"92,185,209,175,50,196,222,199,196,45,85,163,234,118,71,164,199,146,92,178,237,49,188,54,168,103,149,89,94,148,57,137\")"
+            },
+            {
+              "js": "{from:0}",
+              "sol": "{\"from\":\"0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.066ZSwaps.refund": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "253-255",
+          "restrictions": [
+            "investment > 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute refund(bytes32,address) WHEN investment>0,isSwapped!=true",
+          "parameters": [
+            {
+              "js": "[173,218,41,154,158,214,165,157,88,146,223,191,48,194,232,237,0,193,166,74,178,237,199,238,126,153,106,85,231,146,12,39]",
+              "sol": "stringToBytes32(\"173,218,41,154,158,214,165,157,88,146,223,191,48,194,232,237,0,193,166,74,178,237,199,238,126,153,106,85,231,146,12,39\")"
+            },
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "investment <= 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute refund(bytes32,address) WHEN investment<=0,isSwapped!=true",
+          "parameters": [
+            {
+              "js": "[100,119,14,206,179,130,129,129,200,255,41,210,234,211,227,187,45,161,222,148,38,233,177,191,212,198,250,137,141,2,158,194]",
+              "sol": "stringToBytes32(\"100,119,14,206,179,130,129,129,200,255,41,210,234,211,227,187,45,161,222,148,38,233,177,191,212,198,250,137,141,2,158,194\")"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "2": {
+        "branch": {
+          "loc": "259-262",
+          "restrictions": [
+            "investment > 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute refund(bytes32,address) WHEN investment>0,isSwapped!=true",
+          "parameters": [
+            {
+              "js": "[60,140,157,50,57,245,124,115,86,247,156,67,218,123,11,51,137,117,178,33,110,63,145,222,94,209,34,155,88,88,32,89]",
+              "sol": "stringToBytes32(\"60,140,157,50,57,245,124,115,86,247,156,67,218,123,11,51,137,117,178,33,110,63,145,222,94,209,34,155,88,88,32,89\")"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "investment <= 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute refund(bytes32,address) WHEN investment<=0,isSwapped!=true",
+          "parameters": [
+            {
+              "js": "[52,158,1,43,74,2,238,51,244,74,90,161,138,38,171,75,168,8,86,34,150,207,202,26,175,171,163,84,61,171,141,125]",
+              "sol": "stringToBytes32(\"52,158,1,43,74,2,238,51,244,74,90,161,138,38,171,75,168,8,86,34,150,207,202,26,175,171,163,84,61,171,141,125\")"
+            },
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.068ZSwaps.setVault": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute setVault(Vault) WHEN msg.sender==_owner",
+          "parameters": [
+            {
+              "js": "contractVault.address",
+              "sol": "contractVault"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail setVault(Vault) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "contractVault.address",
+                "sol": "contractVault"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.069ZSwaps.setMyWishPercents": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute setMyWishPercents(uint,uint) WHEN msg.sender==_owner,_basePercent<=10000,_quotePercent<=10000",
+          "parameters": [
+            {
+              "js": "255",
+              "sol": "255"
+            },
+            {
+              "js": "66",
+              "sol": "66"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail setMyWishPercents(uint,uint) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "255",
+                "sol": "255"
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail setMyWishPercents(uint,uint) when NOT comply with: _basePercent <= 10000",
+            "parameters": [
+              {
+                "js": 10001,
+                "sol": 10001
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail setMyWishPercents(uint,uint) when NOT comply with: _quotePercent <= 10000",
+            "parameters": [
+              {
+                "js": "255",
+                "sol": "255"
+              },
+              {
+                "js": 10001,
+                "sol": 10001
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.070ZSwaps.setMyWishAddress": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute setMyWishAddress(address) WHEN msg.sender==_owner",
+          "parameters": [
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail setMyWishAddress(address) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.071ZSwaps.createKey": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute createKey(address)",
+          "parameters": [
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.072ZSwaps.allBrokersBasePercent": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute allBrokersBasePercent(bytes32)",
+          "parameters": [
+            {
+              "js": "[133,80,174,84,83,216,167,245,244,106,190,143,43,84,177,250,59,202,248,176,181,137,96,46,87,42,151,236,102,251,72,71]",
+              "sol": "stringToBytes32(\"133,80,174,84,83,216,167,245,244,106,190,143,43,84,177,250,59,202,248,176,181,137,96,46,87,42,151,236,102,251,72,71\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.072ZSwaps.allBrokersQuotePercent": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute allBrokersQuotePercent(bytes32)",
+          "parameters": [
+            {
+              "js": "[45,213,78,14,212,213,232,61,19,163,205,187,4,152,209,5,205,192,164,116,226,111,147,192,189,156,1,88,192,253,241,231]",
+              "sol": "stringToBytes32(\"45,213,78,14,212,213,232,61,19,163,205,187,4,152,209,5,205,192,164,116,226,111,147,192,189,156,1,88,192,253,241,231\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.072ZSwaps.baseLimit": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute baseLimit(bytes32)",
+          "parameters": [
+            {
+              "js": "[205,159,107,238,227,235,197,34,237,29,249,183,157,238,43,130,26,93,188,167,150,56,69,245,142,221,138,66,153,188,173,131]",
+              "sol": "stringToBytes32(\"205,159,107,238,227,235,197,34,237,29,249,183,157,238,43,130,26,93,188,167,150,56,69,245,142,221,138,66,153,188,173,131\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.073ZSwaps.quoteLimit": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute quoteLimit(bytes32)",
+          "parameters": [
+            {
+              "js": "[191,227,254,107,188,201,3,116,48,134,228,207,86,102,75,177,164,236,222,167,22,247,110,92,82,22,178,212,78,226,177,227]",
+              "sol": "stringToBytes32(\"191,227,254,107,188,201,3,116,48,134,228,207,86,102,75,177,164,236,222,167,22,247,110,92,82,22,178,212,78,226,177,227\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.073ZSwaps.baseRaised": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute baseRaised(bytes32)",
+          "parameters": [
+            {
+              "js": "[111,102,28,73,109,104,144,204,177,233,150,23,23,145,12,12,118,215,132,94,134,244,136,155,25,86,242,88,190,76,17,213]",
+              "sol": "stringToBytes32(\"111,102,28,73,109,104,144,204,177,233,150,23,23,145,12,12,118,215,132,94,134,244,136,155,25,86,242,88,190,76,17,213\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.073ZSwaps.quoteRaised": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute quoteRaised(bytes32)",
+          "parameters": [
+            {
+              "js": "[48,0,156,219,131,32,104,108,250,8,14,70,227,192,235,235,100,64,157,2,63,116,112,112,193,13,183,160,28,46,9,26]",
+              "sol": "stringToBytes32(\"48,0,156,219,131,32,104,108,250,8,14,70,227,192,235,235,100,64,157,2,63,116,112,112,193,13,183,160,28,46,9,26\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.073ZSwaps.isBaseFilled": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute isBaseFilled(bytes32)",
+          "parameters": [
+            {
+              "js": "[84,212,179,49,216,198,251,180,24,220,177,112,127,227,159,16,38,231,50,202,175,94,228,243,127,160,44,85,2,26,39,222]",
+              "sol": "stringToBytes32(\"84,212,179,49,216,198,251,180,24,220,177,112,127,227,159,16,38,231,50,202,175,94,228,243,127,160,44,85,2,26,39,222\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.074ZSwaps.isQuoteFilled": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute isQuoteFilled(bytes32)",
+          "parameters": [
+            {
+              "js": "[109,88,191,224,113,76,71,133,58,129,131,54,0,237,101,166,20,133,126,200,225,239,122,16,252,146,222,55,15,153,159,63]",
+              "sol": "stringToBytes32(\"109,88,191,224,113,76,71,133,58,129,131,54,0,237,101,166,20,133,126,200,225,239,122,16,252,146,222,55,15,153,159,63\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.074ZSwaps.baseInvestors": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute baseInvestors(bytes32)",
+          "parameters": [
+            {
+              "js": "[134,167,206,106,27,93,97,215,3,192,165,86,30,133,251,88,189,30,144,180,197,59,194,72,240,220,58,212,124,241,82,116]",
+              "sol": "stringToBytes32(\"134,167,206,106,27,93,97,215,3,192,165,86,30,133,251,88,189,30,144,180,197,59,194,72,240,220,58,212,124,241,82,116\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.074ZSwaps.quoteInvestors": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute quoteInvestors(bytes32)",
+          "parameters": [
+            {
+              "js": "[23,114,55,31,217,44,162,168,114,89,228,147,141,243,69,205,91,64,98,94,169,255,128,94,104,46,46,227,147,140,164,111]",
+              "sol": "stringToBytes32(\"23,114,55,31,217,44,162,168,114,89,228,147,141,243,69,205,91,64,98,94,169,255,128,94,104,46,46,227,147,140,164,111\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.075ZSwaps.baseUserInvestment": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute baseUserInvestment(bytes32,address)",
+          "parameters": [
+            {
+              "js": "[6,15,192,254,7,36,33,142,118,84,158,231,128,57,124,47,188,161,233,246,207,170,207,229,58,216,217,87,142,8,133,120]",
+              "sol": "stringToBytes32(\"6,15,192,254,7,36,33,142,118,84,158,231,128,57,124,47,188,161,233,246,207,170,207,229,58,216,217,87,142,8,133,120\")"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.075ZSwaps.quoteUserInvestment": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute quoteUserInvestment(bytes32,address)",
+          "parameters": [
+            {
+              "js": "[213,187,239,18,105,11,189,89,9,197,122,24,221,211,120,79,25,241,102,189,99,103,59,36,104,146,29,145,51,151,147,29]",
+              "sol": "stringToBytes32(\"213,187,239,18,105,11,189,89,9,197,122,24,221,211,120,79,25,241,102,189,99,103,59,36,104,146,29,145,51,151,147,29\")"
+            },
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.076ZSwaps.orderBrokers": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute orderBrokers(bytes32)",
+          "parameters": [
+            {
+              "js": "[14,201,63,159,142,80,76,162,103,131,55,202,47,57,232,58,147,54,191,57,229,133,70,174,59,114,13,92,91,227,21,123]",
+              "sol": "stringToBytes32(\"14,201,63,159,142,80,76,162,103,131,55,202,47,57,232,58,147,54,191,57,229,133,70,174,59,114,13,92,91,227,21,123\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.081ZProxySwaps.test_allBrokersPercent": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_allBrokersPercent(address,bytes32)",
+          "parameters": [
+            {
+              "js": "accounts[0]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "[107,198,228,149,245,108,83,155,140,142,200,230,64,61,85,86,209,13,141,42,249,180,81,80,172,99,88,159,52,171,64,219]",
+              "sol": "stringToBytes32(\"107,198,228,149,245,108,83,155,140,142,200,230,64,61,85,86,209,13,141,42,249,180,81,80,172,99,88,159,52,171,64,219\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.081ZProxySwaps.test_swap": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_swap(bytes32) WHEN isSwapped!=true,isCancelled!=true,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamps",
+          "parameters": [
+            {
+              "js": "[12,24,163,108,171,75,143,44,114,113,204,86,235,241,24,245,20,218,251,134,246,23,245,108,221,49,213,255,150,91,202,70]",
+              "sol": "stringToBytes32(\"12,24,163,108,171,75,143,44,114,113,204,86,235,241,24,245,20,218,251,134,246,23,245,108,221,49,213,255,150,91,202,70\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.083ZProxySwaps.test_distribute": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_distribute(bytes32,address,address)",
+          "parameters": [
+            {
+              "js": "[125,149,173,62,125,0,109,110,146,238,251,128,87,66,82,122,116,102,77,90,253,201,197,67,155,130,26,18,33,138,52,161]",
+              "sol": "stringToBytes32(\"125,149,173,62,125,0,109,110,146,238,251,128,87,66,82,122,116,102,77,90,253,201,197,67,155,130,26,18,33,138,52,161\")"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.083ZProxySwaps.test_removeInvestor": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_removeInvestor(address[],address)",
+          "parameters": [
+            {
+              "js": "[accounts[9]]",
+              "sol": "[address(address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number)))))))]"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.084ZProxySwaps.test_deposit": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "470-477",
+          "restrictions": [
+            "baseAddresses == _token",
+            "baseOnlyInvestor != 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_deposit(bytes32,address,address,uint) WHEN baseAddresses==_token,baseOnlyInvestor!=0x0000000000000000000000000000000000000000,baseAddresses==_token,quoteAddresses==_token,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamps,msg.sender==baseOnlyInvestor",
+          "parameters": [
+            {
+              "js": "[137,43,80,126,100,77,32,147,10,40,224,246,242,7,111,145,100,81,95,250,12,1,164,123,105,155,173,223,195,57,145,156]",
+              "sol": "stringToBytes32(\"137,43,80,126,100,77,32,147,10,40,224,246,242,7,111,145,100,81,95,250,12,1,164,123,105,155,173,223,195,57,145,156\")"
+            },
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[0]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1336",
+              "sol": "1336"
+            },
+            {
+              "js": "{from:0}",
+              "sol": "{\"from\":\"0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "baseAddresses != _token"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_deposit(bytes32,address,address,uint) WHEN baseAddresses!=_token,baseAddresses==_token,quoteAddresses==_token,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamps",
+          "parameters": [
+            {
+              "js": "[198,77,20,214,240,131,240,89,171,99,254,61,36,254,37,54,42,155,201,77,61,22,110,195,153,217,200,189,239,72,16,205]",
+              "sol": "stringToBytes32(\"198,77,20,214,240,131,240,89,171,99,254,61,36,254,37,54,42,155,201,77,61,22,110,195,153,217,200,189,239,72,16,205\")"
+            },
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "29",
+              "sol": "29"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "2": {
+        "branch": {
+          "loc": "487-493",
+          "restrictions": [
+            "FunctionCall != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_deposit(bytes32,address,address,uint) WHEN FunctionCall!=true,baseAddresses==_token,quoteAddresses==_token,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamps",
+          "parameters": [
+            {
+              "js": "[54,219,255,72,235,215,67,82,37,24,153,190,248,221,33,19,66,209,91,64,182,180,4,213,155,19,124,169,151,92,147,25]",
+              "sol": "stringToBytes32(\"54,219,255,72,235,215,67,82,37,24,153,190,248,221,33,19,66,209,91,64,182,180,4,213,155,19,124,169,151,92,147,25\")"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "11",
+              "sol": "11"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "FunctionCall == true",
+            "baseOnlyInvestor == 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_deposit(bytes32,address,address,uint) WHEN FunctionCall==true,baseOnlyInvestor==0x0000000000000000000000000000000000000000,baseAddresses==_token,quoteAddresses==_token,(await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp<=expirationTimestamps",
+          "parameters": [
+            {
+              "js": "[80,170,52,211,240,53,8,85,177,158,91,94,203,179,1,243,149,203,214,65,156,220,24,114,47,37,75,198,126,166,246,202]",
+              "sol": "stringToBytes32(\"80,170,52,211,240,53,8,85,177,158,91,94,203,179,1,243,149,203,214,65,156,220,24,114,47,37,75,198,126,166,246,202\")"
+            },
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "26",
+              "sol": "26"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.086ZProxySwaps.test_isInvestor": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_isInvestor(bytes32,address,address)",
+          "parameters": [
+            {
+              "js": "[109,235,33,194,220,57,141,198,85,220,46,213,125,36,29,234,229,81,46,207,60,6,65,66,226,145,207,239,147,152,57,196]",
+              "sol": "stringToBytes32(\"109,235,33,194,220,57,141,198,85,220,46,213,125,36,29,234,229,81,46,207,60,6,65,66,226,145,207,239,147,152,57,196\")"
+            },
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.087ZVault.": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute fallback()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.088ZVault.tokenFallback": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute tokenFallback(address,uint,bytes)",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "29",
+              "sol": "29"
+            },
+            {
+              "js": "[4,245,56,254,53,200,70,10,10,221,139,73,159,193,162,58,150,199,211,253,165,156,199,40,141,36,163,84,110,50,143,5]",
+              "sol": "abi.encode(\"4,245,56,254,53,200,70,10,10,221,139,73,159,193,162,58,150,199,211,253,165,156,199,40,141,36,163,84,110,50,143,5\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.088ZVault.setSwaps": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute setSwaps(address) WHEN msg.sender==_owner",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail setSwaps(address) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T23:57:45.088ZVault.withdraw": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "26-30",
+          "restrictions": [
+            "_token == 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute withdraw(address,address,uint) WHEN _token==0x0000000000000000000000000000000000000000,msg.sender==swaps",
+          "parameters": [
+            {
+              "js": "\"0x0000000000000000000000000000000000000000\"",
+              "sol": "0x0000000000000000000000000000000000000000"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "254",
+              "sol": "254"
+            },
+            {
+              "js": "{from:accounts[7]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail withdraw(address,address,uint) when NOT comply with: msg.sender == swaps",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "254",
+                "sol": "254"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "28-30",
+          "restrictions": [
+            "_token != 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute withdraw(address,address,uint) WHEN _token!=0x0000000000000000000000000000000000000000,msg.sender==swaps",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1336",
+              "sol": "1336"
+            },
+            {
+              "js": "{from:accounts[3]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail withdraw(address,address,uint) when NOT comply with: msg.sender == swaps",
+            "parameters": [
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[5]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1336",
+                "sol": "1336"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

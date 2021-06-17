@@ -1,0 +1,172 @@
+,{
+  "2020-11-11T00:20:17.342ZSupplyChain.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T00:20:21.450ZSupplyChain.addItem": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute addItem(string,uint)",
+          "parameters": [
+            {
+              "js": "\"uc0x1\"",
+              "sol": "\"uc0x1\""
+            },
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T00:20:21.451ZSupplyChain.buyItem": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute buyItem(uint) WHEN msg.value>=sku",
+          "parameters": [
+            {
+              "js": "4",
+              "sol": "4"
+            },
+            {
+              "js": "{from:accounts[0],value:257}",
+              "sol": "{\"from\":\"0x0\",\"value\":\"257\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail buyItem(uint) when NOT comply with: msg.value >= sku",
+            "parameters": [
+              {
+                "js": 258,
+                "sol": 258
+              },
+              {
+                "js": "{from:accounts[0],value:257}",
+                "sol": "{\"from\":\"0x0\",\"value\":\"257\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T00:20:21.452ZSupplyChain.shipItem": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute shipItem(uint)",
+          "parameters": [
+            {
+              "js": "255",
+              "sol": "255"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T00:20:21.452ZSupplyChain.receiveItem": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute receiveItem(uint)",
+          "parameters": [
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T00:20:21.453ZSupplyChain.fetchItem": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute fetchItem(uint)",
+          "parameters": [
+            {
+              "js": "4",
+              "sol": "4"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+npx solidity-coverage
+qui 12 nov 2020 01:43:08 -03
+Truffle v4.1.15 (core: 4.1.15)
+Solidity v0.4.25 (solc-js)
+Generating coverage environment
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+Compiling ./contracts/DebugCounter.sol...
+Compiling ./contracts/Debuggable.sol...
+Compiling ./contracts/Migrations.sol...
+Compiling ./contracts/proxy4tests/Debuggable.sol...
+
+Compilation warnings encountered:
+
+/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/coverageEnv/contracts/proxy4tests/Debuggable.sol:1:1: Warning: Source file does not specify required compiler version!Consider adding "pragma solidity ^0.4.25;"
+import "../Debuggable.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/coverageEnv/contracts/DebugCounter.sol:15:5: Warning: No visibility specified. Defaulting to "public". 
+    constructor(string _name) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/coverageEnv/contracts/Debuggable.sol:63:5: Warning: Function state mutability can be restricted to pure
+    function debugNoop() public {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+Writing artifacts to ./build/contracts
+
+Instrumenting  ./coverageEnv/contracts/DebugCounter.sol
+Instrumenting  ./coverageEnv/contracts/Debuggable.sol
+Skipping instrumentation of  ./coverageEnv/contracts/Migrations.sol
+Instrumenting  ./coverageEnv/contracts/proxy4tests/Debuggable.sol
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+Compiling ./contracts/DebugCounter.sol...
+Compiling ./contracts/Debuggable.sol...
+Compiling ./contracts/Migrations.sol...
+Compiling ./contracts/proxy4tests/Debuggable.sol...
+
+Compilation warnings encountered:
+
+/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/coverageEnv/contracts/proxy4tests/Debuggable.sol:1:1: Warning: Source file does not specify required compiler version!Consider adding "pragma solidity ^0.4.25;"
+import "../Debuggable.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/coverageEnv/contracts/DebugCounter.sol:21:5: Warning: No visibility specified. Defaulting to "public". 
+    constructor(string _name) {emit __FunctionCoverageDebugCounter('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/contracts/DebugCounter.sol',1);
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+Writing artifacts to ./build/contracts
+
+Launched testrpc on port 8555
+Running: truffle test --network coverage 
+(this can take a few seconds)...
+Using network 'coverage'.
+
+
+  Contract: DebugCounter
+    ✓ Should execute <unamed>() (43565 gas)
+    ✓ Should execute increment() (43443 gas)
+
+  Contract: contractProxyDebuggable
+    ✓ Should execute testdebug0(string) (27552 gas)
+    ✓ Should execute testdebug1(bytes32) (33207 gas)
+    ✓ Should execute testdebug2(uint256) (25232 gas)
+    ✓ Should execute testdebug3(address) (26428 gas)
+
+    1) Should execute testdebugRevert0()
+    > No events were emitted
+
+    2) Should execute testdebugRevert1(string)
+    > No events were emitted
+    ✓ Should execute testdebugNoop() (24007 gas)
+    ✓ Should execute testdebugNoopConstant()
+
+·-----------------------------------------------------------------|-----------------------------------·
+|                               [32m[1mGas[22m[39m                               ·  [90mBlock limit: 17592186044415 gas[39m  │
+··································································|····································
+|  [32m[1mMethods[22m[39m                                                                                            │
+····················|·················|·······|·······|···········|··················|·················
+|  [1mContract[22m         ·  [1mMethod[22m         ·  [32mMin[39m  ·  [32mMax[39m  ·  [32mAvg[39m      ·  [1m# calls[22m         ·  [1musd (avg)[22m     │
+····················|·················|·······|·······|···········|··················|·················
+|  [90mDebugCounter[39m     ·  increment      ·    -  ·    -  ·    43443  ·               [90m1[39m  ·             [32m[90m-[32m[39m  │
+····················|·················|·······|·······|···········|··················|·················
+|  [90mProxyDebuggable[39m  ·  testdebug0     ·    -  ·    -  ·    27552  ·               [90m1[39m  ·             [32m[90m-[32m[39m  │
+····················|·················|·······|·······|···········|··················|·················
+|  [90mProxyDebuggable[39m  ·  testdebug1     ·    -  ·    -  ·    33207  ·               [90m1[39m  ·             [32m[90m-[32m[39m  │
+····················|·················|·······|·······|···········|··················|·················
+|  [90mProxyDebuggable[39m  ·  testdebug2     ·    -  ·    -  ·    25232  ·               [90m1[39m  ·             [32m[90m-[32m[39m  │
+····················|·················|·······|·······|···········|··················|·················
+|  [90mProxyDebuggable[39m  ·  testdebug3     ·    -  ·    -  ·    26428  ·               [90m1[39m  ·             [32m[90m-[32m[39m  │
+····················|·················|·······|·······|···········|··················|·················
+|  [90mProxyDebuggable[39m  ·  testdebugNoop  ·    -  ·    -  ·    24007  ·               [90m1[39m  ·             [32m[90m-[32m[39m  │
+····················|·················|·······|·······|···········|··················|·················
+|  [32m[1mDeployments[22m[39m                        ·                           ·  [1m% of limit[22m      ·                │
+······································|·······|·······|···········|··················|·················
+|  DebugCounter                       ·    -  ·    -  ·   744536  ·             [90m0 %[39m  ·             [32m[90m-[32m[39m  │
+······································|·······|·······|···········|··················|·················
+|  Debuggable                         ·    -  ·    -  ·  2341556  ·             [90m0 %[39m  ·             [32m[90m-[32m[39m  │
+······································|·······|·······|···········|··················|·················
+|  ProxyDebuggable                    ·    -  ·    -  ·  2126076  ·             [90m0 %[39m  ·             [32m[90m-[32m[39m  │
+·-------------------------------------|-------|-------|-----------|------------------|----------------·
+
+  8 passing (7s)
+  2 failing
+
+  1) Contract: contractProxyDebuggable
+       Should execute testdebugRevert0():
+     Error: VM Exception while processing transaction: revert
+      at Object.InvalidResponse (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/web3/lib/web3/errors.js:38:1)
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/web3/lib/web3/requestmanager.js:86:1
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:134:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/web3/lib/web3/httpprovider.js:128:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:64:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:354:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:509:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:469:1)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+  2) Contract: contractProxyDebuggable
+       Should execute testdebugRevert1(string):
+     Error: VM Exception while processing transaction: revert g6pfc
+      at Object.InvalidResponse (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/web3/lib/web3/errors.js:38:1)
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/web3/lib/web3/requestmanager.js:86:1
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:134:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/web3/lib/web3/httpprovider.js:128:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:64:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:354:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:509:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/debug-solidity/node_modules/truffle/build/webpack:/~/xhr2/lib/xhr2.js:469:1)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+
+
+------------------------|----------|----------|----------|----------|----------------|
+File                    |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+------------------------|----------|----------|----------|----------|----------------|
+ contracts/             |      100 |       50 |      100 |      100 |                |
+  DebugCounter.sol      |      100 |      100 |      100 |      100 |                |
+  Debuggable.sol        |      100 |       50 |      100 |      100 |                |
+ contracts/proxy4tests/ |      100 |      100 |      100 |      100 |                |
+  Debuggable.sol        |      100 |      100 |      100 |      100 |                |
+------------------------|----------|----------|----------|----------|----------------|
+All files               |      100 |       50 |      100 |      100 |                |
+------------------------|----------|----------|----------|----------|----------------|
+
+Istanbul coverage reports generated
+Cleaning up...
+Shutting down testrpc-sc (pid 488271)
+Some truffle tests failed while running coverage

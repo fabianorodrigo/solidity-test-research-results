@@ -1,0 +1,661 @@
+,{
+  "2020-11-11T07:02:56.615ZAiakos.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(uint) WHEN _requiredNumberOfMaintainers>0",
+          "parameters": [
+            {
+              "js": "18",
+              "sol": "18"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail constructor(uint) when NOT comply with: _requiredNumberOfMaintainers > 0",
+            "parameters": [
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.739ZProxyReleases.testinit": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testinit(Releases.Release,string,bytes32)",
+          "parameters": [
+            {
+              "js": "{\"version\": \"fhne0n\",\"sha256Hash\": [230,215,48,94,21,111,101,28,55,137,35,125,111,175,95,62,207,84,227,157,113,90,12,180,151,112,96,86,166,241,224,179],\"approvalCounter\": 17,\"initialized\": true,\"approved\": false}",
+              "sol": "Releases.Release(\"fhne0n\",stringToBytes32(\"230,215,48,94,21,111,101,28,55,137,35,125,111,175,95,62,207,84,227,157,113,90,12,180,151,112,96,86,166,241,224,179\"),17,true,false)"
+            },
+            {
+              "js": "\"PayableExample\"",
+              "sol": "\"PayableExample\""
+            },
+            {
+              "js": "[14,209,173,193,193,112,90,174,171,98,15,93,24,214,52,246,56,24,109,229,210,251,159,8,230,217,117,133,33,164,231,61]",
+              "sol": "stringToBytes32(\"14,209,173,193,193,112,90,174,171,98,15,93,24,214,52,246,56,24,109,229,210,251,159,8,230,217,117,133,33,164,231,61\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.740ZProxyReleases.testcheck": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testcheck(Releases.Release,bytes32) WHEN release.sha256Hash==sha256Hash",
+          "parameters": [
+            {
+              "js": "{\"version\": \"superuser\",\"sha256Hash\": [219,232,23,249,7,147,88,99,221,89,212,126,46,173,173,17,56,107,103,155,254,64,99,14,51,50,252,140,200,60,249,239],\"approvalCounter\": 1532892063,\"initialized\": true,\"approved\": false}",
+              "sol": "Releases.Release(\"superuser\",stringToBytes32(\"219,232,23,249,7,147,88,99,221,89,212,126,46,173,173,17,56,107,103,155,254,64,99,14,51,50,252,140,200,60,249,239\"),1532892063,true,false)"
+            },
+            {
+              "js": "[219,232,23,249,7,147,88,99,221,89,212,126,46,173,173,17,56,107,103,155,254,64,99,14,51,50,252,140,200,60,249,239]",
+              "sol": "stringToBytes32(\"219,232,23,249,7,147,88,99,221,89,212,126,46,173,173,17,56,107,103,155,254,64,99,14,51,50,252,140,200,60,249,239\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testcheck(Releases.Release,bytes32) when NOT comply with: release.sha256Hash == sha256Hash",
+            "parameters": [
+              {
+                "js": "{version : \"superuser\",sha256Hash : [4,114,80,100,18,39,174,160,252,90,18,50,67,50,54,239,5,197,67,211,172,11,30,165,223,249,65,45,252,50,242,226],approvalCounter : 1532892063,initialized : true,approved : false}",
+                "sol": "Releases.Release(\"superuser\",stringToBytes32(\"4,114,80,100,18,39,174,160,252,90,18,50,67,50,54,239,5,197,67,211,172,11,30,165,223,249,65,45,252,50,242,226\"),1532892063,true,false)"
+              },
+              {
+                "js": "[219,232,23,249,7,147,88,99,221,89,212,126,46,173,173,17,56,107,103,155,254,64,99,14,51,50,252,140,200,60,249,239]",
+                "sol": "stringToBytes32(\"219,232,23,249,7,147,88,99,221,89,212,126,46,173,173,17,56,107,103,155,254,64,99,14,51,50,252,140,200,60,249,239\")"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.741ZProxyReleases.testaddApproval": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "64-68",
+          "restrictions": [
+            "release.approvalCounter == requiredNumberOfMaintainers"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testaddApproval(Releases.Release,address,uint) WHEN release.approvalCounter==requiredNumberOfMaintainers,release.approved!=true",
+          "parameters": [
+            {
+              "js": "{\"version\": \"Example\",\"sha256Hash\": [82,64,240,146,184,108,161,67,99,4,247,43,251,92,109,49,91,12,134,136,7,98,40,50,153,171,38,30,180,156,25,243],\"approvalCounter\": 28,\"initialized\": false,\"approved\": false}",
+              "sol": "Releases.Release(\"Example\",stringToBytes32(\"82,64,240,146,184,108,161,67,99,4,247,43,251,92,109,49,91,12,134,136,7,98,40,50,153,171,38,30,180,156,25,243\"),28,false,false)"
+            },
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "28",
+              "sol": "28"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testaddApproval(Releases.Release,address,uint) when NOT comply with: release.approved != true",
+            "parameters": [
+              {
+                "js": "{version : \"Example\",sha256Hash : [82,64,240,146,184,108,161,67,99,4,247,43,251,92,109,49,91,12,134,136,7,98,40,50,153,171,38,30,180,156,25,243],approvalCounter : 28,initialized : false,approved : \"true\"}",
+                "sol": "Releases.Release(\"Example\",stringToBytes32(\"82,64,240,146,184,108,161,67,99,4,247,43,251,92,109,49,91,12,134,136,7,98,40,50,153,171,38,30,180,156,25,243\"),28,false,true)"
+              },
+              {
+                "js": "accounts[5]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "28",
+                "sol": "28"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "release.approvalCounter != requiredNumberOfMaintainers"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testaddApproval(Releases.Release,address,uint) WHEN release.approvalCounter!=requiredNumberOfMaintainers,release.approved!=true",
+          "parameters": [
+            {
+              "js": "{\"version\": \"bouncer\",\"sha256Hash\": [10,186,148,106,209,58,11,178,126,192,145,229,100,140,179,42,203,102,106,208,49,105,176,126,235,134,195,141,32,18,112,122],\"approvalCounter\": 96,\"initialized\": false,\"approved\": false}",
+              "sol": "Releases.Release(\"bouncer\",stringToBytes32(\"10,186,148,106,209,58,11,178,126,192,145,229,100,140,179,42,203,102,106,208,49,105,176,126,235,134,195,141,32,18,112,122\"),96,false,false)"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1336",
+              "sol": "1336"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testaddApproval(Releases.Release,address,uint) when NOT comply with: release.approved != true",
+            "parameters": [
+              {
+                "js": "{version : \"bouncer\",sha256Hash : [10,186,148,106,209,58,11,178,126,192,145,229,100,140,179,42,203,102,106,208,49,105,176,126,235,134,195,141,32,18,112,122],approvalCounter : 96,initialized : false,approved : \"true\"}",
+                "sol": "Releases.Release(\"bouncer\",stringToBytes32(\"10,186,148,106,209,58,11,178,126,192,145,229,100,140,179,42,203,102,106,208,49,105,176,126,235,134,195,141,32,18,112,122\"),96,false,true)"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1336",
+                "sol": "1336"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.743ZAiakos.addMaintainer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute addMaintainer(address) WHEN msg.sender==_owner,_maintainerAddress!=0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail addMaintainer(address) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail addMaintainer(address) when NOT comply with: _maintainerAddress != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.745ZAiakos.deployRelease": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "75-81",
+          "restrictions": [
+            "MemberAccess.Identifier != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute deployRelease(string,bytes32) WHEN MemberAccess.Identifier!=true",
+          "parameters": [
+            {
+              "js": "\"whitelist\"",
+              "sol": "\"whitelist\""
+            },
+            {
+              "js": "[52,28,237,74,169,36,192,7,77,17,15,5,155,188,143,209,241,155,6,12,139,6,195,91,80,102,96,39,237,64,72,46]",
+              "sol": "stringToBytes32(\"52,28,237,74,169,36,192,7,77,17,15,5,155,188,143,209,241,155,6,12,139,6,195,91,80,102,96,39,237,64,72,46\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "79-81",
+          "restrictions": [
+            "MemberAccess.Identifier == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute deployRelease(string,bytes32) WHEN MemberAccess.Identifier==true",
+          "parameters": [
+            {
+              "js": "\"RevertWithReason\"",
+              "sol": "\"RevertWithReason\""
+            },
+            {
+              "js": "[189,232,247,14,70,188,167,21,248,145,137,53,60,101,145,110,174,185,154,122,198,88,147,210,21,168,255,97,51,189,186,192]",
+              "sol": "stringToBytes32(\"189,232,247,14,70,188,167,21,248,145,137,53,60,101,145,110,174,185,154,122,198,88,147,210,21,168,255,97,51,189,186,192\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "2": {
+        "branch": {
+          "loc": "84-87",
+          "restrictions": [
+            "approvalGranted == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute deployRelease(string,bytes32) WHEN approvalGranted==true",
+          "parameters": [
+            {
+              "js": "\"bouncer\"",
+              "sol": "\"bouncer\""
+            },
+            {
+              "js": "[241,32,81,94,51,0,130,39,16,21,141,198,49,225,30,34,10,150,144,196,200,79,187,102,122,26,89,6,210,214,53,208]",
+              "sol": "stringToBytes32(\"241,32,81,94,51,0,130,39,16,21,141,198,49,225,30,34,10,150,144,196,200,79,187,102,122,26,89,6,210,214,53,208\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "approvalGranted != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute deployRelease(string,bytes32) WHEN approvalGranted!=true",
+          "parameters": [
+            {
+              "js": "\"UsesExample\"",
+              "sol": "\"UsesExample\""
+            },
+            {
+              "js": "[35,214,36,59,134,60,133,152,11,5,102,115,38,3,29,170,224,234,215,128,12,41,5,176,210,38,186,119,240,169,101,113]",
+              "sol": "stringToBytes32(\"35,214,36,59,134,60,133,152,11,5,102,115,38,3,29,170,224,234,215,128,12,41,5,176,210,38,186,119,240,169,101,113\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "4": {
+        "branch": {
+          "loc": "88-91",
+          "restrictions": [
+            "releaseApproved == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute deployRelease(string,bytes32) WHEN releaseApproved==true",
+          "parameters": [
+            {
+              "js": "\"\\x19Ethereum Signed Message:\\n32\"",
+              "sol": "\"\\x19Ethereum Signed Message:\\n32\""
+            },
+            {
+              "js": "[36,235,22,217,19,223,31,173,170,192,193,242,50,76,17,81,234,152,145,236,165,4,162,182,181,98,158,188,32,141,6,191]",
+              "sol": "stringToBytes32(\"36,235,22,217,19,223,31,173,170,192,193,242,50,76,17,81,234,152,145,236,165,4,162,182,181,98,158,188,32,141,6,191\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "5": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "releaseApproved != true",
+            "approvalGranted != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute deployRelease(string,bytes32) WHEN releaseApproved!=true,approvalGranted!=true",
+          "parameters": [
+            {
+              "js": "\"superuser\"",
+              "sol": "\"superuser\""
+            },
+            {
+              "js": "[29,171,26,160,247,87,146,36,202,98,52,93,245,194,69,144,67,190,83,205,33,19,207,190,154,183,43,19,47,0,19,230]",
+              "sol": "stringToBytes32(\"29,171,26,160,247,87,146,36,202,98,52,93,245,194,69,144,67,190,83,205,33,19,207,190,154,183,43,19,47,0,19,230\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.746ZAiakos.checkRelease": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute checkRelease(string,bytes32) WHEN _sha256Hash!=0x0,MemberAccess.Identifier==true",
+          "parameters": [
+            {
+              "js": "\"PayableExample\"",
+              "sol": "\"PayableExample\""
+            },
+            {
+              "js": "[217,75,121,57,222,147,138,2,189,55,177,75,48,190,222,134,215,205,247,41,255,152,112,224,228,60,157,74,32,200,146,189]",
+              "sol": "stringToBytes32(\"217,75,121,57,222,147,138,2,189,55,177,75,48,190,222,134,215,205,247,41,255,152,112,224,228,60,157,74,32,200,146,189\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail checkRelease(string,bytes32) when NOT comply with: _sha256Hash != 0x0",
+            "parameters": [
+              {
+                "js": "\"PayableExample\"",
+                "sol": "\"PayableExample\""
+              },
+              {
+                "js": "\"0x0\"",
+                "sol": "0x0"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.746ZAiakos.getReleaseInfo": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute getReleaseInfo(string)",
+          "parameters": [
+            {
+              "js": "\"ERC1820_ACCEPT_MAGIC\"",
+              "sol": "\"ERC1820_ACCEPT_MAGIC\""
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.747ZAiakos.amIMaintainer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute amIMaintainer()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.747ZAiakos.isMaintainer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute isMaintainer(address)",
+          "parameters": [
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.747ZAiakos.getRequiredNumberOfMaintainers": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute getRequiredNumberOfMaintainers()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T07:03:02.747ZAiakos.transferOwnership": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transferOwnership(address) WHEN _newOwner!=0x0000000000000000000000000000000000000000,msg.sender==_owner",
+          "parameters": [
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transferOwnership(address) when NOT comply with: _newOwner != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail transferOwnership(address) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

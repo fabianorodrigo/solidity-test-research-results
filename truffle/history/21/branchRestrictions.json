@@ -1,0 +1,1317 @@
+,{
+  "2020-11-12T09:54:55.905ZMerkleShip.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.595ZProxySafeMath.testmul": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "15-17",
+          "restrictions": [
+            "a == 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testmul(uint256,uint256) WHEN a==0",
+          "parameters": [
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "179",
+              "sol": "179"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "a != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testmul(uint256,uint256) WHEN a!=0",
+          "parameters": [
+            {
+              "js": "47",
+              "sol": "47"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.596ZProxySafeMath.testdiv": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testdiv(uint256,uint256) WHEN b>0",
+          "parameters": [
+            {
+              "js": "11",
+              "sol": "11"
+            },
+            {
+              "js": "63",
+              "sol": "63"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testdiv(uint256,uint256) when NOT comply with: b > 0",
+            "parameters": [
+              {
+                "js": "11",
+                "sol": "11"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.596ZProxySafeMath.testsub": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testsub(uint256,uint256) WHEN b<=a",
+          "parameters": [
+            {
+              "js": "2",
+              "sol": "2"
+            },
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testsub(uint256,uint256) when NOT comply with: b <= a",
+            "parameters": [
+              {
+                "js": "2",
+                "sol": "2"
+              },
+              {
+                "js": 3,
+                "sol": 3
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.597ZProxySafeMath.testadd": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testadd(uint256,uint256)",
+          "parameters": [
+            {
+              "js": "47",
+              "sol": "47"
+            },
+            {
+              "js": "65",
+              "sol": "65"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.597ZProxySafeMath.testmod": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testmod(uint256,uint256) WHEN b!=0",
+          "parameters": [
+            {
+              "js": "11",
+              "sol": "11"
+            },
+            {
+              "js": "180",
+              "sol": "180"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testmod(uint256,uint256) when NOT comply with: b != 0",
+            "parameters": [
+              {
+                "js": "11",
+                "sol": "11"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.598ZMerkleShip.emergencyStop": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute emergencyStop(string) WHEN msg.sender==admin,isStopped==false",
+          "parameters": [
+            {
+              "js": "\"lgxidp\"",
+              "sol": "\"lgxidp\""
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail emergencyStop(string) when NOT comply with: msg.sender == admin",
+            "parameters": [
+              {
+                "js": "\"lgxidp\"",
+                "sol": "\"lgxidp\""
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.599ZMerkleShip.proposeGame": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute proposeGame(uint96,bytes32) WHEN isStopped==false,msg.value==_wager",
+          "parameters": [
+            {
+              "js": "40",
+              "sol": "40"
+            },
+            {
+              "js": "[177,8,218,21,28,16,54,246,20,59,187,176,236,157,238,168,142,252,250,42,224,8,63,175,168,94,243,242,2,212,51,250]",
+              "sol": "stringToBytes32(\"177,8,218,21,28,16,54,246,20,59,187,176,236,157,238,168,142,252,250,42,224,8,63,175,168,94,243,242,2,212,51,250\")"
+            },
+            {
+              "js": "{from:accounts[0],value:40}",
+              "sol": "{\"from\":\"0x0\",\"value\":\"40\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail proposeGame(uint96,bytes32) when NOT comply with: isStopped == false",
+            "parameters": [
+              {
+                "js": "40",
+                "sol": "40"
+              },
+              {
+                "js": "[177,8,218,21,28,16,54,246,20,59,187,176,236,157,238,168,142,252,250,42,224,8,63,175,168,94,243,242,2,212,51,250]",
+                "sol": "stringToBytes32(\"177,8,218,21,28,16,54,246,20,59,187,176,236,157,238,168,142,252,250,42,224,8,63,175,168,94,243,242,2,212,51,250\")"
+              },
+              {
+                "js": "{from:accounts[0],value:40}",
+                "sol": "{\"from\":\"0x0\",\"value\":\"40\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail proposeGame(uint96,bytes32) when NOT comply with: msg.value == _wager",
+            "parameters": [
+              {
+                "js": 41,
+                "sol": 41
+              },
+              {
+                "js": "[177,8,218,21,28,16,54,246,20,59,187,176,236,157,238,168,142,252,250,42,224,8,63,175,168,94,243,242,2,212,51,250]",
+                "sol": "stringToBytes32(\"177,8,218,21,28,16,54,246,20,59,187,176,236,157,238,168,142,252,250,42,224,8,63,175,168,94,243,242,2,212,51,250\")"
+              },
+              {
+                "js": "{from:accounts[0],value:40}",
+                "sol": "{\"from\":\"0x0\",\"value\":\"40\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.601ZMerkleShip.acceptGame": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute acceptGame(uint32,bytes32) WHEN isStopped==false",
+          "parameters": [
+            {
+              "js": "8",
+              "sol": "8"
+            },
+            {
+              "js": "[253,107,229,142,240,53,199,208,43,116,205,2,237,253,115,213,95,63,3,82,140,195,60,88,179,83,76,144,34,211,244,208]",
+              "sol": "stringToBytes32(\"253,107,229,142,240,53,199,208,43,116,205,2,237,253,115,213,95,63,3,82,140,195,60,88,179,83,76,144,34,211,244,208\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail acceptGame(uint32,bytes32) when NOT comply with: isStopped == false",
+            "parameters": [
+              {
+                "js": "8",
+                "sol": "8"
+              },
+              {
+                "js": "[253,107,229,142,240,53,199,208,43,116,205,2,237,253,115,213,95,63,3,82,140,195,60,88,179,83,76,144,34,211,244,208]",
+                "sol": "stringToBytes32(\"253,107,229,142,240,53,199,208,43,116,205,2,237,253,115,213,95,63,3,82,140,195,60,88,179,83,76,144,34,211,244,208\")"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.602ZMerkleShip.cancelProposedGame": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute cancelProposedGame(uint32) WHEN isStopped==false",
+          "parameters": [
+            {
+              "js": "11",
+              "sol": "11"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail cancelProposedGame(uint32) when NOT comply with: isStopped == false",
+            "parameters": [
+              {
+                "js": "11",
+                "sol": "11"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.603ZMerkleShip.guessAndReveal": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute guessAndReveal(uint32,uint8[2],bytes32[6],string,string) WHEN isStopped==false",
+          "parameters": [
+            {
+              "js": "100",
+              "sol": "100"
+            },
+            {
+              "js": "[0,63]",
+              "sol": "[uint8(0),uint8(63)]"
+            },
+            {
+              "js": "[[101,237,138,153,134,46,24,33,8,201,41,144,114,165,215,80,254,214,221,159,146,143,27,53,129,77,243,221,147,85,141,56],[178,52,74,157,18,130,143,151,34,88,28,17,158,26,186,146,88,133,15,31,21,76,45,216,245,219,30,203,55,26,132,148],[51,135,15,124,248,1,74,176,84,242,104,72,235,154,158,64,22,117,154,150,217,236,252,240,26,47,42,119,136,2,237,112],[93,6,194,37,184,26,164,207,146,136,173,151,210,206,2,67,117,15,228,186,66,58,47,111,185,17,40,31,55,21,112,172],[86,162,167,118,62,148,227,199,188,93,190,176,40,134,39,167,154,244,251,76,169,14,33,34,247,158,85,138,35,58,141,96],[124,71,190,187,61,237,241,112,70,28,247,51,57,87,47,37,169,165,154,175,168,202,118,62,122,214,53,228,62,66,134,45]]",
+              "sol": "[bytes32(stringToBytes32(\"101,237,138,153,134,46,24,33,8,201,41,144,114,165,215,80,254,214,221,159,146,143,27,53,129,77,243,221,147,85,141,56\")),bytes32(stringToBytes32(\"178,52,74,157,18,130,143,151,34,88,28,17,158,26,186,146,88,133,15,31,21,76,45,216,245,219,30,203,55,26,132,148\")),bytes32(stringToBytes32(\"51,135,15,124,248,1,74,176,84,242,104,72,235,154,158,64,22,117,154,150,217,236,252,240,26,47,42,119,136,2,237,112\")),bytes32(stringToBytes32(\"93,6,194,37,184,26,164,207,146,136,173,151,210,206,2,67,117,15,228,186,66,58,47,111,185,17,40,31,55,21,112,172\")),bytes32(stringToBytes32(\"86,162,167,118,62,148,227,199,188,93,190,176,40,134,39,167,154,244,251,76,169,14,33,34,247,158,85,138,35,58,141,96\")),bytes32(stringToBytes32(\"124,71,190,187,61,237,241,112,70,28,247,51,57,87,47,37,169,165,154,175,168,202,118,62,122,214,53,228,62,66,134,45\"))]"
+            },
+            {
+              "js": "\"victory by abandonment\"",
+              "sol": "\"victory by abandonment\""
+            },
+            {
+              "js": "\"lgxidp\"",
+              "sol": "\"lgxidp\""
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail guessAndReveal(uint32,uint8[2],bytes32[6],string,string) when NOT comply with: isStopped == false",
+            "parameters": [
+              {
+                "js": "100",
+                "sol": "100"
+              },
+              {
+                "js": "[0,63]",
+                "sol": "[uint8(0),uint8(63)]"
+              },
+              {
+                "js": "[[101,237,138,153,134,46,24,33,8,201,41,144,114,165,215,80,254,214,221,159,146,143,27,53,129,77,243,221,147,85,141,56],[178,52,74,157,18,130,143,151,34,88,28,17,158,26,186,146,88,133,15,31,21,76,45,216,245,219,30,203,55,26,132,148],[51,135,15,124,248,1,74,176,84,242,104,72,235,154,158,64,22,117,154,150,217,236,252,240,26,47,42,119,136,2,237,112],[93,6,194,37,184,26,164,207,146,136,173,151,210,206,2,67,117,15,228,186,66,58,47,111,185,17,40,31,55,21,112,172],[86,162,167,118,62,148,227,199,188,93,190,176,40,134,39,167,154,244,251,76,169,14,33,34,247,158,85,138,35,58,141,96],[124,71,190,187,61,237,241,112,70,28,247,51,57,87,47,37,169,165,154,175,168,202,118,62,122,214,53,228,62,66,134,45]]",
+                "sol": "[bytes32(stringToBytes32(\"101,237,138,153,134,46,24,33,8,201,41,144,114,165,215,80,254,214,221,159,146,143,27,53,129,77,243,221,147,85,141,56\")),bytes32(stringToBytes32(\"178,52,74,157,18,130,143,151,34,88,28,17,158,26,186,146,88,133,15,31,21,76,45,216,245,219,30,203,55,26,132,148\")),bytes32(stringToBytes32(\"51,135,15,124,248,1,74,176,84,242,104,72,235,154,158,64,22,117,154,150,217,236,252,240,26,47,42,119,136,2,237,112\")),bytes32(stringToBytes32(\"93,6,194,37,184,26,164,207,146,136,173,151,210,206,2,67,117,15,228,186,66,58,47,111,185,17,40,31,55,21,112,172\")),bytes32(stringToBytes32(\"86,162,167,118,62,148,227,199,188,93,190,176,40,134,39,167,154,244,251,76,169,14,33,34,247,158,85,138,35,58,141,96\")),bytes32(stringToBytes32(\"124,71,190,187,61,237,241,112,70,28,247,51,57,87,47,37,169,165,154,175,168,202,118,62,122,214,53,228,62,66,134,45\"))]"
+              },
+              {
+                "js": "\"victory by abandonment\"",
+                "sol": "\"victory by abandonment\""
+              },
+              {
+                "js": "\"lgxidp\"",
+                "sol": "\"lgxidp\""
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.605ZMerkleShip.resolveAbandonedGame": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute resolveAbandonedGame(uint32) WHEN isStopped==false",
+          "parameters": [
+            {
+              "js": "48",
+              "sol": "48"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail resolveAbandonedGame(uint32) when NOT comply with: isStopped == false",
+            "parameters": [
+              {
+                "js": "48",
+                "sol": "48"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.606ZMerkleShip.concedeGame": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute concedeGame(uint32) WHEN isStopped==false",
+          "parameters": [
+            {
+              "js": "12",
+              "sol": "12"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail concedeGame(uint32) when NOT comply with: isStopped == false",
+            "parameters": [
+              {
+                "js": "12",
+                "sol": "12"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.607ZMerkleShip.challengeVictory": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute challengeVictory(uint32) WHEN isStopped==false",
+          "parameters": [
+            {
+              "js": "8",
+              "sol": "8"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail challengeVictory(uint32) when NOT comply with: isStopped == false",
+            "parameters": [
+              {
+                "js": "8",
+                "sol": "8"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.609ZMerkleShip.answerChallenge": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute answerChallenge(uint32,string[64]) WHEN isStopped==false",
+          "parameters": [
+            {
+              "js": "8",
+              "sol": "8"
+            },
+            {
+              "js": "[\"victory by concession\",\"verified victory by hit count\",\"victory by unchallenged hit count\",\"mwlwe\",\"game resolved in an emergency\",\"verified victory by hit count\",\"victory by unanswered challenge\",\"victory by concession\",\"victory by unchallenged hit count\",\"game resolved in an emergency\",\"victory by concession\",\"victory by concession\",\"game resolved in an emergency\",\"victory by concession\",\"bv0s\",\"verified victory by hit count\",\"6hqnnb\",\"bv0s\",\"idze4f3\",\"victory by abandonment\",\"victory by unanswered challenge\",\"mwlwe\",\"victory by abandonment\",\"bv0s\",\"lgxidp\",\"idze4f3\",\"lgxidp\",\"victory by unanswered challenge\",\"victory by abandonment\",\"victory by concession\",\"victory by unanswered challenge\",\"victory by concession\",\"game resolved in an emergency\",\"verified victory by hit count\",\"victory by abandonment\",\"verified victory by hit count\",\"verified victory by hit count\",\"mwlwe\",\"nf4t06\",\"victory by unchallenged hit count\",\"idze4f3\",\"lgxidp\",\"6hqnnb\",\"nf4t06\",\"victory by abandonment\",\"victory by unchallenged hit count\",\"victory by unanswered challenge\",\"bv0s\",\"verified victory by hit count\",\"verified victory by hit count\",\"6hqnnb\",\"victory by abandonment\",\"verified victory by hit count\",\"nf4t06\",\"victory by unanswered challenge\",\"victory by unanswered challenge\",\"mwlwe\",\"nf4t06\",\"victory by concession\",\"victory by unanswered challenge\",\"6hqnnb\",\"victory by abandonment\",\"mwlwe\",\"bv0s\"]",
+              "sol": "[string(\"victory by concession\"),string(\"verified victory by hit count\"),string(\"victory by unchallenged hit count\"),string(\"mwlwe\"),string(\"game resolved in an emergency\"),string(\"verified victory by hit count\"),string(\"victory by unanswered challenge\"),string(\"victory by concession\"),string(\"victory by unchallenged hit count\"),string(\"game resolved in an emergency\"),string(\"victory by concession\"),string(\"victory by concession\"),string(\"game resolved in an emergency\"),string(\"victory by concession\"),string(\"bv0s\"),string(\"verified victory by hit count\"),string(\"6hqnnb\"),string(\"bv0s\"),string(\"idze4f3\"),string(\"victory by abandonment\"),string(\"victory by unanswered challenge\"),string(\"mwlwe\"),string(\"victory by abandonment\"),string(\"bv0s\"),string(\"lgxidp\"),string(\"idze4f3\"),string(\"lgxidp\"),string(\"victory by unanswered challenge\"),string(\"victory by abandonment\"),string(\"victory by concession\"),string(\"victory by unanswered challenge\"),string(\"victory by concession\"),string(\"game resolved in an emergency\"),string(\"verified victory by hit count\"),string(\"victory by abandonment\"),string(\"verified victory by hit count\"),string(\"verified victory by hit count\"),string(\"mwlwe\"),string(\"nf4t06\"),string(\"victory by unchallenged hit count\"),string(\"idze4f3\"),string(\"lgxidp\"),string(\"6hqnnb\"),string(\"nf4t06\"),string(\"victory by abandonment\"),string(\"victory by unchallenged hit count\"),string(\"victory by unanswered challenge\"),string(\"bv0s\"),string(\"verified victory by hit count\"),string(\"verified victory by hit count\"),string(\"6hqnnb\"),string(\"victory by abandonment\"),string(\"verified victory by hit count\"),string(\"nf4t06\"),string(\"victory by unanswered challenge\"),string(\"victory by unanswered challenge\"),string(\"mwlwe\"),string(\"nf4t06\"),string(\"victory by concession\"),string(\"victory by unanswered challenge\"),string(\"6hqnnb\"),string(\"victory by abandonment\"),string(\"mwlwe\"),string(\"bv0s\")]"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail answerChallenge(uint32,string[64]) when NOT comply with: isStopped == false",
+            "parameters": [
+              {
+                "js": "8",
+                "sol": "8"
+              },
+              {
+                "js": "[\"victory by concession\",\"verified victory by hit count\",\"victory by unchallenged hit count\",\"mwlwe\",\"game resolved in an emergency\",\"verified victory by hit count\",\"victory by unanswered challenge\",\"victory by concession\",\"victory by unchallenged hit count\",\"game resolved in an emergency\",\"victory by concession\",\"victory by concession\",\"game resolved in an emergency\",\"victory by concession\",\"bv0s\",\"verified victory by hit count\",\"6hqnnb\",\"bv0s\",\"idze4f3\",\"victory by abandonment\",\"victory by unanswered challenge\",\"mwlwe\",\"victory by abandonment\",\"bv0s\",\"lgxidp\",\"idze4f3\",\"lgxidp\",\"victory by unanswered challenge\",\"victory by abandonment\",\"victory by concession\",\"victory by unanswered challenge\",\"victory by concession\",\"game resolved in an emergency\",\"verified victory by hit count\",\"victory by abandonment\",\"verified victory by hit count\",\"verified victory by hit count\",\"mwlwe\",\"nf4t06\",\"victory by unchallenged hit count\",\"idze4f3\",\"lgxidp\",\"6hqnnb\",\"nf4t06\",\"victory by abandonment\",\"victory by unchallenged hit count\",\"victory by unanswered challenge\",\"bv0s\",\"verified victory by hit count\",\"verified victory by hit count\",\"6hqnnb\",\"victory by abandonment\",\"verified victory by hit count\",\"nf4t06\",\"victory by unanswered challenge\",\"victory by unanswered challenge\",\"mwlwe\",\"nf4t06\",\"victory by concession\",\"victory by unanswered challenge\",\"6hqnnb\",\"victory by abandonment\",\"mwlwe\",\"bv0s\"]",
+                "sol": "[string(\"victory by concession\"),string(\"verified victory by hit count\"),string(\"victory by unchallenged hit count\"),string(\"mwlwe\"),string(\"game resolved in an emergency\"),string(\"verified victory by hit count\"),string(\"victory by unanswered challenge\"),string(\"victory by concession\"),string(\"victory by unchallenged hit count\"),string(\"game resolved in an emergency\"),string(\"victory by concession\"),string(\"victory by concession\"),string(\"game resolved in an emergency\"),string(\"victory by concession\"),string(\"bv0s\"),string(\"verified victory by hit count\"),string(\"6hqnnb\"),string(\"bv0s\"),string(\"idze4f3\"),string(\"victory by abandonment\"),string(\"victory by unanswered challenge\"),string(\"mwlwe\"),string(\"victory by abandonment\"),string(\"bv0s\"),string(\"lgxidp\"),string(\"idze4f3\"),string(\"lgxidp\"),string(\"victory by unanswered challenge\"),string(\"victory by abandonment\"),string(\"victory by concession\"),string(\"victory by unanswered challenge\"),string(\"victory by concession\"),string(\"game resolved in an emergency\"),string(\"verified victory by hit count\"),string(\"victory by abandonment\"),string(\"verified victory by hit count\"),string(\"verified victory by hit count\"),string(\"mwlwe\"),string(\"nf4t06\"),string(\"victory by unchallenged hit count\"),string(\"idze4f3\"),string(\"lgxidp\"),string(\"6hqnnb\"),string(\"nf4t06\"),string(\"victory by abandonment\"),string(\"victory by unchallenged hit count\"),string(\"victory by unanswered challenge\"),string(\"bv0s\"),string(\"verified victory by hit count\"),string(\"verified victory by hit count\"),string(\"6hqnnb\"),string(\"victory by abandonment\"),string(\"verified victory by hit count\"),string(\"nf4t06\"),string(\"victory by unanswered challenge\"),string(\"victory by unanswered challenge\"),string(\"mwlwe\"),string(\"nf4t06\"),string(\"victory by concession\"),string(\"victory by unanswered challenge\"),string(\"6hqnnb\"),string(\"victory by abandonment\"),string(\"mwlwe\"),string(\"bv0s\")]"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.610ZMerkleShip.resolveUnclaimedVictory": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute resolveUnclaimedVictory(uint32) WHEN isStopped==false",
+          "parameters": [
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail resolveUnclaimedVictory(uint32) when NOT comply with: isStopped == false",
+            "parameters": [
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.611ZMerkleShip.resolveUnansweredChallenge": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute resolveUnansweredChallenge(uint32) WHEN isStopped==false",
+          "parameters": [
+            {
+              "js": "41",
+              "sol": "41"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail resolveUnansweredChallenge(uint32) when NOT comply with: isStopped == false",
+            "parameters": [
+              {
+                "js": "41",
+                "sol": "41"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.612ZMerkleShip.withdraw": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute withdraw() WHEN userBalance>0",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.612ZMerkleShip.emergencyResolve": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute emergencyResolve(uint32) WHEN isStopped==true",
+          "parameters": [
+            {
+              "js": "8",
+              "sol": "8"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail emergencyResolve(uint32) when NOT comply with: isStopped == true",
+            "parameters": [
+              {
+                "js": "8",
+                "sol": "8"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.614ZMerkleShip.getBalance": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute getBalance()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.619ZProxyMerkleShip.test_reveal": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_reveal(uint32,bytes32[6],string)",
+          "parameters": [
+            {
+              "js": "65",
+              "sol": "65"
+            },
+            {
+              "js": "[[142,66,194,91,180,50,157,23,117,226,231,114,99,16,146,249,71,160,58,126,146,64,80,166,28,82,89,248,159,171,8,79],[7,148,5,3,194,228,153,11,21,241,105,197,99,86,227,14,235,169,26,114,22,132,255,95,85,230,72,213,164,78,26,78],[212,50,158,230,93,140,63,199,150,139,179,24,13,85,54,223,219,110,164,7,13,138,36,96,217,119,70,59,20,218,82,66],[11,152,123,162,95,172,81,22,182,226,201,14,145,197,21,47,33,227,155,204,47,154,235,62,59,57,36,67,136,29,253,221],[125,164,102,57,120,127,172,80,185,250,213,167,203,206,204,103,79,185,203,197,207,19,237,23,65,38,6,10,7,237,91,242],[0,179,179,129,251,217,163,215,63,69,55,17,94,6,152,70,155,125,232,150,30,86,227,251,139,55,219,251,161,106,128,203]]",
+              "sol": "[bytes32(stringToBytes32(\"142,66,194,91,180,50,157,23,117,226,231,114,99,16,146,249,71,160,58,126,146,64,80,166,28,82,89,248,159,171,8,79\")),bytes32(stringToBytes32(\"7,148,5,3,194,228,153,11,21,241,105,197,99,86,227,14,235,169,26,114,22,132,255,95,85,230,72,213,164,78,26,78\")),bytes32(stringToBytes32(\"212,50,158,230,93,140,63,199,150,139,179,24,13,85,54,223,219,110,164,7,13,138,36,96,217,119,70,59,20,218,82,66\")),bytes32(stringToBytes32(\"11,152,123,162,95,172,81,22,182,226,201,14,145,197,21,47,33,227,155,204,47,154,235,62,59,57,36,67,136,29,253,221\")),bytes32(stringToBytes32(\"125,164,102,57,120,127,172,80,185,250,213,167,203,206,204,103,79,185,203,197,207,19,237,23,65,38,6,10,7,237,91,242\")),bytes32(stringToBytes32(\"0,179,179,129,251,217,163,215,63,69,55,17,94,6,152,70,155,125,232,150,30,86,227,251,139,55,219,251,161,106,128,203\"))]"
+            },
+            {
+              "js": "\"6hqnnb\"",
+              "sol": "\"6hqnnb\""
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.621ZProxyMerkleShip.test_checkForVictoryByHit": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_checkForVictoryByHit(uint32)",
+          "parameters": [
+            {
+              "js": "11",
+              "sol": "11"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.621ZProxyMerkleShip.test_zeroOutStorage": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_zeroOutStorage(uint32)",
+          "parameters": [
+            {
+              "js": "49",
+              "sol": "49"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.621ZProxyMerkleShip.test_checkShipCount": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_checkShipCount(string[64])",
+          "parameters": [
+            {
+              "js": "[\"nf4t06\",\"u74nve\",\"lgxidp\",\"mwlwe\",\"mwlwe\",\"bv0s\",\"victory by abandonment\",\"mwlwe\",\"idze4f3\",\"mwlwe\",\"6hqnnb\",\"victory by abandonment\",\"victory by concession\",\"victory by unchallenged hit count\",\"mwlwe\",\"verified victory by hit count\",\"u74nve\",\"idze4f3\",\"u74nve\",\"verified victory by hit count\",\"victory by concession\",\"verified victory by hit count\",\"victory by unanswered challenge\",\"lgxidp\",\"bv0s\",\"u74nve\",\"victory by concession\",\"victory by unanswered challenge\",\"idze4f3\",\"victory by abandonment\",\"victory by abandonment\",\"idze4f3\",\"lgxidp\",\"6hqnnb\",\"victory by abandonment\",\"verified victory by hit count\",\"w3deyc\",\"victory by unanswered challenge\",\"mwlwe\",\"6hqnnb\",\"victory by abandonment\",\"lgxidp\",\"mwlwe\",\"lgxidp\",\"w3deyc\",\"mwlwe\",\"mwlwe\",\"bv0s\",\"victory by unchallenged hit count\",\"victory by unanswered challenge\",\"victory by abandonment\",\"nf4t06\",\"w3deyc\",\"lgxidp\",\"w3deyc\",\"mwlwe\",\"m5p5zi\",\"m5p5zi\",\"idze4f3\",\"nf4t06\",\"t01sg\",\"idze4f3\",\"victory by unanswered challenge\",\"verified victory by hit count\"]",
+              "sol": "[string(\"nf4t06\"),string(\"u74nve\"),string(\"lgxidp\"),string(\"mwlwe\"),string(\"mwlwe\"),string(\"bv0s\"),string(\"victory by abandonment\"),string(\"mwlwe\"),string(\"idze4f3\"),string(\"mwlwe\"),string(\"6hqnnb\"),string(\"victory by abandonment\"),string(\"victory by concession\"),string(\"victory by unchallenged hit count\"),string(\"mwlwe\"),string(\"verified victory by hit count\"),string(\"u74nve\"),string(\"idze4f3\"),string(\"u74nve\"),string(\"verified victory by hit count\"),string(\"victory by concession\"),string(\"verified victory by hit count\"),string(\"victory by unanswered challenge\"),string(\"lgxidp\"),string(\"bv0s\"),string(\"u74nve\"),string(\"victory by concession\"),string(\"victory by unanswered challenge\"),string(\"idze4f3\"),string(\"victory by abandonment\"),string(\"victory by abandonment\"),string(\"idze4f3\"),string(\"lgxidp\"),string(\"6hqnnb\"),string(\"victory by abandonment\"),string(\"verified victory by hit count\"),string(\"w3deyc\"),string(\"victory by unanswered challenge\"),string(\"mwlwe\"),string(\"6hqnnb\"),string(\"victory by abandonment\"),string(\"lgxidp\"),string(\"mwlwe\"),string(\"lgxidp\"),string(\"w3deyc\"),string(\"mwlwe\"),string(\"mwlwe\"),string(\"bv0s\"),string(\"victory by unchallenged hit count\"),string(\"victory by unanswered challenge\"),string(\"victory by abandonment\"),string(\"nf4t06\"),string(\"w3deyc\"),string(\"lgxidp\"),string(\"w3deyc\"),string(\"mwlwe\"),string(\"m5p5zi\"),string(\"m5p5zi\"),string(\"idze4f3\"),string(\"nf4t06\"),string(\"t01sg\"),string(\"idze4f3\"),string(\"victory by unanswered challenge\"),string(\"verified victory by hit count\")]"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.622ZProxyMerkleShip.test_checkShipLength": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_checkShipLength(string[64])",
+          "parameters": [
+            {
+              "js": "[\"victory by abandonment\",\"6hqnnb\",\"t01sg\",\"idze4f3\",\"victory by abandonment\",\"victory by unchallenged hit count\",\"m5p5zi\",\"6hqnnb\",\"victory by unchallenged hit count\",\"m5p5zi\",\"nf4t06\",\"game resolved in an emergency\",\"verified victory by hit count\",\"t01sg\",\"t01sg\",\"victory by concession\",\"idze4f3\",\"lgxidp\",\"w3deyc\",\"t01sg\",\"mwlwe\",\"game resolved in an emergency\",\"6hqnnb\",\"jfjedh\",\"w3deyc\",\"victory by unchallenged hit count\",\"victory by unanswered challenge\",\"victory by unchallenged hit count\",\"w3deyc\",\"lgxidp\",\"juof6n\",\"victory by concession\",\"bv0s\",\"victory by unchallenged hit count\",\"bv0s\",\"m5p5zi\",\"jfjedh\",\"game resolved in an emergency\",\"m5p5zi\",\"juof6n\",\"jfjedh\",\"victory by unanswered challenge\",\"verified victory by hit count\",\"t01sg\",\"idze4f3\",\"victory by unanswered challenge\",\"nf4t06\",\"m5p5zi\",\"m5p5zi\",\"lgxidp\",\"victory by unanswered challenge\",\"victory by unchallenged hit count\",\"6hqnnb\",\"victory by unanswered challenge\",\"m5p5zi\",\"juof6n\",\"game resolved in an emergency\",\"victory by unchallenged hit count\",\"mwlwe\",\"idze4f3\",\"verified victory by hit count\",\"jfjedh\",\"jfjedh\",\"6hqnnb\"]",
+              "sol": "[string(\"victory by abandonment\"),string(\"6hqnnb\"),string(\"t01sg\"),string(\"idze4f3\"),string(\"victory by abandonment\"),string(\"victory by unchallenged hit count\"),string(\"m5p5zi\"),string(\"6hqnnb\"),string(\"victory by unchallenged hit count\"),string(\"m5p5zi\"),string(\"nf4t06\"),string(\"game resolved in an emergency\"),string(\"verified victory by hit count\"),string(\"t01sg\"),string(\"t01sg\"),string(\"victory by concession\"),string(\"idze4f3\"),string(\"lgxidp\"),string(\"w3deyc\"),string(\"t01sg\"),string(\"mwlwe\"),string(\"game resolved in an emergency\"),string(\"6hqnnb\"),string(\"jfjedh\"),string(\"w3deyc\"),string(\"victory by unchallenged hit count\"),string(\"victory by unanswered challenge\"),string(\"victory by unchallenged hit count\"),string(\"w3deyc\"),string(\"lgxidp\"),string(\"juof6n\"),string(\"victory by concession\"),string(\"bv0s\"),string(\"victory by unchallenged hit count\"),string(\"bv0s\"),string(\"m5p5zi\"),string(\"jfjedh\"),string(\"game resolved in an emergency\"),string(\"m5p5zi\"),string(\"juof6n\"),string(\"jfjedh\"),string(\"victory by unanswered challenge\"),string(\"verified victory by hit count\"),string(\"t01sg\"),string(\"idze4f3\"),string(\"victory by unanswered challenge\"),string(\"nf4t06\"),string(\"m5p5zi\"),string(\"m5p5zi\"),string(\"lgxidp\"),string(\"victory by unanswered challenge\"),string(\"victory by unchallenged hit count\"),string(\"6hqnnb\"),string(\"victory by unanswered challenge\"),string(\"m5p5zi\"),string(\"juof6n\"),string(\"game resolved in an emergency\"),string(\"victory by unchallenged hit count\"),string(\"mwlwe\"),string(\"idze4f3\"),string(\"verified victory by hit count\"),string(\"jfjedh\"),string(\"jfjedh\"),string(\"6hqnnb\")]"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.630ZProxyMerkleShip.test_hashEach": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_hashEach(string[64])",
+          "parameters": [
+            {
+              "js": "[\"lgxidp\",\"t01sg\",\"m5p5zi\",\"u74nve\",\"mwlwe\",\"victory by concession\",\"6hqnnb\",\"verified victory by hit count\",\"t01sg\",\"u74nve\",\"victory by unanswered challenge\",\"victory by unchallenged hit count\",\"bv0s\",\"6hqnnb\",\"t01sg\",\"verified victory by hit count\",\"victory by concession\",\"victory by unanswered challenge\",\"game resolved in an emergency\",\"victory by abandonment\",\"victory by concession\",\"victory by unanswered challenge\",\"nf4t06\",\"victory by unanswered challenge\",\"nf4t06\",\"m5p5zi\",\"juof6n\",\"bv0s\",\"game resolved in an emergency\",\"bv0s\",\"victory by concession\",\"victory by abandonment\",\"victory by abandonment\",\"jfjedh\",\"idze4f3\",\"u74nve\",\"hvurof\",\"victory by concession\",\"nf4t06\",\"t01sg\",\"w3deyc\",\"u74nve\",\"juof6n\",\"juof6n\",\"victory by abandonment\",\"bv0s\",\"verified victory by hit count\",\"w3deyc\",\"bv0s\",\"u74nve\",\"victory by unanswered challenge\",\"jfjedh\",\"juof6n\",\"lgxidp\",\"jfjedh\",\"mwlwe\",\"m5p5zi\",\"jfjedh\",\"6hqnnb\",\"w3deyc\",\"idze4f3\",\"qqjpzr\",\"qqjpzr\",\"juof6n\"]",
+              "sol": "[string(\"lgxidp\"),string(\"t01sg\"),string(\"m5p5zi\"),string(\"u74nve\"),string(\"mwlwe\"),string(\"victory by concession\"),string(\"6hqnnb\"),string(\"verified victory by hit count\"),string(\"t01sg\"),string(\"u74nve\"),string(\"victory by unanswered challenge\"),string(\"victory by unchallenged hit count\"),string(\"bv0s\"),string(\"6hqnnb\"),string(\"t01sg\"),string(\"verified victory by hit count\"),string(\"victory by concession\"),string(\"victory by unanswered challenge\"),string(\"game resolved in an emergency\"),string(\"victory by abandonment\"),string(\"victory by concession\"),string(\"victory by unanswered challenge\"),string(\"nf4t06\"),string(\"victory by unanswered challenge\"),string(\"nf4t06\"),string(\"m5p5zi\"),string(\"juof6n\"),string(\"bv0s\"),string(\"game resolved in an emergency\"),string(\"bv0s\"),string(\"victory by concession\"),string(\"victory by abandonment\"),string(\"victory by abandonment\"),string(\"jfjedh\"),string(\"idze4f3\"),string(\"u74nve\"),string(\"hvurof\"),string(\"victory by concession\"),string(\"nf4t06\"),string(\"t01sg\"),string(\"w3deyc\"),string(\"u74nve\"),string(\"juof6n\"),string(\"juof6n\"),string(\"victory by abandonment\"),string(\"bv0s\"),string(\"verified victory by hit count\"),string(\"w3deyc\"),string(\"bv0s\"),string(\"u74nve\"),string(\"victory by unanswered challenge\"),string(\"jfjedh\"),string(\"juof6n\"),string(\"lgxidp\"),string(\"jfjedh\"),string(\"mwlwe\"),string(\"m5p5zi\"),string(\"jfjedh\"),string(\"6hqnnb\"),string(\"w3deyc\"),string(\"idze4f3\"),string(\"qqjpzr\"),string(\"qqjpzr\"),string(\"juof6n\")]"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.631ZProxyMerkleShip.test_sortArray": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_sortArray(bytes32[])",
+          "parameters": [
+            {
+              "js": "[[88,107,209,52,181,98,46,21,147,135,66,75,134,62,70,134,114,0,48,38,213,55,126,48,133,21,171,71,172,50,148,8],[16,129,181,236,114,32,83,12,39,50,88,2,222,246,210,175,35,110,221,227,110,243,137,126,81,32,162,53,135,19,65,242],[250,136,79,19,239,87,171,82,30,121,171,59,200,244,51,152,138,221,118,194,6,129,244,190,62,148,121,141,208,56,248,62],[194,203,47,153,232,99,0,11,6,224,239,60,91,168,73,245,36,28,29,230,8,193,130,11,189,87,143,225,96,234,60,71],[254,8,119,178,253,199,72,254,164,247,136,46,224,13,125,82,164,241,146,34,19,77,96,140,113,202,20,143,250,142,16,75],[66,223,122,202,20,31,170,81,139,60,251,22,254,148,47,234,70,134,82,17,247,46,163,239,115,124,106,161,64,89,95,126],[67,89,246,205,8,131,158,244,73,152,26,179,117,179,200,78,68,97,46,138,62,17,228,202,98,218,6,154,45,159,42,78],[62,19,102,172,244,164,155,220,70,60,157,183,224,122,45,13,82,254,184,71,46,152,70,153,156,254,4,187,220,250,104,3],[221,111,199,173,79,222,247,2,68,20,124,99,215,92,122,74,46,200,86,9,212,153,167,136,94,78,31,102,108,124,60,94]]",
+              "sol": "[bytes32(stringToBytes32(\"88,107,209,52,181,98,46,21,147,135,66,75,134,62,70,134,114,0,48,38,213,55,126,48,133,21,171,71,172,50,148,8\")),bytes32(stringToBytes32(\"16,129,181,236,114,32,83,12,39,50,88,2,222,246,210,175,35,110,221,227,110,243,137,126,81,32,162,53,135,19,65,242\")),bytes32(stringToBytes32(\"250,136,79,19,239,87,171,82,30,121,171,59,200,244,51,152,138,221,118,194,6,129,244,190,62,148,121,141,208,56,248,62\")),bytes32(stringToBytes32(\"194,203,47,153,232,99,0,11,6,224,239,60,91,168,73,245,36,28,29,230,8,193,130,11,189,87,143,225,96,234,60,71\")),bytes32(stringToBytes32(\"254,8,119,178,253,199,72,254,164,247,136,46,224,13,125,82,164,241,146,34,19,77,96,140,113,202,20,143,250,142,16,75\")),bytes32(stringToBytes32(\"66,223,122,202,20,31,170,81,139,60,251,22,254,148,47,234,70,134,82,17,247,46,163,239,115,124,106,161,64,89,95,126\")),bytes32(stringToBytes32(\"67,89,246,205,8,131,158,244,73,152,26,179,117,179,200,78,68,97,46,138,62,17,228,202,98,218,6,154,45,159,42,78\")),bytes32(stringToBytes32(\"62,19,102,172,244,164,155,220,70,60,157,183,224,122,45,13,82,254,184,71,46,152,70,153,156,254,4,187,220,250,104,3\")),bytes32(stringToBytes32(\"221,111,199,173,79,222,247,2,68,20,124,99,215,92,122,74,46,200,86,9,212,153,167,136,94,78,31,102,108,124,60,94\"))]"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.632ZProxyMerkleShip.test_quickSort": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_quickSort(bytes32[],int,int)",
+          "parameters": [
+            {
+              "js": "[[202,73,237,114,99,148,50,23,207,194,202,218,178,102,71,34,247,49,107,140,169,127,135,53,122,151,121,99,143,10,25,211],[93,14,52,130,174,54,144,129,199,22,112,250,19,211,183,249,86,163,220,50,232,207,7,108,144,69,2,210,36,110,109,186],[32,38,45,161,172,23,12,213,124,188,105,195,105,90,2,120,125,199,218,65,169,158,239,164,78,88,44,177,136,223,198,124],[236,139,149,80,50,134,182,175,254,212,103,92,63,11,32,23,118,137,100,211,77,173,33,78,121,124,90,166,158,237,211,181],[17,110,71,83,118,132,133,201,207,173,120,221,35,42,231,81,102,40,240,31,112,204,190,5,109,12,199,251,52,155,179,170],[54,142,28,107,228,242,148,226,13,1,105,91,0,11,142,160,30,100,103,24,13,130,117,124,2,224,129,128,229,232,36,118],[171,194,172,212,231,0,153,151,220,178,123,120,197,159,192,217,135,141,97,197,241,199,107,114,134,238,187,190,122,120,97,230],[50,191,221,149,193,244,227,45,2,83,138,166,115,149,54,52,46,178,224,198,59,7,154,230,44,37,32,24,8,173,65,114]]",
+              "sol": "[bytes32(stringToBytes32(\"202,73,237,114,99,148,50,23,207,194,202,218,178,102,71,34,247,49,107,140,169,127,135,53,122,151,121,99,143,10,25,211\")),bytes32(stringToBytes32(\"93,14,52,130,174,54,144,129,199,22,112,250,19,211,183,249,86,163,220,50,232,207,7,108,144,69,2,210,36,110,109,186\")),bytes32(stringToBytes32(\"32,38,45,161,172,23,12,213,124,188,105,195,105,90,2,120,125,199,218,65,169,158,239,164,78,88,44,177,136,223,198,124\")),bytes32(stringToBytes32(\"236,139,149,80,50,134,182,175,254,212,103,92,63,11,32,23,118,137,100,211,77,173,33,78,121,124,90,166,158,237,211,181\")),bytes32(stringToBytes32(\"17,110,71,83,118,132,133,201,207,173,120,221,35,42,231,81,102,40,240,31,112,204,190,5,109,12,199,251,52,155,179,170\")),bytes32(stringToBytes32(\"54,142,28,107,228,242,148,226,13,1,105,91,0,11,142,160,30,100,103,24,13,130,117,124,2,224,129,128,229,232,36,118\")),bytes32(stringToBytes32(\"171,194,172,212,231,0,153,151,220,178,123,120,197,159,192,217,135,141,97,197,241,199,107,114,134,238,187,190,122,120,97,230\")),bytes32(stringToBytes32(\"50,191,221,149,193,244,227,45,2,83,138,166,115,149,54,52,46,178,224,198,59,7,154,230,44,37,32,24,8,173,65,114\"))]"
+            },
+            {
+              "js": "41",
+              "sol": "41"
+            },
+            {
+              "js": "101",
+              "sol": "101"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.633ZProxyMerkleShip.test_computeMerkleTree": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "948-964",
+          "restrictions": [
+            "_data.length >= 2"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_computeMerkleTree(bytes32[]) WHEN _data.length>=2",
+          "parameters": [
+            {
+              "js": "[[192,244,182,160,126,171,229,244,59,212,45,138,54,102,241,52,151,87,217,94,69,10,6,40,144,192,41,225,39,75,247,12],[129,224,31,117,139,233,48,135,242,183,108,229,48,107,60,253,190,240,72,151,3,87,71,35,208,120,137,182,90,237,0,154],[84,213,59,90,85,27,45,78,53,160,229,65,2,216,127,225,91,126,102,201,249,119,131,131,50,79,80,101,121,110,56,23],[105,35,132,254,179,142,86,207,196,229,252,3,43,54,65,241,19,212,67,134,112,63,95,238,224,38,113,196,233,79,217,26],[22,228,188,188,111,137,142,74,128,186,4,214,92,253,194,71,104,217,169,58,60,114,5,154,21,141,34,242,68,146,27,168],[108,102,253,118,5,14,159,202,227,174,118,124,150,42,128,250,93,100,49,73,87,132,179,9,251,176,85,208,28,230,178,70],[63,244,151,180,67,94,28,139,53,229,83,228,186,210,146,102,65,35,222,211,254,76,176,38,99,224,235,56,148,183,185,232],[59,57,250,245,68,113,219,48,149,159,8,149,121,229,142,194,145,165,252,28,209,248,196,28,190,65,26,198,47,153,71,185],[95,70,117,119,183,88,33,251,4,253,52,188,173,156,147,129,200,183,169,55,136,63,32,222,13,87,137,147,91,128,42,9],[160,93,90,87,184,102,49,157,184,128,124,221,122,39,116,213,110,42,13,81,33,104,202,24,242,46,23,184,105,15,52,144],[153,161,136,103,135,162,174,63,175,23,255,213,45,143,7,170,121,44,45,203,138,164,9,244,198,183,30,15,32,23,146,149]]",
+              "sol": "[bytes32(stringToBytes32(\"192,244,182,160,126,171,229,244,59,212,45,138,54,102,241,52,151,87,217,94,69,10,6,40,144,192,41,225,39,75,247,12\")),bytes32(stringToBytes32(\"129,224,31,117,139,233,48,135,242,183,108,229,48,107,60,253,190,240,72,151,3,87,71,35,208,120,137,182,90,237,0,154\")),bytes32(stringToBytes32(\"84,213,59,90,85,27,45,78,53,160,229,65,2,216,127,225,91,126,102,201,249,119,131,131,50,79,80,101,121,110,56,23\")),bytes32(stringToBytes32(\"105,35,132,254,179,142,86,207,196,229,252,3,43,54,65,241,19,212,67,134,112,63,95,238,224,38,113,196,233,79,217,26\")),bytes32(stringToBytes32(\"22,228,188,188,111,137,142,74,128,186,4,214,92,253,194,71,104,217,169,58,60,114,5,154,21,141,34,242,68,146,27,168\")),bytes32(stringToBytes32(\"108,102,253,118,5,14,159,202,227,174,118,124,150,42,128,250,93,100,49,73,87,132,179,9,251,176,85,208,28,230,178,70\")),bytes32(stringToBytes32(\"63,244,151,180,67,94,28,139,53,229,83,228,186,210,146,102,65,35,222,211,254,76,176,38,99,224,235,56,148,183,185,232\")),bytes32(stringToBytes32(\"59,57,250,245,68,113,219,48,149,159,8,149,121,229,142,194,145,165,252,28,209,248,196,28,190,65,26,198,47,153,71,185\")),bytes32(stringToBytes32(\"95,70,117,119,183,88,33,251,4,253,52,188,173,156,147,129,200,183,169,55,136,63,32,222,13,87,137,147,91,128,42,9\")),bytes32(stringToBytes32(\"160,93,90,87,184,102,49,157,184,128,124,221,122,39,116,213,110,42,13,81,33,104,202,24,242,46,23,184,105,15,52,144\")),bytes32(stringToBytes32(\"153,161,136,103,135,162,174,63,175,23,255,213,45,143,7,170,121,44,45,203,138,164,9,244,198,183,30,15,32,23,146,149\"))]"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "962-964",
+          "restrictions": [
+            "_data.length == 2"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_computeMerkleTree(bytes32[]) WHEN _data.length==2",
+          "parameters": [
+            {
+              "js": "[[53,101,159,93,115,4,201,142,195,152,180,6,38,7,146,115,96,201,83,110,4,65,61,183,150,158,54,49,204,39,181,10],[139,38,115,26,89,245,15,142,100,207,23,164,215,164,39,49,6,115,57,92,75,31,108,127,30,245,217,54,56,32,95,226]]",
+              "sol": "[bytes32(stringToBytes32(\"53,101,159,93,115,4,201,142,195,152,180,6,38,7,146,115,96,201,83,110,4,65,61,183,150,158,54,49,204,39,181,10\")),bytes32(stringToBytes32(\"139,38,115,26,89,245,15,142,100,207,23,164,215,164,39,49,6,115,57,92,75,31,108,127,30,245,217,54,56,32,95,226\"))]"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "2": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_data.length != 2"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_computeMerkleTree(bytes32[]) WHEN _data.length!=2",
+          "parameters": [
+            {
+              "js": "[[30,58,24,64,49,97,49,104,156,157,174,162,81,115,124,225,106,241,57,145,184,68,189,104,23,96,66,39,95,5,148,90],[64,121,138,113,127,248,207,45,19,233,130,242,204,169,120,203,210,65,86,16,66,228,117,77,164,181,44,235,180,53,58,105],[148,3,252,255,6,160,56,52,86,154,57,104,126,156,222,234,34,57,231,112,97,36,94,149,138,86,19,2,45,23,45,154],[193,208,146,156,253,154,146,25,238,233,5,23,225,126,181,82,115,181,208,90,25,179,165,53,83,150,209,46,247,4,89,147],[197,185,24,39,195,41,196,54,140,75,123,88,66,51,231,154,202,189,108,48,104,221,158,100,226,174,221,234,45,128,64,126],[154,226,31,227,26,85,85,32,115,127,186,158,179,120,51,100,207,61,127,13,18,205,151,196,220,64,63,84,225,39,7,106],[196,1,52,110,189,79,184,126,229,110,109,122,54,66,231,169,144,48,122,30,172,40,249,88,155,167,254,153,79,234,30,213],[93,222,142,169,22,78,39,237,15,215,240,190,105,40,37,156,242,164,147,102,115,10,99,126,125,129,94,49,98,174,160,10],[76,145,143,141,104,24,185,223,230,99,8,161,178,7,234,106,110,216,4,219,115,6,114,83,241,254,16,48,41,172,4,91],[240,71,38,188,5,83,165,141,32,200,37,38,87,143,92,50,176,147,235,69,57,64,14,44,44,66,35,49,217,89,37,50],[198,8,47,26,178,127,110,203,229,159,112,77,220,181,226,97,39,5,168,222,62,114,233,114,221,215,245,159,220,248,185,116],[19,147,55,147,239,39,205,134,112,145,240,117,51,165,184,100,79,86,102,226,243,252,216,121,39,240,188,221,56,43,246,189],[141,142,56,252,230,227,61,132,118,118,143,48,170,16,204,99,37,191,137,216,146,21,93,98,40,219,24,217,219,253,240,6],[185,29,208,69,204,138,206,116,27,239,171,138,161,202,27,177,194,217,214,198,53,60,100,97,164,11,43,16,165,229,101,251],[229,241,67,237,207,219,76,235,22,121,185,117,56,189,190,45,59,210,222,141,129,30,4,3,247,208,50,26,157,16,88,181],[167,186,34,107,217,125,165,177,146,187,130,199,179,233,119,171,12,196,76,216,128,84,144,183,103,2,239,208,139,172,159,83],[229,103,148,114,175,149,209,200,56,186,235,251,195,239,54,162,72,24,24,31,78,174,142,75,67,154,210,119,220,208,94,137],[110,37,50,65,138,46,166,231,123,84,48,4,17,243,156,45,159,241,91,182,150,116,157,119,164,137,158,195,11,145,197,92],[42,178,208,89,36,173,11,69,19,124,255,227,89,168,89,253,163,141,126,71,3,116,46,10,125,232,111,72,200,216,182,15],[112,156,112,145,141,165,7,164,68,191,242,15,29,56,115,106,154,123,33,13,116,116,230,245,113,109,172,65,202,175,72,92],[64,51,190,187,174,160,171,233,123,32,34,44,206,41,151,157,86,155,90,235,0,183,30,169,109,57,143,82,141,37,73,39],[160,220,135,250,116,92,33,151,231,103,81,131,165,12,211,42,52,116,38,164,158,87,35,138,178,43,72,23,33,132,219,181],[156,247,111,73,34,134,68,144,116,105,32,14,174,96,247,28,210,149,103,6,33,175,76,237,226,217,172,237,207,58,174,82],[207,242,251,135,213,34,143,217,211,214,177,75,148,19,6,4,21,7,251,13,161,169,10,4,21,207,108,230,20,42,147,133],[34,190,133,116,53,85,18,175,239,83,53,218,217,239,194,104,81,137,164,63,151,153,90,49,223,169,185,176,102,231,204,192],[104,134,140,203,207,192,77,157,28,186,83,81,84,13,181,5,159,238,53,120,232,154,184,69,101,4,135,176,117,233,109,31],[42,92,44,14,62,156,184,1,198,100,243,132,34,178,248,143,4,172,43,174,50,73,39,116,126,131,185,244,53,110,68,187],[61,169,220,50,241,213,147,6,231,77,189,159,236,249,105,65,191,176,227,90,88,136,185,228,97,28,192,192,168,163,245,121],[19,190,73,223,199,30,167,31,159,98,46,10,27,150,196,58,68,84,145,253,129,245,223,185,124,131,59,183,151,12,31,73],[122,198,32,116,67,203,216,239,67,1,139,17,46,106,23,30,30,171,182,4,215,15,20,201,30,234,186,200,107,96,217,160],[89,13,62,114,249,251,125,188,114,219,207,89,251,48,65,81,255,69,50,92,232,183,81,38,42,193,36,111,99,188,193,208],[191,90,128,50,236,24,219,174,61,205,37,102,194,85,117,237,115,113,155,214,25,45,118,245,24,149,95,219,96,48,136,118],[110,141,224,251,42,77,235,184,100,3,114,192,59,109,77,34,3,127,69,251,161,49,106,243,218,92,32,100,234,74,78,128],[174,76,65,73,217,106,39,10,222,182,92,227,177,78,107,124,134,212,29,112,22,33,111,32,191,193,188,93,22,164,26,106],[29,8,29,113,88,85,47,44,195,241,177,169,196,70,33,213,244,88,49,111,239,135,166,61,239,61,59,111,158,75,68,104],[151,9,201,66,74,196,29,131,49,206,82,98,73,160,39,151,22,116,66,63,24,35,158,68,168,212,211,44,252,178,16,208],[147,113,113,114,187,247,236,5,36,18,133,201,102,188,77,253,210,165,21,153,223,166,248,19,96,120,45,2,0,47,182,91],[3,128,42,68,16,93,3,189,238,251,170,150,141,62,245,186,111,29,152,75,201,77,116,108,160,71,5,206,27,155,145,223],[208,28,161,170,245,164,62,65,233,89,189,122,172,6,142,135,195,98,172,170,120,144,161,217,157,54,156,13,125,178,172,211],[42,226,106,181,23,11,188,173,11,146,76,83,103,116,167,95,123,209,226,61,73,176,105,54,84,217,252,130,168,199,23,153],[141,21,169,118,65,149,48,45,247,143,209,195,165,219,131,249,113,126,128,70,47,58,34,153,156,199,162,131,87,113,30,41],[199,122,118,12,198,174,104,112,171,97,45,177,18,6,73,145,193,5,25,7,25,102,216,192,218,196,179,90,84,21,99,107],[72,42,181,230,36,7,206,61,125,74,204,236,205,227,104,37,82,162,125,171,2,44,23,108,11,132,19,83,68,119,149,252],[80,234,21,28,221,225,215,226,5,15,68,244,237,137,175,193,9,29,234,79,175,108,129,150,100,29,35,137,65,242,137,199],[40,74,5,162,183,235,220,246,193,201,206,210,132,254,28,58,214,15,189,128,229,62,18,200,228,106,105,234,224,206,86,187],[112,148,183,32,110,32,149,162,144,151,238,221,230,221,141,243,80,235,31,241,193,72,169,157,23,161,21,78,18,253,86,55],[140,64,211,32,143,254,25,52,148,17,223,51,46,134,134,248,255,251,45,55,187,144,186,59,38,125,118,218,129,216,157,9],[18,225,147,8,187,214,77,188,78,144,201,219,196,72,196,60,201,109,197,60,215,114,69,10,119,247,62,27,134,1,162,166],[184,31,215,228,70,126,78,68,138,159,83,56,183,75,229,72,163,193,250,143,32,241,93,38,149,248,49,60,100,98,188,132],[93,75,72,230,177,137,10,102,61,244,50,164,174,33,171,57,185,38,58,13,38,140,27,137,122,216,87,218,31,75,202,133],[208,39,227,40,44,139,173,212,42,205,13,3,111,184,213,139,230,42,238,208,194,116,208,133,37,223,163,6,146,34,95,145],[195,133,112,118,84,77,55,194,170,41,2,252,110,31,232,130,77,126,252,27,194,208,132,158,160,53,227,171,147,206,170,159],[30,158,96,193,178,129,210,42,157,153,78,204,66,174,80,37,7,193,54,178,205,25,40,175,219,41,185,105,241,171,185,161],[186,175,201,62,137,40,251,100,101,132,192,98,65,161,36,96,82,212,230,235,124,78,227,133,117,170,236,3,92,10,44,115],[8,215,155,50,144,57,148,5,80,249,193,22,23,122,52,230,228,210,86,93,88,7,112,105,252,65,136,36,40,204,17,118],[102,116,79,68,187,203,19,190,111,9,180,190,126,86,144,212,22,89,115,4,171,158,107,33,16,36,153,61,168,46,71,5],[217,231,156,244,184,103,175,68,168,57,129,171,154,100,22,176,244,29,224,162,29,98,211,59,118,115,230,215,32,138,217,177],[123,82,9,113,230,2,58,110,229,43,225,100,166,246,94,30,93,8,248,29,155,171,188,151,30,71,151,244,75,215,48,118],[235,201,86,201,212,181,181,252,184,249,210,236,172,131,249,42,1,118,202,33,234,41,105,248,133,44,95,193,176,19,123,235],[59,137,233,68,174,233,145,24,84,72,155,10,131,55,112,230,190,163,111,169,39,144,224,149,51,213,210,218,71,76,225,124],[246,197,58,3,227,242,222,31,106,220,48,229,78,181,183,140,212,123,92,167,185,120,117,108,117,143,240,141,60,10,164,42],[242,14,10,50,89,44,7,158,173,121,207,25,38,189,189,0,66,177,29,63,205,168,171,239,7,119,24,216,55,44,173,80],[72,205,197,35,129,179,215,127,25,173,199,242,6,223,4,52,39,153,164,49,25,14,195,120,232,65,0,203,53,83,240,20]]",
+              "sol": "[bytes32(stringToBytes32(\"30,58,24,64,49,97,49,104,156,157,174,162,81,115,124,225,106,241,57,145,184,68,189,104,23,96,66,39,95,5,148,90\")),bytes32(stringToBytes32(\"64,121,138,113,127,248,207,45,19,233,130,242,204,169,120,203,210,65,86,16,66,228,117,77,164,181,44,235,180,53,58,105\")),bytes32(stringToBytes32(\"148,3,252,255,6,160,56,52,86,154,57,104,126,156,222,234,34,57,231,112,97,36,94,149,138,86,19,2,45,23,45,154\")),bytes32(stringToBytes32(\"193,208,146,156,253,154,146,25,238,233,5,23,225,126,181,82,115,181,208,90,25,179,165,53,83,150,209,46,247,4,89,147\")),bytes32(stringToBytes32(\"197,185,24,39,195,41,196,54,140,75,123,88,66,51,231,154,202,189,108,48,104,221,158,100,226,174,221,234,45,128,64,126\")),bytes32(stringToBytes32(\"154,226,31,227,26,85,85,32,115,127,186,158,179,120,51,100,207,61,127,13,18,205,151,196,220,64,63,84,225,39,7,106\")),bytes32(stringToBytes32(\"196,1,52,110,189,79,184,126,229,110,109,122,54,66,231,169,144,48,122,30,172,40,249,88,155,167,254,153,79,234,30,213\")),bytes32(stringToBytes32(\"93,222,142,169,22,78,39,237,15,215,240,190,105,40,37,156,242,164,147,102,115,10,99,126,125,129,94,49,98,174,160,10\")),bytes32(stringToBytes32(\"76,145,143,141,104,24,185,223,230,99,8,161,178,7,234,106,110,216,4,219,115,6,114,83,241,254,16,48,41,172,4,91\")),bytes32(stringToBytes32(\"240,71,38,188,5,83,165,141,32,200,37,38,87,143,92,50,176,147,235,69,57,64,14,44,44,66,35,49,217,89,37,50\")),bytes32(stringToBytes32(\"198,8,47,26,178,127,110,203,229,159,112,77,220,181,226,97,39,5,168,222,62,114,233,114,221,215,245,159,220,248,185,116\")),bytes32(stringToBytes32(\"19,147,55,147,239,39,205,134,112,145,240,117,51,165,184,100,79,86,102,226,243,252,216,121,39,240,188,221,56,43,246,189\")),bytes32(stringToBytes32(\"141,142,56,252,230,227,61,132,118,118,143,48,170,16,204,99,37,191,137,216,146,21,93,98,40,219,24,217,219,253,240,6\")),bytes32(stringToBytes32(\"185,29,208,69,204,138,206,116,27,239,171,138,161,202,27,177,194,217,214,198,53,60,100,97,164,11,43,16,165,229,101,251\")),bytes32(stringToBytes32(\"229,241,67,237,207,219,76,235,22,121,185,117,56,189,190,45,59,210,222,141,129,30,4,3,247,208,50,26,157,16,88,181\")),bytes32(stringToBytes32(\"167,186,34,107,217,125,165,177,146,187,130,199,179,233,119,171,12,196,76,216,128,84,144,183,103,2,239,208,139,172,159,83\")),bytes32(stringToBytes32(\"229,103,148,114,175,149,209,200,56,186,235,251,195,239,54,162,72,24,24,31,78,174,142,75,67,154,210,119,220,208,94,137\")),bytes32(stringToBytes32(\"110,37,50,65,138,46,166,231,123,84,48,4,17,243,156,45,159,241,91,182,150,116,157,119,164,137,158,195,11,145,197,92\")),bytes32(stringToBytes32(\"42,178,208,89,36,173,11,69,19,124,255,227,89,168,89,253,163,141,126,71,3,116,46,10,125,232,111,72,200,216,182,15\")),bytes32(stringToBytes32(\"112,156,112,145,141,165,7,164,68,191,242,15,29,56,115,106,154,123,33,13,116,116,230,245,113,109,172,65,202,175,72,92\")),bytes32(stringToBytes32(\"64,51,190,187,174,160,171,233,123,32,34,44,206,41,151,157,86,155,90,235,0,183,30,169,109,57,143,82,141,37,73,39\")),bytes32(stringToBytes32(\"160,220,135,250,116,92,33,151,231,103,81,131,165,12,211,42,52,116,38,164,158,87,35,138,178,43,72,23,33,132,219,181\")),bytes32(stringToBytes32(\"156,247,111,73,34,134,68,144,116,105,32,14,174,96,247,28,210,149,103,6,33,175,76,237,226,217,172,237,207,58,174,82\")),bytes32(stringToBytes32(\"207,242,251,135,213,34,143,217,211,214,177,75,148,19,6,4,21,7,251,13,161,169,10,4,21,207,108,230,20,42,147,133\")),bytes32(stringToBytes32(\"34,190,133,116,53,85,18,175,239,83,53,218,217,239,194,104,81,137,164,63,151,153,90,49,223,169,185,176,102,231,204,192\")),bytes32(stringToBytes32(\"104,134,140,203,207,192,77,157,28,186,83,81,84,13,181,5,159,238,53,120,232,154,184,69,101,4,135,176,117,233,109,31\")),bytes32(stringToBytes32(\"42,92,44,14,62,156,184,1,198,100,243,132,34,178,248,143,4,172,43,174,50,73,39,116,126,131,185,244,53,110,68,187\")),bytes32(stringToBytes32(\"61,169,220,50,241,213,147,6,231,77,189,159,236,249,105,65,191,176,227,90,88,136,185,228,97,28,192,192,168,163,245,121\")),bytes32(stringToBytes32(\"19,190,73,223,199,30,167,31,159,98,46,10,27,150,196,58,68,84,145,253,129,245,223,185,124,131,59,183,151,12,31,73\")),bytes32(stringToBytes32(\"122,198,32,116,67,203,216,239,67,1,139,17,46,106,23,30,30,171,182,4,215,15,20,201,30,234,186,200,107,96,217,160\")),bytes32(stringToBytes32(\"89,13,62,114,249,251,125,188,114,219,207,89,251,48,65,81,255,69,50,92,232,183,81,38,42,193,36,111,99,188,193,208\")),bytes32(stringToBytes32(\"191,90,128,50,236,24,219,174,61,205,37,102,194,85,117,237,115,113,155,214,25,45,118,245,24,149,95,219,96,48,136,118\")),bytes32(stringToBytes32(\"110,141,224,251,42,77,235,184,100,3,114,192,59,109,77,34,3,127,69,251,161,49,106,243,218,92,32,100,234,74,78,128\")),bytes32(stringToBytes32(\"174,76,65,73,217,106,39,10,222,182,92,227,177,78,107,124,134,212,29,112,22,33,111,32,191,193,188,93,22,164,26,106\")),bytes32(stringToBytes32(\"29,8,29,113,88,85,47,44,195,241,177,169,196,70,33,213,244,88,49,111,239,135,166,61,239,61,59,111,158,75,68,104\")),bytes32(stringToBytes32(\"151,9,201,66,74,196,29,131,49,206,82,98,73,160,39,151,22,116,66,63,24,35,158,68,168,212,211,44,252,178,16,208\")),bytes32(stringToBytes32(\"147,113,113,114,187,247,236,5,36,18,133,201,102,188,77,253,210,165,21,153,223,166,248,19,96,120,45,2,0,47,182,91\")),bytes32(stringToBytes32(\"3,128,42,68,16,93,3,189,238,251,170,150,141,62,245,186,111,29,152,75,201,77,116,108,160,71,5,206,27,155,145,223\")),bytes32(stringToBytes32(\"208,28,161,170,245,164,62,65,233,89,189,122,172,6,142,135,195,98,172,170,120,144,161,217,157,54,156,13,125,178,172,211\")),bytes32(stringToBytes32(\"42,226,106,181,23,11,188,173,11,146,76,83,103,116,167,95,123,209,226,61,73,176,105,54,84,217,252,130,168,199,23,153\")),bytes32(stringToBytes32(\"141,21,169,118,65,149,48,45,247,143,209,195,165,219,131,249,113,126,128,70,47,58,34,153,156,199,162,131,87,113,30,41\")),bytes32(stringToBytes32(\"199,122,118,12,198,174,104,112,171,97,45,177,18,6,73,145,193,5,25,7,25,102,216,192,218,196,179,90,84,21,99,107\")),bytes32(stringToBytes32(\"72,42,181,230,36,7,206,61,125,74,204,236,205,227,104,37,82,162,125,171,2,44,23,108,11,132,19,83,68,119,149,252\")),bytes32(stringToBytes32(\"80,234,21,28,221,225,215,226,5,15,68,244,237,137,175,193,9,29,234,79,175,108,129,150,100,29,35,137,65,242,137,199\")),bytes32(stringToBytes32(\"40,74,5,162,183,235,220,246,193,201,206,210,132,254,28,58,214,15,189,128,229,62,18,200,228,106,105,234,224,206,86,187\")),bytes32(stringToBytes32(\"112,148,183,32,110,32,149,162,144,151,238,221,230,221,141,243,80,235,31,241,193,72,169,157,23,161,21,78,18,253,86,55\")),bytes32(stringToBytes32(\"140,64,211,32,143,254,25,52,148,17,223,51,46,134,134,248,255,251,45,55,187,144,186,59,38,125,118,218,129,216,157,9\")),bytes32(stringToBytes32(\"18,225,147,8,187,214,77,188,78,144,201,219,196,72,196,60,201,109,197,60,215,114,69,10,119,247,62,27,134,1,162,166\")),bytes32(stringToBytes32(\"184,31,215,228,70,126,78,68,138,159,83,56,183,75,229,72,163,193,250,143,32,241,93,38,149,248,49,60,100,98,188,132\")),bytes32(stringToBytes32(\"93,75,72,230,177,137,10,102,61,244,50,164,174,33,171,57,185,38,58,13,38,140,27,137,122,216,87,218,31,75,202,133\")),bytes32(stringToBytes32(\"208,39,227,40,44,139,173,212,42,205,13,3,111,184,213,139,230,42,238,208,194,116,208,133,37,223,163,6,146,34,95,145\")),bytes32(stringToBytes32(\"195,133,112,118,84,77,55,194,170,41,2,252,110,31,232,130,77,126,252,27,194,208,132,158,160,53,227,171,147,206,170,159\")),bytes32(stringToBytes32(\"30,158,96,193,178,129,210,42,157,153,78,204,66,174,80,37,7,193,54,178,205,25,40,175,219,41,185,105,241,171,185,161\")),bytes32(stringToBytes32(\"186,175,201,62,137,40,251,100,101,132,192,98,65,161,36,96,82,212,230,235,124,78,227,133,117,170,236,3,92,10,44,115\")),bytes32(stringToBytes32(\"8,215,155,50,144,57,148,5,80,249,193,22,23,122,52,230,228,210,86,93,88,7,112,105,252,65,136,36,40,204,17,118\")),bytes32(stringToBytes32(\"102,116,79,68,187,203,19,190,111,9,180,190,126,86,144,212,22,89,115,4,171,158,107,33,16,36,153,61,168,46,71,5\")),bytes32(stringToBytes32(\"217,231,156,244,184,103,175,68,168,57,129,171,154,100,22,176,244,29,224,162,29,98,211,59,118,115,230,215,32,138,217,177\")),bytes32(stringToBytes32(\"123,82,9,113,230,2,58,110,229,43,225,100,166,246,94,30,93,8,248,29,155,171,188,151,30,71,151,244,75,215,48,118\")),bytes32(stringToBytes32(\"235,201,86,201,212,181,181,252,184,249,210,236,172,131,249,42,1,118,202,33,234,41,105,248,133,44,95,193,176,19,123,235\")),bytes32(stringToBytes32(\"59,137,233,68,174,233,145,24,84,72,155,10,131,55,112,230,190,163,111,169,39,144,224,149,51,213,210,218,71,76,225,124\")),bytes32(stringToBytes32(\"246,197,58,3,227,242,222,31,106,220,48,229,78,181,183,140,212,123,92,167,185,120,117,108,117,143,240,141,60,10,164,42\")),bytes32(stringToBytes32(\"242,14,10,50,89,44,7,158,173,121,207,25,38,189,189,0,66,177,29,63,205,168,171,239,7,119,24,216,55,44,173,80\")),bytes32(stringToBytes32(\"72,205,197,35,129,179,215,127,25,173,199,242,6,223,4,52,39,153,164,49,25,14,195,120,232,65,0,203,53,83,240,20\"))]"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.637ZProxyMerkleShip.test_verifyMerkleProof": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_verifyMerkleProof(bytes32[6],bytes32,string)",
+          "parameters": [
+            {
+              "js": "[[72,185,60,49,83,143,59,215,228,34,70,106,74,57,33,143,162,54,2,11,166,234,130,90,230,155,0,147,67,179,232,122],[165,197,155,150,156,70,110,120,56,252,57,118,249,134,14,4,116,100,147,15,208,171,247,117,122,110,186,71,22,132,148,155],[110,16,229,229,16,111,175,94,180,226,159,156,107,84,245,41,254,120,197,156,149,195,220,155,103,242,199,94,45,123,9,235],[36,31,180,57,86,61,15,191,163,234,5,10,24,139,165,254,230,186,147,53,114,214,217,166,73,212,144,182,255,111,151,41],[234,62,37,126,214,65,156,5,154,55,200,31,109,216,69,129,117,147,62,136,39,192,208,200,52,110,114,26,203,34,250,143],[60,42,168,85,38,106,182,36,200,93,22,171,134,245,63,92,52,159,160,179,165,72,203,81,205,5,66,184,79,139,166,219]]",
+              "sol": "[bytes32(stringToBytes32(\"72,185,60,49,83,143,59,215,228,34,70,106,74,57,33,143,162,54,2,11,166,234,130,90,230,155,0,147,67,179,232,122\")),bytes32(stringToBytes32(\"165,197,155,150,156,70,110,120,56,252,57,118,249,134,14,4,116,100,147,15,208,171,247,117,122,110,186,71,22,132,148,155\")),bytes32(stringToBytes32(\"110,16,229,229,16,111,175,94,180,226,159,156,107,84,245,41,254,120,197,156,149,195,220,155,103,242,199,94,45,123,9,235\")),bytes32(stringToBytes32(\"36,31,180,57,86,61,15,191,163,234,5,10,24,139,165,254,230,186,147,53,114,214,217,166,73,212,144,182,255,111,151,41\")),bytes32(stringToBytes32(\"234,62,37,126,214,65,156,5,154,55,200,31,109,216,69,129,117,147,62,136,39,192,208,200,52,110,114,26,203,34,250,143\")),bytes32(stringToBytes32(\"60,42,168,85,38,106,182,36,200,93,22,171,134,245,63,92,52,159,160,179,165,72,203,81,205,5,66,184,79,139,166,219\"))]"
+            },
+            {
+              "js": "[94,178,151,136,227,90,52,17,75,62,147,165,202,5,137,213,5,225,19,214,27,54,96,198,12,247,221,142,105,102,69,223]",
+              "sol": "stringToBytes32(\"94,178,151,136,227,90,52,17,75,62,147,165,202,5,137,213,5,225,19,214,27,54,96,198,12,247,221,142,105,102,69,223\")"
+            },
+            {
+              "js": "\"mwlwe\"",
+              "sol": "\"mwlwe\""
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.638ZProxyMerkleShip.test_isCoordinateValid": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_isCoordinateValid(uint8,uint8)",
+          "parameters": [
+            {
+              "js": "48",
+              "sol": "48"
+            },
+            {
+              "js": "39",
+              "sol": "39"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.638ZProxyMerkleShip.test_coordinateToIndex": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_coordinateToIndex(uint8,uint8)",
+          "parameters": [
+            {
+              "js": "4",
+              "sol": "4"
+            },
+            {
+              "js": "41",
+              "sol": "41"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.639ZProxyMerkleShip.test_subString": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_subString(string,uint256)",
+          "parameters": [
+            {
+              "js": "\"nf4t06\"",
+              "sol": "\"nf4t06\""
+            },
+            {
+              "js": "40",
+              "sol": "40"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T09:55:00.639ZProxyMerkleShip.test_isStringValid": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute test_isStringValid(string)",
+          "parameters": [
+            {
+              "js": "\"victory by abandonment\"",
+              "sol": "\"victory by abandonment\""
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

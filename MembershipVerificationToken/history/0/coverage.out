@@ -1,0 +1,271 @@
+npm run coverage
+seg 09 nov 2020 23:11:32 -03
+Truffle v5.0.27 (core: 5.0.27)
+Solidity - 0.4.25 (solc-js)
+Node v10.15.3
+Web3.js v1.0.0-beta.37
+
+> membershipverificationtoken@2.5.7 coverage /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken
+> touch allFiredEvents & solidity-coverage
+
+Generating coverage environment
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/ERC1261MetaData.sol
+> Compiling ./contracts/MembershipVerificationToken.sol
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/Protocol/IERC1261.sol
+> Compiling ./contracts/proxy4tests/MembershipVerificationToken.sol
+> Compiling openzeppelin-solidity/contracts/introspection/ERC165.sol
+> Compiling openzeppelin-solidity/contracts/introspection/IERC165.sol
+> Compiling openzeppelin-solidity/contracts/ownership/Ownable.sol
+
+    > compilation warnings encountered:
+
+/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/coverageEnv/contracts/proxy4tests/MembershipVerificationToken.sol:1:1: Warning: Source file does not specify required compiler version!Consider adding "pragma solidity ^0.4.25;"
+import "../MembershipVerificationToken.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.4.25+commit.59dbf8f1.Emscripten.clang
+
+Instrumenting  ./coverageEnv/contracts/ERC1261MetaData.sol
+Instrumenting  ./coverageEnv/contracts/MembershipVerificationToken.sol
+Skipping instrumentation of  ./coverageEnv/contracts/Migrations.sol
+Instrumenting  ./coverageEnv/contracts/Protocol/IERC1261.sol
+Instrumenting  ./coverageEnv/contracts/proxy4tests/MembershipVerificationToken.sol
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/ERC1261MetaData.sol
+> Compiling ./contracts/MembershipVerificationToken.sol
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/Protocol/IERC1261.sol
+> Compiling ./contracts/proxy4tests/MembershipVerificationToken.sol
+> Compiling openzeppelin-solidity/contracts/introspection/ERC165.sol
+> Compiling openzeppelin-solidity/contracts/introspection/IERC165.sol
+> Compiling openzeppelin-solidity/contracts/ownership/Ownable.sol
+
+    > compilation warnings encountered:
+
+/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/coverageEnv/contracts/proxy4tests/MembershipVerificationToken.sol:1:1: Warning: Source file does not specify required compiler version!Consider adding "pragma solidity ^0.4.25;"
+import "../MembershipVerificationToken.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+,openzeppelin-solidity/contracts/ownership/Ownable.sol:28:3: Warning: Function state mutability can be restricted to view
+  function owner() public      returns(address) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,openzeppelin-solidity/contracts/ownership/Ownable.sol:43:3: Warning: Function state mutability can be restricted to view
+  function isOwner() public      returns(bool) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.4.25+commit.59dbf8f1.Emscripten.clang
+
+Launched testrpc on port 8555
+Running: truffle test --network coverage 
+(this can take a few seconds)...
+Using network 'coverage'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+[0m[0m
+[0m  Contract: ERC1261MetaData[0m
+  [32m  ✓[0m[90m Should execute name()[0m[33m (38ms)[0m
+  [32m  ✓[0m[90m Should execute symbol()[0m
+
+[0m  Contract: contractProxyMembershipVerificationToken[0m
+  [32m  ✓[0m[90m Should execute test_assign(address,uint[]) WHEN _to!=0x0000000000000000000000000000000000000000,_attributeIndexes.length==attributeNames.length[0m[31m (76ms)[0m
+  [32m  ✓[0m[90m Should fail test_assign(address,uint[]) when NOT comply with: _to != 0x0000000000000000000000000000000000000000[0m[33m (58ms)[0m
+  [32m  ✓[0m[90m Should fail test_assign(address,uint[]) when NOT comply with: _attributeIndexes.length == attributeNames.length[0m[33m (63ms)[0m
+  [32m  ✓[0m[90m Should execute test_revoke(address) WHEN _from!=0x0000000000000000000000000000000000000000[0m[33m (51ms)[0m
+  [32m  ✓[0m[90m Should fail test_revoke(address) when NOT comply with: _from != 0x0000000000000000000000000000000000000000[0m[33m (61ms)[0m
+
+[0m  Contract: MembershipVerificationToken[0m
+  [32m  ✓[0m[90m Should execute requestMembership(uint[]) WHEN FunctionCall!=true,_attributeIndexes.length==attributeNames.length[0m[33m (51ms)[0m
+  [32m  ✓[0m[90m Should fail requestMembership(uint[]) when NOT comply with: _attributeIndexes.length == attributeNames.length[0m[33m (66ms)[0m
+  [31m  1) Should execute forfeitMembership() WHEN msg.sender!=0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+
+    ---------------------------
+  [31m  2) Should fail forfeitMembership() when NOT comply with: msg.sender != 0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+
+    ---------------------------
+  [31m  3) Should execute approveRequest(address) WHEN msg.sender==_owner,_user!=0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail approveRequest(address) when NOT comply with: msg.sender == _owner[0m[33m (40ms)[0m
+  [32m  ✓[0m[90m Should fail approveRequest(address) when NOT comply with: _user != 0x0000000000000000000000000000000000000000[0m[33m (47ms)[0m
+  [31m  4) Should execute discardRequest(address) WHEN msg.sender==_owner[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail discardRequest(address) when NOT comply with: msg.sender == _owner[0m[33m (41ms)[0m
+  [32m  ✓[0m[90m Should execute assignTo(address,uint[]) WHEN msg.sender==_owner,_to!=0x0000000000000000000000000000000000000000,_attributeIndexes.length==attributeNames.length[0m[33m (48ms)[0m
+  [32m  ✓[0m[90m Should fail assignTo(address,uint[]) when NOT comply with: msg.sender == _owner[0m[33m (42ms)[0m
+  [32m  ✓[0m[90m Should fail assignTo(address,uint[]) when NOT comply with: _to != 0x0000000000000000000000000000000000000000[0m[33m (47ms)[0m
+  [32m  ✓[0m[90m Should fail assignTo(address,uint[]) when NOT comply with: _attributeIndexes.length == attributeNames.length[0m[33m (44ms)[0m
+  [32m  ✓[0m[90m Should execute revokeFrom(address) WHEN msg.sender==_owner,_from!=0x0000000000000000000000000000000000000000[0m[33m (42ms)[0m
+  [32m  ✓[0m[90m Should fail revokeFrom(address) when NOT comply with: msg.sender == _owner[0m[33m (40ms)[0m
+  [32m  ✓[0m[90m Should fail revokeFrom(address) when NOT comply with: _from != 0x0000000000000000000000000000000000000000[0m[33m (41ms)[0m
+  [32m  ✓[0m[90m Should execute addAttributeSet(bytes32,bytes32[])[0m[33m (53ms)[0m
+  [31m  5) Should execute modifyAttributeByIndex(address,uint,uint) WHEN msg.sender==_owner[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail modifyAttributeByIndex(address,uint,uint) when NOT comply with: msg.sender == _owner[0m
+  [32m  ✓[0m[90m Should execute getAllMembers()[0m
+  [32m  ✓[0m[90m Should execute getCurrentMemberCount()[0m
+  [32m  ✓[0m[90m Should execute getAttributeNames()[0m
+  [32m  ✓[0m[90m Should execute getAttributes(address) WHEN _to!=0x0000000000000000000000000000000000000000[0m
+  [32m  ✓[0m[90m Should fail getAttributes(address) when NOT comply with: _to != 0x0000000000000000000000000000000000000000[0m
+  [32m  ✓[0m[90m Should execute getAttributeExhaustiveCollection(uint)[0m
+  [31m  6) Should execute getAttributeByIndex(address,uint)[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x4fd7A7374d3C40bc674A50e5375aa3e341e8b61d (address))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should execute isCurrentMember(address) WHEN _to!=0x0000000000000000000000000000000000000000[0m
+  [32m  ✓[0m[90m Should fail isCurrentMember(address) when NOT comply with: _to != 0x0000000000000000000000000000000000000000[0m
+
+
+[92m [0m[32m 29 passing[0m[90m (9s)[0m
+[31m  6 failing[0m
+
+[0m  1) Contract: MembershipVerificationToken
+       Should execute forfeitMembership() WHEN msg.sender!=0x0000000000000000000000000000000000000000:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert Not a current member -- Reason given: Not a current member.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  2) Contract: MembershipVerificationToken
+       Should fail forfeitMembership() when NOT comply with: msg.sender != 0x0000000000000000000000000000000000000000:
+[0m[31m     AssertionError: Expected to fail with revert, but failed with: Error: Returned error: from not found; is required[0m[90m
+      at fails (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle-assertions/index.js:152:13)
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  3) Contract: MembershipVerificationToken
+       Should execute approveRequest(address) WHEN msg.sender==_owner,_user!=0x0000000000000000000000000000000000000000:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert Hasn't sent ether yet -- Reason given: Hasn't sent ether yet.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  4) Contract: MembershipVerificationToken
+       Should execute discardRequest(address) WHEN msg.sender==_owner:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert Hasn't sent ether yet -- Reason given: Hasn't sent ether yet.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  5) Contract: MembershipVerificationToken
+       Should execute modifyAttributeByIndex(address,uint,uint) WHEN msg.sender==_owner:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert data doesn't exist for the user -- Reason given: data doesn't exist for the user.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  6) Contract: MembershipVerificationToken
+       Should execute getAttributeByIndex(address,uint):
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert data doesn't exist for the user[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/MembershipVerificationToken/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+
+
+----------------------------------|----------|----------|----------|----------|----------------|
+File                              |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+----------------------------------|----------|----------|----------|----------|----------------|
+ contracts/                       |    80.33 |       75 |    95.45 |    77.78 |                |
+  ERC1261MetaData.sol             |      100 |      100 |      100 |      100 |                |
+  MembershipVerificationToken.sol |    78.57 |       75 |    94.74 |    75.86 |... 124,168,186 |
+ contracts/Protocol/              |      100 |      100 |      100 |      100 |                |
+  IERC1261.sol                    |      100 |      100 |      100 |      100 |                |
+ contracts/proxy4tests/           |      100 |      100 |      100 |      100 |                |
+  MembershipVerificationToken.sol |      100 |      100 |      100 |      100 |                |
+----------------------------------|----------|----------|----------|----------|----------------|
+All files                         |    80.95 |       75 |       96 |    78.46 |                |
+----------------------------------|----------|----------|----------|----------|----------------|
+
+Istanbul coverage reports generated
+Cleaning up...
+Shutting down testrpc-sc (pid 17605)
+Some truffle tests failed while running coverage

@@ -1,0 +1,529 @@
+,{
+  "2020-11-14T21:13:05.323ZOwnable.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:10.837ZDetailedERC20.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(string,string,uint8)",
+          "parameters": [
+            {
+              "js": "\"whitelist\"",
+              "sol": "\"whitelist\""
+            },
+            {
+              "js": "\"bouncer\"",
+              "sol": "\"bouncer\""
+            },
+            {
+              "js": "95",
+              "sol": "95"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:26.992ZHarbergerAds.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(ERC20,uint256,uint256)",
+          "parameters": [
+            {
+              "js": "contractERC20test.address",
+              "sol": "contractERC20test"
+            },
+            {
+              "js": "64",
+              "sol": "64"
+            },
+            {
+              "js": "17",
+              "sol": "17"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.472ZERC20test.": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute fallback()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.473ZERC20test.burn": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute burn(uint256) WHEN _value<=balances",
+          "parameters": [
+            {
+              "js": "17",
+              "sol": "17"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.474ZERC20test.mint": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute mint(address) WHEN mintingFinished!=true",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail mint(address) when NOT comply with: mintingFinished != true",
+            "parameters": [
+              {
+                "js": "accounts[6]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.476ZHarbergerAds.taxesDue": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute taxesDue(uint256) WHEN 1>0",
+          "parameters": [
+            {
+              "js": "1532892064",
+              "sol": "1532892064"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.477ZHarbergerAds.balanceOf": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "41-45",
+          "restrictions": [
+            "balance > allowance"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute balanceOf(address) WHEN balance>allowance",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "43-45",
+          "restrictions": [
+            "balance <= allowance"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute balanceOf(address) WHEN balance<=allowance",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.477ZHarbergerAds.addProperty": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute addProperty(uint256)",
+          "parameters": [
+            {
+              "js": "4",
+              "sol": "4"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.477ZHarbergerAds.forecloseIfPossible": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute forecloseIfPossible(uint256)",
+          "parameters": [
+            {
+              "js": "64",
+              "sol": "64"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.478ZHarbergerAds.collectTaxes": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "83-85",
+          "restrictions": [
+            "taxes > 0",
+            "taxes <= balance"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute collectTaxes(uint256) WHEN taxes>0,taxes<=balance",
+          "parameters": [
+            {
+              "js": "1331007098",
+              "sol": "1331007098"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "taxes <= 0",
+            "taxes <= balance"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute collectTaxes(uint256) WHEN taxes<=0,taxes<=balance",
+          "parameters": [
+            {
+              "js": "2",
+              "sol": "2"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "2": {
+        "branch": {
+          "loc": "93-95",
+          "restrictions": [
+            "balance > 0",
+            "taxes > balance"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute collectTaxes(uint256) WHEN balance>0,taxes>balance",
+          "parameters": [
+            {
+              "js": "66",
+              "sol": "66"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "balance <= 0",
+            "taxes > balance"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute collectTaxes(uint256) WHEN balance<=0,taxes>balance",
+          "parameters": [
+            {
+              "js": "95",
+              "sol": "95"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.479ZHarbergerAds.buy": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "118-129",
+          "restrictions": [
+            "seller != msg.sender"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute buy(uint256,uint256,uint256) WHEN seller!=msg.sender",
+          "parameters": [
+            {
+              "js": "2014223714",
+              "sol": "2014223714"
+            },
+            {
+              "js": "1331007097",
+              "sol": "1331007097"
+            },
+            {
+              "js": "2",
+              "sol": "2"
+            },
+            {
+              "js": "{from:accounts[1]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "seller == msg.sender"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute buy(uint256,uint256,uint256) WHEN seller==msg.sender",
+          "parameters": [
+            {
+              "js": "1331007097",
+              "sol": "1331007097"
+            },
+            {
+              "js": "3",
+              "sol": "3"
+            },
+            {
+              "js": "2014223716",
+              "sol": "2014223716"
+            },
+            {
+              "js": "{from:accounts[6]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.480ZHarbergerAds.propertyCount": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute propertyCount()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-14T21:13:32.480ZHarbergerAds.changeRecipient": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute changeRecipient(uint256,address)",
+          "parameters": [
+            {
+              "js": "17",
+              "sol": "17"
+            },
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

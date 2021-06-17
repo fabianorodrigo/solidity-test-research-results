@@ -1,0 +1,536 @@
+npx solidity-coverage
+qui 12 nov 2020 08:32:27 -03
+Truffle v5.0.27 (core: 5.0.27)
+Solidity - 0.4.24 (solc-js)
+Node v10.15.3
+Web3.js v1.0.0-beta.37
+Generating coverage environment
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/Pony.sol
+> Compiling ./contracts/TESTBUXX.sol
+> Compiling ./contracts/proxy4tests/TESTBUXX.sol
+
+    > compilation warnings encountered:
+
+/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/Pony.sol:21:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Pony (address _fb) public {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:44:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function TESTBUXX ( uint256 initialSupply,
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/proxy4tests/TESTBUXX.sol:1:1: Warning: Source file does not specify required compiler version!Consider adding "pragma solidity ^0.4.24;"
+import "../TESTBUXX.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/Pony.sol:4:3: Warning: Functions in interfaces should be declared external.
+  function transfer(address to, uint256 value, bytes data) returns (bool success);
+  ^------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/Pony.sol:5:3: Warning: Functions in interfaces should be declared external.
+  function balanceOf( address owner ) public constant returns (uint);
+  ^-----------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:55:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer( address(0), msg.sender, totalSupply );
+    ^---------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:64:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer( address(0), to, value );
+    ^-------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:83:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval( msg.sender, spender, value );
+    ^------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:153:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Burn( msg.sender, value );
+    ^-----------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:168:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Burn( from, value );
+    ^-----------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:183:49: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+      require( address(rx).call.value(0)(bytes4(keccak256(custom_fallback)),
+                                                ^------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:183:49: Warning: The provided argument of type string memory is not implicitly convertible to expected type bytes memory.
+      require( address(rx).call.value(0)(bytes4(keccak256(custom_fallback)),
+                                                ^------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:239:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer( from, to, value ); // ERC20-compat version
+    ^-------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/Pony.sol:4:3: Warning: No visibility specified. Defaulting to "public". In interfaces it defaults to external.
+  function transfer(address to, uint256 value, bytes data) returns (bool success);
+  ^------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/Pony.sol:27:56: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+  function tokenFallback (address from, uint256 value, bytes _dc) public {
+                                                       ^-------^
+
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.4.24+commit.e67f0147.Emscripten.clang
+
+Skipping instrumentation of  ./coverageEnv/contracts/Migrations.sol
+Instrumenting  ./coverageEnv/contracts/Pony.sol
+Instrumenting  ./coverageEnv/contracts/proxy4tests/TESTBUXX.sol
+Instrumenting  ./coverageEnv/contracts/TESTBUXX.sol
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/Pony.sol
+> Compiling ./contracts/TESTBUXX.sol
+> Compiling ./contracts/proxy4tests/TESTBUXX.sol
+
+    > compilation warnings encountered:
+
+/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/Pony.sol:33:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function Pony (address _fb) public {emit __FunctionCoverageTOKEN('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/Pony.sol',1);
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:62:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function TESTBUXX ( uint256 initialSupply,
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/proxy4tests/TESTBUXX.sol:1:1: Warning: Source file does not specify required compiler version!Consider adding "pragma solidity ^0.4.24;"
+import "../TESTBUXX.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/Pony.sol:10:3: Warning: Functions in interfaces should be declared external.
+  function transfer(address to, uint256 value, bytes data) returns (bool success);
+  ^------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/Pony.sol:11:3: Warning: Functions in interfaces should be declared external.
+  function balanceOf( address owner ) public constant returns (uint);
+  ^-----------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:88:1: Warning: Invoking events without "emit" prefix is deprecated.
+Transfer( address(0), msg.sender, totalSupply );
+^---------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:110:1: Warning: Invoking events without "emit" prefix is deprecated.
+Transfer( address(0), to, value );
+^-------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:137:1: Warning: Invoking events without "emit" prefix is deprecated.
+Approval( msg.sender, spender, value );
+^------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:263:1: Warning: Invoking events without "emit" prefix is deprecated.
+Burn( msg.sender, value );
+^-----------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:297:1: Warning: Invoking events without "emit" prefix is deprecated.
+Burn( from, value );
+^-----------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:324:43: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+require( address(rx).call.value(0)(bytes4(keccak256(custom_fallback)),
+                                          ^------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:324:43: Warning: The provided argument of type string memory is not implicitly convertible to expected type bytes memory.
+require( address(rx).call.value(0)(bytes4(keccak256(custom_fallback)),
+                                          ^------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:432:1: Warning: Invoking events without "emit" prefix is deprecated.
+Transfer( from, to, value ); // ERC20-compat version
+^-------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/Pony.sol:10:3: Warning: No visibility specified. Defaulting to "public". In interfaces it defaults to external.
+  function transfer(address to, uint256 value, bytes data) returns (bool success);
+  ^------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/Pony.sol:46:56: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+ ... bytes _dc ... 
+     ^-------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:114:76: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+ ... __FunctionCoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',4) ... 
+     ^-----------------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:116:6: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+emit __CoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',69);
+     ^----------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:117:10: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+    emit __StatementCoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',13);
+         ^-------------------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:169:9: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+  {emit __FunctionCoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',7);
+        ^-----------------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:171:6: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+emit __CoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',106);
+     ^-----------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:172:10: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+    emit __StatementCoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',20);
+         ^-------------------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:382:9: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+  {emit __FunctionCoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',16);
+        ^------------------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:384:6: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+emit __CoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',219);
+     ^-----------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:385:10: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+    emit __StatementCoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',59);
+         ^-------------------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:387:6: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+emit __CoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',220);
+     ^-----------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:389:6: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+emit __CoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',221);
+     ^-----------------------------------------------------------------------------------------------------------------------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/contracts/TESTBUXX.sol:390:10: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+    emit __StatementCoveragetokenRecipient('/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/contracts/TESTBUXX.sol',60);
+         ^-------------------------------------------------------------------------------------------------------------------------------------^
+
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/ponyBadges/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.4.24+commit.e67f0147.Emscripten.clang
+
+Launched testrpc on port 8555
+Running: truffle test --network coverage 
+(this can take a few seconds)...
+Using network 'coverage'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+[0m[0m
+[0m  Contract: Pony[0m
+  [31m  1) Should execute tokenFallback(address,uint256,bytes) WHEN value>=PLAY_COST[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail tokenFallback(address,uint256,bytes) when NOT comply with: value >= PLAY_COST[0m[33m (56ms)[0m
+  [31m  2) Should execute withdraw() WHEN msg.sender==admin[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail withdraw() when NOT comply with: msg.sender == admin[0m[33m (49ms)[0m
+  [32m  ✓[0m[90m Should execute getPony(address)[0m
+
+[0m  Contract: contractProxyTESTBUXX[0m
+  [31m  3) Should execute test_transfer(address,address,uint,bytes) WHEN to!=0x0,balances_>=value[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail test_transfer(address,address,uint,bytes) when NOT comply with: to != 0x0[0m[33m (55ms)[0m
+
+[0m  Contract: TESTBUXX[0m
+  [31m  4) Should execute fallback()[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should execute mint(address,uint256) WHEN msg.sender==admin[0m[33m (50ms)[0m
+  [32m  ✓[0m[90m Should fail mint(address,uint256) when NOT comply with: msg.sender == admin[0m[33m (42ms)[0m
+  [32m  ✓[0m[90m Should execute balanceOf(address)[0m
+  [32m  ✓[0m[90m Should execute approve(address,uint256)[0m[33m (39ms)[0m
+  [32m  ✓[0m[90m Should execute safeApprove(address,uint256,uint256)[0m[33m (39ms)[0m
+  [32m  ✓[0m[90m Should execute allowance(address,address)[0m
+  [31m  5) Should execute transfer(address,uint256) WHEN to!=0x0[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail transfer(address,uint256) when NOT comply with: to != 0x0[0m[33m (47ms)[0m
+  [31m  6) Should execute transferFrom(address,address,uint256) WHEN to!=0x0[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail transferFrom(address,address,uint256) when NOT comply with: to != 0x0[0m[33m (46ms)[0m
+  [31m  7) Should execute approveAndCall(address,uint256,bytes) WHEN FunctionCall==true[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [31m  8) Should execute approveAndCall(address,uint256,bytes) WHEN FunctionCall!=true[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [31m  9) Should execute burn(uint256) WHEN balances_>=value[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [31m  10) Should execute burnFrom(address,uint256) WHEN balances_>=value[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [31m  11) Should execute transfer(address,uint,bytes,string) WHEN FunctionCall==true,to!=0x0[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail transfer(address,uint,bytes,string) when NOT comply with: to != 0x0[0m[33m (44ms)[0m
+  [31m  12) Should execute transfer(address,uint,bytes,string) WHEN FunctionCall!=true,to!=0x0[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail transfer(address,uint,bytes,string) when NOT comply with: to != 0x0[0m[33m (40ms)[0m
+  [31m  13) Should execute transfer(address,uint,bytes) WHEN FunctionCall==true,to!=0x0[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail transfer(address,uint,bytes) when NOT comply with: to != 0x0[0m[33m (46ms)[0m
+  [31m  14) Should execute transfer(address,uint,bytes) WHEN FunctionCall!=true,to!=0x0[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x58539cAAcD64Cc669fEb3c58bA8bABFBAdffa8A2 (address), value: 0 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail transfer(address,uint,bytes) when NOT comply with: to != 0x0[0m[33m (47ms)[0m
+
+
+[92m [0m[32m 16 passing[0m[90m (8s)[0m
+[31m  14 failing[0m
+
+[0m  1) Contract: Pony
+       Should execute tokenFallback(address,uint256,bytes) WHEN value>=PLAY_COST:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  2) Contract: Pony
+       Should execute withdraw() WHEN msg.sender==admin:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  3) Contract: contractProxyTESTBUXX
+       Should execute test_transfer(address,address,uint,bytes) WHEN to!=0x0,balances_>=value:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  4) Contract: TESTBUXX
+       Should execute fallback():
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  5) Contract: TESTBUXX
+       Should execute transfer(address,uint256) WHEN to!=0x0:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  6) Contract: TESTBUXX
+       Should execute transferFrom(address,address,uint256) WHEN to!=0x0:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  7) Contract: TESTBUXX
+       Should execute approveAndCall(address,uint256,bytes) WHEN FunctionCall==true:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  8) Contract: TESTBUXX
+       Should execute approveAndCall(address,uint256,bytes) WHEN FunctionCall!=true:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  9) Contract: TESTBUXX
+       Should execute burn(uint256) WHEN balances_>=value:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  10) Contract: TESTBUXX
+       Should execute burnFrom(address,uint256) WHEN balances_>=value:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  11) Contract: TESTBUXX
+       Should execute transfer(address,uint,bytes,string) WHEN FunctionCall==true,to!=0x0:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  12) Contract: TESTBUXX
+       Should execute transfer(address,uint,bytes,string) WHEN FunctionCall!=true,to!=0x0:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  13) Contract: TESTBUXX
+       Should execute transfer(address,uint,bytes) WHEN FunctionCall==true,to!=0x0:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  14) Contract: TESTBUXX
+       Should execute transfer(address,uint,bytes) WHEN FunctionCall!=true,to!=0x0:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+
+
+------------------------|----------|----------|----------|----------|----------------|
+File                    |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+------------------------|----------|----------|----------|----------|----------------|
+ contracts/             |    54.43 |       50 |    95.24 |    53.75 |                |
+  Pony.sol              |    81.82 |       75 |      100 |       75 |       31,32,34 |
+  TESTBUXX.sol          |       50 |    42.31 |    94.12 |       50 |... 237,238,239 |
+ contracts/proxy4tests/ |      100 |      100 |      100 |      100 |                |
+  TESTBUXX.sol          |      100 |      100 |      100 |      100 |                |
+------------------------|----------|----------|----------|----------|----------------|
+All files               |       55 |       50 |    95.65 |    54.32 |                |
+------------------------|----------|----------|----------|----------|----------------|
+
+Istanbul coverage reports generated
+Cleaning up...
+Shutting down testrpc-sc (pid 22579)
+Some truffle tests failed while running coverage

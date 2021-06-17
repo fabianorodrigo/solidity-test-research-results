@@ -1,0 +1,172 @@
+solidity-coverage
+ter 10 nov 2020 21:15:30 -03
+Truffle v5.0.27 (core: 5.0.27)
+Solidity - 0.5.4 (solc-js)
+Node v10.15.3
+Web3.js v1.0.0-beta.37
+Generating coverage environment
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/SimpleCrowdfund.sol
+> Compiling ./contracts/SimpleToken.sol
+> Compiling ./contracts/library/Ownable.sol
+> Compiling ./contracts/library/SafeMath.sol
+> Compiling ./contracts/proxy4tests/SafeMath.sol
+
+    > compilation warnings encountered:
+
+/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/contracts/proxy4tests/SafeMath.sol:1:1: Warning: Source file does not specify required compiler version! Consider adding "pragma solidity ^0.5.4;"
+import "../library/SafeMath.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.5.4+commit.9549d8ff.Emscripten.clang
+
+Instrumenting  ./coverageEnv/contracts/library/Ownable.sol
+Instrumenting  ./coverageEnv/contracts/library/SafeMath.sol
+Skipping instrumentation of  ./coverageEnv/contracts/Migrations.sol
+Instrumenting  ./coverageEnv/contracts/proxy4tests/SafeMath.sol
+Instrumenting  ./coverageEnv/contracts/SimpleCrowdfund.sol
+Instrumenting  ./coverageEnv/contracts/SimpleToken.sol
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/SimpleCrowdfund.sol
+> Compiling ./contracts/SimpleToken.sol
+> Compiling ./contracts/library/Ownable.sol
+> Compiling ./contracts/library/SafeMath.sol
+> Compiling ./contracts/proxy4tests/SafeMath.sol
+
+    > compilation warnings encountered:
+
+/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/contracts/proxy4tests/SafeMath.sol:1:1: Warning: Source file does not specify required compiler version! Consider adding "pragma solidity ^0.5.4;"
+import "../library/SafeMath.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/contracts/SimpleToken.sol:33:27: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function transferFrom(address _from, address _to, uint256 _value) publ ...
+                          ^-----------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/contracts/SimpleToken.sol:33:42: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+ ... nction transferFrom(address _from, address _to, uint256 _value) public returns (b ...
+                                        ^---------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/contracts/SimpleToken.sol:33:55: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+ ... erFrom(address _from, address _to, uint256 _value) public returns (bool) {emit __Fun ...
+                                        ^------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/contracts/SimpleToken.sol:35:22: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function approve(address _spender, uint256 _value) public returns (b ...
+                     ^--------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/contracts/SimpleToken.sol:35:40: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+ ... function approve(address _spender, uint256 _value) public returns (bool) {emit __Fun ...
+                                        ^------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/contracts/SimpleToken.sol:37:24: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function allowance(address _owner, address _spender) public      ret ...
+                       ^------------^
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/contracts/SimpleToken.sol:37:40: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+ ... function allowance(address _owner, address _spender) public      returns (uint256) {em ...
+                                        ^--------------^
+
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/06/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.5.4+commit.9549d8ff.Emscripten.clang
+
+Launched testrpc on port 8555
+Running: truffle test --network coverage 
+(this can take a few seconds)...
+Using network 'coverage'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+[0m[0m
+[0m  Contract: contractProxySafeMath[0m
+  [32m  ✓[0m[90m Should execute testadd(uint256,uint256)[0m
+  [32m  ✓[0m[90m Should execute testsub(uint256,uint256) WHEN b<=a[0m
+  [32m  ✓[0m[90m Should fail testsub(uint256,uint256) when NOT comply with: b <= a[0m[33m (41ms)[0m
+  [32m  ✓[0m[90m Should execute testmul(uint256,uint256) WHEN a==0[0m
+  [32m  ✓[0m[90m Should execute testmul(uint256,uint256) WHEN a!=0[0m
+  [32m  ✓[0m[90m Should execute testdiv(uint256,uint256) WHEN b>0[0m
+  [32m  ✓[0m[90m Should fail testdiv(uint256,uint256) when NOT comply with: b > 0[0m
+  [32m  ✓[0m[90m Should execute testmod(uint256,uint256) WHEN b!=0[0m
+  [32m  ✓[0m[90m Should fail testmod(uint256,uint256) when NOT comply with: b != 0[0m[33m (74ms)[0m
+
+[0m  Contract: SimpleCrowdfund[0m
+  [32m  ✓[0m[90m Should execute buyTokens(address)[0m[31m (78ms)[0m
+  [32m  ✓[0m[90m Should execute getRate()[0m
+  [32m  ✓[0m[90m Should execute fallback()[0m[33m (61ms)[0m
+
+[0m  Contract: SimpleToken[0m
+  [32m  ✓[0m[90m Should execute transferFrom(address,address,uint256)[0m
+  [32m  ✓[0m[90m Should execute approve(address,uint256)[0m
+  [32m  ✓[0m[90m Should execute allowance(address,address)[0m
+  [32m  ✓[0m[90m Should execute balanceOf(address)[0m
+  [31m  1) Should execute transfer(address,uint256) WHEN _to!=0x0000000000000000000000000000000000000000,_value<=balances[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x9D196bD4dB6AA856AD1A3d8a06e3539e7aFA176A (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x9D196bD4dB6AA856AD1A3d8a06e3539e7aFA176A (address))
+    Mint(to: <indexed> 0x9D196bD4dB6AA856AD1A3d8a06e3539e7aFA176A (address), amount: 5 (uint256))
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x9D196bD4dB6AA856AD1A3d8a06e3539e7aFA176A (address), value: 5 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail transfer(address,uint256) when NOT comply with: _to != 0x0000000000000000000000000000000000000000[0m[33m (40ms)[0m
+  [32m  ✓[0m[90m Should execute mint(address,uint256) WHEN msg.sender==_owner,totalSupply<maxSupply[0m[33m (46ms)[0m
+  [32m  ✓[0m[90m Should fail mint(address,uint256) when NOT comply with: msg.sender == _owner[0m[33m (38ms)[0m
+  [32m  ✓[0m[90m Should execute owner()[0m
+  [32m  ✓[0m[90m Should execute isOwner()[0m
+  [32m  ✓[0m[90m Should execute renounceOwnership() WHEN msg.sender==_owner[0m[33m (38ms)[0m
+  [32m  ✓[0m[90m Should fail renounceOwnership() when NOT comply with: msg.sender == _owner[0m[33m (47ms)[0m
+  [32m  ✓[0m[90m Should execute transferOwnership(address) WHEN msg.sender==_owner,newOwner!=0x0000000000000000000000000000000000000000[0m[33m (38ms)[0m
+  [32m  ✓[0m[90m Should fail transferOwnership(address) when NOT comply with: msg.sender == _owner[0m
+  [32m  ✓[0m[90m Should fail transferOwnership(address) when NOT comply with: newOwner != 0x0000000000000000000000000000000000000000[0m[33m (45ms)[0m
+
+
+[92m [0m[32m 26 passing[0m[90m (9s)[0m
+[31m  1 failing[0m
+
+[0m  1) Contract: SimpleToken
+       Should execute transfer(address,uint256) WHEN _to!=0x0000000000000000000000000000000000000000,_value<=balances:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+
+
+------------------------|----------|----------|----------|----------|----------------|
+File                    |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+------------------------|----------|----------|----------|----------|----------------|
+ contracts/             |    78.13 |       55 |      100 |    75.86 |                |
+  SimpleCrowdfund.sol   |    84.21 |       50 |      100 |    82.35 |       46,48,50 |
+  SimpleToken.sol       |    69.23 |    66.67 |      100 |    66.67 |    36,37,38,39 |
+ contracts/library/     |      100 |     87.5 |      100 |      100 |                |
+  Ownable.sol           |      100 |      100 |      100 |      100 |                |
+  SafeMath.sol          |      100 |    83.33 |      100 |      100 |                |
+ contracts/proxy4tests/ |      100 |      100 |      100 |      100 |                |
+  SafeMath.sol          |      100 |      100 |      100 |      100 |                |
+------------------------|----------|----------|----------|----------|----------------|
+All files               |    89.06 |    69.44 |      100 |    88.71 |                |
+------------------------|----------|----------|----------|----------|----------------|
+
+Istanbul coverage reports generated
+Cleaning up...
+Shutting down testrpc-sc (pid 272243)
+Some truffle tests failed while running coverage

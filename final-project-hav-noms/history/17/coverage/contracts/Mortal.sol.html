@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Mortal.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Mortal.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.75% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.75% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/16</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.5.0;
+&nbsp;
+import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+&nbsp;
+//import "./Ownable.sol";
+&nbsp;
+/**
+ * @title A contract that can be destroyed by its owner after a delay elapses.
+ * This contract allows an inheriting contract to be destroyed after
+ * its owner indicates an intention and then waits for a period
+ * without changing their mind. All ether contained in the contract
+ * is forwarded to a nominated beneficiary upon destruction.
+ * @author https://github.com/hav-noms/
+ */
+contract Mortal is Ownable {
+    
+    uint public initiationTime;
+    bool public selfDestructInitiated;
+    address payable public selfDestructBeneficiary;
+    uint public constant SELFDESTRUCT_DELAY = 4 weeks;
+&nbsp;
+    /**
+     * @dev Constructor
+     * @param _selfDestructBeneficiary The account which will recieve any funds in this contract when killed.
+     */
+    constructor(address payable _selfDestructBeneficiary)
+        public
+    {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_selfDestructBeneficiary != address(0), "_selfDestructBeneficiary must not be the zero address");
+        selfDestructBeneficiary = _selfDestructBeneficiary;
+        emit SelfDestructBeneficiaryUpdated(selfDestructBeneficiary);
+    }
+&nbsp;
+    /**
+     * @notice Set the beneficiary address of this contract.
+     * @dev Only the contract owner may call this. The provided beneficiary must be non-null.
+     * @param _beneficiary The address to pay any eth contained in this contract to upon self-destruction.
+     */
+<span class="fstat-no" title="function not covered" >    function setSelfDestructBeneficiary(address payable _beneficiary)</span>
+        external
+        onlyOwner
+    {
+<span class="cstat-no" title="statement not covered" >        require(_beneficiary != address(0), "Beneficiary must not be the zero address")</span>;
+<span class="cstat-no" title="statement not covered" >        selfDestructBeneficiary = _beneficiary</span>;
+<span class="cstat-no" title="statement not covered" >        emit SelfDestructBeneficiaryUpdated(_beneficiary);</span>
+    }
+&nbsp;
+    /**
+     * @notice Begin the self-destruction counter of this contract.
+     * Once the delay has elapsed, the contract may be self-destructed.
+     * @dev Only the contract owner may call this.
+     */
+<span class="fstat-no" title="function not covered" >    function initiateSelfDestruct()</span>
+        external
+        onlyOwner
+    {
+<span class="cstat-no" title="statement not covered" >        initiationTime = now</span>;
+<span class="cstat-no" title="statement not covered" >        selfDestructInitiated = true</span>;
+<span class="cstat-no" title="statement not covered" >        emit SelfDestructInitiated(SELFDESTRUCT_DELAY);</span>
+    }
+&nbsp;
+    /**
+     * @notice Terminate and reset the self-destruction timer.
+     * @dev Only the contract owner may call this.
+     */
+<span class="fstat-no" title="function not covered" >    function terminateSelfDestruct()</span>
+        external
+        onlyOwner
+    {
+<span class="cstat-no" title="statement not covered" >        initiationTime = 0</span>;
+<span class="cstat-no" title="statement not covered" >        selfDestructInitiated = false</span>;
+<span class="cstat-no" title="statement not covered" >        emit SelfDestructTerminated();</span>
+    }
+&nbsp;
+    /**
+     * @notice If the self-destruction delay has elapsed, destroy this contract and
+     * remit any ether it owns to the beneficiary address.
+     * @dev Only the contract owner may call this.
+     */
+<span class="fstat-no" title="function not covered" >    function selfDestruct()</span>
+        external
+        onlyOwner
+    {
+<span class="cstat-no" title="statement not covered" >        require(selfDestructInitiated, "Self destruct has not yet been initiated")</span>;
+<span class="cstat-no" title="statement not covered" >        require(initiationTime + SELFDESTRUCT_DELAY &lt; now, "Self destruct delay has not yet elapsed")</span>;
+<span class="cstat-no" title="statement not covered" >        emit SelfDestructed(selfDestructBeneficiary);</span>
+<span class="cstat-no" title="statement not covered" >        selfdestruct(selfDestructBeneficiary)</span>;
+    }
+&nbsp;
+    //-----------------------------------------------------------------
+    // Events
+    //-----------------------------------------------------------------
+    
+    event SelfDestructTerminated();
+    event SelfDestructed(address beneficiary);
+    event SelfDestructInitiated(uint selfDestructDelay);
+    event SelfDestructBeneficiaryUpdated(address newBeneficiary);
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Nov 13 2020 18:49:58 GMT-0200 (GMT-02:00)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

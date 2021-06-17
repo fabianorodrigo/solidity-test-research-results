@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Splitter.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Splitter.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">62.5% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity &gt;=0.4.21 &lt;0.6.0;
+&nbsp;
+import './SafeMath.sol';
+import './Stoppable.sol';
+&nbsp;
+/// @title Splitter - Split payments to two parties 50/50
+/// @author hilmarx
+/// @notice You can use this contract to split up payments equally among two pre-defined parties
+/// @dev This is a test version, please don't use in production
+&nbsp;
+contract Splitter is Stoppable  {
+&nbsp;
+    using SafeMath for uint256;
+&nbsp;
+    // State variables
+&nbsp;
+    // balance of alice, bob &amp; carol
+    mapping (address =&gt; uint) public balanceOf;
+&nbsp;
+    // mapping to find respective remainders for splitting pairs with their hashes
+    mapping (bytes32 =&gt; uint) public remainderPair; 
+&nbsp;
+    // Events
+    // Show that the remainder was distributed to the two accounts
+    event LogRemainderClaimed(uint indexed remainder, bool indexed claimable);
+&nbsp;
+    // Show that alice sent some Ether to the split function
+    event LogSplit(uint indexed amount);
+&nbsp;
+    // Show that either bob or carol successfully withdrew their balance
+    event LogBalanceWithdrawn(address indexed withdrawer, uint indexed amount);
+&nbsp;
+    // Modifiers
+    
+    ///@dev Check if message sender (Bob or Carol) have any balance which can be withdrawn
+    modifier sufficientBalance() {
+        <span class="missing-if-branch" title="if path not taken" >I</span>require(balanceOf[msg.sender] &gt; 0, "Your balance is 0");
+        _;
+    }
+    
+    ///@dev Check that Alice is not sending a message with value 0 to a payable method
+    modifier nonZero() {
+        require(msg.value &gt; 0, "You cannot send a transaction with value equal to 0");
+        _;
+    }
+    
+    //@dev Constructor setting addresses &amp; balances of Alice, Bob &amp; Carol, where alice is the owner
+    constructor() public {
+        // alice = owner();
+    }
+&nbsp;
+    // Setter Functions
+&nbsp;
+    ///@dev Split ether sent by Alice into two equal pieces and add them to receiver1s &amp; receiver2s balance, equally.
+    ///@dev If ether amount cannot be divided by two, store remainder in the 'remainder' state variable which is mapped to each unqiue splitting pair
+    ///@dev If the ether stored in the remainder state variable is again divisible by 2, emit an event
+    function splitEther(address receiver1, address receiver2) 
+        public
+        onlyOwner
+        nonZero
+        onlyIfRunning
+        payable
+    {       
+        // Require both address to not be 0;
+        require( receiver1 != address(0) &amp;&amp; receiver2 != address(0) );
+&nbsp;
+        // Store balance uint of carol in memory
+        uint receiver1NewBalance = balanceOf[receiver1];
+&nbsp;
+        // Store balance uint of bob in memory
+        uint receiver2NewBalance = balanceOf[receiver2];
+&nbsp;
+        // Divide Ether sent by Alice into two equal payouts
+        uint payout = msg.value.div(2);
+&nbsp;
+        // Check if remainer exists, if yes update remainder
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (msg.value &gt; payout.mul(2)) {
+&nbsp;
+            // Find pairHash of splitting Pair
+            bytes32 pairHash = createPairHash(receiver1, receiver2);
+&nbsp;
+            // Find remainder of splitting pair
+            uint newRemainder = remainderPair[pairHash];
+&nbsp;
+            // Update remainder
+            newRemainder = newRemainder.add(msg.value - payout.mul(2));
+            
+            // If remainder is greater than 0 &amp; divisible by two, trigger event and update carols and bobs balanceOf
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (newRemainder &gt; 0 &amp;&amp; newRemainder.mod(2) == 0) 
+            {
+                // Split existing remainder in two
+<span class="cstat-no" title="statement not covered" >                uint evenPayout = newRemainder.div(2);</span>
+&nbsp;
+                // update carols and bobs balance
+<span class="cstat-no" title="statement not covered" >                receiver1NewBalance = receiver1NewBalance.add(evenPayout)</span>;
+<span class="cstat-no" title="statement not covered" >                receiver2NewBalance = receiver2NewBalance.add(evenPayout)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                emit LogRemainderClaimed(newRemainder, true);</span>
+&nbsp;
+                // Set remainder to 0;
+<span class="cstat-no" title="statement not covered" >                newRemainder = 0</span>;
+            }
+            // SSTORE new remainder
+            remainderPair[pairHash] = newRemainder;
+        }
+        // SSTORE updated balance of Carol
+        balanceOf[receiver1] = receiver1NewBalance.add(payout);
+        // SSTORE updated balance of bob
+        balanceOf[receiver2] = receiver2NewBalance.add(payout);
+&nbsp;
+        // Emit event that ether was succesfully splitted amoung bob &amp; carol
+        emit LogSplit(msg.value);
+    }
+    
+    ///@dev Enable Bob &amp; Carol to withdraw the value of their contracts balance
+<span class="fstat-no" title="function not covered" >    function withdraw() </span>
+        public
+        sufficientBalance
+        onlyIfRunning
+        returns (bool success)
+    {
+<span class="cstat-no" title="statement not covered" >        uint withdrawAmount = balanceOf[msg.sender];</span>
+<span class="cstat-no" title="statement not covered" >        balanceOf[msg.sender] = 0</span>;
+        // emit event that either carol or bob successfully withdrew their balance
+<span class="cstat-no" title="statement not covered" >        emit LogBalanceWithdrawn(msg.sender, withdrawAmount);</span>
+<span class="cstat-no" title="statement not covered" >        msg.sender.transfer(withdrawAmount)</span>;
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    }
+&nbsp;
+    function createPairHash(address receiver1, address receiver2) 
+        internal 
+        pure 
+        returns (bytes32 resultedPairHash) 
+    {
+        bytes32 pairHash;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (receiver1 &gt; receiver2) {
+<span class="cstat-no" title="statement not covered" >            pairHash = keccak256(abi.encodePacked(receiver1, receiver2))</span>;
+        } else {
+            pairHash = keccak256(abi.encodePacked(receiver2, receiver1));
+        }
+        return pairHash;
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 10 2020 01:55:42 GMT-0200 (GMT-02:00)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

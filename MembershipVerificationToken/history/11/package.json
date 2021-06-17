@@ -1,0 +1,98 @@
+{
+  "name": "membershipverificationtoken",
+  "version": "2.5.7",
+  "description": "Standard Implementation and interface for Membership Verification Token",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start:blockchain:client": ". ./scripts/start-blockchain.sh",
+    "stop:blockchain:client": ". ./scripts/stop-blockchain.sh",
+    "pretest": "npm run start:blockchain:client",
+    "test": "truffle migrate --reset --compile-all && truffle test --network development",
+    "posttest": "npm run stop:blockchain:client",
+    "precommit": "lint-staged && solhint \"contracts/*.sol\"",
+    "coverage": "touch allFiredEvents & solidity-coverage",
+    "prettier": "prettier --write \"**/*.{js,json,css,md}\"",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "lint:sol": "prettier --write contracts/**/*.sol",
+    "lint:js": "eslint --fix test/**/*.js"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "openzeppelin-solidity"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:js --",
+      "prettier --write **/*.js",
+      "git add"
+    ],
+    "*.sol": [
+      "npm run lint:sol --",
+      "git add"
+    ],
+    "*.{json,css}": [
+      "prettier --write **/*.json",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "files": [
+    "contracts",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaitanyapotti/MembershipVerificationToken.git"
+  },
+  "author": "Chaitanya Potti",
+  "bugs": {
+    "url": "https://github.com/chaitanyapotti/MembershipVerificationToken/issues"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "smart",
+    "contracts",
+    "protocol",
+    "electus",
+    "eip-1261",
+    "Membership Verification Token",
+    "Organizations",
+    "Decentralized",
+    "Governance"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/chaitanyapotti/MembershipVerificationToken#readme",
+  "dependencies": {
+    "ganache-cli": "^6.4.5",
+    "openzeppelin-solidity": "2.0.0",
+    "truffle-assertions": "^0.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-mocha": "^5.3.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2",
+    "prettier-plugin-solidity": "^1.0.0-alpha.27",
+    "solhint": "^2.1.0",
+    "solhint-plugin-prettier": "0.0.3",
+    "solidity-coverage": "^0.6.3",
+    "truffle": "^5.0.27"
+  }
+}

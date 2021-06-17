@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for external/BokkyPooBah/BokkyPooBahsDateTimeLibrary.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">external/BokkyPooBah/</a> BokkyPooBahsDateTimeLibrary.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.94% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>150/158</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.52% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>38/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>39/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.9% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>149/157</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-yes">152×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">78×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">164×</span>
+<span class="cline-any cline-yes">164×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.5.2;
+&nbsp;
+// ----------------------------------------------------------------------------
+// BokkyPooBah's DateTime Library v1.01
+//
+// A gas-efficient Solidity date and time library
+//
+// https://github.com/bokkypoobah/BokkyPooBahsDateTimeLibrary
+//
+// Tested date range 1970/01/01 to 2345/12/31
+//
+// Conventions:
+// Unit      | Range         | Notes
+// :-------- |:-------------:|:-----
+// timestamp | &gt;= 0          | Unix timestamp, number of seconds since 1970/01/01 00:00:00 UTC
+// year      | 1970 ... 2345 |
+// month     | 1 ... 12      |
+// day       | 1 ... 31      |
+// hour      | 0 ... 23      |
+// minute    | 0 ... 59      |
+// second    | 0 ... 59      |
+// dayOfWeek | 1 ... 7       | 1 = Monday, ..., 7 = Sunday
+//
+//
+// Enjoy. (c) BokkyPooBah / Bok Consulting Pty Ltd 2018-2019. The MIT Licence.
+// ----------------------------------------------------------------------------
+&nbsp;
+library BokkyPooBahsDateTimeLibrary {
+&nbsp;
+	uint constant SECONDS_PER_DAY = 24 * 60 * 60;
+	uint constant SECONDS_PER_HOUR = 60 * 60;
+	uint constant SECONDS_PER_MINUTE = 60;
+	int constant OFFSET19700101 = 2440588;
+&nbsp;
+	uint constant DOW_MON = 1;
+	uint constant DOW_TUE = 2;
+	uint constant DOW_WED = 3;
+	uint constant DOW_THU = 4;
+	uint constant DOW_FRI = 5;
+	uint constant DOW_SAT = 6;
+	uint constant DOW_SUN = 7;
+&nbsp;
+	// ------------------------------------------------------------------------
+	// Calculate the number of days from 1970/01/01 to year/month/day using
+	// the date conversion algorithm from
+	//   http://aa.usno.navy.mil/faq/docs/JD_Formula.php
+	// and subtracting the offset 2440588 so that 1970/01/01 is day 0
+	//
+	// days = day
+	//      - 32075
+	//      + 1461 * (year + 4800 + (month - 14) / 12) / 4
+	//      + 367 * (month - 2 - (month - 14) / 12 * 12) / 12
+	//      - 3 * ((year + 4900 + (month - 14) / 12) / 100) / 4
+	//      - offset
+	// ------------------------------------------------------------------------
+	function _daysFromDate(uint year, uint month, uint day) internal pure returns (uint _days) {
+		require(year &gt;= 1970);
+		int _year = int(year);
+		int _month = int(month);
+		int _day = int(day);
+&nbsp;
+		int __days = _day
+		  - 32075
+		  + 1461 * (_year + 4800 + (_month - 14) / 12) / 4
+		  + 367 * (_month - 2 - (_month - 14) / 12 * 12) / 12
+		  - 3 * ((_year + 4900 + (_month - 14) / 12) / 100) / 4
+		  - OFFSET19700101;
+&nbsp;
+		_days = uint(__days);
+	}
+&nbsp;
+	// ------------------------------------------------------------------------
+	// Calculate year/month/day from the number of days since 1970/01/01 using
+	// the date conversion algorithm from
+	//   http://aa.usno.navy.mil/faq/docs/JD_Formula.php
+	// and adding the offset 2440588 so that 1970/01/01 is day 0
+	//
+	// int L = days + 68569 + offset
+	// int N = 4 * L / 146097
+	// L = L - (146097 * N + 3) / 4
+	// year = 4000 * (L + 1) / 1461001
+	// L = L - 1461 * year / 4 + 31
+	// month = 80 * L / 2447
+	// dd = L - 2447 * month / 80
+	// L = month / 11
+	// month = month + 2 - 12 * L
+	// year = 100 * (N - 49) + year + L
+	// ------------------------------------------------------------------------
+	function _daysToDate(uint _days) internal pure returns (uint year, uint month, uint day) {
+		int __days = int(_days);
+&nbsp;
+		int L = __days + 68569 + OFFSET19700101;
+		int N = 4 * L / 146097;
+		L = L - (146097 * N + 3) / 4;
+		int _year = 4000 * (L + 1) / 1461001;
+		L = L - 1461 * _year / 4 + 31;
+		int _month = 80 * L / 2447;
+		int _day = L - 2447 * _month / 80;
+		L = _month / 11;
+		_month = _month + 2 - 12 * L;
+		_year = 100 * (N - 49) + _year + L;
+&nbsp;
+		year = uint(_year);
+		month = uint(_month);
+		day = uint(_day);
+	}
+&nbsp;
+	function timestampFromDate(uint year, uint month, uint day) internal pure returns (uint timestamp) {
+		timestamp = _daysFromDate(year, month, day) * SECONDS_PER_DAY;
+	}
+	function timestampFromDateTime(uint year, uint month, uint day, uint hour, uint minute, uint second) internal pure returns (uint timestamp) {
+		timestamp = _daysFromDate(year, month, day) * SECONDS_PER_DAY + hour * SECONDS_PER_HOUR + minute * SECONDS_PER_MINUTE + second;
+	}
+	function timestampToDate(uint timestamp) internal pure returns (uint year, uint month, uint day) {
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+	}
+	function timestampToDateTime(uint timestamp) internal pure returns (uint year, uint month, uint day, uint hour, uint minute, uint second) {
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+		uint secs = timestamp % SECONDS_PER_DAY;
+		hour = secs / SECONDS_PER_HOUR;
+		secs = secs % SECONDS_PER_HOUR;
+		minute = secs / SECONDS_PER_MINUTE;
+		second = secs % SECONDS_PER_MINUTE;
+	}
+&nbsp;
+	function isValidDate(uint year, uint month, uint day) internal pure returns (bool valid) {
+		if (year &gt;= 1970 &amp;&amp; month &gt; 0 &amp;&amp; month &lt;= 12) {
+			uint daysInMonth = _getDaysInMonth(year, month);
+			if (day &gt; 0 &amp;&amp; day &lt;= daysInMonth) {
+				valid = true;
+			}
+		}
+	}
+	function isValidDateTime(uint year, uint month, uint day, uint hour, uint minute, uint second) internal pure returns (bool valid) {
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (isValidDate(year, month, day)) {
+<span class="cstat-no" title="statement not covered" >			if (hour &lt; 24 &amp;&amp; minute &lt; 60 &amp;&amp; second &lt; 60) {</span>
+<span class="cstat-no" title="statement not covered" >				valid = true</span>;
+			}
+		}
+	}
+	function isLeapYear(uint timestamp) internal pure returns (bool leapYear) {
+		uint year;
+		uint month;
+		uint day;
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+		leapYear = _isLeapYear(year);
+	}
+	function _isLeapYear(uint year) internal pure returns (bool leapYear) {
+		leapYear = ((year % 4 == 0) &amp;&amp; (year % 100 != 0)) || (year % 400 == 0);
+	}
+	function isWeekDay(uint timestamp) internal pure returns (bool weekDay) {
+		weekDay = getDayOfWeek(timestamp) &lt;= DOW_FRI;
+	}
+	function isWeekEnd(uint timestamp) internal pure returns (bool weekEnd) {
+		weekEnd = getDayOfWeek(timestamp) &gt;= DOW_SAT;
+	}
+	function getDaysInMonth(uint timestamp) internal pure returns (uint daysInMonth) {
+		uint year;
+		uint month;
+		uint day;
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+		daysInMonth = _getDaysInMonth(year, month);
+	}
+	function _getDaysInMonth(uint year, uint month) internal pure returns (uint daysInMonth) {
+		if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+			daysInMonth = 31;
+		} else if (month != 2) {
+			daysInMonth = 30;
+		} else {
+			daysInMonth = _isLeapYear(year) ? 29 : 28;
+		}
+	}
+	// 1 = Monday, 7 = Sunday
+	function getDayOfWeek(uint timestamp) internal pure returns (uint dayOfWeek) {
+		uint _days = timestamp / SECONDS_PER_DAY;
+		dayOfWeek = (_days + 3) % 7 + 1;
+	}
+&nbsp;
+	function getYear(uint timestamp) internal pure returns (uint year) {
+		uint month;
+		uint day;
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+	}
+	function getMonth(uint timestamp) internal pure returns (uint month) {
+		uint year;
+		uint day;
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+	}
+	function getDay(uint timestamp) internal pure returns (uint day) {
+		uint year;
+		uint month;
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+	}
+	function getHour(uint timestamp) internal pure returns (uint hour) {
+		uint secs = timestamp % SECONDS_PER_DAY;
+		hour = secs / SECONDS_PER_HOUR;
+	}
+	function getMinute(uint timestamp) internal pure returns (uint minute) {
+		uint secs = timestamp % SECONDS_PER_HOUR;
+		minute = secs / SECONDS_PER_MINUTE;
+	}
+	function getSecond(uint timestamp) internal pure returns (uint second) {
+		second = timestamp % SECONDS_PER_MINUTE;
+	}
+&nbsp;
+	function addYears(uint timestamp, uint _years) internal pure returns (uint newTimestamp) {
+		uint year;
+		uint month;
+		uint day;
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+		year += _years;
+		uint daysInMonth = _getDaysInMonth(year, month);
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (day &gt; daysInMonth) {
+<span class="cstat-no" title="statement not covered" >			day = daysInMonth</span>;
+		}
+		newTimestamp = _daysFromDate(year, month, day) * SECONDS_PER_DAY + timestamp % SECONDS_PER_DAY;
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(newTimestamp &gt;= timestamp);
+	}
+	function addMonths(uint timestamp, uint _months) internal pure returns (uint newTimestamp) {
+		uint year;
+		uint month;
+		uint day;
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+		month += _months;
+		year += (month - 1) / 12;
+		month = (month - 1) % 12 + 1;
+		uint daysInMonth = _getDaysInMonth(year, month);
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (day &gt; daysInMonth) {
+<span class="cstat-no" title="statement not covered" >			day = daysInMonth</span>;
+		}
+		newTimestamp = _daysFromDate(year, month, day) * SECONDS_PER_DAY + timestamp % SECONDS_PER_DAY;
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(newTimestamp &gt;= timestamp);
+	}
+	function addDays(uint timestamp, uint _days) internal pure returns (uint newTimestamp) {
+		newTimestamp = timestamp + _days * SECONDS_PER_DAY;
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(newTimestamp &gt;= timestamp);
+	}
+	function addHours(uint timestamp, uint _hours) internal pure returns (uint newTimestamp) {
+		newTimestamp = timestamp + _hours * SECONDS_PER_HOUR;
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(newTimestamp &gt;= timestamp);
+	}
+	function addMinutes(uint timestamp, uint _minutes) internal pure returns (uint newTimestamp) {
+		newTimestamp = timestamp + _minutes * SECONDS_PER_MINUTE;
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(newTimestamp &gt;= timestamp);
+	}
+	function addSeconds(uint timestamp, uint _seconds) internal pure returns (uint newTimestamp) {
+		newTimestamp = timestamp + _seconds;
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(newTimestamp &gt;= timestamp);
+	}
+&nbsp;
+	function subYears(uint timestamp, uint _years) internal pure returns (uint newTimestamp) {
+		uint year;
+		uint month;
+		uint day;
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+		year -= _years;
+		uint daysInMonth = _getDaysInMonth(year, month);
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (day &gt; daysInMonth) {
+<span class="cstat-no" title="statement not covered" >			day = daysInMonth</span>;
+		}
+		newTimestamp = _daysFromDate(year, month, day) * SECONDS_PER_DAY + timestamp % SECONDS_PER_DAY;
+<span class="cstat-no" title="statement not covered" >		require(newTimestamp &lt;= timestamp)</span>;
+	}
+	function subMonths(uint timestamp, uint _months) internal pure returns (uint newTimestamp) {
+		uint year;
+		uint month;
+		uint day;
+		(year, month, day) = _daysToDate(timestamp / SECONDS_PER_DAY);
+		uint yearMonth = year * 12 + (month - 1) - _months;
+		year = yearMonth / 12;
+		month = yearMonth % 12 + 1;
+		uint daysInMonth = _getDaysInMonth(year, month);
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (day &gt; daysInMonth) {
+<span class="cstat-no" title="statement not covered" >			day = daysInMonth</span>;
+		}
+		newTimestamp = _daysFromDate(year, month, day) * SECONDS_PER_DAY + timestamp % SECONDS_PER_DAY;
+<span class="cstat-no" title="statement not covered" >		require(newTimestamp &lt;= timestamp)</span>;
+	}
+	function subDays(uint timestamp, uint _days) internal pure returns (uint newTimestamp) {
+		newTimestamp = timestamp - _days * SECONDS_PER_DAY;
+		require(newTimestamp &lt;= timestamp);
+	}
+	function subHours(uint timestamp, uint _hours) internal pure returns (uint newTimestamp) {
+		newTimestamp = timestamp - _hours * SECONDS_PER_HOUR;
+		<span class="missing-if-branch" title="if path not taken" >I</span>require(newTimestamp &lt;= timestamp);
+	}
+	function subMinutes(uint timestamp, uint _minutes) internal pure returns (uint newTimestamp) {
+		newTimestamp = timestamp - _minutes * SECONDS_PER_MINUTE;
+		<span class="missing-if-branch" title="if path not taken" >I</span>require(newTimestamp &lt;= timestamp);
+	}
+	function subSeconds(uint timestamp, uint _seconds) internal pure returns (uint newTimestamp) {
+		newTimestamp = timestamp - _seconds;
+		<span class="missing-if-branch" title="else path not taken" >E</span>require(newTimestamp &lt;= timestamp);
+	}
+&nbsp;
+	function diffYears(uint fromTimestamp, uint toTimestamp) internal pure returns (uint _years) {
+		require(fromTimestamp &lt;= toTimestamp);
+		uint fromYear;
+		uint fromMonth;
+		uint fromDay;
+		uint toYear;
+		uint toMonth;
+		uint toDay;
+		(fromYear, fromMonth, fromDay) = _daysToDate(fromTimestamp / SECONDS_PER_DAY);
+		(toYear, toMonth, toDay) = _daysToDate(toTimestamp / SECONDS_PER_DAY);
+		_years = toYear - fromYear;
+	}
+	function diffMonths(uint fromTimestamp, uint toTimestamp) internal pure returns (uint _months) {
+		require(fromTimestamp &lt;= toTimestamp);
+		uint fromYear;
+		uint fromMonth;
+		uint fromDay;
+		uint toYear;
+		uint toMonth;
+		uint toDay;
+		(fromYear, fromMonth, fromDay) = _daysToDate(fromTimestamp / SECONDS_PER_DAY);
+		(toYear, toMonth, toDay) = _daysToDate(toTimestamp / SECONDS_PER_DAY);
+		_months = toYear * 12 + toMonth - fromYear * 12 - fromMonth;
+	}
+	function diffDays(uint fromTimestamp, uint toTimestamp) internal pure returns (uint _days) {
+		require(fromTimestamp &lt;= toTimestamp);
+		_days = (toTimestamp - fromTimestamp) / SECONDS_PER_DAY;
+	}
+	function diffHours(uint fromTimestamp, uint toTimestamp) internal pure returns (uint _hours) {
+		require(fromTimestamp &lt;= toTimestamp);
+		_hours = (toTimestamp - fromTimestamp) / SECONDS_PER_HOUR;
+	}
+	function diffMinutes(uint fromTimestamp, uint toTimestamp) internal pure returns (uint _minutes) {
+		require(fromTimestamp &lt;= toTimestamp);
+		_minutes = (toTimestamp - fromTimestamp) / SECONDS_PER_MINUTE;
+	}
+	function diffSeconds(uint fromTimestamp, uint toTimestamp) internal pure returns (uint _seconds) {
+		require(fromTimestamp &lt;= toTimestamp);
+		_seconds = toTimestamp - fromTimestamp;
+	}
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Nov 13 2020 02:48:58 GMT-0200 (GMT-02:00)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

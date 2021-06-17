@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Protocol/IERC1261.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/Protocol/</a> IERC1261.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/0</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.4.25;
+&nbsp;
+/// @title ERC-1261 MVT Standard
+/// @dev See https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1261.md
+///  The constructor should define the attribute set for this MVT.
+///  Note: the ERC-165 identifier for this interface is 0x1d8362cf.
+interface IERC1261 {
+    /* is ERC173, ERC165 */
+    /// @dev This emits when a token is assigned to a member.
+    event Assigned(address indexed _to, uint[] attributeIndexes);
+&nbsp;
+    /// @dev This emits when a membership is revoked.
+    event Revoked(address indexed _to);
+&nbsp;
+    /// @dev This emits when a user forfeits his membership
+    event Forfeited(address indexed _to);
+&nbsp;
+    /// @dev This emits when a membership request is accepted
+    event ApprovedMembership(address indexed _to, uint[] attributeIndexes);
+&nbsp;
+    /// @dev This emits when a membership is requested by an user
+    event RequestedMembership(address indexed _to);
+&nbsp;
+    /// @dev This emits when data of a member is modified.
+    ///  Doesn't emit when a new membership is created and data is assigned.
+    event ModifiedAttributes(
+        address indexed _to,
+        uint attributeIndex,
+        uint prevValueIndex,
+        bytes32 prevValue,
+        uint modifiedValueIndex,
+        bytes32 modifiedValue
+    );
+&nbsp;
+    /// @notice Adds a new attribute (key, value) pair to the set of pre-existing attributes.
+    /// @dev Adds a new attribute at the end of the array of attributes and maps it to `values`.
+    ///  Contract can set a max number of attributes and throw if limit is reached.
+    /// @param _name Name of the attribute which is to be added.
+    /// @param values List of values of the specified attribute.
+    function addAttributeSet(bytes32 _name, bytes32[] values) external;
+&nbsp;
+    /// @notice Modifies the attribute value of a specific attribute for a given `_to` address.
+    /// @dev Use appropriate checks for whether a user/admin can modify the data.
+    ///  Best practice is to use onlyOwner modifier from ERC173.
+    /// @param _to The address whose attribute is being modified.
+    /// @param _attributeIndex The index of attribute which is being modified.
+    /// @param _modifiedValueIndex The index of the new value which is being assigned to the user attribute.
+    function modifyAttributeByIndex(
+        address _to,
+        uint _attributeIndex,
+        uint _modifiedValueIndex
+    ) external;
+&nbsp;
+    /// @notice Requests membership from any address.
+    /// @dev Throws if the `msg.sender` already has the token.
+    ///  The individual `msg.sender` can request for a membership if some exisiting criteria are satisfied.
+    ///  When a membership is requested, this function emits the RequestedMembership event.
+    ///  dev can store the membership request and use `approveRequest` to assign memebership later
+    ///  dev can also oraclize the request to assign membership later
+    /// @param _attributeIndexes the attribute data associated with the member.
+    ///  This is an array which contains indexes of attributes.
+    function requestMembership(uint[] _attributeIndexes) external payable;
+&nbsp;
+    /// @notice User can forfeit his membership.
+    /// @dev Throws if the `msg.sender` already doesn't have the token.
+    ///  The individual `msg.sender` can revoke his/her membership.
+    ///  When the token is revoked, this function emits the Revoked event.
+    function forfeitMembership() external payable;
+&nbsp;
+    /// @notice Owner approves membership from any address.
+    /// @dev Throws if the `_user` doesn't have a pending request.
+    ///  Throws if the `msg.sender` is not an owner.
+    ///  Approves the pending request
+    ///  Make oraclize callback call this function
+    ///  When the token is assigned, this function emits the `ApprovedMembership` and `Assigned` events.
+    /// @param _user the user whose membership request will be approved.
+    function approveRequest(address _user) external;
+&nbsp;
+    /// @notice Owner discards membership from any address.
+    /// @dev Throws if the `_user` doesn't have a pending request.
+    ///  Throws if the `msg.sender` is not an owner.
+    ///  Discards the pending request
+    ///  Make oraclize callback call this function if criteria are not satisfied
+    /// @param _user the user whose membership request will be discarded.
+    function discardRequest(address _user) external;
+&nbsp;
+    /// @notice Assigns membership of an MVT from owner address to another address.
+    /// @dev Throws if the member already has the token.
+    ///  Throws if `_to` is the zero address.
+    ///  Throws if the `msg.sender` is not an owner.
+    ///  The entity assigns the membership to each individual.
+    ///  When the token is assigned, this function emits the Assigned event.
+    /// @param _to The address to which the token is assigned.
+    /// @param _attributeIndexes The attribute data associated with the member.
+    ///  This is an array which contains indexes of attributes.
+    function assignTo(address _to, uint[] _attributeIndexes) external;
+&nbsp;
+    /// @notice Only Owner can revoke the membership.
+    /// @dev This removes the membership of the user.
+    ///  Throws if the `_from` is not an owner of the token.
+    ///  Throws if the `msg.sender` is not an owner.
+    ///  Throws if `_from` is the zero address.
+    ///  When transaction is complete, this function emits the Revoked event.
+    /// @param _from The current owner of the MVT.
+    function revokeFrom(address _from) external;
+&nbsp;
+    /// @notice Queries whether a member is a current member of the organization.
+    /// @dev MVT's assigned to the zero address are considered invalid, and this
+    ///  function throws for queries about the zero address.
+    /// @param _to An address for whom to query the membership.
+    /// @return Whether the member owns the token.
+    function isCurrentMember(address _to) external view returns (bool);
+&nbsp;
+    /// @notice Gets the value collection of an attribute.
+    /// @dev Returns the values of attributes as a bytes32 array.
+    /// @param _index Index of the attribute whose values are to be fetched
+    /// @return The values of attributes.
+    function getAttributeExhaustiveCollection(uint _index)
+        external
+        view
+        returns (bytes32[]);
+&nbsp;
+    /// @notice Returns the list of all past and present members.
+    /// @dev Use this function along with isCurrentMember to find wasMemberOf() in Js.
+    ///  It can be calculated as present in getAllMembers() and !isCurrentMember().
+    /// @return List of addresses who have owned the token and currently own the token.
+    function getAllMembers() external view returns (address[]);
+&nbsp;
+    /// @notice Returns the count of all current members.
+    /// @dev Use this function in polls as denominator to get percentage of members voted.
+    /// @return Count of current Members.
+    function getCurrentMemberCount() external view returns (uint);
+&nbsp;
+    /// @notice Returns the list of all attribute names.
+    /// @dev Returns the names of attributes as a bytes32 array.
+    ///  AttributeNames are stored in a bytes32 Array.
+    ///  Possible values for each attributeName are stored in a mapping(attributeName =&gt; attributeValues).
+    ///  AttributeName is bytes32 and attributeValues is bytes32[].
+    ///  Attributes of a particular user are stored in bytes32[].
+    ///  Which has a single attributeValue for each attributeName in an array.
+    ///  Use web3.toAscii(data[0]).replace(/\u0000/g, "") to convert to string in JS.
+    /// @return The names of attributes.
+    function getAttributeNames() external view returns (bytes32[]);
+&nbsp;
+    /// @notice Returns the attributes of `_to` address.
+    /// @dev Throws if `_to` is the zero address.
+    ///  Use web3.toAscii(data[0]).replace(/\u0000/g, "") to convert to string in JS.
+    /// @param _to The address whose current attributes are to be returned.
+    /// @return The attributes associated with `_to` address.
+    function getAttributes(address _to) external view returns (uint[]);
+&nbsp;
+    /// @notice Returns the `attribute` stored against `_to` address.
+    /// @dev Finds the index of the `attribute`.
+    ///  Throws if the attribute is not present in the predefined attributes.
+    ///  Returns the attributeValue for the specified `attribute`.
+    /// @param _to The address whose attribute is requested.
+    /// @param _attributeIndex The attribute Index which is required.
+    /// @return The attribute value at the specified name.
+    function getAttributeByIndex(address _to, uint _attributeIndex)
+        external
+        view
+        returns (uint);
+}
+&nbsp;
+/// @title ERC-1261 Membership Verification Token Standard, optional metadata extension
+/// @dev See https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1261.md
+///  Note: the ERC-1261 identifier for this interface is 0x93254542.
+interface IERC1261Metadata {
+    /* is ERC1261 */
+    /// @notice A descriptive name for a collection of MTs in this contract.
+    function name() external view returns (bytes32);
+&nbsp;
+    /// @notice An abbreviated name for MTs in this contract.
+    function symbol() external view returns (bytes32);
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Nov 10 2020 13:29:58 GMT-0200 (GMT-02:00)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

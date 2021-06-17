@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Helper.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Helper.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.49% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>31/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>16/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.5% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>33/40</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.5.0;
+&nbsp;
+/*
+* Used to proxy function calls to the RLPReader for testing
+*/
+import "./RLPReader.sol";
+&nbsp;
+contract Helper {
+    using RLPReader for bytes;
+    using RLPReader for uint;
+    using RLPReader for RLPReader.RLPItem;
+&nbsp;
+    function isList(bytes memory item) public pure returns (bool) {
+        RLPReader.RLPItem memory rlpItem = item.toRlpItem();
+        return rlpItem.isList();
+    }
+&nbsp;
+    function itemLength(bytes memory item) public pure returns (uint) {
+        uint memPtr;
+        assembly {
+            memPtr := add(item, 0x20)
+        }
+&nbsp;
+        return _itemLength(memPtr);
+    }
+&nbsp;
+    function rlpLen(bytes memory item) public pure returns (uint) {
+        RLPReader.RLPItem memory rlpItem = item.toRlpItem();
+        return rlpItem.rlpLen();
+    }
+&nbsp;
+    function payloadLen(bytes memory item) public pure returns (uint) {
+        RLPReader.RLPItem memory rlpItem = item.toRlpItem();
+        return rlpItem.payloadLen();
+    }
+&nbsp;
+    function numItems(bytes memory item) public pure returns (uint) {
+        RLPReader.RLPItem[] memory rlpItem = item.toRlpItem().toList();
+        return rlpItem.length;
+    }
+&nbsp;
+    function toRlpBytes(bytes memory item) public pure returns (bytes memory) {
+        RLPReader.RLPItem memory rlpItem = item.toRlpItem();
+        return rlpItem.toRlpBytes();
+    }
+&nbsp;
+    function toBytes(bytes memory item) public pure returns (bytes memory) {
+        RLPReader.RLPItem memory rlpItem = item.toRlpItem();
+        return rlpItem.toBytes();
+    }
+&nbsp;
+    function toUint(bytes memory item) public pure returns (uint) {
+        RLPReader.RLPItem memory rlpItem = item.toRlpItem();
+        return rlpItem.toUint();
+    }
+&nbsp;
+    function toUintStrict(bytes memory item) public pure returns (uint) {
+        RLPReader.RLPItem memory rlpItem = item.toRlpItem();
+        return rlpItem.toUintStrict();
+    }
+&nbsp;
+    function toAddress(bytes memory item) public pure returns (address) {
+        RLPReader.RLPItem memory rlpItem = item.toRlpItem();
+        return rlpItem.toAddress();
+    }
+&nbsp;
+    function toBoolean(bytes memory item) public pure returns (bool) {
+        RLPReader.RLPItem memory rlpItem = item.toRlpItem();
+        return rlpItem.toBoolean();
+    }
+&nbsp;
+    function bytesToString(bytes memory item) public pure returns (string memory) {
+        RLPReader.RLPItem memory rlpItem = item.toRlpItem();
+        return string(rlpItem.toBytes());
+    }
+&nbsp;
+    /* custom destructuring */
+&nbsp;
+    function customDestructure(bytes memory item) public pure returns (address, bool, uint) {
+        // first three elements follow the return types in order. Ignore the rest
+        RLPReader.RLPItem[] memory items = item.toRlpItem().toList();
+        return (items[0].toAddress(), items[1].toBoolean(), items[2].toUint());
+    }
+&nbsp;
+    function customNestedDestructure(bytes memory item) public pure returns (address, uint) {
+        RLPReader.RLPItem[] memory items = item.toRlpItem().toList();
+<span class="cstat-no" title="statement not covered" >        items = items[0].toList()</span>;
+<span class="cstat-no" title="statement not covered" >        return (items[0].toAddress(), items[1].toUint());</span>
+    }
+&nbsp;
+    function customNestedToRlpBytes(bytes memory item) public pure returns (bytes memory) {
+        RLPReader.RLPItem[] memory items = item.toRlpItem().toList();
+<span class="cstat-no" title="statement not covered" >        return items[0].toRlpBytes();</span>
+    }
+&nbsp;
+    /** Copied verbatim from the reader contract due to scope **/
+    uint8 constant STRING_SHORT_START = 0x80;
+    uint8 constant STRING_LONG_START  = 0xb8;
+    uint8 constant LIST_SHORT_START   = 0xc0;
+    uint8 constant LIST_LONG_START    = 0xf8;
+    function _itemLength(uint memPtr) private pure returns (uint len) {
+        uint byte0;
+        assembly {
+            byte0 := byte(0, mload(memPtr))
+        }
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (byte0 &lt; STRING_SHORT_START)
+            return 1;
+        
+        else <span class="cstat-no" title="statement not covered" >if (byte0 &lt; STRING_LONG_START)</span>
+<span class="cstat-no" title="statement not covered" >            return byte0 - STRING_SHORT_START + 1;</span>
+&nbsp;
+        else <span class="cstat-no" title="statement not covered" >if (byte0 &lt; LIST_SHORT_START) {</span>
+            assembly {
+                let byteLen := sub(byte0, 0xb7) // # of bytes the actual length is
+                memPtr := add(memPtr, 1) // skip over the first byte
+                
+                /* 32 byte word size */
+                let dataLen := div(mload(memPtr), exp(256, sub(32, byteLen))) // right shifting to get the len
+                len := add(dataLen, add(byteLen, 1))
+            }
+        }
+&nbsp;
+        else <span class="cstat-no" title="statement not covered" >if (byte0 &lt; LIST_LONG_START) {</span>
+<span class="cstat-no" title="statement not covered" >            return byte0 - LIST_SHORT_START + 1;</span>
+        } 
+&nbsp;
+        else {
+            assembly {
+                let byteLen := sub(byte0, 0xf7)
+                memPtr := add(memPtr, 1)
+&nbsp;
+                let dataLen := div(mload(memPtr), exp(256, sub(32, byteLen))) // right shifting to the correct length
+                len := add(dataLen, add(byteLen, 1))
+            }
+        }
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Nov 12 2020 06:34:44 GMT-0200 (GMT-02:00)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+,{
+  "2020-11-12T21:03:49.486ZMetaTxProxy.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T21:03:53.123ZProxyEcTools.testrecover": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "16-18",
+          "restrictions": [
+            "signedMessage.length != 65"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testrecover(bytes32,bytes) WHEN signedMessage.length!=65",
+          "parameters": [
+            {
+              "js": "[204,29,153,201,117,109,209,37,232,59,1,168,163,132,236,246,227,212,106,189,30,81,16,23,73,249,154,227,245,93,7,78]",
+              "sol": "stringToBytes32(\"204,29,153,201,117,109,209,37,232,59,1,168,163,132,236,246,227,212,106,189,30,81,16,23,73,249,154,227,245,93,7,78\")"
+            },
+            {
+              "js": "[237,165]",
+              "sol": "abi.encode(\"237,165\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "signedMessage.length == 65"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testrecover(bytes32,bytes) WHEN signedMessage.length==65",
+          "parameters": [
+            {
+              "js": "[181,95,169,156,125,153,27,43,26,216,43,48,233,129,116,132,170,82,131,167,160,109,228,246,69,244,119,157,61,34,201,112]",
+              "sol": "stringToBytes32(\"181,95,169,156,125,153,27,43,26,216,43,48,233,129,116,132,170,82,131,167,160,109,228,246,69,244,119,157,61,34,201,112\")"
+            },
+            {
+              "js": "[75,84,176,230,4,172,30,159,222,31,133,71,75,112,159,176,36,80,70,227,26,100,56,139,151,72,141,147,14,31,180,76,138,109,104,84,233,83,15,110,32,13,212,87,224,69,35,110,163,149,18,163,87,241,61,29,16,195,86,246,208,35,106,63,171]",
+              "sol": "abi.encode(\"75,84,176,230,4,172,30,159,222,31,133,71,75,112,159,176,36,80,70,227,26,100,56,139,151,72,141,147,14,31,180,76,138,109,104,84,233,83,15,110,32,13,212,87,224,69,35,110,163,149,18,163,87,241,61,29,16,195,86,246,208,35,106,63,171\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T21:03:53.124ZProxyEcTools.testtoEthereumSignedMessage": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoEthereumSignedMessage(bytes32)",
+          "parameters": [
+            {
+              "js": "[246,217,223,29,53,80,204,88,116,216,234,101,175,182,43,98,126,79,19,241,137,65,11,138,147,2,109,145,65,151,10,245]",
+              "sol": "stringToBytes32(\"246,217,223,29,53,80,204,88,116,216,234,101,175,182,43,98,126,79,19,241,137,65,11,138,147,2,109,145,65,151,10,245\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T21:03:53.124ZProxyEcTools.testprefixedRecover": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testprefixedRecover(bytes32,bytes)",
+          "parameters": [
+            {
+              "js": "[69,28,94,210,182,88,212,78,208,212,90,234,143,215,177,77,84,124,240,151,175,75,217,175,66,252,21,134,134,17,70,143]",
+              "sol": "stringToBytes32(\"69,28,94,210,182,88,212,78,208,212,90,234,143,215,177,77,84,124,240,151,175,75,217,175,66,252,21,134,134,17,70,143\")"
+            },
+            {
+              "js": "[9,202,167,232,143,28,143,129,32,215,159,249,75,13,175,180,163,182,203,114,68,232,61,170,228,68,60,223,155,7,66,117]",
+              "sol": "abi.encode(\"9,202,167,232,143,28,143,129,32,215,159,249,75,13,175,180,163,182,203,114,68,232,61,170,228,68,60,223,155,7,66,117\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T21:03:53.125ZExternalContract.updateValue": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute updateValue(uint256)",
+          "parameters": [
+            {
+              "js": "26",
+              "sol": "26"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T21:03:53.126ZMetaTxProxy.": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute fallback()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T21:03:53.126ZMetaTxProxy.getTransactionHashNonce": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute getTransactionHashNonce(bytes32)",
+          "parameters": [
+            {
+              "js": "[242,208,206,212,220,21,91,101,27,30,218,55,113,253,19,221,3,17,198,225,141,193,129,103,192,246,3,199,251,67,51,150]",
+              "sol": "stringToBytes32(\"242,208,206,212,220,21,91,101,27,30,218,55,113,253,19,221,3,17,198,225,141,193,129,103,192,246,3,199,251,67,51,150\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T21:03:53.127ZMetaTxProxy.getTransactionHash": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute getTransactionHash(address,uint256,bytes,uint256)",
+          "parameters": [
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "2014223716",
+              "sol": "2014223716"
+            },
+            {
+              "js": "[130,84,200,247,241,180,62,74,10,135,224,155,207,253,236,209,161,243,234,144,68,215,139,1,117,203,14,153,130,156,23,232]",
+              "sol": "abi.encode(\"130,84,200,247,241,180,62,74,10,135,224,155,207,253,236,209,161,243,234,144,68,215,139,1,117,203,14,153,130,156,23,232\")"
+            },
+            {
+              "js": "29",
+              "sol": "29"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T21:03:53.127ZMetaTxProxy.getSigner": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute getSigner(bytes32,bytes)",
+          "parameters": [
+            {
+              "js": "[170,203,81,224,86,195,31,35,152,67,255,199,202,176,205,167,235,211,157,102,143,114,149,173,152,41,193,87,222,200,115,57]",
+              "sol": "stringToBytes32(\"170,203,81,224,86,195,31,35,152,67,255,199,202,176,205,167,235,211,157,102,143,114,149,173,152,41,193,87,222,200,115,57\")"
+            },
+            {
+              "js": "[200,174,220,202,182,177,251,192,244,2,249,46,147,211,46,128,159,141,85,154,81,139,149,252,62,188,34,144,223,143,178,196]",
+              "sol": "abi.encode(\"200,174,220,202,182,177,251,192,244,2,249,46,147,211,46,128,159,141,85,154,81,139,149,252,62,188,34,144,223,143,178,196\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T21:03:53.127ZMetaTxProxy.executeTransaction": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute executeTransaction(address,uint256,bytes,uint256,uint256,bytes)",
+          "parameters": [
+            {
+              "js": "accounts[0]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "[70,40,51,143,202,2,172,22,241,158,37,107,154,224,80,163,123,174,118,199,186,137,15,219,218,125,234,148,172,184,223,65]",
+              "sol": "abi.encode(\"70,40,51,143,202,2,172,22,241,158,37,107,154,224,80,163,123,174,118,199,186,137,15,219,218,125,234,148,172,184,223,65\")"
+            },
+            {
+              "js": "1532892064",
+              "sol": "1532892064"
+            },
+            {
+              "js": "1532892063",
+              "sol": "1532892063"
+            },
+            {
+              "js": "[47,90,35,198,200,226,245,43,4,149,150,209,253,200,25,201,9,39,230,155,252,170,21,140,49,233,48,220,39,170,106,235]",
+              "sol": "abi.encode(\"47,90,35,198,200,226,245,43,4,149,150,209,253,200,25,201,9,39,230,155,252,170,21,140,49,233,48,220,39,170,106,235\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T21:03:53.128ZMetaTxProxy.verifySignature": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute verifySignature(address,uint256,bytes,uint256,bytes) WHEN signer==_signer",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1532892063",
+              "sol": "1532892063"
+            },
+            {
+              "js": "[212,51,48,12,164,57,166,115,194,169,44,110,195,165,28,230,133,19,141,2,117,214,220,30,103,210,52,181,58,117,64,139]",
+              "sol": "abi.encode(\"212,51,48,12,164,57,166,115,194,169,44,110,195,165,28,230,133,19,141,2,117,214,220,30,103,210,52,181,58,117,64,139\")"
+            },
+            {
+              "js": "97",
+              "sol": "97"
+            },
+            {
+              "js": "[103,28,62,246,131,182,248,252,9,37,109,32,221,138,60,205,160,115,125,200,86,175,157,158,36,232,147,101,186,117,250,10]",
+              "sol": "abi.encode(\"103,28,62,246,131,182,248,252,9,37,109,32,221,138,60,205,160,115,125,200,86,175,157,158,36,232,147,101,186,117,250,10\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

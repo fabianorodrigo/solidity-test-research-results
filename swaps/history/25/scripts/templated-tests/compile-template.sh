@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+rm -rf build
+rm -f contracts/Swaps.sol
+source $(dirname "$0")/templated-tests/preprocess-template.sh $1
+node_modules/.bin/truffle compile --all
+node_modules/.bin/combine-contracts Swaps
