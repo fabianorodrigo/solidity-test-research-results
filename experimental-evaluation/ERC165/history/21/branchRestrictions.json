@@ -1,0 +1,173 @@
+,{
+  "2020-11-12T06:37:24.339ZERC165InterfaceImplementer.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T06:37:30.003ZERC165InterfaceCaller.callImplementation": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "24-29",
+          "restrictions": [
+            "FunctionCall == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute callImplementation(address) WHEN FunctionCall==true",
+          "parameters": [
+            {
+              "js": "contractERC165InterfaceImplementer.address",
+              "sol": "contractERC165InterfaceImplementer.address"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "27-29",
+          "restrictions": [
+            "FunctionCall != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute callImplementation(address) WHEN FunctionCall!=true",
+          "parameters": [
+            {
+              "js": "contractERC165InterfaceImplementer.address",
+              "sol": "contractERC165InterfaceImplementer.address"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T06:37:30.004ZERC165InterfaceCaller.callImplementationUsingLib": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "33-38",
+          "restrictions": [
+            "FunctionCall == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute callImplementationUsingLib(address) WHEN FunctionCall==true",
+          "parameters": [
+            {
+              "js": "contractERC165InterfaceImplementer.address",
+              "sol": "contractERC165InterfaceImplementer.address"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "36-38",
+          "restrictions": [
+            "FunctionCall != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute callImplementationUsingLib(address) WHEN FunctionCall!=true",
+          "parameters": [
+            {
+              "js": "contractERC165InterfaceImplementer.address",
+              "sol": "contractERC165InterfaceImplementer.address"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T06:37:30.006ZERC165InterfaceImplementer.someFunction": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute someFunction()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T06:37:30.006ZERC165InterfaceImplementer.someOtherFunction": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute someOtherFunction(uint256[])",
+          "parameters": [
+            {
+              "js": "[29,5,4,28,124,26,2014223716]",
+              "sol": "[uint256(29),uint256(5),uint256(4),uint256(28),uint256(124),uint256(26),uint256(2014223716)]"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

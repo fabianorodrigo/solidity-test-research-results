@@ -1,0 +1,41 @@
+{
+  "name": "crowdsale",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:worldofatlantis/crowdsale.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "openzeppelin-solidity": "^2.1.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "ganache-cli": "^6.4.1",
+    "openzeppelin-test-helpers": "^0.1.2",
+    "solc": "^0.5.4",
+    "solidity-coverage": "^0.5.11",
+    "solium": "^1.2.3",
+    "truffle": "^5.0.6",
+    "truffle-flattener": "^1.3.0"
+  },
+  "scripts": {
+    "test": "scripts/test.sh",
+    "coverage": "solidity-coverage",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
+    "lint:sol": "solium -d .",
+    "lint:sol:fix": "solium -d . --fix",
+    "lint": "npm run lint:js && npm run lint:sol",
+    "lint:fix": "npm run lint:js:fix && npm run lint:sol:fix",
+    "dist_token": "truffle-flattener ./contracts/AtlantisToken.sol > AtlantisToken.full.sol && solcjs --bin --abi --optimize AtlantisToken.full.sol && mv AtlantisToken_full_sol_AtlantisToken.bin AtlantisToken.full.bin && mv AtlantisToken_full_sol_AtlantisToken.abi AtlantisToken.full.abi && rm AtlantisToken_full_sol_*",
+    "dist_sale": "truffle-flattener ./contracts/AtlantisCrowdsale.sol > AtlantisCrowdsale.full.sol && solcjs --bin --abi --optimize AtlantisCrowdsale.full.sol && mv AtlantisCrowdsale_full_sol_AtlantisCrowdsale.bin AtlantisCrowdsale.full.bin && mv AtlantisCrowdsale_full_sol_AtlantisCrowdsale.abi AtlantisCrowdsale.full.abi && rm AtlantisCrowdsale_full_sol_*",
+    "dist": "npm run dist_token && npm run dist_sale"
+  }
+}

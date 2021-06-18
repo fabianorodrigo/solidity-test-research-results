@@ -1,0 +1,791 @@
+,{
+  "2020-11-10T15:32:00.126ZProxyRLPReader.testtoRlpItem": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoRlpItem(bytes)",
+          "parameters": [
+            {
+              "js": "[221,229,163,124,132,204,66,44,167,36,228,94,203,24,239,190,16,208,40,65,6,108,230,207,202,131,63,91,228,60,233,90]",
+              "sol": "abi.encode(\"221,229,163,124,132,204,66,44,167,36,228,94,203,24,239,190,16,208,40,65,6,108,230,207,202,131,63,91,228,60,233,90\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.126ZProxyRLPReader.testrlpLen": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testrlpLen(RLPReader.RLPItem)",
+          "parameters": [
+            {
+              "js": "{\"len\": 255,\"memPtr\": 31}",
+              "sol": "RLPReader.RLPItem(255,31)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.127ZProxyRLPReader.testpayloadLen": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testpayloadLen(RLPReader.RLPItem)",
+          "parameters": [
+            {
+              "js": "{\"len\": 34,\"memPtr\": 21}",
+              "sol": "RLPReader.RLPItem(34,21)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.127ZProxyRLPReader.testtoList": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoList(RLPReader.RLPItem)",
+          "parameters": [
+            {
+              "js": "{\"len\": 257,\"memPtr\": 1}",
+              "sol": "RLPReader.RLPItem(257,1)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.128ZProxyRLPReader.testisList": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "66-66",
+          "restrictions": [
+            "item.len == 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testisList(RLPReader.RLPItem) WHEN item.len==0",
+          "parameters": [
+            {
+              "js": "{\"len\": 0,\"memPtr\": 1}",
+              "sol": "RLPReader.RLPItem(0,1)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "item.len != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testisList(RLPReader.RLPItem) WHEN item.len!=0",
+          "parameters": [
+            {
+              "js": "{\"len\": 256,\"memPtr\": 31}",
+              "sol": "RLPReader.RLPItem(256,31)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.128ZProxyRLPReader.testtoRlpBytes": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoRlpBytes(RLPReader.RLPItem)",
+          "parameters": [
+            {
+              "js": "{\"len\": 0,\"memPtr\": 1}",
+              "sol": "RLPReader.RLPItem(0,1)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.128ZProxyRLPReader.testtoBoolean": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoBoolean(RLPReader.RLPItem) WHEN item.len==1",
+          "parameters": [
+            {
+              "js": "{\"len\": 1,\"memPtr\": 256}",
+              "sol": "RLPReader.RLPItem(1,256)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testtoBoolean(RLPReader.RLPItem) when NOT comply with: item.len == 1",
+            "parameters": [
+              {
+                "js": "{len : 2,memPtr : 256}",
+                "sol": "RLPReader.RLPItem(2,256)"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.129ZProxyRLPReader.testtoAddress": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoAddress(RLPReader.RLPItem) WHEN item.len==21",
+          "parameters": [
+            {
+              "js": "{\"len\": 21,\"memPtr\": 3}",
+              "sol": "RLPReader.RLPItem(21,3)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testtoAddress(RLPReader.RLPItem) when NOT comply with: item.len == 21",
+            "parameters": [
+              {
+                "js": "{len : 22,memPtr : 3}",
+                "sol": "RLPReader.RLPItem(22,3)"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.129ZProxyRLPReader.testtoUint": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoUint(RLPReader.RLPItem) WHEN item.len>0,item.len<=33",
+          "parameters": [
+            {
+              "js": "{\"len\": 31,\"memPtr\": 3}",
+              "sol": "RLPReader.RLPItem(31,3)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testtoUint(RLPReader.RLPItem) when NOT comply with: item.len > 0",
+            "parameters": [
+              {
+                "js": "{len : 0,memPtr : 3}",
+                "sol": "RLPReader.RLPItem(0,3)"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail testtoUint(RLPReader.RLPItem) when NOT comply with: item.len <= 33",
+            "parameters": [
+              {
+                "js": "{len : 34,memPtr : 3}",
+                "sol": "RLPReader.RLPItem(34,3)"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.130ZProxyRLPReader.testtoUintStrict": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoUintStrict(RLPReader.RLPItem) WHEN item.len==33",
+          "parameters": [
+            {
+              "js": "{\"len\": 33,\"memPtr\": 255}",
+              "sol": "RLPReader.RLPItem(33,255)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testtoUintStrict(RLPReader.RLPItem) when NOT comply with: item.len == 33",
+            "parameters": [
+              {
+                "js": "{len : 34,memPtr : 255}",
+                "sol": "RLPReader.RLPItem(34,255)"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.131ZProxyRLPReader.testtoBytes": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoBytes(RLPReader.RLPItem) WHEN item.len>0",
+          "parameters": [
+            {
+              "js": "{\"len\": 21,\"memPtr\": 22}",
+              "sol": "RLPReader.RLPItem(21,22)"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testtoBytes(RLPReader.RLPItem) when NOT comply with: item.len > 0",
+            "parameters": [
+              {
+                "js": "{len : 0,memPtr : 22}",
+                "sol": "RLPReader.RLPItem(0,22)"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.132ZHelper.isList": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute isList(bytes)",
+          "parameters": [
+            {
+              "js": "[123,117,68,0,56,96,160,207,90,37,51,187,139,84,11,86,105,188,254,11,31,203,106,152,73,88,135,174,15,80,248,214]",
+              "sol": "abi.encode(\"123,117,68,0,56,96,160,207,90,37,51,187,139,84,11,86,105,188,254,11,31,203,106,152,73,88,135,174,15,80,248,214\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.132ZHelper.itemLength": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute itemLength(bytes)",
+          "parameters": [
+            {
+              "js": "[37,62,188,70,11,193,34,93,58,115,239,207,2,54,123,132,8,162,6,226,87,197,96,231,18,27,229,80,197,92,50,2]",
+              "sol": "abi.encode(\"37,62,188,70,11,193,34,93,58,115,239,207,2,54,123,132,8,162,6,226,87,197,96,231,18,27,229,80,197,92,50,2\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.132ZHelper.rlpLen": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute rlpLen(bytes)",
+          "parameters": [
+            {
+              "js": "[142,224,43,255,192,255,117,152,181,241,252,101,50,54,205,42,32,196,158,9,189,137,234,184,73,31,29,101,60,161,121,129]",
+              "sol": "abi.encode(\"142,224,43,255,192,255,117,152,181,241,252,101,50,54,205,42,32,196,158,9,189,137,234,184,73,31,29,101,60,161,121,129\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.132ZHelper.payloadLen": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute payloadLen(bytes)",
+          "parameters": [
+            {
+              "js": "[186,105,14,239,29,218,153,149,193,173,134,105,119,224,27,185,246,226,93,28,87,55,128,81,187,127,181,117,125,252,83,168]",
+              "sol": "abi.encode(\"186,105,14,239,29,218,153,149,193,173,134,105,119,224,27,185,246,226,93,28,87,55,128,81,187,127,181,117,125,252,83,168\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.133ZHelper.numItems": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute numItems(bytes)",
+          "parameters": [
+            {
+              "js": "[143,33,232,230,241,178,186,120,240,69,104,15,114,121,188,134,121,245,117,27,56,244,18,240,92,44,204,76,244,105,53,36]",
+              "sol": "abi.encode(\"143,33,232,230,241,178,186,120,240,69,104,15,114,121,188,134,121,245,117,27,56,244,18,240,92,44,204,76,244,105,53,36\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.133ZHelper.toRlpBytes": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute toRlpBytes(bytes)",
+          "parameters": [
+            {
+              "js": "[210,38,163,252,77,58,163,106,35,82,181,120,124,159,105,167,210,106,64,113,198,50,84,64,168,233,85,222,14,181,136,98]",
+              "sol": "abi.encode(\"210,38,163,252,77,58,163,106,35,82,181,120,124,159,105,167,210,106,64,113,198,50,84,64,168,233,85,222,14,181,136,98\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.133ZHelper.toBytes": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute toBytes(bytes)",
+          "parameters": [
+            {
+              "js": "[93,127,237,244,146,22,192,32,233,243,84,247,80,35,111,32,216,75,41,60,182,170,103,96,96,237,64,140,115,178,44,181]",
+              "sol": "abi.encode(\"93,127,237,244,146,22,192,32,233,243,84,247,80,35,111,32,216,75,41,60,182,170,103,96,96,237,64,140,115,178,44,181\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.133ZHelper.toUint": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute toUint(bytes)",
+          "parameters": [
+            {
+              "js": "[51,113,142,146,122,71,42,75,116,57,79,65,174,29,150,143,157,23,191,39,23,41,186,194,5,203,57,111,5,141,199,113]",
+              "sol": "abi.encode(\"51,113,142,146,122,71,42,75,116,57,79,65,174,29,150,143,157,23,191,39,23,41,186,194,5,203,57,111,5,141,199,113\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.134ZHelper.toUintStrict": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute toUintStrict(bytes)",
+          "parameters": [
+            {
+              "js": "[228,7,176,197,68,143,46,140,141,148,56,146,129,167,23,192,109,216,180,30,187,85,241,128,248,40,76,97,247,58,195,226]",
+              "sol": "abi.encode(\"228,7,176,197,68,143,46,140,141,148,56,146,129,167,23,192,109,216,180,30,187,85,241,128,248,40,76,97,247,58,195,226\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.134ZHelper.toAddress": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute toAddress(bytes)",
+          "parameters": [
+            {
+              "js": "[170,41,135,151,102,126,244,220,125,66,141,135,105,62,23,188,185,192,15,135,1,19,176,137,158,227,187,250,45,25,7,148]",
+              "sol": "abi.encode(\"170,41,135,151,102,126,244,220,125,66,141,135,105,62,23,188,185,192,15,135,1,19,176,137,158,227,187,250,45,25,7,148\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.134ZHelper.toBoolean": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute toBoolean(bytes)",
+          "parameters": [
+            {
+              "js": "[158,247,174,179,127,186,82,123,190,180,70,210,243,228,218,168,251,224,60,209,145,22,122,64,214,3,62,199,83,235,178,77]",
+              "sol": "abi.encode(\"158,247,174,179,127,186,82,123,190,180,70,210,243,228,218,168,251,224,60,209,145,22,122,64,214,3,62,199,83,235,178,77\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.135ZHelper.bytesToString": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute bytesToString(bytes)",
+          "parameters": [
+            {
+              "js": "[181,63,17,0,185,56,33,206,115,212,224,71,168,156,180,252,26,179,146,86,95,26,209,134,145,33,226,188,153,57,198,114]",
+              "sol": "abi.encode(\"181,63,17,0,185,56,33,206,115,212,224,71,168,156,180,252,26,179,146,86,95,26,209,134,145,33,226,188,153,57,198,114\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.135ZHelper.customDestructure": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute customDestructure(bytes)",
+          "parameters": [
+            {
+              "js": "[122,78,242,100,31,92,48,239,235,33,245,208,241,185,15,136,154,247,253,128,42,6,108,205,18,23,41,136,101,43,167,135]",
+              "sol": "abi.encode(\"122,78,242,100,31,92,48,239,235,33,245,208,241,185,15,136,154,247,253,128,42,6,108,205,18,23,41,136,101,43,167,135\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.135ZHelper.customNestedDestructure": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute customNestedDestructure(bytes)",
+          "parameters": [
+            {
+              "js": "[122,126,49,249,44,157,86,240,176,129,240,23,17,76,143,74,112,180,92,171,203,7,239,56,2,83,109,124,75,53,52,176]",
+              "sol": "abi.encode(\"122,126,49,249,44,157,86,240,176,129,240,23,17,76,143,74,112,180,92,171,203,7,239,56,2,83,109,124,75,53,52,176\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-10T15:32:00.136ZHelper.customNestedToRlpBytes": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute customNestedToRlpBytes(bytes)",
+          "parameters": [
+            {
+              "js": "[69,128,77,75,31,133,54,138,138,236,25,179,104,129,129,19,122,37,167,40,244,249,57,27,213,93,15,161,253,244,95,177]",
+              "sol": "abi.encode(\"69,128,77,75,31,133,54,138,138,236,25,179,104,129,129,19,122,37,167,40,244,249,57,27,213,93,15,161,253,244,95,177\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

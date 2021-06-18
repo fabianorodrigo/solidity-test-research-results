@@ -1,0 +1,563 @@
+npx solidity-coverage
+ter 10 nov 2020 00:04:31 -03
+Truffle v5.0.27 (core: 5.0.27)
+Solidity - 0.5.10 (solc-js)
+Node v10.15.3
+Web3.js v1.0.0-beta.37
+Generating coverage environment
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/CanonicalBurner.sol
+> Compiling ./contracts/ITokenReceiver.sol
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/NOIAToken.sol
+> Compiling ./contracts/NOIAVault.sol
+> Compiling ./contracts/NOIAVaultFactory.sol
+> Compiling ./contracts/TokenRecoverable.sol
+> Compiling ./contracts/proxy4tests/NOIAToken.sol
+> Compiling ./contracts/proxy4tests/NOIAVaultFactory.sol
+> Compiling openzeppelin-solidity/contracts/cryptography/ECDSA.sol
+> Compiling openzeppelin-solidity/contracts/math/SafeMath.sol
+> Compiling openzeppelin-solidity/contracts/ownership/Ownable.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/ERC20.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/IERC20.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/SafeERC20.sol
+> Compiling openzeppelin-solidity/contracts/utils/Address.sol
+
+    > compilation warnings encountered:
+
+/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/noia-token/coverageEnv/contracts/proxy4tests/NOIAToken.sol:1:1: Warning: Source file does not specify required compiler version! Consider adding "pragma solidity ^0.5.10;"
+import "../NOIAToken.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/noia-token/coverageEnv/contracts/proxy4tests/NOIAVaultFactory.sol:1:1: Warning: Source file does not specify required compiler version! Consider adding "pragma solidity ^0.5.10;"
+import "../NOIAVaultFactory.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/noia-token/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.5.10+commit.5a6ea5b1.Emscripten.clang
+
+Instrumenting  ./coverageEnv/contracts/CanonicalBurner.sol
+Instrumenting  ./coverageEnv/contracts/ITokenReceiver.sol
+Skipping instrumentation of  ./coverageEnv/contracts/Migrations.sol
+Instrumenting  ./coverageEnv/contracts/NOIAToken.sol
+Instrumenting  ./coverageEnv/contracts/NOIAVault.sol
+Instrumenting  ./coverageEnv/contracts/NOIAVaultFactory.sol
+Instrumenting  ./coverageEnv/contracts/proxy4tests/NOIAToken.sol
+Instrumenting  ./coverageEnv/contracts/proxy4tests/NOIAVaultFactory.sol
+Instrumenting  ./coverageEnv/contracts/TokenRecoverable.sol
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/CanonicalBurner.sol
+> Compiling ./contracts/ITokenReceiver.sol
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/NOIAToken.sol
+> Compiling ./contracts/NOIAVault.sol
+> Compiling ./contracts/NOIAVaultFactory.sol
+> Compiling ./contracts/TokenRecoverable.sol
+> Compiling ./contracts/proxy4tests/NOIAToken.sol
+> Compiling ./contracts/proxy4tests/NOIAVaultFactory.sol
+> Compiling openzeppelin-solidity/contracts/cryptography/ECDSA.sol
+> Compiling openzeppelin-solidity/contracts/math/SafeMath.sol
+> Compiling openzeppelin-solidity/contracts/ownership/Ownable.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/ERC20.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/IERC20.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/SafeERC20.sol
+> Compiling openzeppelin-solidity/contracts/utils/Address.sol
+
+    > compilation warnings encountered:
+
+/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/noia-token/coverageEnv/contracts/proxy4tests/NOIAToken.sol:1:1: Warning: Source file does not specify required compiler version! Consider adding "pragma solidity ^0.5.10;"
+import "../NOIAToken.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+,/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/noia-token/coverageEnv/contracts/proxy4tests/NOIAVaultFactory.sol:1:1: Warning: Source file does not specify required compiler version! Consider adding "pragma solidity ^0.5.10;"
+import "../NOIAVaultFactory.sol";
+^ (Relevant source part starts here and spans across multiple lines).
+
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/noia-token/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.5.10+commit.5a6ea5b1.Emscripten.clang
+
+Launched testrpc on port 8555
+Running: truffle test --network coverage 
+(this can take a few seconds)...
+Using network 'coverage'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+[0m[0m
+[0m  Contract: CanonicalBurner[0m
+  [31m  1) Should execute tokensReceived(address,address,uint256) WHEN msg.sender==token[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail tokensReceived(address,address,uint256) when NOT comply with: msg.sender == token[0m[33m (59ms)[0m
+
+[0m  Contract: contractProxyNOIAToken[0m
+  [32m  ✓[0m[90m Should execute test_postTransfer(address,address,uint256) WHEN notify==false,FunctionCall==true[0m[33m (49ms)[0m
+  [32m  ✓[0m[90m Should execute test_postTransfer(address,address,uint256) WHEN notify!=false,FunctionCall==true[0m[33m (46ms)[0m
+  [31m  2) Should execute test_postTransfer(address,address,uint256) WHEN to==burnAddress,FunctionCall!=true[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should execute test_postTransfer(address,address,uint256) WHEN to!=burnAddress,FunctionCall!=true[0m[31m (159ms)[0m
+  [31m  3) Should execute test_burn(address,uint256) WHEN tokensToMint==0,account!=0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0xEAD4e79dB84B630042e72005dc80e59F29DC8451 (address), value: 3 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail test_burn(address,uint256) when NOT comply with: tokensToMint == 0[0m[31m (153ms)[0m
+  [32m  ✓[0m[90m Should fail test_burn(address,uint256) when NOT comply with: account != 0x0000000000000000000000000000000000000000[0m[31m (169ms)[0m
+
+[0m  Contract: NOIAToken[0m
+  [32m  ✓[0m[90m Should execute register()[0m
+  [32m  ✓[0m[90m Should execute unregister()[0m
+  [32m  ✓[0m[90m Should execute enableEtherlessTransfer() WHEN msg.sender==_owner[0m
+  [32m  ✓[0m[90m Should fail enableEtherlessTransfer() when NOT comply with: msg.sender == _owner[0m[33m (39ms)[0m
+  [32m  ✓[0m[90m Should execute disableEtherlessTransfer() WHEN msg.sender==_owner[0m
+  [32m  ✓[0m[90m Should fail disableEtherlessTransfer() when NOT comply with: msg.sender == _owner[0m
+  [31m  4) Should execute transfer(address,uint256) WHEN success==true[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [31m  5) Should execute transfer(address,uint256) WHEN success!=true[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [31m  6) Should execute transferFrom(address,address,uint256) WHEN success==true[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [31m  7) Should execute transferFrom(address,address,uint256) WHEN success!=true[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should execute mint(address,uint256) WHEN msg.sender==_owner,to!=0x0000000000000000000000000000000000000000[0m[33m (46ms)[0m
+  [32m  ✓[0m[90m Should fail mint(address,uint256) when NOT comply with: msg.sender == _owner[0m
+  [32m  ✓[0m[90m Should fail mint(address,uint256) when NOT comply with: to != 0x0000000000000000000000000000000000000000[0m[33m (44ms)[0m
+  [31m  8) Should execute burn(uint256) WHEN msg.sender==burnAddress,tokensToMint==0,msg.sender!=0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0xba3B0Ba0777FBCA41A80e449fF21353ab52F425a (address), value: 29 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail burn(uint256) when NOT comply with: msg.sender == burnAddress[0m[31m (106ms)[0m
+  [32m  ✓[0m[90m Should fail burn(uint256) when NOT comply with: tokensToMint == 0[0m[31m (115ms)[0m
+  [31m  9) Should fail burn(uint256) when NOT comply with: msg.sender != 0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0xba3B0Ba0777FBCA41A80e449fF21353ab52F425a (address), value: 29 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should execute setBurnAddress(address) WHEN msg.sender==_owner[0m
+  [32m  ✓[0m[90m Should fail setBurnAddress(address) when NOT comply with: msg.sender == _owner[0m[33m (39ms)[0m
+  [31m  10) Should execute transferPreSigned(bytes,address,uint256,uint256,uint256) WHEN msg.sender==_to,etherlessTransferEnabled==true,_to!=0x0000000000000000000000000000000000000000,from!=0x0000000000000000000000000000000000000000,hashedTxs==false,_to!=0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail transferPreSigned(bytes,address,uint256,uint256,uint256) when NOT comply with: etherlessTransferEnabled == true[0m[31m (104ms)[0m
+  [32m  ✓[0m[90m Should fail transferPreSigned(bytes,address,uint256,uint256,uint256) when NOT comply with: _to != 0x0000000000000000000000000000000000000000[0m[31m (77ms)[0m
+  [32m  ✓[0m[90m Should fail transferPreSigned(bytes,address,uint256,uint256,uint256) when NOT comply with: _to != 0x0000000000000000000000000000000000000000[0m[33m (74ms)[0m
+  [31m  11) Should execute transferPreSigned(bytes,address,uint256,uint256,uint256) WHEN msg.sender!=_to,etherlessTransferEnabled==true,_to!=0x0000000000000000000000000000000000000000,from!=0x0000000000000000000000000000000000000000,hashedTxs==false[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail transferPreSigned(bytes,address,uint256,uint256,uint256) when NOT comply with: etherlessTransferEnabled == true[0m[31m (96ms)[0m
+  [32m  ✓[0m[90m Should fail transferPreSigned(bytes,address,uint256,uint256,uint256) when NOT comply with: _to != 0x0000000000000000000000000000000000000000[0m[31m (79ms)[0m
+  [32m  ✓[0m[90m Should execute hashForSign(bytes4,address,address,uint256,uint256,uint256)[0m
+
+[0m  Contract: contractProxyNOIAVaultFactory[0m
+  [32m  ✓[0m[90m Should execute testcreateClone(address)[0m
+
+[0m  Contract: NOIAVaultFactory[0m
+  [32m  ✓[0m[90m Should execute createVault(address,uint256)[0m
+  [32m  ✓[0m[90m Should execute unlockableBalanceOf(address)[0m
+  [32m  ✓[0m[90m Should execute totalBalanceOf(address)[0m
+  [32m  ✓[0m[90m Should execute getVaultsCount(address)[0m
+  [31m  12) Should execute recoverTokens(IERC20,address,uint256) WHEN balance>=amount[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+
+[0m  Contract: NOIAVault[0m
+  [32m  ✓[0m[90m Should execute initialize(address,uint256,address) WHEN beneficiary==0x0000000000000000000000000000000000000000,_beneficiary!=0x0000000000000000000000000000000000000000,_lockTill>block.timestamp[0m[33m (51ms)[0m
+  [32m  ✓[0m[90m Should fail initialize(address,uint256,address) when NOT comply with: _beneficiary != 0x0000000000000000000000000000000000000000[0m[33m (47ms)[0m
+  [32m  ✓[0m[90m Should fail initialize(address,uint256,address) when NOT comply with: _lockTill > (await web3.eth.getBlock(await web3.eth.getBlockNumber())).timestamp[0m[33m (47ms)[0m
+  [31m  13) Should execute release() WHEN lockTill>block.timestamp[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [31m  14) Should execute release() WHEN lockTill<=block.timestamp[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [31m  15) Should execute recoverTokens(IERC20,address,uint256) WHEN balance>=amount[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [31m  16) Should execute tokensReceived(address,address,uint256)[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+
+[0m  Contract: TokenRecoverable[0m
+  [31m  17) Should execute recoverTokens(IERC20,address,uint256) WHEN msg.sender==_owner,balance>=amount[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x1b69d040D369203303E728d7C599F0b2eF8386B3 (address))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail recoverTokens(IERC20,address,uint256) when NOT comply with: msg.sender == _owner[0m
+
+
+[92m [0m[32m 34 passing[0m[90m (19s)[0m
+[31m  17 failing[0m
+
+[0m  1) Contract: CanonicalBurner
+       Should execute tokensReceived(address,address,uint256) WHEN msg.sender==token:
+[0m[31m     Error: Returned error: sender account not recognized -- Reason given: Only burnAddress can burn tokens.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  2) Contract: contractProxyNOIAToken
+       Should execute test_postTransfer(address,address,uint256) WHEN to==burnAddress,FunctionCall!=true:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert All tokens must be minted before burning -- Reason given: All tokens must be minted before burning.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  3) Contract: contractProxyNOIAToken
+       Should execute test_burn(address,uint256) WHEN tokensToMint==0,account!=0x0000000000000000000000000000000000000000:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert All tokens must be minted before burning -- Reason given: All tokens must be minted before burning.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  4) Contract: NOIAToken
+       Should execute transfer(address,uint256) WHEN success==true:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert SafeMath: subtraction overflow -- Reason given: SafeMath: subtraction overflow.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  5) Contract: NOIAToken
+       Should execute transfer(address,uint256) WHEN success!=true:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert SafeMath: subtraction overflow -- Reason given: SafeMath: subtraction overflow.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  6) Contract: NOIAToken
+       Should execute transferFrom(address,address,uint256) WHEN success==true:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert SafeMath: subtraction overflow -- Reason given: SafeMath: subtraction overflow.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  7) Contract: NOIAToken
+       Should execute transferFrom(address,address,uint256) WHEN success!=true:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert SafeMath: subtraction overflow -- Reason given: SafeMath: subtraction overflow.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  8) Contract: NOIAToken
+       Should execute burn(uint256) WHEN msg.sender==burnAddress,tokensToMint==0,msg.sender!=0x0000000000000000000000000000000000000000:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert All tokens must be minted before burning -- Reason given: All tokens must be minted before burning.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  9) Contract: NOIAToken
+       Should fail burn(uint256) when NOT comply with: msg.sender != 0x0000000000000000000000000000000000000000:
+[0m[31m     AssertionError: Expected to fail with revert, but failed with: Error: Returned error: from not found; is required[0m[90m
+      at fails (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle-assertions@0.9.2/node_modules/truffle-assertions/index.js:152:13)
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  10) Contract: NOIAToken
+       Should execute transferPreSigned(bytes,address,uint256,uint256,uint256) WHEN msg.sender==_to,etherlessTransferEnabled==true,_to!=0x0000000000000000000000000000000000000000,from!=0x0000000000000000000000000000000000000000,hashedTxs==false,_to!=0x0000000000000000000000000000000000000000:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert Invalid signature -- Reason given: Invalid signature.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  11) Contract: NOIAToken
+       Should execute transferPreSigned(bytes,address,uint256,uint256,uint256) WHEN msg.sender!=_to,etherlessTransferEnabled==true,_to!=0x0000000000000000000000000000000000000000,from!=0x0000000000000000000000000000000000000000,hashedTxs==false:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert Invalid signature -- Reason given: Invalid signature.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  12) Contract: NOIAVaultFactory
+       Should execute recoverTokens(IERC20,address,uint256) WHEN balance>=amount:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert Given amount is larger than current balance -- Reason given: Given amount is larger than current balance.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  13) Contract: NOIAVault
+       Should execute release() WHEN lockTill>block.timestamp:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  14) Contract: NOIAVault
+       Should execute release() WHEN lockTill<=block.timestamp:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  15) Contract: NOIAVault
+       Should execute recoverTokens(IERC20,address,uint256) WHEN balance>=amount:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  16) Contract: NOIAVault
+       Should execute tokensReceived(address,address,uint256):
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  17) Contract: TokenRecoverable
+       Should execute recoverTokens(IERC20,address,uint256) WHEN msg.sender==_owner,balance>=amount:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert Given amount is larger than current balance -- Reason given: Given amount is larger than current balance.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+
+
+------------------------|----------|----------|----------|----------|----------------|
+File                    |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+------------------------|----------|----------|----------|----------|----------------|
+ contracts/             |    64.58 |    48.08 |    96.67 |    66.33 |                |
+  CanonicalBurner.sol   |      100 |      100 |      100 |      100 |                |
+  ITokenReceiver.sol    |      100 |      100 |      100 |      100 |                |
+  NOIAToken.sol         |    53.19 |    46.43 |      100 |    55.32 |... 160,163,164 |
+  NOIAVault.sol         |    66.67 |       50 |       80 |    66.67 |... 45,46,47,48 |
+  NOIAVaultFactory.sol  |    79.17 |    33.33 |      100 |    80.77 | 43,44,45,55,67 |
+  TokenRecoverable.sol  |    66.67 |       50 |      100 |    66.67 |             14 |
+ contracts/proxy4tests/ |      100 |      100 |      100 |      100 |                |
+  NOIAToken.sol         |      100 |      100 |      100 |      100 |                |
+  NOIAVaultFactory.sol  |      100 |      100 |      100 |      100 |                |
+------------------------|----------|----------|----------|----------|----------------|
+All files               |    65.66 |    48.08 |    97.06 |    67.33 |                |
+------------------------|----------|----------|----------|----------|----------------|
+
+Istanbul coverage reports generated
+Cleaning up...
+Shutting down testrpc-sc (pid 29039)
+Some truffle tests failed while running coverage

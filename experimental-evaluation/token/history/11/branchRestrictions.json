@@ -1,0 +1,1213 @@
+,{
+  "2020-11-11T17:21:04.781ZPower.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.922ZProxyMathUtils.testvalidPerc": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testvalidPerc(uint256)",
+          "parameters": [
+            {
+              "js": "2",
+              "sol": "2"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.923ZProxyMathUtils.testpercOf0": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testpercOf0(uint256,uint256,uint256) WHEN PERC_DIVISOR>0",
+          "parameters": [
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "65",
+              "sol": "65"
+            },
+            {
+              "js": "110",
+              "sol": "110"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.925ZProxyMathUtils.testpercOf1": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testpercOf1(uint256,uint256) WHEN PERC_DIVISOR>0",
+          "parameters": [
+            {
+              "js": "28",
+              "sol": "28"
+            },
+            {
+              "js": "111",
+              "sol": "111"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.926ZProxyMathUtils.testpercPoints": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testpercPoints(uint256,uint256) WHEN _fracDenom>0",
+          "parameters": [
+            {
+              "js": "104",
+              "sol": "104"
+            },
+            {
+              "js": "29",
+              "sol": "29"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testpercPoints(uint256,uint256) when NOT comply with: _fracDenom > 0",
+            "parameters": [
+              {
+                "js": "104",
+                "sol": "104"
+              },
+              {
+                "js": 0,
+                "sol": 0
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.927ZRelevantTokenMock.roundNum": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute roundNum()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.928ZRelevantTokenMock.setRoundNum": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute setRoundNum(uint256)",
+          "parameters": [
+            {
+              "js": "86",
+              "sol": "86"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.930ZRelevantTokenMock.setLastRound": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute setLastRound(uint256,uint256,uint256) WHEN msg.sender==_owner,_roundNum<currentRound",
+          "parameters": [
+            {
+              "js": "999999",
+              "sol": "999999"
+            },
+            {
+              "js": "82",
+              "sol": "82"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail setLastRound(uint256,uint256,uint256) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "999999",
+                "sol": "999999"
+              },
+              {
+                "js": "82",
+                "sol": "82"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.943ZRelevantTokenMock.emptyDevBalance": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute emptyDevBalance()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.944ZRelevantToken.initialize": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute initialize(string,uint8,string,string,address,uint256,uint256,uint256,uint256,uint256,uint256,uint256) WHEN initialized!=true",
+          "parameters": [
+            {
+              "js": "\"0.3\"",
+              "sol": "\"0.3\""
+            },
+            {
+              "js": "93",
+              "sol": "93"
+            },
+            {
+              "js": "\"PayableExample\"",
+              "sol": "\"PayableExample\""
+            },
+            {
+              "js": "\"z6bsn\"",
+              "sol": "\"z6bsn\""
+            },
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "89",
+              "sol": "89"
+            },
+            {
+              "js": "70",
+              "sol": "70"
+            },
+            {
+              "js": "11",
+              "sol": "11"
+            },
+            {
+              "js": "56",
+              "sol": "56"
+            },
+            {
+              "js": "67",
+              "sol": "67"
+            },
+            {
+              "js": "1532892064",
+              "sol": "1532892064"
+            },
+            {
+              "js": "104",
+              "sol": "104"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.947ZRelevantToken.releaseTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "114-131",
+          "restrictions": [
+            "lastRound >= targetRound"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute releaseTokens() WHEN lastRound>=targetRound,lastRound<currentRound",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail releaseTokens() when NOT comply with: lastRound < currentRound",
+            "parameters": [
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "121-130",
+          "restrictions": [
+            "currentRound < targetRound",
+            "lastRound < targetRound"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute releaseTokens() WHEN currentRound<targetRound,lastRound<targetRound,lastRound<currentRound",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail releaseTokens() when NOT comply with: lastRound < currentRound",
+            "parameters": [
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "2": {
+        "branch": {
+          "loc": "124-130",
+          "restrictions": [
+            "currentRound >= targetRound",
+            "lastRound < targetRound"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute releaseTokens() WHEN currentRound>=targetRound,lastRound<targetRound,lastRound<currentRound",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail releaseTokens() when NOT comply with: lastRound < currentRound",
+            "parameters": [
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.969ZRelevantToken.partialSum": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute partialSum(uint256)",
+          "parameters": [
+            {
+              "js": "89",
+              "sol": "89"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.969ZRelevantToken.allocateRewards": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute allocateRewards(uint256) WHEN msg.sender==_owner,_rewards<=rewardFund",
+          "parameters": [
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail allocateRewards(uint256) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail allocateRewards(uint256) when NOT comply with: _rewards <= rewardFund",
+            "parameters": [
+              {
+                "js": 1,
+                "sol": 1
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.980ZRelevantToken.allocateAirdrops": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute allocateAirdrops(uint256) WHEN msg.sender==_owner,_rewards<=airdropFund",
+          "parameters": [
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail allocateAirdrops(uint256) when NOT comply with: msg.sender == _owner",
+            "parameters": [
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail allocateAirdrops(uint256) when NOT comply with: _rewards <= airdropFund",
+            "parameters": [
+              {
+                "js": 1,
+                "sol": 1
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.989ZRelevantToken.claimTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute claimTokens(uint256,bytes) WHEN allocatedRewards>=_amount,_owner==recOwner",
+          "parameters": [
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "[74,204,163,48,125,70,98,91,23,167,240,192,185,18,164,48,64,12,219,109,148,202,125,84,106,39,247,33,116,107,73,175]",
+              "sol": "abi.encode(\"74,204,163,48,125,70,98,91,23,167,240,192,185,18,164,48,64,12,219,109,148,202,125,84,106,39,247,33,116,107,73,175\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail claimTokens(uint256,bytes) when NOT comply with: allocatedRewards >= _amount",
+            "parameters": [
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "[74,204,163,48,125,70,98,91,23,167,240,192,185,18,164,48,64,12,219,109,148,202,125,84,106,39,247,33,116,107,73,175]",
+                "sol": "abi.encode(\"74,204,163,48,125,70,98,91,23,167,240,192,185,18,164,48,64,12,219,109,148,202,125,84,106,39,247,33,116,107,73,175\")"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.998ZRelevantToken.nonceOf": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute nonceOf(address)",
+          "parameters": [
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:11.998ZRelevantToken.roundNum": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute roundNum() WHEN roundLength>0",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail roundNum() when NOT comply with: roundLength > 0",
+            "parameters": [
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.006ZRelevantToken.roundsSincleLast": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute roundsSincleLast()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.008ZProxyRelevantToken.testpreMintTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testpreMintTokens(uint256)",
+          "parameters": [
+            {
+              "js": "90",
+              "sol": "90"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.010ZProxyRelevantToken.testnewTokensForConstantPhase": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testnewTokensForConstantPhase(uint256,uint256)",
+          "parameters": [
+            {
+              "js": "3",
+              "sol": "3"
+            },
+            {
+              "js": "37",
+              "sol": "37"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.011ZProxyRelevantToken.testnewTokensForDecayPhase": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "164-166",
+          "restrictions": [
+            "lastRound == 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testnewTokensForDecayPhase(uint256) WHEN lastRound==0",
+          "parameters": [
+            {
+              "js": "256",
+              "sol": "256"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "lastRound != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testnewTokensForDecayPhase(uint256) WHEN lastRound!=0",
+          "parameters": [
+            {
+              "js": "77",
+              "sol": "77"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "2": {
+        "branch": {
+          "loc": "167-180",
+          "restrictions": [
+            "_roundsPassed < 100000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testnewTokensForDecayPhase(uint256) WHEN _roundsPassed<100000",
+          "parameters": [
+            {
+              "js": "106",
+              "sol": "106"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "3": {
+        "branch": {
+          "loc": "175-180",
+          "restrictions": [
+            "_roundsPassed >= 100000",
+            "lastRound != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testnewTokensForDecayPhase(uint256) WHEN _roundsPassed>=100000,lastRound!=0",
+          "parameters": [
+            {
+              "js": "982080",
+              "sol": "982080"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.015ZProxyRelevantToken.testnewTokensForCrossingDecay": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testnewTokensForCrossingDecay()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.015ZProxyRelevantToken.testnewTokensForCrossingConst": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testnewTokensForCrossingConst(uint256)",
+          "parameters": [
+            {
+              "js": "44",
+              "sol": "44"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.016ZProxyRelevantToken.testsplitRewards": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testsplitRewards(uint256)",
+          "parameters": [
+            {
+              "js": "57",
+              "sol": "57"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.017ZProxyRelevantToken.testtoDevFund": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoDevFund()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.021ZProxyPower.testpower": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testpower(uint256,uint256,uint32,uint32)",
+          "parameters": [
+            {
+              "js": "9999",
+              "sol": "9999"
+            },
+            {
+              "js": "35",
+              "sol": "35"
+            },
+            {
+              "js": "122",
+              "sol": "122"
+            },
+            {
+              "js": "69",
+              "sol": "69"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.022ZProxyPower.testln": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testln(uint256,uint256) WHEN _numerator<=MAX_NUM",
+          "parameters": [
+            {
+              "js": "86",
+              "sol": "86"
+            },
+            {
+              "js": "66",
+              "sol": "66"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testln(uint256,uint256) when NOT comply with: _numerator <= MAX_NUM",
+            "parameters": [
+              {
+                "js": "680564733841876926926749214863536422913",
+                "sol": "680564733841876926926749214863536422913"
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.023ZProxyPower.testfloorLog2": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfloorLog2(uint256)",
+          "parameters": [
+            {
+              "js": "116",
+              "sol": "116"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.024ZProxyPower.testfindPositionInMaxExpArray": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "272-273",
+          "restrictions": [
+            "maxExpArray >= _x"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfindPositionInMaxExpArray(uint256) WHEN maxExpArray>=_x",
+          "parameters": [
+            {
+              "js": "1338",
+              "sol": "1338"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "maxExpArray < _x"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfindPositionInMaxExpArray(uint256) WHEN maxExpArray<_x",
+          "parameters": [
+            {
+              "js": "95",
+              "sol": "95"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "2": {
+        "branch": {
+          "loc": "274-275",
+          "restrictions": [
+            "maxExpArray >= _x"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfindPositionInMaxExpArray(uint256) WHEN maxExpArray>=_x",
+          "parameters": [
+            {
+              "js": "110",
+              "sol": "110"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "maxExpArray < _x",
+            "maxExpArray < _x"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfindPositionInMaxExpArray(uint256) WHEN maxExpArray<_x,maxExpArray<_x",
+          "parameters": [
+            {
+              "js": "9",
+              "sol": "9"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-11T17:21:12.026ZProxyPower.testfixedExp": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testfixedExp(uint256,uint8)",
+          "parameters": [
+            {
+              "js": "115",
+              "sol": "115"
+            },
+            {
+              "js": "115",
+              "sol": "115"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

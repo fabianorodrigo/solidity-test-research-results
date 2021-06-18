@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/Trickle.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Trickle.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">56.52% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>26/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">46.15% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">55.32% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>26/47</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity 0.5.7;
+&nbsp;
+import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
+&nbsp;
+/**
+ * Trickle is a decentralized program allowing people to create
+ * secure fixed hourly rate agreements leveraging the power of blockchain technology.
+ * Trickle works with any ERC20-compatible tokens on top of Ethereum, including stablecoins.
+ *
+ * Brought to you by DreamTeam &lt;https://token.dreamteam.gg&gt;.
+ * Learn more about Trickle &lt;https://github.com/dreamteam-gg/trickle-dapp&gt;.
+ */
+contract Trickle {
+&nbsp;
+    using SafeMath for uint256;
+&nbsp;
+    event AgreementCreated(
+        uint256 indexed agreementId,
+        address token,
+        address indexed recipient,
+        address indexed sender,
+        uint256 start,
+        uint256 duration,
+        uint256 totalAmount,
+        uint256 createdAt
+    );
+    event AgreementCanceled(
+        uint256 indexed agreementId,
+        address token,
+        address indexed recipient,
+        address indexed sender,
+        uint256 start,
+        uint256 duration,
+        uint256 amountReleased,
+        uint256 amountCanceled,
+        uint256 canceledAt
+    );
+    event Withdraw(
+        uint256 indexed agreementId,
+        address token,
+        address indexed recipient,
+        address indexed sender,
+        uint256 amountReleased,
+        uint256 releasedAt
+    );
+&nbsp;
+    uint256 private lastAgreementId;
+&nbsp;
+    struct Agreement {
+        uint256 meta; // Metadata packs 3 values to save on storage:
+                      // + uint48 start;    // Timestamp with agreement start. Up to year 999999+.
+                      // + uint48 duration; // Agreement duration. Up to year 999999+.
+                      // + uint160 token;   // Token address converted to uint.
+        uint256 totalAmount;
+        uint256 releasedAmount;
+        address recipient;
+        address sender;
+    }
+&nbsp;
+    mapping (uint256 =&gt; Agreement) private agreements;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    modifier agreementPartiesOnly(uint256 agreementId</span>) {
+<span class="cstat-no" title="statement not covered" >        require (</span>
+            msg.sender == agreements[agreementId].sender ||
+            msg.sender == agreements[agreementId].recipient,
+            "Allowed only for agreement's sender or recipient"
+        );
+        _;
+    }
+&nbsp;
+    modifier validAgreement(uint256 agreementId) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>require(agreements[agreementId].releasedAmount &lt; agreements[agreementId].totalAmount, "Agreement is completed or does not exists");
+        _;
+    }
+&nbsp;
+    function createAgreement(IERC20 token, address recipient, uint256 totalAmount, uint48 duration, uint48 start) external {
+        require(duration &gt; 0, "Duration must be greater than zero");
+        require(totalAmount &gt; 0, "Total Amount must be greater than zero");
+        require(start &gt; 0, "Start must be greater than zero");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(token != IERC20(0x0), "Token must be a valid Ethereum address");
+        require(recipient != address(0x0), "Recipient must be a valid Ethereum address");
+&nbsp;
+        uint256 agreementId = ++lastAgreementId;
+&nbsp;
+        agreements[agreementId] = Agreement({
+            meta: encodeMeta(start, duration, uint256(address(token))),
+            recipient: recipient,
+            totalAmount: totalAmount,
+            sender: msg.sender,
+            releasedAmount: 0
+        });
+&nbsp;
+        token.transferFrom(agreements[agreementId].sender, address(this), agreements[agreementId].totalAmount);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AgreementCreated(</span>
+            agreementId,
+            address(token),
+            recipient,
+            msg.sender,
+            start,
+            duration,
+            totalAmount,
+            block.timestamp
+        );
+    }
+&nbsp;
+    function getAgreement(uint256 agreementId) external view returns (
+        address token,
+        address recipient,
+        address sender,
+        uint256 start,
+        uint256 duration,
+        uint256 totalAmount,
+        uint256 releasedAmount
+    ) {
+        (start, duration, token) = decodeMeta(agreements[agreementId].meta);
+        sender = agreements[agreementId].sender;
+        totalAmount = agreements[agreementId].totalAmount;
+        releasedAmount = agreements[agreementId].releasedAmount;
+        recipient = agreements[agreementId].recipient;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function withdrawTokens(uint256 agreementId) public validAgreement(agreementId</span>) {
+<span class="cstat-no" title="statement not covered" >        uint256 unreleased = withdrawableAmount(agreementId);</span>
+<span class="cstat-no" title="statement not covered" >        require(unreleased &gt; 0, "Nothing to withdraw")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        agreements[agreementId].releasedAmount = agreements[agreementId].releasedAmount.add(unreleased)</span>;
+<span class="cstat-no" title="statement not covered" >        (, , address token) = decodeMeta(agreements[agreementId].meta);</span>
+<span class="cstat-no" title="statement not covered" >        IERC20(token).transfer(agreements[agreementId].recipient, unreleased)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit Withdraw(</span>
+            agreementId,
+            token,
+            agreements[agreementId].recipient,
+            agreements[agreementId].sender,
+            unreleased,
+            block.timestamp
+        );
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function cancelAgreement(uint256 agreementId) external validAgreement(agreementId) agreementPartiesOnly(agreementId</span>) {
+<span class="cstat-no" title="statement not covered" >        if (withdrawableAmount(agreementId) &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            withdrawTokens(agreementId)</span>;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 releasedAmount = agreements[agreementId].releasedAmount;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 canceledAmount = agreements[agreementId].totalAmount.sub(releasedAmount);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        (uint256 start, uint256 duration, address token) = decodeMeta(agreements[agreementId].meta);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        agreements[agreementId].releasedAmount = agreements[agreementId].totalAmount</span>;
+<span class="cstat-no" title="statement not covered" >        if (canceledAmount &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >            IERC20(token).transfer(agreements[agreementId].sender, canceledAmount)</span>;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AgreementCanceled(</span>
+            agreementId,
+            token,
+            agreements[agreementId].recipient,
+            agreements[agreementId].sender,
+            start,
+            duration,
+            releasedAmount,
+            canceledAmount,
+            block.timestamp
+        );
+    }
+&nbsp;
+    function withdrawableAmount(uint256 agreementId) public view returns (uint256) {
+        return proportionalAmount(agreementId).sub(agreements[agreementId].releasedAmount);
+    }
+&nbsp;
+    function proportionalAmount(uint256 agreementId) private view returns (uint256) {
+        (uint256 start, uint256 duration, ) = decodeMeta(agreements[agreementId].meta);
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (block.timestamp &gt;= start.add(duration)) {
+            return agreements[agreementId].totalAmount;
+        } else <span class="cstat-no" title="statement not covered" >if (block.timestamp &lt;= start) {</span>
+<span class="cstat-no" title="statement not covered" >            return 0;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return agreements[agreementId].totalAmount.mul(</span>
+                block.timestamp.sub(start)
+            ).div(duration);
+        }
+    }
+&nbsp;
+    function encodeMeta(uint256 start, uint256 duration, uint256 token) private pure returns(uint256 result) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(
+            start &lt; 2 ** 48 &amp;&amp;
+            duration &lt; 2 ** 48 &amp;&amp;
+            token &lt; 2 ** 160,
+            "Start, Duration or Token Address provided have invalid values"
+        );
+&nbsp;
+        result = start;
+        result |= duration &lt;&lt; (48);
+        result |= token &lt;&lt; (48 + 48);
+&nbsp;
+        return result;
+    }
+&nbsp;
+    function decodeMeta(uint256 meta) private pure returns(uint256 start, uint256 duration, address token) {
+        start = uint48(meta);
+        duration = uint48(meta &gt;&gt; (48));
+        token = address(meta &gt;&gt; (48 + 48));
+    }
+&nbsp;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Nov 12 2020 03:07:38 GMT-0200 (GMT-02:00)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,2525 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Engines/PAMEngine.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">Engines/</a> PAMEngine.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>81/225</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">41.41% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>53/128</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.71% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">39.11% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>88/225</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742
+743
+744
+745
+746
+747
+748
+749
+750
+751
+752
+753
+754
+755
+756
+757
+758
+759
+760
+761
+762
+763
+764
+765
+766
+767
+768
+769
+770
+771
+772
+773
+774
+775
+776
+777
+778
+779
+780
+781
+782
+783
+784
+785
+786
+787
+788
+789
+790
+791
+792
+793
+794
+795
+796
+797
+798
+799
+800
+801
+802
+803
+804
+805
+806
+807
+808
+809
+810
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820
+821</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.5.2;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import "openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "openzeppelin-solidity/contracts/drafts/SignedSafeMath.sol";
+&nbsp;
+import "../Core/Core.sol";
+import "../Core/FloatMath.sol";
+import "./IEngine.sol";
+&nbsp;
+&nbsp;
+/**
+ * @title the stateless component for a PAM contract
+ * implements the STF and POF of the Actus standard for a PAM contract
+ * @dev all numbers except unix timestamp are represented as multiple of 10 ** 18
+ * inputs have to be multiplied by 10 ** 18, outputs have to divided by 10 ** 18
+ */
+contract PAMEngine is Core, IEngine {
+&nbsp;
+	using SafeMath for uint;
+	using SignedSafeMath for int;
+	using FloatMath for int;
+&nbsp;
+&nbsp;
+	/**
+	 * get the initial contract state
+	 * @param contractTerms terms of the contract
+	 * @return initial contract state
+	 */
+	function computeInitialState(ContractTerms memory contractTerms)
+		public
+		pure
+		returns (ContractState memory)
+	{
+		return initializeContractState(contractTerms);
+	}
+&nbsp;
+	/**
+	 * computes pending events based on the contract state and
+	 * applys them to the contract state and returns the evaluated events and the new contract state
+	 * @dev evaluates all events between the scheduled time of the last executed event and now
+	 * (such that Led &lt; Tev &amp;&amp; now &gt;= Tev)
+	 * @param contractTerms terms of the contract
+	 * @param contractState current state of the contract
+	 * @param timestamp current timestamp
+	 * @return the new contract state and the evaluated events
+	 */
+	function computeNextState(
+		ContractTerms memory contractTerms,
+		ContractState memory contractState,
+		uint256 timestamp
+	)
+		public
+		pure
+		returns (ContractState memory, ContractEvent[MAX_EVENT_SCHEDULE_SIZE] memory)
+	{
+		ContractState memory nextContractState = contractState;
+		ContractEvent[MAX_EVENT_SCHEDULE_SIZE] memory nextContractEvents;
+&nbsp;
+		ProtoEvent[MAX_EVENT_SCHEDULE_SIZE] memory pendingProtoEventSchedule = computeProtoEventScheduleSegment(
+			contractTerms,
+			contractState.lastEventTime,
+			timestamp
+		);
+&nbsp;
+		for (uint8 index = 0; index &lt; MAX_EVENT_SCHEDULE_SIZE; index++) {
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (pendingProtoEventSchedule[index].eventTime == 0) continue;
+&nbsp;
+			nextContractEvents[index] = ContractEvent(
+				pendingProtoEventSchedule[index].eventTime,
+				pendingProtoEventSchedule[index].eventType,
+				pendingProtoEventSchedule[index].currency,
+				payoffFunction(
+					pendingProtoEventSchedule[index].scheduleTime,
+					contractTerms,
+					contractState,
+					pendingProtoEventSchedule[index].eventType
+				),
+				timestamp
+			);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			nextContractState = stateTransitionFunction(</span>
+				pendingProtoEventSchedule[index].scheduleTime,
+				contractTerms,
+				contractState,
+				pendingProtoEventSchedule[index].eventType
+			);
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return (nextContractState, nextContractEvents);</span>
+	}
+&nbsp;
+	/**
+	 * applys a prototype event to the current state of a contract and
+	 * returns the contrat event and the new contract state
+	 * @param contractTerms terms of the contract
+	 * @param contractState current state of the contract
+	 * @param protoEvent prototype event to be evaluated and applied to the contract state
+	 * @param timestamp current timestamp
+	 * @return the new contract state and the evaluated event
+	 */
+	function computeNextStateForProtoEvent(
+		ContractTerms memory contractTerms,
+		ContractState memory contractState,
+		ProtoEvent memory protoEvent,
+		uint256 timestamp
+	)
+		public
+		pure
+		returns (ContractState memory, ContractEvent memory)
+	{
+		ContractEvent memory contractEvent = ContractEvent(
+			protoEvent.eventTime,
+			protoEvent.eventType,
+			protoEvent.currency,
+			payoffFunction(timestamp, contractTerms, contractState, protoEvent.pofType), // solium-disable-line
+			timestamp
+		);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		ContractState memory nextContractState = stateTransitionFunction(</span>
+			timestamp,
+			contractTerms,
+			contractState,
+			protoEvent.stfType
+		);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return (nextContractState, contractEvent);</span>
+	}
+&nbsp;
+	/**
+	 * computes a schedule segment of contract events based on the contract terms and the specified period
+	 * @param contractTerms terms of the contract
+	 * @param segmentStart start timestamp of the segment
+	 * @param segmentEnd end timestamp of the segement
+	 * @return event schedule segment
+	 */
+	function computeProtoEventScheduleSegment(
+		ContractTerms memory contractTerms,
+		uint256 segmentStart,
+		uint256 segmentEnd
+	)
+		public
+		pure
+		returns (ProtoEvent[MAX_EVENT_SCHEDULE_SIZE] memory)
+	{
+		ProtoEvent[MAX_EVENT_SCHEDULE_SIZE] memory protoEventSchedule;
+		uint16 index = 0;
+&nbsp;
+		// initial exchange
+		if (isInPeriod(contractTerms.initialExchangeDate, segmentStart, segmentEnd)) {
+			protoEventSchedule[index] = ProtoEvent(
+				contractTerms.initialExchangeDate,
+				contractTerms.initialExchangeDate.add(getEpochOffset(EventType.IED)),
+				contractTerms.initialExchangeDate,
+				EventType.IED,
+				contractTerms.currency,
+				EventType.IED,
+				EventType.IED
+			);
+			index++;
+		}
+&nbsp;
+		// purchase
+		if (contractTerms.purchaseDate != 0) {
+			if (isInPeriod(contractTerms.purchaseDate, segmentStart, segmentEnd)) {
+				protoEventSchedule[index] = ProtoEvent(
+					contractTerms.purchaseDate,
+					contractTerms.purchaseDate.add(getEpochOffset(EventType.PRD)),
+					contractTerms.purchaseDate,
+					EventType.PRD,
+					contractTerms.currency,
+					EventType.PRD,
+					EventType.PRD
+				);
+				index++;
+			}
+		}
+&nbsp;
+		// interest payment related (e.g. for reoccurring interest payments)
+		if (contractTerms.nominalInterestRate != 0 &amp;&amp; (
+			contractTerms.cycleOfInterestPayment.isSet == true &amp;&amp; contractTerms.cycleAnchorDateOfInterestPayment != 0)
+		) {
+			uint256[MAX_CYCLE_SIZE] memory interestPaymentSchedule = computeDatesFromCycleSegment(
+				contractTerms.cycleAnchorDateOfInterestPayment,
+				contractTerms.maturityDate,
+				contractTerms.cycleOfInterestPayment,
+				contractTerms.endOfMonthConvention,
+				true,
+				segmentStart,
+				segmentEnd
+			);
+			<span class="missing-if-branch" title="else path not taken" >E</span>if (contractTerms.capitalizationEndDate != 0) {
+				uint256 shiftedIPCITime = shiftEventTime(
+					contractTerms.capitalizationEndDate,
+					contractTerms.businessDayConvention,
+					contractTerms.calendar
+				);
+				if (isInPeriod(shiftedIPCITime, segmentStart, segmentEnd)) {
+					protoEventSchedule[index] = ProtoEvent(
+						shiftedIPCITime,
+						shiftedIPCITime.add(getEpochOffset(EventType.IPCI)),
+						contractTerms.capitalizationEndDate,
+						EventType.IPCI,
+						contractTerms.currency,
+						EventType.IPCI,
+						EventType.IPCI
+					);
+					index++;
+				}
+			}
+			for (uint8 i = 0; i &lt; MAX_CYCLE_SIZE; i++) {
+				if (interestPaymentSchedule[i] == 0) break;
+				uint256 shiftedIPDate = shiftEventTime(
+					interestPaymentSchedule[i],
+					contractTerms.businessDayConvention,
+					contractTerms.calendar
+				);
+				<span class="missing-if-branch" title="if path not taken" >I</span>if (isInPeriod(shiftedIPDate, segmentStart, segmentEnd) == false) continue;
+				if (
+					contractTerms.capitalizationEndDate != 0 &amp;&amp;
+					interestPaymentSchedule[i] &lt;= contractTerms.capitalizationEndDate
+				) {
+					<span class="missing-if-branch" title="if path not taken" >I</span>if (interestPaymentSchedule[i] == contractTerms.capitalizationEndDate) continue;
+					protoEventSchedule[index] = ProtoEvent(
+						shiftedIPDate,
+						shiftedIPDate.add(getEpochOffset(EventType.IPCI)),
+						interestPaymentSchedule[i],
+						EventType.IPCI,
+						contractTerms.currency,
+						EventType.IPCI,
+						EventType.IPCI
+					);
+					index++;
+				} else {
+					protoEventSchedule[index] = ProtoEvent(
+						shiftedIPDate,
+						shiftedIPDate.add(getEpochOffset(EventType.IP)),
+						interestPaymentSchedule[i],
+						EventType.IP,
+						contractTerms.currency,
+						EventType.IP,
+						EventType.IP
+					);
+					index++;
+				}
+			}
+		}
+		// capitalization end date
+		else if (contractTerms.capitalizationEndDate != 0) {
+			uint256 shiftedIPCIDate = shiftEventTime(
+				contractTerms.capitalizationEndDate,
+				contractTerms.businessDayConvention,
+				contractTerms.calendar
+			);
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (isInPeriod(shiftedIPCIDate, segmentStart, segmentEnd)) {
+<span class="cstat-no" title="statement not covered" >				protoEventSchedule[index] = ProtoEvent(</span>
+					shiftedIPCIDate,
+					shiftedIPCIDate.add(getEpochOffset(EventType.IPCI)),
+					contractTerms.capitalizationEndDate,
+					EventType.IPCI,
+					contractTerms.currency,
+					EventType.IPCI,
+					EventType.IPCI
+				);
+				index++;
+			}
+		}
+&nbsp;
+		// rate reset
+		if (contractTerms.cycleOfRateReset.isSet == true &amp;&amp; contractTerms.cycleAnchorDateOfRateReset != 0) {
+			uint256[MAX_CYCLE_SIZE] memory rateResetSchedule = computeDatesFromCycleSegment(
+				contractTerms.cycleAnchorDateOfRateReset,
+				contractTerms.maturityDate,
+				contractTerms.cycleOfRateReset,
+				contractTerms.endOfMonthConvention,
+				false,
+				segmentStart,
+				segmentEnd
+			);
+			for (uint8 i = 0; i &lt; MAX_CYCLE_SIZE; i++) {
+				<span class="missing-if-branch" title="else path not taken" >E</span>if (rateResetSchedule[i] == 0) break;
+<span class="cstat-no" title="statement not covered" >				uint256 shiftedRRDate = shiftEventTime(</span>
+					rateResetSchedule[i],
+					contractTerms.businessDayConvention,
+					contractTerms.calendar
+				);
+<span class="cstat-no" title="statement not covered" >				if (isInPeriod(shiftedRRDate, segmentStart, segmentEnd) == false) continue;</span>
+<span class="cstat-no" title="statement not covered" >				protoEventSchedule[index] = ProtoEvent(</span>
+					shiftedRRDate,
+					shiftedRRDate.add(getEpochOffset(EventType.RR)),
+					rateResetSchedule[i],
+					EventType.RR,
+					contractTerms.currency,
+					EventType.RR,
+					EventType.RR
+				);
+				index++;
+			}
+			// ... nextRateReset
+		}
+&nbsp;
+		// fees
+		if (contractTerms.cycleOfFee.isSet == true &amp;&amp; contractTerms.cycleAnchorDateOfFee != 0) {
+			uint256[MAX_CYCLE_SIZE] memory feeSchedule = computeDatesFromCycleSegment(
+				contractTerms.cycleAnchorDateOfFee,
+				contractTerms.maturityDate,
+				contractTerms.cycleOfFee,
+				contractTerms.endOfMonthConvention,
+				true,
+				segmentStart,
+				segmentEnd
+			);
+			for (uint8 i = 0; i &lt; MAX_CYCLE_SIZE; i++) {
+				<span class="missing-if-branch" title="else path not taken" >E</span>if (feeSchedule[i] == 0) break;
+<span class="cstat-no" title="statement not covered" >				uint256 shiftedFPDate = shiftEventTime(</span>
+					feeSchedule[i],
+					contractTerms.businessDayConvention,
+					contractTerms.calendar
+				);
+<span class="cstat-no" title="statement not covered" >				if (isInPeriod(shiftedFPDate, segmentStart, segmentEnd) == false) continue;</span>
+<span class="cstat-no" title="statement not covered" >				protoEventSchedule[index] = ProtoEvent(</span>
+					shiftedFPDate,
+					shiftedFPDate.add(getEpochOffset(EventType.FP)),
+					feeSchedule[i],
+					EventType.FP,
+					contractTerms.currency,
+					EventType.FP,
+					EventType.FP
+				);
+				index++;
+			}
+		}
+&nbsp;
+		// scaling
+		if ((contractTerms.scalingEffect != ScalingEffect._000 || contractTerms.scalingEffect != ScalingEffect._00M)
+			&amp;&amp; contractTerms.cycleAnchorDateOfScalingIndex != 0
+		) {
+			uint256[MAX_CYCLE_SIZE] memory scalingSchedule = computeDatesFromCycleSegment(
+				contractTerms.cycleAnchorDateOfScalingIndex,
+				contractTerms.maturityDate,
+				contractTerms.cycleOfScalingIndex,
+				contractTerms.endOfMonthConvention,
+				true,
+				segmentStart,
+				segmentEnd
+			);
+			for (uint8 i = 0; i &lt; MAX_CYCLE_SIZE; i++) {
+				if (scalingSchedule[i] == 0) break;
+				uint256 shiftedSCDate = shiftEventTime(
+					scalingSchedule[i],
+					contractTerms.businessDayConvention,
+					contractTerms.calendar
+				);
+				<span class="missing-if-branch" title="if path not taken" >I</span>if (isInPeriod(shiftedSCDate, segmentStart, segmentEnd) == false) continue;
+				protoEventSchedule[index] = ProtoEvent(
+					shiftedSCDate,
+					shiftedSCDate.add(getEpochOffset(EventType.SC)),
+					scalingSchedule[i],
+					EventType.SC,
+					contractTerms.currency,
+					EventType.SC,
+					EventType.SC
+				);
+				index++;
+			}
+		}
+&nbsp;
+		// termination
+		if (contractTerms.terminationDate != 0) {
+			if (isInPeriod(contractTerms.terminationDate, segmentStart, segmentEnd)) {
+				protoEventSchedule[index] = ProtoEvent(
+					contractTerms.terminationDate,
+					contractTerms.terminationDate.add(getEpochOffset(EventType.TD)),
+					contractTerms.terminationDate,
+					EventType.TD,
+					contractTerms.currency,
+					EventType.TD,
+					EventType.TD
+				);
+				index++;
+			}
+		}
+&nbsp;
+		// principal redemption
+		if (isInPeriod(contractTerms.maturityDate, segmentStart, segmentEnd)) {
+			protoEventSchedule[index] = ProtoEvent(
+				contractTerms.maturityDate,
+				contractTerms.maturityDate.add(getEpochOffset(EventType.PR)),
+				contractTerms.maturityDate,
+				EventType.PR,
+				contractTerms.currency,
+				EventType.PR,
+				EventType.PR
+			);
+			index++;
+		}
+&nbsp;
+		sortProtoEventSchedule(protoEventSchedule, index);
+&nbsp;
+		return protoEventSchedule;
+	}
+&nbsp;
+	/**
+	 * initialize contract state space based on the contract terms
+	 * @dev see initStateSpace()
+	 * @param contractTerms terms of the contract
+	 * @return initial contract state
+	 */
+	function initializeContractState(ContractTerms memory contractTerms)
+		private
+		pure
+		returns (ContractState memory)
+	{
+		ContractState memory contractState;
+&nbsp;
+		contractState.contractStatus = ContractStatus.PF;
+		contractState.nominalScalingMultiplier = int256(1 * 10 ** PRECISION);
+		contractState.interestScalingMultiplier = int256(1 * 10 ** PRECISION);
+		contractState.contractRoleSign = contractTerms.contractRole;
+		contractState.lastEventTime = contractTerms.statusDate;
+		contractState.nominalValue = contractTerms.notionalPrincipal;
+		contractState.nominalRate = contractTerms.nominalInterestRate;
+		contractState.nominalAccrued = contractTerms.accruedInterest;
+		contractState.feeAccrued = contractTerms.feeAccrued;
+&nbsp;
+		return contractState;
+	}
+&nbsp;
+	/**
+	 * computes the next contract state based on the contract terms, state and the event type
+	 * @param timestamp current timestamp
+	 * @param contractTerms terms of the contract
+	 * @param contractState current state of the contract
+	 * @param eventType event type
+	 * @return next contract state
+	 */
+<span class="fstat-no" title="function not covered" >	function stateTransitionFunction(</span>
+		uint256 timestamp,
+		ContractTerms memory contractTerms,
+		ContractState memory contractState,
+		EventType eventType
+	)
+		private
+		pure
+		returns (ContractState memory)
+	{
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.AD) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = contractState.nominalAccrued.add(contractState.nominalRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = contractState.feeAccrued.add(contractTerms.feeRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.CD) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = contractState.nominalAccrued.add(contractState.nominalRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = contractState.feeAccrued.add(contractTerms.feeRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.contractStatus = ContractStatus.DF</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.FP) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = contractState.nominalAccrued.add(contractState.nominalRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.IED) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalValue = roleSign(contractTerms.contractRole) * contractTerms.notionalPrincipal</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.nominalRate = contractTerms.nominalInterestRate</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			if (contractTerms.cycleAnchorDateOfInterestPayment != 0 &amp;&amp;</span>
+				contractTerms.cycleAnchorDateOfInterestPayment &lt; contractTerms.initialExchangeDate
+			) {
+<span class="cstat-no" title="statement not covered" >				contractState.nominalAccrued = contractState.nominalRate</span>
+				.floatMult(contractState.nominalValue)
+				.floatMult(yearFraction(contractTerms.cycleAnchorDateOfInterestPayment, timestamp, contractTerms.dayCountConvention));
+			}
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.IPCI) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalValue = contractState.nominalValue.add(contractState.nominalAccrued.add(contractState.nominalRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent)))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = contractState.feeAccrued.add(contractTerms.feeRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.IP) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = contractState.feeAccrued.add(contractTerms.feeRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.PP) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = contractState.nominalAccrued.add(contractState.nominalRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = contractState.feeAccrued.add(contractTerms.feeRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.nominalValue -= 0</span>; // riskFactor(contractTerms.objectCodeOfPrepaymentModel, timestamp, contractState, contractTerms) * contractState.nominalValue;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.PRD) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = contractState.nominalAccrued.add(contractState.nominalRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = contractState.feeAccrued.add(contractTerms.feeRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.PR) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalValue = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.nominalRate = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.PY) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = contractState.nominalAccrued.add(contractState.nominalRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = contractState.feeAccrued.add(contractTerms.feeRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.RRY) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = contractState.nominalAccrued.add(contractState.nominalRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = contractState.feeAccrued.add(contractTerms.feeRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.nominalRate = contractTerms.nextResetRate</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.RR) {</span>
+			// int256 rate = //riskFactor(contractTerms.marketObjectCodeOfRateReset, timestamp, contractState, contractTerms)
+			// 	* contractTerms.rateMultiplier + contractTerms.rateSpread;
+<span class="cstat-no" title="statement not covered" >			int256 rate = contractTerms.rateSpread;</span>
+<span class="cstat-no" title="statement not covered" >			int256 deltaRate = rate.sub(contractState.nominalRate);</span>
+&nbsp;
+			 // apply period cap/floor
+<span class="cstat-no" title="statement not covered" >			if ((contractTerms.lifeCap &lt; deltaRate) &amp;&amp; (contractTerms.lifeCap &lt; ((-1) * contractTerms.periodFloor))) {</span>
+<span class="cstat-no" title="statement not covered" >				deltaRate = contractTerms.lifeCap</span>;
+			} else <span class="cstat-no" title="statement not covered" >if (deltaRate &lt; ((-1) * contractTerms.periodFloor)) {</span>
+<span class="cstat-no" title="statement not covered" >				deltaRate = ((-1) * contractTerms.periodFloor)</span>;
+			}
+<span class="cstat-no" title="statement not covered" >			rate = contractState.nominalRate.add(deltaRate)</span>;
+&nbsp;
+			// apply life cap/floor
+<span class="cstat-no" title="statement not covered" >			if (contractTerms.lifeCap &lt; rate &amp;&amp; contractTerms.lifeCap &lt; contractTerms.lifeFloor) {</span>
+<span class="cstat-no" title="statement not covered" >				rate = contractTerms.lifeCap</span>;
+			} else <span class="cstat-no" title="statement not covered" >if (rate &lt; contractTerms.lifeFloor) {</span>
+<span class="cstat-no" title="statement not covered" >				rate = contractTerms.lifeFloor</span>;
+			}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = contractState.nominalAccrued.add(contractState.nominalRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.nominalRate = rate</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.SC) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = contractState.nominalAccrued.add(contractState.nominalRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = contractState.feeAccrued.add(contractTerms.feeRate.floatMult(contractState.nominalValue).floatMult(contractState.timeFromLastEvent))</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			if ((contractTerms.scalingEffect == ScalingEffect.I00)</span>
+				|| (contractTerms.scalingEffect == ScalingEffect.IN0)
+				|| (contractTerms.scalingEffect == ScalingEffect.I0M)
+				|| (contractTerms.scalingEffect == ScalingEffect.INM)
+			) {
+<span class="cstat-no" title="statement not covered" >				contractState.interestScalingMultiplier = 0</span>; // riskFactor(contractTerms.marketObjectCodeOfScalingIndex, timestamp, contractState, contractTerms)
+			}
+<span class="cstat-no" title="statement not covered" >			if ((contractTerms.scalingEffect == ScalingEffect._0N0)</span>
+				|| (contractTerms.scalingEffect == ScalingEffect._0NM)
+				|| (contractTerms.scalingEffect == ScalingEffect.IN0)
+				|| (contractTerms.scalingEffect == ScalingEffect.INM)
+			) {
+<span class="cstat-no" title="statement not covered" >				contractState.nominalScalingMultiplier = 0</span>; // riskFactor(contractTerms.marketObjectCodeOfScalingIndex, timestamp, contractState, contractTerms)
+			}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		if (eventType == EventType.TD) {</span>
+<span class="cstat-no" title="statement not covered" >			contractState.timeFromLastEvent = yearFraction(</span>
+				shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+				shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+				contractTerms.dayCountConvention
+			);
+<span class="cstat-no" title="statement not covered" >			contractState.nominalValue = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.nominalRate = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.nominalAccrued = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.feeAccrued = 0</span>;
+<span class="cstat-no" title="statement not covered" >			contractState.lastEventTime = timestamp</span>;
+<span class="cstat-no" title="statement not covered" >			return contractState;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		revert("PAMEngine.stateTransitionFunction: ATTRIBUTE_NOT_FOUND")</span>;
+	}
+&nbsp;
+	/**
+	 * calculates the payoff for the current time based on the contract terms,
+	 * state and the event type
+	 * @param timestamp current timestamp
+	 * @param contractTerms terms of the contract
+	 * @param contractState current state of the contract
+	 * @param eventType event type
+	 * @return payoff
+	 */
+	function payoffFunction(
+		uint256 timestamp,
+		ContractTerms memory contractTerms,
+		ContractState memory contractState,
+		EventType eventType
+	)
+		private
+		pure
+		returns (int256 payoff)
+	{
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.AD) <span class="cstat-no" title="statement not covered" >return 0;</span>
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.CD) <span class="cstat-no" title="statement not covered" >return 0;</span>
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.IPCI) <span class="cstat-no" title="statement not covered" >return 0;</span>
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.RRY) <span class="cstat-no" title="statement not covered" >return 0;</span>
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.RR) <span class="cstat-no" title="statement not covered" >return 0;</span>
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.SC) <span class="cstat-no" title="statement not covered" >return 0;</span>
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.FP) {
+<span class="cstat-no" title="statement not covered" >			if (contractTerms.feeBasis == FeeBasis.A) {</span>
+<span class="cstat-no" title="statement not covered" >				return (</span>
+					performanceIndicator(contractState.contractStatus)
+					* roleSign(contractTerms.contractRole)
+					* contractTerms.feeRate
+				);
+			} else {
+<span class="cstat-no" title="statement not covered" >				return (</span>
+					performanceIndicator(contractState.contractStatus)
+					* contractState.feeAccrued
+						.add(
+							yearFraction(
+								shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+								shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+								contractTerms.dayCountConvention
+							)
+							.floatMult(contractTerms.feeRate)
+							.floatMult(contractState.nominalValue)
+						)
+				);
+			}
+		}
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.IED) {
+<span class="cstat-no" title="statement not covered" >			return (</span>
+				performanceIndicator(contractState.contractStatus)
+				* roleSign(contractTerms.contractRole)
+				* (-1)
+				* contractTerms.notionalPrincipal
+					.add(contractTerms.premiumDiscountAtIED)
+			);
+		}
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.IP) {
+<span class="cstat-no" title="statement not covered" >			return (</span>
+				performanceIndicator(contractState.contractStatus)
+				* contractState.interestScalingMultiplier
+					.floatMult(
+						contractState.nominalAccrued
+						.add(
+							yearFraction(
+								shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+								shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+								contractTerms.dayCountConvention
+							)
+							.floatMult(contractState.nominalRate)
+							.floatMult(contractState.nominalValue)
+						)
+					)
+			);
+		}
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.PP) {
+<span class="cstat-no" title="statement not covered" >			return (</span>
+				performanceIndicator(contractState.contractStatus)
+				* roleSign(contractTerms.contractRole)
+				* 0 // riskFactor(timestamp, contractState, contractTerms, contractTerms.objectCodeOfPrepaymentModel)
+				* contractState.nominalValue
+			);
+		}
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.PRD) {
+<span class="cstat-no" title="statement not covered" >			return (</span>
+				performanceIndicator(contractState.contractStatus)
+				* roleSign(contractTerms.contractRole)
+				* (-1)
+				* contractTerms.priceAtPurchaseDate
+					.add(contractState.nominalAccrued)
+					.add(
+						yearFraction(
+							shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+							shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+							contractTerms.dayCountConvention
+						)
+						.floatMult(contractState.nominalRate)
+						.floatMult(contractState.nominalValue)
+					)
+			);
+		}
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.PR) {
+<span class="cstat-no" title="statement not covered" >			return (</span>
+				performanceIndicator(contractState.contractStatus)
+				* contractState.nominalScalingMultiplier
+					.floatMult(contractState.nominalValue)
+			);
+		}
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (eventType == EventType.PY) {
+<span class="cstat-no" title="statement not covered" >			if (contractTerms.penaltyType == PenaltyType.A) {</span>
+<span class="cstat-no" title="statement not covered" >				return (</span>
+					performanceIndicator(contractState.contractStatus)
+					* roleSign(contractTerms.contractRole)
+					* contractTerms.penaltyRate
+				);
+			} else <span class="cstat-no" title="statement not covered" >if (contractTerms.penaltyType == PenaltyType.N) {</span>
+<span class="cstat-no" title="statement not covered" >				return (</span>
+					performanceIndicator(contractState.contractStatus)
+					* roleSign(contractTerms.contractRole)
+					* yearFraction(
+							shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+							shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+							contractTerms.dayCountConvention
+						)
+						.floatMult(contractTerms.penaltyRate)
+						.floatMult(contractState.nominalValue)
+				);
+			} else {
+				// riskFactor(timestamp, contractState, contractTerms, contractTerms.marketObjectCodeOfRateReset);
+<span class="cstat-no" title="statement not covered" >				int256 risk = 0;</span>
+<span class="cstat-no" title="statement not covered" >				int256 param = 0;</span>
+<span class="cstat-no" title="statement not covered" >				if (contractState.nominalRate - risk &gt; 0) <span class="cstat-no" title="statement not covered" >param = contractState.nominalRate - risk</span>;</span>
+<span class="cstat-no" title="statement not covered" >				return (</span>
+					performanceIndicator(contractState.contractStatus)
+					* roleSign(contractTerms.contractRole)
+					* yearFraction(
+							shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+							shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+							contractTerms.dayCountConvention
+						)
+						.floatMult(contractState.nominalValue)
+						.floatMult(param)
+				);
+			}
+		}
+		if (eventType == EventType.TD) {
+			return (
+				performanceIndicator(contractState.contractStatus)
+				* roleSign(contractTerms.contractRole)
+				* contractTerms.priceAtPurchaseDate
+					.add(contractState.nominalAccrued)
+					.add(
+						yearFraction(
+							shiftCalcTime(contractState.lastEventTime, contractTerms.businessDayConvention, contractTerms.calendar),
+							shiftCalcTime(timestamp, contractTerms.businessDayConvention, contractTerms.calendar),
+							contractTerms.dayCountConvention
+						)
+						.floatMult(contractState.nominalRate)
+						.floatMult(contractState.nominalValue)
+					)
+			);
+		}
+		revert("PAMEngine.payoffFunction: ATTRIBUTE_NOT_FOUND");
+	}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 11 2020 13:55:39 GMT-0200 (GMT-02:00)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

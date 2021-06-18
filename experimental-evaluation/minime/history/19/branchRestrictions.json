@@ -1,0 +1,1344 @@
+,{
+  "2020-11-12T04:12:02.018ZControlled.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:05.708ZMiniMeToken.null": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute constructor(address,address,uint,string,uint8,string,bool)",
+          "parameters": [
+            {
+              "js": "contractMiniMeTokenFactory.address",
+              "sol": "contractMiniMeTokenFactory.address"
+            },
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "\"RevertWithReason\"",
+              "sol": "\"RevertWithReason\""
+            },
+            {
+              "js": "17",
+              "sol": "17"
+            },
+            {
+              "js": "\"RevertWithReason\"",
+              "sol": "\"RevertWithReason\""
+            },
+            {
+              "js": "true",
+              "sol": "true"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.689ZMiniMeTokenFactory.createCloneToken": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute createCloneToken(address,uint,string,uint8,string,bool)",
+          "parameters": [
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1337",
+              "sol": "1337"
+            },
+            {
+              "js": "\"MMT_0.2\"",
+              "sol": "\"MMT_0.2\""
+            },
+            {
+              "js": "28",
+              "sol": "28"
+            },
+            {
+              "js": "\"RevertWithReason\"",
+              "sol": "\"RevertWithReason\""
+            },
+            {
+              "js": "false",
+              "sol": "false"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.691ZControlled.changeController": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute changeController(address) WHEN msg.sender==controller",
+          "parameters": [
+            {
+              "js": "accounts[5]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail changeController(address) when NOT comply with: msg.sender == controller",
+            "parameters": [
+              {
+                "js": "accounts[5]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.692ZMiniMeToken.transfer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transfer(address,uint256) WHEN transfersEnabled==true,parentSnapShotBlock<block.number",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1337",
+              "sol": "1337"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transfer(address,uint256) when NOT comply with: transfersEnabled == true",
+            "parameters": [
+              {
+                "js": "accounts[6]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1337",
+                "sol": "1337"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail transfer(address,uint256) when NOT comply with: parentSnapShotBlock < (await web3.eth.getBlockNumber())",
+            "parameters": [
+              {
+                "js": "accounts[6]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1337",
+                "sol": "1337"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.694ZMiniMeToken.transferFrom": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "150-156",
+          "restrictions": [
+            "msg.sender != controller"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transferFrom(address,address,uint256) WHEN msg.sender!=controller,transfersEnabled==true,parentSnapShotBlock<block.number",
+          "parameters": [
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "66",
+              "sol": "66"
+            },
+            {
+              "js": "{from:accounts[8]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transferFrom(address,address,uint256) when NOT comply with: transfersEnabled == true",
+            "parameters": [
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "{from:accounts[8]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          },
+          {
+            "success": false,
+            "description": "Should fail transferFrom(address,address,uint256) when NOT comply with: parentSnapShotBlock < (await web3.eth.getBlockNumber())",
+            "parameters": [
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[2]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "66",
+                "sol": "66"
+              },
+              {
+                "js": "{from:accounts[8]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "msg.sender == controller"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transferFrom(address,address,uint256) WHEN msg.sender==controller,parentSnapShotBlock<block.number",
+          "parameters": [
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "10001",
+              "sol": "10001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transferFrom(address,address,uint256) when NOT comply with: parentSnapShotBlock < (await web3.eth.getBlockNumber())",
+            "parameters": [
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "10001",
+                "sol": "10001"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.698ZMiniMeToken.balanceOf": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute balanceOf(address)",
+          "parameters": [
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.698ZMiniMeToken.approve": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "228-230",
+          "restrictions": [
+            "FunctionCall == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute approve(address,uint256) WHEN FunctionCall==true,transfersEnabled==true",
+          "parameters": [
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "10001",
+              "sol": "10001"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail approve(address,uint256) when NOT comply with: transfersEnabled == true",
+            "parameters": [
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "10001",
+                "sol": "10001"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "FunctionCall != true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute approve(address,uint256) WHEN FunctionCall!=true,transfersEnabled==true",
+          "parameters": [
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1",
+              "sol": "1"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail approve(address,uint256) when NOT comply with: transfersEnabled == true",
+            "parameters": [
+              {
+                "js": "accounts[1]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1",
+                "sol": "1"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.700ZMiniMeToken.allowance": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute allowance(address,address)",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.700ZMiniMeToken.approveAndCall": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute approveAndCall(address,uint256,bytes)",
+          "parameters": [
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "2014223715",
+              "sol": "2014223715"
+            },
+            {
+              "js": "[252,209,226,197,222,237,198,175,50,93,69,59,4,38,43,64,62,27,251,181,43,194,213,236,167,143,88,35,252,179,166,140]",
+              "sol": "abi.encode(\"252,209,226,197,222,237,198,175,50,93,69,59,4,38,43,64,62,27,251,181,43,194,213,236,167,143,88,35,252,179,166,140\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.702ZMiniMeToken.totalSupply": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute totalSupply()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.703ZMiniMeToken.balanceOfAt": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute balanceOfAt(address,uint)",
+          "parameters": [
+            {
+              "js": "accounts[2]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "95",
+              "sol": "95"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.703ZMiniMeToken.totalSupplyAt": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute totalSupplyAt(uint)",
+          "parameters": [
+            {
+              "js": "2014223716",
+              "sol": "2014223716"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.704ZMiniMeToken.createCloneToken": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "351-351",
+          "restrictions": [
+            "_snapshotBlock == 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute createCloneToken(string,uint8,string,uint,bool) WHEN _snapshotBlock==0",
+          "parameters": [
+            {
+              "js": "\"\\x19Ethereum Signed Message:\\n32\"",
+              "sol": "\"\\x19Ethereum Signed Message:\\n32\""
+            },
+            {
+              "js": "17",
+              "sol": "17"
+            },
+            {
+              "js": "\"RevertWithReason\"",
+              "sol": "\"RevertWithReason\""
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "false",
+              "sol": "false"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_snapshotBlock != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute createCloneToken(string,uint8,string,uint,bool) WHEN _snapshotBlock!=0",
+          "parameters": [
+            {
+              "js": "\"IsLibrary\"",
+              "sol": "\"IsLibrary\""
+            },
+            {
+              "js": "255",
+              "sol": "255"
+            },
+            {
+              "js": "\"UsesExample\"",
+              "sol": "\"UsesExample\""
+            },
+            {
+              "js": "26",
+              "sol": "26"
+            },
+            {
+              "js": "false",
+              "sol": "false"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.705ZMiniMeToken.generateTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute generateTokens(address,uint) WHEN msg.sender==controller",
+          "parameters": [
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "27",
+              "sol": "27"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail generateTokens(address,uint) when NOT comply with: msg.sender == controller",
+            "parameters": [
+              {
+                "js": "accounts[1]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "27",
+                "sol": "27"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.705ZMiniMeToken.destroyTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute destroyTokens(address,uint) WHEN msg.sender==controller,curTotalSupply>=_amount,previousBalanceFrom>=_amount",
+          "parameters": [
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail destroyTokens(address,uint) when NOT comply with: msg.sender == controller",
+            "parameters": [
+              {
+                "js": "accounts[1]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.707ZMiniMeToken.enableTransfers": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute enableTransfers(bool) WHEN msg.sender==controller",
+          "parameters": [
+            {
+              "js": "false",
+              "sol": "false"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail enableTransfers(bool) when NOT comply with: msg.sender == controller",
+            "parameters": [
+              {
+                "js": "false",
+                "sol": "false"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.707ZMiniMeToken.": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute fallback()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.708ZMiniMeToken.claimTokens": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "498-501",
+          "restrictions": [
+            "_token == 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute claimTokens(address) WHEN _token==0x0000000000000000000000000000000000000000,msg.sender==controller",
+          "parameters": [
+            {
+              "js": "\"0x0000000000000000000000000000000000000000\"",
+              "sol": "0x0000000000000000000000000000000000000000"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail claimTokens(address) when NOT comply with: msg.sender == controller",
+            "parameters": [
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_token != 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute claimTokens(address) WHEN _token!=0x0000000000000000000000000000000000000000,msg.sender==controller",
+          "parameters": [
+            {
+              "js": "accounts[1]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail claimTokens(address) when NOT comply with: msg.sender == controller",
+            "parameters": [
+              {
+                "js": "accounts[1]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "{from:accounts[9]}",
+                "sol": "{\"from\":\"accounts[9]\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.711ZProxyMiniMeToken.testdoTransfer": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "170-173",
+          "restrictions": [
+            "_amount == 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testdoTransfer(address,address,uint) WHEN _amount==0,parentSnapShotBlock<block.number",
+          "parameters": [
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[0]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testdoTransfer(address,address,uint) when NOT comply with: parentSnapShotBlock < (await web3.eth.getBlockNumber())",
+            "parameters": [
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[0]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "0",
+                "sol": "0"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_amount != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testdoTransfer(address,address,uint) WHEN _amount!=0,parentSnapShotBlock<block.number",
+          "parameters": [
+            {
+              "js": "accounts[4]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[9]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "1338",
+              "sol": "1338"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testdoTransfer(address,address,uint) when NOT comply with: parentSnapShotBlock < (await web3.eth.getBlockNumber())",
+            "parameters": [
+              {
+                "js": "accounts[4]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[9]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "1338",
+                "sol": "1338"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "2": {
+        "branch": {
+          "loc": "187-189",
+          "restrictions": [
+            "FunctionCall == true"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testdoTransfer(address,address,uint) WHEN FunctionCall==true,parentSnapShotBlock<block.number",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[3]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "29",
+              "sol": "29"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testdoTransfer(address,address,uint) when NOT comply with: parentSnapShotBlock < (await web3.eth.getBlockNumber())",
+            "parameters": [
+              {
+                "js": "accounts[6]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[3]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "29",
+                "sol": "29"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      },
+      "3": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "FunctionCall != true",
+            "_amount != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testdoTransfer(address,address,uint) WHEN FunctionCall!=true,_amount!=0,parentSnapShotBlock<block.number",
+          "parameters": [
+            {
+              "js": "accounts[7]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "65",
+              "sol": "65"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail testdoTransfer(address,address,uint) when NOT comply with: parentSnapShotBlock < (await web3.eth.getBlockNumber())",
+            "parameters": [
+              {
+                "js": "accounts[7]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "accounts[8]",
+                "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+              },
+              {
+                "js": "65",
+                "sol": "65"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.715ZProxyMiniMeToken.testgetValueAt": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "426-426",
+          "restrictions": [
+            "checkpoints.length == 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testgetValueAt(MiniMeToken.Checkpoint[],uint) WHEN checkpoints.length==0",
+          "parameters": [
+            {
+              "js": "[]",
+              "sol": "[]"
+            },
+            {
+              "js": "1532892062",
+              "sol": "1532892062"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "checkpoints.length != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testgetValueAt(MiniMeToken.Checkpoint[],uint) WHEN checkpoints.length!=0",
+          "parameters": [
+            {
+              "js": "[{\"fromBlock\": 27,\"value\": 3},{\"fromBlock\": 17,\"value\": 0},{\"fromBlock\": 255,\"value\": 1338},{\"fromBlock\": 18,\"value\": 4},{\"fromBlock\": 9999,\"value\": 17},{\"fromBlock\": 2014223716,\"value\": 254},{\"fromBlock\": 0,\"value\": 18},{\"fromBlock\": 65,\"value\": 10000},{\"fromBlock\": 2014223714,\"value\": 66},{\"fromBlock\": 1532892064,\"value\": 18},{\"fromBlock\": 65,\"value\": 18},{\"fromBlock\": 26,\"value\": 9999},{\"fromBlock\": 95,\"value\": 10000},{\"fromBlock\": 1532892062,\"value\": 10000},{\"fromBlock\": 257,\"value\": 18},{\"fromBlock\": 2,\"value\": 26},{\"fromBlock\": 9999,\"value\": 9999},{\"fromBlock\": 1336,\"value\": 2014223714},{\"fromBlock\": 26,\"value\": 1532892064},{\"fromBlock\": 17,\"value\": 2},{\"fromBlock\": 3,\"value\": 1338},{\"fromBlock\": 0,\"value\": 256},{\"fromBlock\": 1337,\"value\": 254},{\"fromBlock\": 257,\"value\": 3},{\"fromBlock\": 5,\"value\": 97},{\"fromBlock\": 1532892064,\"value\": 66},{\"fromBlock\": 9999,\"value\": 2014223714},{\"fromBlock\": 1337,\"value\": 29},{\"fromBlock\": 254,\"value\": 1336},{\"fromBlock\": 5,\"value\": 65},{\"fromBlock\": 95,\"value\": 5},{\"fromBlock\": 28,\"value\": 17},{\"fromBlock\": 3,\"value\": 5},{\"fromBlock\": 2014223715,\"value\": 254},{\"fromBlock\": 1338,\"value\": 2},{\"fromBlock\": 95,\"value\": 65},{\"fromBlock\": 18,\"value\": 1532892064},{\"fromBlock\": 256,\"value\": 9999},{\"fromBlock\": 10000,\"value\": 3},{\"fromBlock\": 27,\"value\": 0},{\"fromBlock\": 27,\"value\": 28},{\"fromBlock\": 97,\"value\": 4},{\"fromBlock\": 2014223714,\"value\": 17},{\"fromBlock\": 1337,\"value\": 29},{\"fromBlock\": 1532892064,\"value\": 26},{\"fromBlock\": 66,\"value\": 1337},{\"fromBlock\": 18,\"value\": 27},{\"fromBlock\": 257,\"value\": 1},{\"fromBlock\": 19,\"value\": 254},{\"fromBlock\": 6,\"value\": 1532892064},{\"fromBlock\": 18,\"value\": 66},{\"fromBlock\": 97,\"value\": 65},{\"fromBlock\": 66,\"value\": 2014223714},{\"fromBlock\": 6,\"value\": 1532892064},{\"fromBlock\": 254,\"value\": 1336},{\"fromBlock\": 97,\"value\": 10000},{\"fromBlock\": 18,\"value\": 28},{\"fromBlock\": 10001,\"value\": 65},{\"fromBlock\": 2014223714,\"value\": 17},{\"fromBlock\": 9999,\"value\": 1532892062},{\"fromBlock\": 97,\"value\": 6},{\"fromBlock\": 10001,\"value\": 17},{\"fromBlock\": 18,\"value\": 1338},{\"fromBlock\": 27,\"value\": 65},{\"fromBlock\": 27,\"value\": 26},{\"fromBlock\": 1532892064,\"value\": 257},{\"fromBlock\": 10000,\"value\": 95},{\"fromBlock\": 2014223716,\"value\": 18},{\"fromBlock\": 19,\"value\": 26},{\"fromBlock\": 18,\"value\": 18},{\"fromBlock\": 1336,\"value\": 254},{\"fromBlock\": 2014223714,\"value\": 1532892063},{\"fromBlock\": 1338,\"value\": 1532892064},{\"fromBlock\": 1336,\"value\": 2},{\"fromBlock\": 2014223716,\"value\": 9999},{\"fromBlock\": 17,\"value\": 2014223714},{\"fromBlock\": 17,\"value\": 66},{\"fromBlock\": 1532892064,\"value\": 28},{\"fromBlock\": 1338,\"value\": 18},{\"fromBlock\": 1337,\"value\": 1337},{\"fromBlock\": 4,\"value\": 10001},{\"fromBlock\": 1336,\"value\": 1336},{\"fromBlock\": 28,\"value\": 1532892062},{\"fromBlock\": 1532892062,\"value\": 27},{\"fromBlock\": 1532892063,\"value\": 96},{\"fromBlock\": 1338,\"value\": 3},{\"fromBlock\": 5,\"value\": 1337},{\"fromBlock\": 254,\"value\": 66},{\"fromBlock\": 1337,\"value\": 26},{\"fromBlock\": 1532892062,\"value\": 18},{\"fromBlock\": 18,\"value\": 2014223714},{\"fromBlock\": 1532892064,\"value\": 10000},{\"fromBlock\": 5,\"value\": 17},{\"fromBlock\": 1338,\"value\": 4},{\"fromBlock\": 96,\"value\": 27},{\"fromBlock\": 17,\"value\": 1},{\"fromBlock\": 256,\"value\": 1532892064},{\"fromBlock\": 257,\"value\": 1336},{\"fromBlock\": 6,\"value\": 9999},{\"fromBlock\": 1532892064,\"value\": 27},{\"fromBlock\": 65,\"value\": 10000},{\"fromBlock\": 10001,\"value\": 6},{\"fromBlock\": 254,\"value\": 26},{\"fromBlock\": 3,\"value\": 26},{\"fromBlock\": 1336,\"value\": 1338},{\"fromBlock\": 19,\"value\": 1336},{\"fromBlock\": 5,\"value\": 257},{\"fromBlock\": 17,\"value\": 18},{\"fromBlock\": 19,\"value\": 3},{\"fromBlock\": 255,\"value\": 5},{\"fromBlock\": 3,\"value\": 10000},{\"fromBlock\": 1532892062,\"value\": 26},{\"fromBlock\": 2014223716,\"value\": 1532892063},{\"fromBlock\": 2014223715,\"value\": 9999},{\"fromBlock\": 66,\"value\": 2014223714},{\"fromBlock\": 3,\"value\": 65},{\"fromBlock\": 18,\"value\": 96},{\"fromBlock\": 29,\"value\": 17},{\"fromBlock\": 1532892064,\"value\": 254},{\"fromBlock\": 17,\"value\": 97},{\"fromBlock\": 255,\"value\": 65},{\"fromBlock\": 26,\"value\": 18},{\"fromBlock\": 1,\"value\": 19},{\"fromBlock\": 2014223715,\"value\": 1337},{\"fromBlock\": 19,\"value\": 6},{\"fromBlock\": 17,\"value\": 17},{\"fromBlock\": 257,\"value\": 10000},{\"fromBlock\": 1338,\"value\": 5},{\"fromBlock\": 0,\"value\": 256},{\"fromBlock\": 5,\"value\": 95},{\"fromBlock\": 3,\"value\": 27},{\"fromBlock\": 5,\"value\": 0},{\"fromBlock\": 1336,\"value\": 29},{\"fromBlock\": 97,\"value\": 254},{\"fromBlock\": 29,\"value\": 1532892064},{\"fromBlock\": 257,\"value\": 17},{\"fromBlock\": 10000,\"value\": 1532892064},{\"fromBlock\": 3,\"value\": 29},{\"fromBlock\": 65,\"value\": 10000},{\"fromBlock\": 10001,\"value\": 255},{\"fromBlock\": 10001,\"value\": 19},{\"fromBlock\": 97,\"value\": 1532892064},{\"fromBlock\": 254,\"value\": 2014223715},{\"fromBlock\": 17,\"value\": 10000},{\"fromBlock\": 2014223714,\"value\": 17},{\"fromBlock\": 19,\"value\": 96},{\"fromBlock\": 2014223715,\"value\": 1},{\"fromBlock\": 256,\"value\": 256},{\"fromBlock\": 2,\"value\": 1338},{\"fromBlock\": 2014223716,\"value\": 257},{\"fromBlock\": 64,\"value\": 1532892064},{\"fromBlock\": 0,\"value\": 27},{\"fromBlock\": 1,\"value\": 17},{\"fromBlock\": 4,\"value\": 5},{\"fromBlock\": 17,\"value\": 27},{\"fromBlock\": 17,\"value\": 1532892062},{\"fromBlock\": 18,\"value\": 26},{\"fromBlock\": 5,\"value\": 96},{\"fromBlock\": 5,\"value\": 17},{\"fromBlock\": 3,\"value\": 17},{\"fromBlock\": 19,\"value\": 29},{\"fromBlock\": 0,\"value\": 97},{\"fromBlock\": 2014223715,\"value\": 9999},{\"fromBlock\": 0,\"value\": 2014223715},{\"fromBlock\": 5,\"value\": 27},{\"fromBlock\": 64,\"value\": 18},{\"fromBlock\": 1532892064,\"value\": 18},{\"fromBlock\": 19,\"value\": 0},{\"fromBlock\": 254,\"value\": 97},{\"fromBlock\": 19,\"value\": 256},{\"fromBlock\": 3,\"value\": 256},{\"fromBlock\": 19,\"value\": 26},{\"fromBlock\": 2014223715,\"value\": 66},{\"fromBlock\": 1336,\"value\": 256},{\"fromBlock\": 5,\"value\": 2014223714},{\"fromBlock\": 2014223715,\"value\": 5},{\"fromBlock\": 1336,\"value\": 97},{\"fromBlock\": 66,\"value\": 9999},{\"fromBlock\": 18,\"value\": 257},{\"fromBlock\": 10000,\"value\": 27},{\"fromBlock\": 96,\"value\": 18},{\"fromBlock\": 10000,\"value\": 17},{\"fromBlock\": 28,\"value\": 257},{\"fromBlock\": 1532892063,\"value\": 96},{\"fromBlock\": 97,\"value\": 66},{\"fromBlock\": 2014223715,\"value\": 18},{\"fromBlock\": 1336,\"value\": 10000},{\"fromBlock\": 1338,\"value\": 10000},{\"fromBlock\": 6,\"value\": 256},{\"fromBlock\": 64,\"value\": 9999},{\"fromBlock\": 28,\"value\": 6},{\"fromBlock\": 3,\"value\": 17},{\"fromBlock\": 29,\"value\": 97},{\"fromBlock\": 19,\"value\": 95},{\"fromBlock\": 27,\"value\": 1532892064},{\"fromBlock\": 28,\"value\": 26},{\"fromBlock\": 1532892064,\"value\": 254},{\"fromBlock\": 97,\"value\": 19},{\"fromBlock\": 17,\"value\": 6},{\"fromBlock\": 1532892064,\"value\": 17},{\"fromBlock\": 2014223715,\"value\": 256},{\"fromBlock\": 3,\"value\": 256},{\"fromBlock\": 10001,\"value\": 28},{\"fromBlock\": 17,\"value\": 1532892062},{\"fromBlock\": 1532892063,\"value\": 10001},{\"fromBlock\": 1532892063,\"value\": 27},{\"fromBlock\": 97,\"value\": 1532892064},{\"fromBlock\": 17,\"value\": 1},{\"fromBlock\": 64,\"value\": 3},{\"fromBlock\": 2014223716,\"value\": 1532892062},{\"fromBlock\": 1532892063,\"value\": 18},{\"fromBlock\": 95,\"value\": 1532892063},{\"fromBlock\": 0,\"value\": 1532892064},{\"fromBlock\": 1532892064,\"value\": 2014223715},{\"fromBlock\": 96,\"value\": 18},{\"fromBlock\": 66,\"value\": 1532892062},{\"fromBlock\": 96,\"value\": 95},{\"fromBlock\": 255,\"value\": 4},{\"fromBlock\": 18,\"value\": 6},{\"fromBlock\": 1336,\"value\": 3},{\"fromBlock\": 18,\"value\": 19},{\"fromBlock\": 5,\"value\": 2014223715},{\"fromBlock\": 1338,\"value\": 2014223715},{\"fromBlock\": 10001,\"value\": 10000},{\"fromBlock\": 1336,\"value\": 2014223715},{\"fromBlock\": 96,\"value\": 28},{\"fromBlock\": 1532892064,\"value\": 5},{\"fromBlock\": 5,\"value\": 2014223714},{\"fromBlock\": 19,\"value\": 1336},{\"fromBlock\": 1338,\"value\": 3},{\"fromBlock\": 0,\"value\": 1336},{\"fromBlock\": 18,\"value\": 1338},{\"fromBlock\": 10001,\"value\": 1532892064},{\"fromBlock\": 2014223715,\"value\": 10000},{\"fromBlock\": 97,\"value\": 257},{\"fromBlock\": 64,\"value\": 29},{\"fromBlock\": 28,\"value\": 17},{\"fromBlock\": 64,\"value\": 97},{\"fromBlock\": 18,\"value\": 2},{\"fromBlock\": 256,\"value\": 64},{\"fromBlock\": 3,\"value\": 1532892064},{\"fromBlock\": 10000,\"value\": 10000},{\"fromBlock\": 17,\"value\": 254},{\"fromBlock\": 10000,\"value\": 1532892062},{\"fromBlock\": 27,\"value\": 95},{\"fromBlock\": 2,\"value\": 1532892063},{\"fromBlock\": 17,\"value\": 29},{\"fromBlock\": 5,\"value\": 28},{\"fromBlock\": 1,\"value\": 6},{\"fromBlock\": 1532892064,\"value\": 28},{\"fromBlock\": 1338,\"value\": 96},{\"fromBlock\": 1337,\"value\": 1532892063},{\"fromBlock\": 1336,\"value\": 255},{\"fromBlock\": 255,\"value\": 254}]",
+              "sol": "[MiniMeToken.Checkpoint(27,3),MiniMeToken.Checkpoint(17,0),MiniMeToken.Checkpoint(255,1338),MiniMeToken.Checkpoint(18,4),MiniMeToken.Checkpoint(9999,17),MiniMeToken.Checkpoint(2014223716,254),MiniMeToken.Checkpoint(0,18),MiniMeToken.Checkpoint(65,10000),MiniMeToken.Checkpoint(2014223714,66),MiniMeToken.Checkpoint(1532892064,18),MiniMeToken.Checkpoint(65,18),MiniMeToken.Checkpoint(26,9999),MiniMeToken.Checkpoint(95,10000),MiniMeToken.Checkpoint(1532892062,10000),MiniMeToken.Checkpoint(257,18),MiniMeToken.Checkpoint(2,26),MiniMeToken.Checkpoint(9999,9999),MiniMeToken.Checkpoint(1336,2014223714),MiniMeToken.Checkpoint(26,1532892064),MiniMeToken.Checkpoint(17,2),MiniMeToken.Checkpoint(3,1338),MiniMeToken.Checkpoint(0,256),MiniMeToken.Checkpoint(1337,254),MiniMeToken.Checkpoint(257,3),MiniMeToken.Checkpoint(5,97),MiniMeToken.Checkpoint(1532892064,66),MiniMeToken.Checkpoint(9999,2014223714),MiniMeToken.Checkpoint(1337,29),MiniMeToken.Checkpoint(254,1336),MiniMeToken.Checkpoint(5,65),MiniMeToken.Checkpoint(95,5),MiniMeToken.Checkpoint(28,17),MiniMeToken.Checkpoint(3,5),MiniMeToken.Checkpoint(2014223715,254),MiniMeToken.Checkpoint(1338,2),MiniMeToken.Checkpoint(95,65),MiniMeToken.Checkpoint(18,1532892064),MiniMeToken.Checkpoint(256,9999),MiniMeToken.Checkpoint(10000,3),MiniMeToken.Checkpoint(27,0),MiniMeToken.Checkpoint(27,28),MiniMeToken.Checkpoint(97,4),MiniMeToken.Checkpoint(2014223714,17),MiniMeToken.Checkpoint(1337,29),MiniMeToken.Checkpoint(1532892064,26),MiniMeToken.Checkpoint(66,1337),MiniMeToken.Checkpoint(18,27),MiniMeToken.Checkpoint(257,1),MiniMeToken.Checkpoint(19,254),MiniMeToken.Checkpoint(6,1532892064),MiniMeToken.Checkpoint(18,66),MiniMeToken.Checkpoint(97,65),MiniMeToken.Checkpoint(66,2014223714),MiniMeToken.Checkpoint(6,1532892064),MiniMeToken.Checkpoint(254,1336),MiniMeToken.Checkpoint(97,10000),MiniMeToken.Checkpoint(18,28),MiniMeToken.Checkpoint(10001,65),MiniMeToken.Checkpoint(2014223714,17),MiniMeToken.Checkpoint(9999,1532892062),MiniMeToken.Checkpoint(97,6),MiniMeToken.Checkpoint(10001,17),MiniMeToken.Checkpoint(18,1338),MiniMeToken.Checkpoint(27,65),MiniMeToken.Checkpoint(27,26),MiniMeToken.Checkpoint(1532892064,257),MiniMeToken.Checkpoint(10000,95),MiniMeToken.Checkpoint(2014223716,18),MiniMeToken.Checkpoint(19,26),MiniMeToken.Checkpoint(18,18),MiniMeToken.Checkpoint(1336,254),MiniMeToken.Checkpoint(2014223714,1532892063),MiniMeToken.Checkpoint(1338,1532892064),MiniMeToken.Checkpoint(1336,2),MiniMeToken.Checkpoint(2014223716,9999),MiniMeToken.Checkpoint(17,2014223714),MiniMeToken.Checkpoint(17,66),MiniMeToken.Checkpoint(1532892064,28),MiniMeToken.Checkpoint(1338,18),MiniMeToken.Checkpoint(1337,1337),MiniMeToken.Checkpoint(4,10001),MiniMeToken.Checkpoint(1336,1336),MiniMeToken.Checkpoint(28,1532892062),MiniMeToken.Checkpoint(1532892062,27),MiniMeToken.Checkpoint(1532892063,96),MiniMeToken.Checkpoint(1338,3),MiniMeToken.Checkpoint(5,1337),MiniMeToken.Checkpoint(254,66),MiniMeToken.Checkpoint(1337,26),MiniMeToken.Checkpoint(1532892062,18),MiniMeToken.Checkpoint(18,2014223714),MiniMeToken.Checkpoint(1532892064,10000),MiniMeToken.Checkpoint(5,17),MiniMeToken.Checkpoint(1338,4),MiniMeToken.Checkpoint(96,27),MiniMeToken.Checkpoint(17,1),MiniMeToken.Checkpoint(256,1532892064),MiniMeToken.Checkpoint(257,1336),MiniMeToken.Checkpoint(6,9999),MiniMeToken.Checkpoint(1532892064,27),MiniMeToken.Checkpoint(65,10000),MiniMeToken.Checkpoint(10001,6),MiniMeToken.Checkpoint(254,26),MiniMeToken.Checkpoint(3,26),MiniMeToken.Checkpoint(1336,1338),MiniMeToken.Checkpoint(19,1336),MiniMeToken.Checkpoint(5,257),MiniMeToken.Checkpoint(17,18),MiniMeToken.Checkpoint(19,3),MiniMeToken.Checkpoint(255,5),MiniMeToken.Checkpoint(3,10000),MiniMeToken.Checkpoint(1532892062,26),MiniMeToken.Checkpoint(2014223716,1532892063),MiniMeToken.Checkpoint(2014223715,9999),MiniMeToken.Checkpoint(66,2014223714),MiniMeToken.Checkpoint(3,65),MiniMeToken.Checkpoint(18,96),MiniMeToken.Checkpoint(29,17),MiniMeToken.Checkpoint(1532892064,254),MiniMeToken.Checkpoint(17,97),MiniMeToken.Checkpoint(255,65),MiniMeToken.Checkpoint(26,18),MiniMeToken.Checkpoint(1,19),MiniMeToken.Checkpoint(2014223715,1337),MiniMeToken.Checkpoint(19,6),MiniMeToken.Checkpoint(17,17),MiniMeToken.Checkpoint(257,10000),MiniMeToken.Checkpoint(1338,5),MiniMeToken.Checkpoint(0,256),MiniMeToken.Checkpoint(5,95),MiniMeToken.Checkpoint(3,27),MiniMeToken.Checkpoint(5,0),MiniMeToken.Checkpoint(1336,29),MiniMeToken.Checkpoint(97,254),MiniMeToken.Checkpoint(29,1532892064),MiniMeToken.Checkpoint(257,17),MiniMeToken.Checkpoint(10000,1532892064),MiniMeToken.Checkpoint(3,29),MiniMeToken.Checkpoint(65,10000),MiniMeToken.Checkpoint(10001,255),MiniMeToken.Checkpoint(10001,19),MiniMeToken.Checkpoint(97,1532892064),MiniMeToken.Checkpoint(254,2014223715),MiniMeToken.Checkpoint(17,10000),MiniMeToken.Checkpoint(2014223714,17),MiniMeToken.Checkpoint(19,96),MiniMeToken.Checkpoint(2014223715,1),MiniMeToken.Checkpoint(256,256),MiniMeToken.Checkpoint(2,1338),MiniMeToken.Checkpoint(2014223716,257),MiniMeToken.Checkpoint(64,1532892064),MiniMeToken.Checkpoint(0,27),MiniMeToken.Checkpoint(1,17),MiniMeToken.Checkpoint(4,5),MiniMeToken.Checkpoint(17,27),MiniMeToken.Checkpoint(17,1532892062),MiniMeToken.Checkpoint(18,26),MiniMeToken.Checkpoint(5,96),MiniMeToken.Checkpoint(5,17),MiniMeToken.Checkpoint(3,17),MiniMeToken.Checkpoint(19,29),MiniMeToken.Checkpoint(0,97),MiniMeToken.Checkpoint(2014223715,9999),MiniMeToken.Checkpoint(0,2014223715),MiniMeToken.Checkpoint(5,27),MiniMeToken.Checkpoint(64,18),MiniMeToken.Checkpoint(1532892064,18),MiniMeToken.Checkpoint(19,0),MiniMeToken.Checkpoint(254,97),MiniMeToken.Checkpoint(19,256),MiniMeToken.Checkpoint(3,256),MiniMeToken.Checkpoint(19,26),MiniMeToken.Checkpoint(2014223715,66),MiniMeToken.Checkpoint(1336,256),MiniMeToken.Checkpoint(5,2014223714),MiniMeToken.Checkpoint(2014223715,5),MiniMeToken.Checkpoint(1336,97),MiniMeToken.Checkpoint(66,9999),MiniMeToken.Checkpoint(18,257),MiniMeToken.Checkpoint(10000,27),MiniMeToken.Checkpoint(96,18),MiniMeToken.Checkpoint(10000,17),MiniMeToken.Checkpoint(28,257),MiniMeToken.Checkpoint(1532892063,96),MiniMeToken.Checkpoint(97,66),MiniMeToken.Checkpoint(2014223715,18),MiniMeToken.Checkpoint(1336,10000),MiniMeToken.Checkpoint(1338,10000),MiniMeToken.Checkpoint(6,256),MiniMeToken.Checkpoint(64,9999),MiniMeToken.Checkpoint(28,6),MiniMeToken.Checkpoint(3,17),MiniMeToken.Checkpoint(29,97),MiniMeToken.Checkpoint(19,95),MiniMeToken.Checkpoint(27,1532892064),MiniMeToken.Checkpoint(28,26),MiniMeToken.Checkpoint(1532892064,254),MiniMeToken.Checkpoint(97,19),MiniMeToken.Checkpoint(17,6),MiniMeToken.Checkpoint(1532892064,17),MiniMeToken.Checkpoint(2014223715,256),MiniMeToken.Checkpoint(3,256),MiniMeToken.Checkpoint(10001,28),MiniMeToken.Checkpoint(17,1532892062),MiniMeToken.Checkpoint(1532892063,10001),MiniMeToken.Checkpoint(1532892063,27),MiniMeToken.Checkpoint(97,1532892064),MiniMeToken.Checkpoint(17,1),MiniMeToken.Checkpoint(64,3),MiniMeToken.Checkpoint(2014223716,1532892062),MiniMeToken.Checkpoint(1532892063,18),MiniMeToken.Checkpoint(95,1532892063),MiniMeToken.Checkpoint(0,1532892064),MiniMeToken.Checkpoint(1532892064,2014223715),MiniMeToken.Checkpoint(96,18),MiniMeToken.Checkpoint(66,1532892062),MiniMeToken.Checkpoint(96,95),MiniMeToken.Checkpoint(255,4),MiniMeToken.Checkpoint(18,6),MiniMeToken.Checkpoint(1336,3),MiniMeToken.Checkpoint(18,19),MiniMeToken.Checkpoint(5,2014223715),MiniMeToken.Checkpoint(1338,2014223715),MiniMeToken.Checkpoint(10001,10000),MiniMeToken.Checkpoint(1336,2014223715),MiniMeToken.Checkpoint(96,28),MiniMeToken.Checkpoint(1532892064,5),MiniMeToken.Checkpoint(5,2014223714),MiniMeToken.Checkpoint(19,1336),MiniMeToken.Checkpoint(1338,3),MiniMeToken.Checkpoint(0,1336),MiniMeToken.Checkpoint(18,1338),MiniMeToken.Checkpoint(10001,1532892064),MiniMeToken.Checkpoint(2014223715,10000),MiniMeToken.Checkpoint(97,257),MiniMeToken.Checkpoint(64,29),MiniMeToken.Checkpoint(28,17),MiniMeToken.Checkpoint(64,97),MiniMeToken.Checkpoint(18,2),MiniMeToken.Checkpoint(256,64),MiniMeToken.Checkpoint(3,1532892064),MiniMeToken.Checkpoint(10000,10000),MiniMeToken.Checkpoint(17,254),MiniMeToken.Checkpoint(10000,1532892062),MiniMeToken.Checkpoint(27,95),MiniMeToken.Checkpoint(2,1532892063),MiniMeToken.Checkpoint(17,29),MiniMeToken.Checkpoint(5,28),MiniMeToken.Checkpoint(1,6),MiniMeToken.Checkpoint(1532892064,28),MiniMeToken.Checkpoint(1338,96),MiniMeToken.Checkpoint(1337,1532892063),MiniMeToken.Checkpoint(1336,255),MiniMeToken.Checkpoint(255,254)]"
+            },
+            {
+              "js": "1337",
+              "sol": "1337"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.730ZProxyMiniMeToken.testupdateValueAtNow": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testupdateValueAtNow(MiniMeToken.Checkpoint[],uint)",
+          "parameters": [
+            {
+              "js": "[{\"fromBlock\": 9999,\"value\": 255},{\"fromBlock\": 2014223714,\"value\": 255},{\"fromBlock\": 1532892064,\"value\": 1532892064},{\"fromBlock\": 96,\"value\": 1532892063},{\"fromBlock\": 18,\"value\": 29},{\"fromBlock\": 254,\"value\": 28},{\"fromBlock\": 27,\"value\": 27}]",
+              "sol": "[MiniMeToken.Checkpoint(9999,255),MiniMeToken.Checkpoint(2014223714,255),MiniMeToken.Checkpoint(1532892064,1532892064),MiniMeToken.Checkpoint(96,1532892063),MiniMeToken.Checkpoint(18,29),MiniMeToken.Checkpoint(254,28),MiniMeToken.Checkpoint(27,27)]"
+            },
+            {
+              "js": "256",
+              "sol": "256"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.731ZProxyMiniMeToken.testisContract": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "469-469",
+          "restrictions": [
+            "_addr == 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testisContract(address) WHEN _addr==0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "\"0x0000000000000000000000000000000000000000\"",
+              "sol": "0x0000000000000000000000000000000000000000"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "_addr != 0x0000000000000000000000000000000000000000"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testisContract(address) WHEN _addr!=0x0000000000000000000000000000000000000000",
+          "parameters": [
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T04:12:09.732ZProxyMiniMeToken.testmin": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testmin(uint,uint)",
+          "parameters": [
+            {
+              "js": "2014223714",
+              "sol": "2014223714"
+            },
+            {
+              "js": "2014223715",
+              "sol": "2014223715"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

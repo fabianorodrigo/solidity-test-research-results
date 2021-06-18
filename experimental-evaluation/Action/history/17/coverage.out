@@ -1,0 +1,153 @@
+npm run coverage
+qua 11 nov 2020 16:42:46 -03
+Truffle v5.0.27 (core: 5.0.27)
+Solidity - 0.4.25 (solc-js)
+Node v10.15.3
+Web3.js v1.0.0-beta.37
+
+> electusaction@2.5.4 coverage /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action
+> touch allFiredEvents & solidity-coverage
+
+Generating coverage environment
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/IAction.sol
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/testContracts/ActionTest.sol
+> Compiling ./contracts/testContracts/FreezableTestToken.sol
+> Compiling electusvoting/contracts/Token/FreezableToken.sol
+> Compiling electusvoting/contracts/Token/IFreezableToken.sol
+> Compiling electusvoting/contracts/poll/BasePoll.sol
+> Compiling electusvoting/contracts/poll/IPoll.sol
+> Compiling electusvoting/contracts/poll/TokenProportionalCapped.sol
+> Compiling electusvoting/contracts/poll/TokenProportionalUncapped.sol
+> Compiling electusvoting/contracts/protocol/Protocol.sol
+> Compiling electusvoting/contracts/testContracts/TokenProportionalCappedTest.sol
+> Compiling electusvoting/contracts/testContracts/TokenProportionalUncappedTest.sol
+> Compiling membershipverificationtoken/contracts/ERC1261MetaData.sol
+> Compiling membershipverificationtoken/contracts/MembershipVerificationToken.sol
+> Compiling membershipverificationtoken/contracts/Protocol/IERC1261.sol
+> Compiling openzeppelin-solidity/contracts/introspection/ERC165.sol
+> Compiling openzeppelin-solidity/contracts/introspection/IERC165.sol
+> Compiling openzeppelin-solidity/contracts/math/SafeMath.sol
+> Compiling openzeppelin-solidity/contracts/ownership/Ownable.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/ERC20.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/IERC20.sol
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.4.25+commit.59dbf8f1.Emscripten.clang
+
+Instrumenting  ./coverageEnv/contracts/IAction.sol
+Skipping instrumentation of  ./coverageEnv/contracts/Migrations.sol
+Instrumenting  ./coverageEnv/contracts/testContracts/ActionTest.sol
+Instrumenting  ./coverageEnv/contracts/testContracts/FreezableTestToken.sol
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/IAction.sol
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/testContracts/ActionTest.sol
+> Compiling ./contracts/testContracts/FreezableTestToken.sol
+> Compiling electusvoting/contracts/Token/FreezableToken.sol
+> Compiling electusvoting/contracts/Token/IFreezableToken.sol
+> Compiling electusvoting/contracts/poll/BasePoll.sol
+> Compiling electusvoting/contracts/poll/IPoll.sol
+> Compiling electusvoting/contracts/poll/TokenProportionalCapped.sol
+> Compiling electusvoting/contracts/poll/TokenProportionalUncapped.sol
+> Compiling electusvoting/contracts/protocol/Protocol.sol
+> Compiling electusvoting/contracts/testContracts/TokenProportionalCappedTest.sol
+> Compiling electusvoting/contracts/testContracts/TokenProportionalUncappedTest.sol
+> Compiling membershipverificationtoken/contracts/ERC1261MetaData.sol
+> Compiling membershipverificationtoken/contracts/MembershipVerificationToken.sol
+> Compiling membershipverificationtoken/contracts/Protocol/IERC1261.sol
+> Compiling openzeppelin-solidity/contracts/introspection/ERC165.sol
+> Compiling openzeppelin-solidity/contracts/introspection/IERC165.sol
+> Compiling openzeppelin-solidity/contracts/math/SafeMath.sol
+> Compiling openzeppelin-solidity/contracts/ownership/Ownable.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/ERC20.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/IERC20.sol
+
+    > compilation warnings encountered:
+
+electusvoting/contracts/Token/FreezableToken.sol:61:5: Warning: Function state mutability can be restricted to view
+    function getTotalMintableSupply() public      returns (uint) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+,electusvoting/contracts/Token/FreezableToken.sol:65:5: Warning: Function state mutability can be restricted to view
+    function mintingFinished() public      returns (bool) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+,electusvoting/contracts/poll/BasePoll.sol:140:5: Warning: Function state mutability can be restricted to view
+    function hasPollStarted() public      returns (bool) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.4.25+commit.59dbf8f1.Emscripten.clang
+
+Launched testrpc on port 8555
+Running: truffle test --network coverage 
+(this can take a few seconds)...
+Using network 'coverage'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+[0m[0m
+[0m  Contract: ActionTest[0m
+  [32m  ✓[0m[90m Should execute fallback()[0m[33m (41ms)[0m
+  [31m  1) Should execute execute()[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x84805a34E46bd586f163F60b258AC3aed1522985 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x84805a34E46bd586f163F60b258AC3aed1522985 (address))
+    OwnershipTransferred(previousOwner: <indexed> 0x0000000000000000000000000000000000000000 (address), newOwner: <indexed> 0x84805a34E46bd586f163F60b258AC3aed1522985 (address))
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0xcCb2666fBC8aD7cCa9C5EBdd5aa64515E8B1f2b6 (address), value: 100 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should execute canExecute()[0m
+
+
+[92m [0m[32m 2 passing[0m[90m (5s)[0m
+[31m  1 failing[0m
+
+[0m  1) Contract: ActionTest
+       Should execute execute():
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/Action/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+
+
+--------------------------|----------|----------|----------|----------|----------------|
+File                      |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+--------------------------|----------|----------|----------|----------|----------------|
+ contracts/               |      100 |      100 |      100 |      100 |                |
+  IAction.sol             |      100 |      100 |      100 |      100 |                |
+ contracts/testContracts/ |    91.67 |       50 |      100 |    91.67 |                |
+  ActionTest.sol          |       90 |       50 |      100 |       90 |             35 |
+  FreezableTestToken.sol  |      100 |      100 |      100 |      100 |                |
+--------------------------|----------|----------|----------|----------|----------------|
+All files                 |    91.67 |       50 |      100 |    91.67 |                |
+--------------------------|----------|----------|----------|----------|----------------|
+
+Istanbul coverage reports generated
+Cleaning up...
+Shutting down testrpc-sc (pid 412079)
+Some truffle tests failed while running coverage

@@ -1,0 +1,237 @@
+npx solidity-coverage
+ter 10 nov 2020 12:12:02 -03
+Truffle v5.0.27 (core: 5.0.27)
+Solidity - 0.5.7 (solc-js)
+Node v10.15.3
+Web3.js v1.0.0-beta.37
+Generating coverage environment
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/Trickle.sol
+> Compiling ./contracts/mocks/ERC20Mock.sol
+> Compiling openzeppelin-solidity/contracts/math/SafeMath.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/ERC20.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/IERC20.sol
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/trickle-smart-contracts/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.5.7+commit.6da8b019.Emscripten.clang
+
+Skipping instrumentation of  ./coverageEnv/contracts/Migrations.sol
+Instrumenting  ./coverageEnv/contracts/mocks/ERC20Mock.sol
+Instrumenting  ./coverageEnv/contracts/Trickle.sol
+Running: truffle compile --network coverage 
+(this can take a few seconds)...
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/Trickle.sol
+> Compiling ./contracts/mocks/ERC20Mock.sol
+> Compiling openzeppelin-solidity/contracts/math/SafeMath.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/ERC20.sol
+> Compiling openzeppelin-solidity/contracts/token/ERC20/IERC20.sol
+> Artifacts written to /home/fabianorodrigo/Projetos/bitbucket/solidity-test/workdir/trickle-smart-contracts/coverageEnv/build/contracts
+> Compiled successfully using:
+   - solc: 0.5.7+commit.6da8b019.Emscripten.clang
+
+Launched testrpc on port 8555
+Running: truffle test --network coverage 
+(this can take a few seconds)...
+Using network 'coverage'.
+
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+[0m[0m
+[0m  Contract: ERC20Mock[0m
+  [32m  ✓[0m[90m Should execute mint(address,uint256) WHEN account!=0x0000000000000000000000000000000000000000[0m[33m (61ms)[0m
+  [32m  ✓[0m[90m Should fail mint(address,uint256) when NOT comply with: account != 0x0000000000000000000000000000000000000000[0m[33m (62ms)[0m
+  [31m  1) Should execute burn(address,uint256) WHEN account!=0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x73D20E0d39c6f1fa7Ec7Ef840A7c17F11AF9De24 (address), value: 48 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail burn(address,uint256) when NOT comply with: account != 0x0000000000000000000000000000000000000000[0m[33m (56ms)[0m
+  [31m  2) Should execute burnFrom(address,uint256) WHEN account!=0x0000000000000000000000000000000000000000,msg.sender!=0x0000000000000000000000000000000000000000,account!=0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x73D20E0d39c6f1fa7Ec7Ef840A7c17F11AF9De24 (address), value: 48 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail burnFrom(address,uint256) when NOT comply with: account != 0x0000000000000000000000000000000000000000[0m[33m (50ms)[0m
+  [31m  3) Should fail burnFrom(address,uint256) when NOT comply with: msg.sender != 0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x73D20E0d39c6f1fa7Ec7Ef840A7c17F11AF9De24 (address), value: 48 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail burnFrom(address,uint256) when NOT comply with: account != 0x0000000000000000000000000000000000000000[0m[33m (49ms)[0m
+  [32m  ✓[0m[90m Should execute approveInternal(address,address,uint256) WHEN spender!=0x0000000000000000000000000000000000000000,owner!=0x0000000000000000000000000000000000000000[0m
+  [32m  ✓[0m[90m Should fail approveInternal(address,address,uint256) when NOT comply with: spender != 0x0000000000000000000000000000000000000000[0m[33m (44ms)[0m
+  [32m  ✓[0m[90m Should fail approveInternal(address,address,uint256) when NOT comply with: owner != 0x0000000000000000000000000000000000000000[0m[33m (42ms)[0m
+
+[0m  Contract: Trickle[0m
+  [31m  4) Should execute createAgreement(IERC20,address,uint256,uint48,uint48) WHEN duration>0,totalAmount>0,start>0,recipient!=0x0000000000000000000000000000000000000000[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x73D20E0d39c6f1fa7Ec7Ef840A7c17F11AF9De24 (address), value: 48 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should fail createAgreement(IERC20,address,uint256,uint48,uint48) when NOT comply with: duration > 0[0m[33m (47ms)[0m
+  [32m  ✓[0m[90m Should fail createAgreement(IERC20,address,uint256,uint48,uint48) when NOT comply with: totalAmount > 0[0m[33m (40ms)[0m
+  [32m  ✓[0m[90m Should fail createAgreement(IERC20,address,uint256,uint48,uint48) when NOT comply with: start > 0[0m[33m (47ms)[0m
+  [32m  ✓[0m[90m Should fail createAgreement(IERC20,address,uint256,uint48,uint48) when NOT comply with: recipient != 0x0000000000000000000000000000000000000000[0m[33m (52ms)[0m
+  [32m  ✓[0m[90m Should execute getAgreement(uint256)[0m
+  [31m  5) Should execute withdrawTokens(uint256) WHEN unreleased>0[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x73D20E0d39c6f1fa7Ec7Ef840A7c17F11AF9De24 (address), value: 48 (uint256))
+
+    ---------------------------
+  [31m  6) Should execute cancelAgreement(uint256) WHEN canceledAmount>0[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x73D20E0d39c6f1fa7Ec7Ef840A7c17F11AF9De24 (address), value: 48 (uint256))
+
+    ---------------------------
+  [31m  7) Should execute cancelAgreement(uint256) WHEN canceledAmount<=0[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    Transfer(from: <indexed> 0x0000000000000000000000000000000000000000 (address), to: <indexed> 0x73D20E0d39c6f1fa7Ec7Ef840A7c17F11AF9De24 (address), value: 48 (uint256))
+
+    ---------------------------
+  [32m  ✓[0m[90m Should execute withdrawableAmount(uint256)[0m
+
+
+[92m [0m[32m 14 passing[0m[90m (7s)[0m
+[31m  7 failing[0m
+
+[0m  1) Contract: ERC20Mock
+       Should execute burn(address,uint256) WHEN account!=0x0000000000000000000000000000000000000000:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  2) Contract: ERC20Mock
+       Should execute burnFrom(address,uint256) WHEN account!=0x0000000000000000000000000000000000000000,msg.sender!=0x0000000000000000000000000000000000000000,account!=0x0000000000000000000000000000000000000000:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  3) Contract: ERC20Mock
+       Should fail burnFrom(address,uint256) when NOT comply with: msg.sender != 0x0000000000000000000000000000000000000000:
+[0m[31m     AssertionError: Expected to fail with revert, but failed with: Error: Returned error: from not found; is required[0m[90m
+      at fails (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle-assertions@0.9.2/node_modules/truffle-assertions/index.js:152:13)
+      at process._tickCallback (internal/process/next_tick.js:68:7)
+[0m
+[0m  4) Contract: Trickle
+       Should execute createAgreement(IERC20,address,uint256,uint48,uint48) WHEN duration>0,totalAmount>0,start>0,recipient!=0x0000000000000000000000000000000000000000:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  5) Contract: Trickle
+       Should execute withdrawTokens(uint256) WHEN unreleased>0:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert Agreement is completed or does not exists -- Reason given: Agreement is completed or does not exists.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  6) Contract: Trickle
+       Should execute cancelAgreement(uint256) WHEN canceledAmount>0:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert Agreement is completed or does not exists -- Reason given: Agreement is completed or does not exists.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+[0m  7) Contract: Trickle
+       Should execute cancelAgreement(uint256) WHEN canceledAmount<=0:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert Agreement is completed or does not exists -- Reason given: Agreement is completed or does not exists.[0m[90m
+      at Object.ErrorResponse (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/~/web3-core-helpers/src/errors.js:29:1)
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-core-requestmanager/src/index.js:140:1
+      at /home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/packages/truffle-provider/wrapper.js:112:1
+      at XMLHttpRequest.request.onreadystatechange (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/web3-providers-http/src/index.js:96:1)
+      at XMLHttpRequestEventTarget.dispatchEvent (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request-event-target.js:34:1)
+      at XMLHttpRequest._setReadyState (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:208:1)
+      at XMLHttpRequest._onHttpResponseEnd (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:318:1)
+      at IncomingMessage.<anonymous> (/home/fabianorodrigo/.nvm/versions/node/v10.15.3/pnpm-global/4/node_modules/.pnpm/truffle@5.0.27/node_modules/truffle/build/webpack:/~/xhr2-cookies/dist/xml-http-request.js:289:47)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+[0m
+
+
+------------------|----------|----------|----------|----------|----------------|
+File              |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+------------------|----------|----------|----------|----------|----------------|
+ contracts/       |    56.52 |    46.15 |       70 |    55.32 |                |
+  Trickle.sol     |    56.52 |    46.15 |       70 |    55.32 |... 157,179,181 |
+ contracts/mocks/ |      100 |      100 |      100 |      100 |                |
+  ERC20Mock.sol   |      100 |      100 |      100 |      100 |                |
+------------------|----------|----------|----------|----------|----------------|
+All files         |    60.78 |    46.15 |       80 |    59.62 |                |
+------------------|----------|----------|----------|----------|----------------|
+
+Istanbul coverage reports generated
+Cleaning up...
+Shutting down testrpc-sc (pid 165697)
+Some truffle tests failed while running coverage

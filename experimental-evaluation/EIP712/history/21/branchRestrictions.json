@@ -1,0 +1,224 @@
+,{
+  "2020-11-12T06:40:28.241ZProxyEcTools.testrecover": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "16-18",
+          "restrictions": [
+            "signedMessage.length != 65"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testrecover(bytes32,bytes) WHEN signedMessage.length!=65",
+          "parameters": [
+            {
+              "js": "[232,179,179,51,118,88,219,208,141,94,146,108,245,40,87,58,43,101,215,81,11,159,118,145,3,54,41,83,30,248,166,11]",
+              "sol": "stringToBytes32(\"232,179,179,51,118,88,219,208,141,94,146,108,245,40,87,58,43,101,215,81,11,159,118,145,3,54,41,83,30,248,166,11\")"
+            },
+            {
+              "js": "[128,2]",
+              "sol": "abi.encode(\"128,2\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "-",
+          "restrictions": [
+            "signedMessage.length == 65"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testrecover(bytes32,bytes) WHEN signedMessage.length==65",
+          "parameters": [
+            {
+              "js": "[136,52,141,202,49,79,205,235,105,41,80,81,16,179,192,37,74,153,124,86,69,141,100,214,157,45,30,82,71,25,140,138]",
+              "sol": "stringToBytes32(\"136,52,141,202,49,79,205,235,105,41,80,81,16,179,192,37,74,153,124,86,69,141,100,214,157,45,30,82,71,25,140,138\")"
+            },
+            {
+              "js": "[138,241,53,71,246,36,23,35,133,231,119,103,158,237,15,154,241,3,191,27,22,247,9,170,66,70,158,156,248,241,124,79,30,172,60,222,203,82,134,245,82,164,26,161,250,53,172,39,77,125,106,172,15,156,9,23,192,51,104,110,30,195,191,215,107]",
+              "sol": "abi.encode(\"138,241,53,71,246,36,23,35,133,231,119,103,158,237,15,154,241,3,191,27,22,247,9,170,66,70,158,156,248,241,124,79,30,172,60,222,203,82,134,245,82,164,26,161,250,53,172,39,77,125,106,172,15,156,9,23,192,51,104,110,30,195,191,215,107\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T06:40:28.242ZProxyEcTools.testtoEthereumSignedMessage": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoEthereumSignedMessage(bytes32)",
+          "parameters": [
+            {
+              "js": "[147,186,236,95,215,30,235,184,164,118,19,148,118,41,197,115,178,184,30,228,241,58,105,222,244,128,109,219,54,60,130,249]",
+              "sol": "stringToBytes32(\"147,186,236,95,215,30,235,184,164,118,19,148,118,41,197,115,178,184,30,228,241,58,105,222,244,128,109,219,54,60,130,249\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T06:40:28.242ZProxyEcTools.testprefixedRecover": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testprefixedRecover(bytes32,bytes)",
+          "parameters": [
+            {
+              "js": "[216,212,214,98,187,33,29,3,138,158,230,76,203,223,216,82,187,1,182,196,116,33,194,217,83,51,207,136,24,71,53,5]",
+              "sol": "stringToBytes32(\"216,212,214,98,187,33,29,3,138,158,230,76,203,223,216,82,187,1,182,196,116,33,194,217,83,51,207,136,24,71,53,5\")"
+            },
+            {
+              "js": "[59,4,169,100,247,104,225,105,173,24,25,214,101,135,24,38,0,178,230,35,49,19,159,10,177,224,184,101,190,21,242,69]",
+              "sol": "abi.encode(\"59,4,169,100,247,104,225,105,173,24,25,214,101,135,24,38,0,178,230,35,49,19,159,10,177,224,184,101,190,21,242,69\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T06:40:28.243ZSignatureVerifier.hashBid": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute hashBid(SignatureVerifier.Bid)",
+          "parameters": [
+            {
+              "js": "{\"amount\": 2,\"bidder\": {\"userId\": 101,\"wallet\": accounts[9]}}",
+              "sol": "SignatureVerifier.Bid(2,SignatureVerifier.Identity(101,address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T06:40:28.244ZSignatureVerifier.verifyHardCoded": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute verifyHardCoded()",
+          "parameters": [
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T06:40:28.244ZSignatureVerifier.verifySpecificWithPrefix": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute verifySpecificWithPrefix(SignatureVerifier.Bid,bytes)",
+          "parameters": [
+            {
+              "js": "{\"amount\": 28,\"bidder\": {\"userId\": 2,\"wallet\": accounts[1]}}",
+              "sol": "SignatureVerifier.Bid(28,SignatureVerifier.Identity(2,address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))))"
+            },
+            {
+              "js": "[159,120,161,63,53,188,221,88,193,91,38,185,238,95,169,9,115,37,215,132,221,200,220,106,196,58,73,184,10,179,251,161]",
+              "sol": "abi.encode(\"159,120,161,63,53,188,221,88,193,91,38,185,238,95,169,9,115,37,215,132,221,200,220,106,196,58,73,184,10,179,251,161\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T06:40:28.245ZSignatureVerifier.verifySpecificWithoutPrefix": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute verifySpecificWithoutPrefix(SignatureVerifier.Bid,bytes)",
+          "parameters": [
+            {
+              "js": "{\"amount\": 26,\"bidder\": {\"userId\": 2,\"wallet\": accounts[7]}}",
+              "sol": "SignatureVerifier.Bid(26,SignatureVerifier.Identity(2,address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))))"
+            },
+            {
+              "js": "[228,237,53,132,243,105,78,59,122,146,181,244,233,208,221,168,235,36,96,189,176,74,93,214,107,198,125,137,192,181,67,146]",
+              "sol": "abi.encode(\"228,237,53,132,243,105,78,59,122,146,181,244,233,208,221,168,235,36,96,189,176,74,93,214,107,198,125,137,192,181,67,146\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}

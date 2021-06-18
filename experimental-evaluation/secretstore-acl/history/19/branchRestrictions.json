@@ -1,0 +1,106 @@
+,{
+  "2020-11-12T03:28:14.051ZOnceTransferablePermission.checkPermissions": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute checkPermissions(address,bytes32)",
+          "parameters": [
+            {
+              "js": "accounts[6]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "[210,223,137,73,85,80,11,214,128,161,55,34,70,120,119,238,130,66,172,126,111,13,239,202,87,182,164,135,47,216,136,225]",
+              "sol": "stringToBytes32(\"210,223,137,73,85,80,11,214,128,161,55,34,70,120,119,238,130,66,172,126,111,13,239,202,87,182,164,135,47,216,136,225\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T03:28:14.052ZOnceTransferablePermission.createKey": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute createKey(bytes32)",
+          "parameters": [
+            {
+              "js": "[18,124,115,240,237,50,47,10,183,125,235,91,222,185,113,232,179,121,3,126,6,201,54,49,28,131,44,92,64,11,190,65]",
+              "sol": "stringToBytes32(\"18,124,115,240,237,50,47,10,183,125,235,91,222,185,113,232,179,121,3,126,6,201,54,49,28,131,44,92,64,11,190,65\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-12T03:28:14.052ZOnceTransferablePermission.transferPermission": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute transferPermission(bytes32,address) WHEN newOwner!=0x0000000000000000000000000000000000000000,MemberAccess.Identifier!=true",
+          "parameters": [
+            {
+              "js": "[83,25,19,7,84,30,65,161,156,203,175,131,4,194,167,130,224,55,89,169,35,61,171,191,215,29,154,53,38,180,36,200]",
+              "sol": "stringToBytes32(\"83,25,19,7,84,30,65,161,156,203,175,131,4,194,167,130,224,55,89,169,35,61,171,191,215,29,154,53,38,180,36,200\")"
+            },
+            {
+              "js": "accounts[8]",
+              "sol": "address(uint160(uint(keccak256(abi.encodePacked(nonce, blockhash(block.number))))))"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": [
+          {
+            "success": false,
+            "description": "Should fail transferPermission(bytes32,address) when NOT comply with: newOwner != 0x0000000000000000000000000000000000000000",
+            "parameters": [
+              {
+                "js": "[83,25,19,7,84,30,65,161,156,203,175,131,4,194,167,130,224,55,89,169,35,61,171,191,215,29,154,53,38,180,36,200]",
+                "sol": "stringToBytes32(\"83,25,19,7,84,30,65,161,156,203,175,131,4,194,167,130,224,55,89,169,35,61,171,191,215,29,154,53,38,180,36,200\")"
+              },
+              {
+                "js": "\"0x0000000000000000000000000000000000000000\"",
+                "sol": "0x0000000000000000000000000000000000000000"
+              },
+              {
+                "js": "{from:accounts[0]}",
+                "sol": "{\"from\":\"0x0\"}"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

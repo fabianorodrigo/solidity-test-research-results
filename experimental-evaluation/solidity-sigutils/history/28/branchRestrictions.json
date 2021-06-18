@@ -1,0 +1,224 @@
+,{
+  "2020-11-13T00:03:38.363ZProxySignatureUtils.testtoEthBytes32SignedMessageHash": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoEthBytes32SignedMessageHash(bytes32)",
+          "parameters": [
+            {
+              "js": "[94,148,176,31,133,212,71,7,98,135,14,151,135,54,184,124,26,58,149,87,95,31,102,228,20,108,247,175,8,90,8,185]",
+              "sol": "stringToBytes32(\"94,148,176,31,133,212,71,7,98,135,14,151,135,54,184,124,26,58,149,87,95,31,102,228,20,108,247,175,8,90,8,185\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-13T00:03:38.363ZProxySignatureUtils.testtoEthPersonalSignedMessageHash": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testtoEthPersonalSignedMessageHash(bytes)",
+          "parameters": [
+            {
+              "js": "[31,175,91,90,125,203,124,186,170,61,108,231,29,109,236,187,87,64,117,221,170,98,66,52,145,24,174,6,255,33,145,189]",
+              "sol": "abi.encode(\"31,175,91,90,125,203,124,186,170,61,108,231,29,109,236,187,87,64,117,221,170,98,66,52,145,24,174,6,255,33,145,189\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-13T00:03:38.364ZProxySignatureUtils.testuintToString": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "43-51",
+          "restrictions": [
+            "v == 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testuintToString(uint) WHEN v==0",
+          "parameters": [
+            {
+              "js": "0",
+              "sol": "0"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      },
+      "1": {
+        "branch": {
+          "loc": "45-51",
+          "restrictions": [
+            "v != 0"
+          ]
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testuintToString(uint) WHEN v!=0",
+          "parameters": [
+            {
+              "js": "28",
+              "sol": "28"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-13T00:03:38.364ZProxySignatureUtils.testparseSignature": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testparseSignature(bytes,uint)",
+          "parameters": [
+            {
+              "js": "[106,48,108,236,80,239,20,191,185,152,51,150,227,175,114,214,92,226,78,20,74,66,204,86,50,168,89,32,42,161,106,106]",
+              "sol": "abi.encode(\"106,48,108,236,80,239,20,191,185,152,51,150,227,175,114,214,92,226,78,20,74,66,204,86,50,168,89,32,42,161,106,106\")"
+            },
+            {
+              "js": "9",
+              "sol": "9"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-13T00:03:38.364ZProxySignatureUtils.testcountSignatures": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testcountSignatures(bytes)",
+          "parameters": [
+            {
+              "js": "[152,122,30,97,154,52,138,33,178,7,156,183,102,95,255,43,119,105,185,121,220,210,151,27,9,205,143,117,151,82,190,44]",
+              "sol": "abi.encode(\"152,122,30,97,154,52,138,33,178,7,156,183,102,95,255,43,119,105,185,121,220,210,151,27,9,205,143,117,151,82,190,44\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-13T00:03:38.365ZProxySignatureUtils.testrecoverAddress": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testrecoverAddress(bytes32,bytes,uint)",
+          "parameters": [
+            {
+              "js": "[240,12,185,143,181,159,134,140,143,123,234,222,79,144,162,241,129,155,133,237,105,79,216,104,220,186,187,251,210,199,185,165]",
+              "sol": "stringToBytes32(\"240,12,185,143,181,159,134,140,143,123,234,222,79,144,162,241,129,155,133,237,105,79,216,104,220,186,187,251,210,199,185,165\")"
+            },
+            {
+              "js": "[104,189,136,73,192,119,250,176,225,30,230,153,233,203,167,215,37,127,176,184,94,48,106,161,8,90,37,226,107,232,115,197]",
+              "sol": "abi.encode(\"104,189,136,73,192,119,250,176,225,30,230,153,233,203,167,215,37,127,176,184,94,48,106,161,8,90,37,226,107,232,115,197\")"
+            },
+            {
+              "js": "49",
+              "sol": "49"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+},{
+  "2020-11-13T00:03:38.365ZProxySignatureUtils.testrecoverAddresses": {
+    "branches": {
+      "0": {
+        "branch": {
+          "loc": "-",
+          "restrictions": []
+        },
+        "scenarioSuccess": {
+          "success": true,
+          "description": "Should execute testrecoverAddresses(bytes32,bytes)",
+          "parameters": [
+            {
+              "js": "[240,142,218,144,195,239,182,201,88,66,198,104,70,239,92,89,135,134,134,9,96,125,217,99,103,210,125,30,61,46,178,45]",
+              "sol": "stringToBytes32(\"240,142,218,144,195,239,182,201,88,66,198,104,70,239,92,89,135,134,134,9,96,125,217,99,103,210,125,30,61,46,178,45\")"
+            },
+            {
+              "js": "[248,143,133,246,41,6,5,31,99,218,44,130,64,206,6,93,164,17,197,57,57,246,218,50,65,131,192,188,35,252,254,12]",
+              "sol": "abi.encode(\"248,143,133,246,41,6,5,31,99,218,44,130,64,206,6,93,164,17,197,57,57,246,218,50,65,131,192,188,35,252,254,12\")"
+            },
+            {
+              "js": "{from:accounts[0]}",
+              "sol": "{\"from\":\"0x0\"}"
+            }
+          ]
+        },
+        "scenarioFail": []
+      }
+    }
+  }
+}
